@@ -19,7 +19,7 @@ data_test = {
     "username": "test",
     "password": "test"
 }
-respo = httpx.post("https://httpbin.org/post", data=data_test)
+response = httpx.post("https://httpbin.org/post", data=data_test)
 
 print(response.status_code)
 print(response.json())
