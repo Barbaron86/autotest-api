@@ -3,7 +3,7 @@ name = "autotest-api"
 version = "0.1.0"
 description = ""
 authors = [
-    {name = "Barbaron86",email = "kirill.molodykh@mail.ru"}
+    { name = "Barbaron86", email = "kirill.molodykh@mail.ru" }
 ]
 requires-python = ">=3.12,<4.0"
 dependencies = [
