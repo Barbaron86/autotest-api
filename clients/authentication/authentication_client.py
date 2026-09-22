@@ -23,16 +23,17 @@ class RefreshRequestDict(TypedDict):
 
 
 class AuthenticationClient(ApiClient):
-    """
-    Клиент для работы с /api/v1/authentication
-    """
+    """Клиент для работы с /api/v1/authentication"""
 
     def login_api(self, request: LoginRequestDict) -> Response:
         """
         Метод выполняет аутентификацию пользователя.
 
-        :param request: Словарь с email и password.
-        :return: Ответ от сервера в виде объекта httpx.Response
+        Args:
+            request: Словарь с email и password.
+
+        Returns:
+            Ответ от сервера в виде объекта httpx.Response.
         """
         return self.post("/api/v1/authentication/login", json=request)
 
@@ -40,7 +41,10 @@ class AuthenticationClient(ApiClient):
         """
         Метод обновляет токен авторизации.
 
-        :param request: Словарь с refreshToken.
-        :return: Ответ от сервера в виде объекта httpx.Response
+        Args:
+            request: Словарь с refreshToken.
+
+        Returns:
+            Ответ от сервера в виде объекта httpx.Response.
         """
         return self.post("/api/v1/authentication/refresh", json=request)
