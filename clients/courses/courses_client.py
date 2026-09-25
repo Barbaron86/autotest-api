@@ -3,6 +3,7 @@ from typing import TypedDict
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 
 
 class GetCoursesQueryDict(TypedDict):
@@ -91,3 +92,15 @@ class CoursesClient(ApiClient):
             HTTP-ответ API на запрос удаления курса.
         """
         return self.delete(f"/api/v1/courses/{course_id}")
+
+
+def get_courses_client(user: AuthenticationUserDict) -> CoursesClient:
+    """Создает клиент для работы с курсами от имени пользователя.
+
+    Args:
+        user: Учетные данные пользователя для аутентификации.
+
+    Returns:
+        Экземпляр CoursesClient с авторизованным HTTP-клиентом.
+    """
+    return CoursesClient(client=get_private_http_client(user))

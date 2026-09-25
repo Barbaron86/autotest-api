@@ -3,6 +3,7 @@ from typing import TypedDict
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 
 
 class UserUpdateRequestDict(TypedDict):
@@ -60,3 +61,15 @@ class PrivateUsersClient(ApiClient):
             Ответ от сервера в виде объекта httpx.Response.
         """
         return self.patch(f"/api/v1/users/{user_id}", json=request)
+
+
+def get_private_users_client(user: AuthenticationUserDict) -> PrivateUsersClient:
+    """Создает клиент для работы с приватными методами пользователей.
+
+    Args:
+        user: Учетные данные пользователя для аутентификации.
+
+    Returns:
+        Экземпляр PrivateUsersClient с авторизованным HTTP-клиентом.
+    """
+    return PrivateUsersClient(client=get_private_http_client(user))
