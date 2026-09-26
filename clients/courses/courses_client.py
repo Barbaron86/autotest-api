@@ -3,7 +3,22 @@ from typing import TypedDict
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.files.files_client import FileDict
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
+from clients.users.private_users_client import UserDict
+
+
+class CourseDict(TypedDict):
+    """Описание структуры данных курса."""
+
+    id: str
+    title: str
+    maxScore: int | None
+    minScore: int | None
+    description: str
+    estimatedTime: str | None
+    previewFile: FileDict
+    createdByUserId: UserDict
 
 
 class GetCoursesQueryDict(TypedDict):
@@ -22,6 +37,12 @@ class CreateCourseRequestDict(TypedDict):
     estimatedTime: str | None
     previewFileId: str
     createdByUserId: str
+
+
+class CreateCourseResponseDict(TypedDict):
+    """Описание структуры ответа на запрос создания курса."""
+
+    course: CourseDict
 
 
 class UpdateCourseRequestDict(TypedDict):
@@ -69,6 +90,21 @@ class CoursesClient(ApiClient):
             HTTP-ответ API на запрос создания курса.
         """
         return self.post("/api/v1/courses", json=request)
+
+    def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
+        """Создает новый курс и возвращает данные курса.
+
+        Args:
+            request: Данные для создания курса.
+
+        Returns:
+            Данные созданного курса в виде словаря.
+        """
+        response = self.create_course_api(request=request)
+        response.raise_for_status()
+
+        response_data: CreateCourseResponseDict = response.json()
+        return response_data
 
     def update_course_api(self, course_id: str, request: UpdateCourseRequestDict) -> Response:
         """Обновляет существующий курс.

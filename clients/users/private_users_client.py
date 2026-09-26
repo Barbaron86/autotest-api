@@ -6,6 +6,16 @@ from clients.api_client import ApiClient
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 
 
+class UserDict(TypedDict):
+    """Описание структуры данных пользователя."""
+
+    id: str
+    email: str
+    lastName: str
+    firstName: str
+    middleName: str
+
+
 class UserUpdateRequestDict(TypedDict):
     """Описание структуры запроса на обновление информации о пользователе."""
 
@@ -13,6 +23,12 @@ class UserUpdateRequestDict(TypedDict):
     lastName: str | None
     firstName: str | None
     middleName: str | None
+
+
+class GetUserResponseDict(TypedDict):
+    """Описание структуры ответа на запрос получения информации о пользователе."""
+
+    user: UserDict
 
 
 class PrivateUsersClient(ApiClient):
@@ -36,6 +52,22 @@ class PrivateUsersClient(ApiClient):
             Ответ от сервера в виде объекта httpx.Response.
         """
         return self.get(f"/api/v1/users/{user_id}")
+
+    def get_user(self, user_id: str) -> GetUserResponseDict:
+        """
+        Метод получает информацию о пользователе по его идентификатору и возвращает данные пользователя.
+
+        Args:
+            user_id: Идентификатор пользователя.
+
+        Returns:
+            Данные пользователя в виде словаря.
+        """
+        response = self.get_user_api(user_id=user_id)
+        response.raise_for_status()
+
+        response_data: GetUserResponseDict = response.json()
+        return response_data
 
     def delete_user_api(self, user_id: str) -> Response:
         """

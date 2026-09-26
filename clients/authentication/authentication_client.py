@@ -7,23 +7,19 @@ from clients.public_http_builder import get_public_http_client
 
 
 class LoginRequestDict(TypedDict):
-    """
-    Описание структуры запроса на аутентификацию.
-    """
+    """Описание структуры запроса на аутентификацию."""
 
     email: str
     password: str
 
 
 class RefreshRequestDict(TypedDict):
-    """
-    Описание структуры запроса для обновления токена.
-    """
+    """Описание структуры запроса для обновления токена."""
 
     refreshToken: str
 
 
-class Token(TypedDict):
+class TokenDict(TypedDict):
     """Описание структуры токена."""
 
     tokenType: str
@@ -34,7 +30,7 @@ class Token(TypedDict):
 class LoginResponseDict(TypedDict):
     """Описание структуры ответа на запрос аутентификации."""
 
-    token: Token
+    token: TokenDict
 
 
 class AuthenticationClient(ApiClient):
@@ -75,6 +71,8 @@ class AuthenticationClient(ApiClient):
             Данные ответа аутентификации, содержащие access и refresh токены.
         """
         response = self.login_api(request)
+        response.raise_for_status()
+
         response_data: LoginResponseDict = response.json()
         return response_data
 

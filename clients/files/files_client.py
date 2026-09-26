@@ -6,12 +6,27 @@ from clients.api_client import ApiClient
 from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
 
 
+class FileDict(TypedDict):
+    """Описание структуры данных файла."""
+
+    id: str
+    filename: str
+    directory: str
+    url: str
+
+
 class CreateFileRequestDict(TypedDict):
     """Описание структуры запроса на создание файла."""
 
     filename: str
     directory: str
     upload_file: str
+
+
+class CreateFileResponseDict(TypedDict):
+    """Описание структуры ответа на запрос создания файла."""
+
+    file: FileDict
 
 
 class FilesClient(ApiClient):
@@ -30,9 +45,26 @@ class FilesClient(ApiClient):
         """
         return self.post("/api/v1/files", data=request, files={"upload_file": open(request["upload_file"], "rb")})
 
+    def create_file(self, request: CreateFileRequestDict) -> CreateFileResponseDict:
+        """
+        Загружает файл на сервер и возвращает данные о загруженном файле.
+
+        Args:
+            request: Данные для загрузки файла, включая имя файла,
+                директорию и путь к локальному файлу.
+
+        Returns:
+            Данные загруженного файла в виде словаря.
+        """
+        response = self.create_file_api(request=request)
+        response.raise_for_status()
+
+        response_data: CreateFileResponseDict = response.json()
+        return response_data
+
     def get_file_api(self, file_id: str) -> Response:
         """
-        Получает файл с сервера по его идентификатору.л
+        Получает файл с сервера по его идентификатору.
 
         Args:
             file_id: Идентификатор файла.
@@ -57,6 +89,9 @@ class FilesClient(ApiClient):
 
 def get_files_client(user: AuthenticationUserDict) -> FilesClient:
     """Функция для получения экземпляра FilesClient.
+
+    Args:
+        user: Учетные данные пользователя для аутентификации.
 
     Returns:
         Экземпляр FilesClient.
