@@ -61,7 +61,7 @@ class PrivateUsersClient(ApiClient):
             user_id: Идентификатор пользователя.
 
         Returns:
-            Данные пользователя в виде словаря.
+            Данные пользователя.
         """
         response = self.get_user_api(user_id=user_id)
         response.raise_for_status()

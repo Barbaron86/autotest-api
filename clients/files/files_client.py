@@ -54,7 +54,7 @@ class FilesClient(ApiClient):
                 директорию и путь к локальному файлу.
 
         Returns:
-            Данные загруженного файла в виде словаря.
+            Данные загруженного файла.
         """
         response = self.create_file_api(request=request)
         response.raise_for_status()

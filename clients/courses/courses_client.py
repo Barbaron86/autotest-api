@@ -98,7 +98,7 @@ class CoursesClient(ApiClient):
             request: Данные для создания курса.
 
         Returns:
-            Данные созданного курса в виде словаря.
+            Данные созданного курса.
         """
         response = self.create_course_api(request=request)
         response.raise_for_status()

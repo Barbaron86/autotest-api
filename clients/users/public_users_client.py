@@ -53,7 +53,7 @@ class PublicUsersClient(ApiClient):
             request: Данные нового пользователя.
 
         Returns:
-            Данные созданного пользователя в виде словаря.
+            Данные созданного пользователя.
         """
         response = self.create_user_api(request=request)
         response.raise_for_status()
