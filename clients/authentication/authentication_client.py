@@ -6,13 +6,13 @@ from clients.public_http_builder import get_public_http_client
 
 
 class AuthenticationClient(ApiClient):
-    """Клиент для работы с /api/v1/authentication"""
+    """API-клиент для работы с аутентификацией."""
 
     def login_api(self, request: LoginRequestSchema) -> Response:
         """Выполняет запрос на аутентификацию пользователя.
 
         Args:
-            request: Модель запроса на аутентификацию.
+            request: Данные для аутентификации.
 
         Returns:
             HTTP-ответ API на запрос аутентификации.
@@ -23,7 +23,7 @@ class AuthenticationClient(ApiClient):
         """Выполняет запрос на обновление токена.
 
         Args:
-            request: Модель запроса на обновление токена.
+            request: Данные для обновления токена.
 
         Returns:
             HTTP-ответ API на запрос обновления токена.
@@ -31,13 +31,13 @@ class AuthenticationClient(ApiClient):
         return self.post("/api/v1/authentication/refresh", json=request.model_dump())
 
     def login(self, request: LoginRequestSchema) -> LoginResponseSchema:
-        """Аутентифицирует пользователя и возвращает данные авторизации.
+        """Аутентифицирует пользователя.
 
         Args:
-            request: Модель запроса на аутентификацию.
+            request: Данные для аутентификации.
 
         Returns:
-            Модель ответа с данными авторизации.
+            Данные авторизации.
         """
         response = self.login_api(request)
         response.raise_for_status()
@@ -46,8 +46,7 @@ class AuthenticationClient(ApiClient):
 
 
 def get_authentication_client() -> AuthenticationClient:
-    """
-    Функция для получения экземпляра AuthenticationClient.
+    """Создает публичный API-клиент для аутентификации.
 
     Returns:
         Экземпляр AuthenticationClient.

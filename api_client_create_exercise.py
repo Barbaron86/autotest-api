@@ -1,5 +1,7 @@
-from clients.courses.courses_client import CreateCourseRequestDict, get_courses_client
-from clients.exercises.exercises_client import CreateExerciseRequestDict, get_exercises_client
+from clients.courses.courses_client import get_courses_client
+from clients.courses.courses_schema import CreateCourseRequestSchema
+from clients.exercises.exercises_client import get_exercises_client
+from clients.exercises.exercises_schema import CreateExerciseRequestSchema
 from clients.files.files_client import get_files_client
 from clients.files.files_schema import CreateFileRequestSchema
 from clients.private_http_builder import AuthenticationUserSchema
@@ -28,27 +30,27 @@ create_file_request = CreateFileRequestSchema(
 create_file_response_data = files_client.create_file(request=create_file_request)
 print(create_file_response_data)
 
-create_course_request = CreateCourseRequestDict(
+create_course_request = CreateCourseRequestSchema(
     title="Python",
     description="Python API course",
-    minScore=10,
-    maxScore=100,
-    estimatedTime="2 weeks",
-    previewFileId=create_file_response_data.file.id,
-    createdByUserId=create_user_response_data.user.id,
+    min_score=10,
+    max_score=100,
+    estimated_time="2 weeks",
+    preview_file_id=create_file_response_data.file.id,
+    created_by_user_id=create_user_response_data.user.id,
 )
 
 create_course_response_data = courses_client.create_course(request=create_course_request)
 print(create_course_response_data)
 
-create_exercise_request = CreateExerciseRequestDict(
+create_exercise_request = CreateExerciseRequestSchema(
     title="Python Exercise",
     description="Python Exercise Description",
-    courseId=create_user_response_data.user.id,
-    maxScore=100,
-    minScore=10,
-    estimatedTime="1 week",
-    orderIndex=0,
+    course_id=create_course_response_data.course.id,
+    max_score=100,
+    min_score=10,
+    estimated_time="1 week",
+    order_index=0,
 )
 create_exercise_response_data = exercise_client.create_exercise(request=create_exercise_request)
 print(create_exercise_response_data)

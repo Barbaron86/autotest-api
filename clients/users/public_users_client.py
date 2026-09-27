@@ -35,7 +35,7 @@ class PublicUsersClient(ApiClient):
 
 
 def get_public_users_client() -> PublicUsersClient:
-    """Функция для получения экземпляра PublicUsersClient.
+    """Создает публичный API-клиент для работы с пользователями.
 
     Returns:
         Экземпляр PublicUsersClient.

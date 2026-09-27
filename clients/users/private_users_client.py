@@ -66,7 +66,7 @@ class PrivateUsersClient(ApiClient):
 
 
 def get_private_users_client(user: AuthenticationUserSchema) -> PrivateUsersClient:
-    """Создает приватный API-клиент для работы с пользователями.
+    """Создает авторизованный API-клиент для работы с пользователями.
 
     Args:
         user: Учетные данные пользователя для аутентификации.

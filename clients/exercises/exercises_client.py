@@ -1,107 +1,47 @@
-from typing import TypedDict
-
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.exercises.exercises_schema import (
+    CreateExerciseRequestSchema,
+    CreateExerciseResponseSchema,
+    GetExerciseResponseSchema,
+    GetExercisesRequestSchema,
+    GetExercisesResponseSchema,
+    UpdateExerciseRequestSchema,
+    UpdateExerciseResponseSchema,
+)
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
-
-
-class ExerciseDict(TypedDict):
-    """Описание структуры данных упражнения."""
-
-    id: str
-    title: str
-    description: str
-    courseId: str
-    maxScore: int | None
-    minScore: int | None
-    orderIndex: int
-    estimatedTime: str | None
-
-
-class GetExerciseResponseDict(TypedDict):
-    """Описание структуры ответа на запрос получения упражнения."""
-
-    exercise: ExerciseDict
-
-
-class GetExercisesResponseDict(TypedDict):
-    """Описание структуры ответа на запрос получения списка упражнений."""
-
-    exercises: list[ExerciseDict]
-
-
-class GetExercisesRequestDict(TypedDict):
-    """Описание структуры запроса на получение упражнений."""
-
-    course_id: str
-
-
-class CreateExerciseRequestDict(TypedDict):
-    """Описание структуры запроса на создание упражнения."""
-
-    title: str
-    description: str
-    courseId: str
-    maxScore: int | None
-    minScore: int | None
-    orderIndex: int
-    estimatedTime: str | None
-
-
-class CreateExerciseResponseDict(TypedDict):
-    """Описание структуры ответа на запрос создания упражнения."""
-
-    exercise: ExerciseDict
-
-
-class UpdateExerciseRequestDict(TypedDict):
-    """Описание структуры запроса на обновление упражнения."""
-
-    title: str | None
-    description: str | None
-    maxScore: int | None
-    minScore: int | None
-    orderIndex: int | None
-    estimatedTime: str | None
-
-
-class UpdateExerciseResponseDict(TypedDict):
-    """Описание структуры ответа на запрос обновления упражнения."""
-
-    exercise: ExerciseDict
 
 
 class ExercisesClient(ApiClient):
     """API-клиент для работы с упражнениями."""
 
-    def get_exercises_api(self, query: GetExercisesRequestDict) -> Response:
-        """Получает список упражнений для курса.
+    def get_exercises_api(self, query: GetExercisesRequestSchema) -> Response:
+        """Выполняет запрос на получение списка упражнений.
 
         Args:
-            query: Query-параметры с идентификатором курса.
+            query: Query-параметры для получения списка упражнений.
 
         Returns:
             HTTP-ответ API со списком упражнений.
         """
-        return self.get("/api/v1/exercises", params=query)
+        return self.get("/api/v1/exercises", params=query.model_dump())
 
-    def get_exercises(self, query: GetExercisesRequestDict) -> GetExercisesResponseDict:
-        """Получает список упражнений для курса и возвращает их данные.
+    def get_exercises(self, query: GetExercisesRequestSchema) -> GetExercisesResponseSchema:
+        """Получает список упражнений.
 
         Args:
-            query: Query-параметры с идентификатором курса.
+            query: Query-параметры для получения списка упражнений.
 
         Returns:
-            Данные ответа со списком упражнений.
+            Данные списка упражнений.
         """
         response = self.get_exercises_api(query=query)
         response.raise_for_status()
-        response_data: GetExercisesResponseDict = response.json()
-        return response_data
+        return GetExercisesResponseSchema.model_validate_json(response.text)
 
-    def create_exercise_api(self, request: CreateExerciseRequestDict) -> Response:
-        """Создает новое упражнение.
+    def create_exercise_api(self, request: CreateExerciseRequestSchema) -> Response:
+        """Выполняет запрос на создание упражнения.
 
         Args:
             request: Данные для создания упражнения.
@@ -109,10 +49,10 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос создания упражнения.
         """
-        return self.post("/api/v1/exercises", json=request)
+        return self.post("/api/v1/exercises", json=request.model_dump())
 
-    def create_exercise(self, request: CreateExerciseRequestDict) -> CreateExerciseResponseDict:
-        """Создает новое упражнение и возвращает его данные.
+    def create_exercise(self, request: CreateExerciseRequestSchema) -> CreateExerciseResponseSchema:
+        """Создает упражнение.
 
         Args:
             request: Данные для создания упражнения.
@@ -122,11 +62,10 @@ class ExercisesClient(ApiClient):
         """
         response = self.create_exercise_api(request=request)
         response.raise_for_status()
-        response_data: CreateExerciseResponseDict = response.json()
-        return response_data
+        return CreateExerciseResponseSchema.model_validate_json(response.text)
 
     def get_exercise_api(self, exercise_id: str) -> Response:
-        """Получает упражнение по его идентификатору.
+        """Выполняет запрос на получение упражнения.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -136,8 +75,8 @@ class ExercisesClient(ApiClient):
         """
         return self.get(f"/api/v1/exercises/{exercise_id}")
 
-    def get_exercise(self, exercise_id: str) -> GetExerciseResponseDict:
-        """Получает упражнение по его идентификатору и возвращает его данные.
+    def get_exercise(self, exercise_id: str) -> GetExerciseResponseSchema:
+        """Получает упражнение.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -147,11 +86,10 @@ class ExercisesClient(ApiClient):
         """
         response = self.get_exercise_api(exercise_id=exercise_id)
         response.raise_for_status()
-        response_data: GetExerciseResponseDict = response.json()
-        return response_data
+        return GetExerciseResponseSchema.model_validate_json(response.text)
 
-    def update_exercise_api(self, exercise_id: str, request: UpdateExerciseRequestDict) -> Response:
-        """Обновляет существующее упражнение.
+    def update_exercise_api(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> Response:
+        """Выполняет запрос на обновление упражнения.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -160,10 +98,10 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос обновления упражнения.
         """
-        return self.patch(f"/api/v1/exercises/{exercise_id}", json=request)
+        return self.patch(f"/api/v1/exercises/{exercise_id}", json=request.model_dump(exclude_unset=True))
 
-    def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestDict) -> UpdateExerciseResponseDict:
-        """Обновляет существующее упражнение и возвращает его данные.
+    def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> UpdateExerciseResponseSchema:
+        """Обновляет упражнение.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -174,11 +112,10 @@ class ExercisesClient(ApiClient):
         """
         response = self.update_exercise_api(exercise_id=exercise_id, request=request)
         response.raise_for_status()
-        response_data: UpdateExerciseResponseDict = response.json()
-        return response_data
+        return UpdateExerciseResponseSchema.model_validate_json(response.text)
 
     def delete_exercise_api(self, exercise_id: str) -> Response:
-        """Удаляет упражнение по его идентификатору.
+        """Выполняет запрос на удаление упражнения.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -189,7 +126,7 @@ class ExercisesClient(ApiClient):
         return self.delete(f"/api/v1/exercises/{exercise_id}")
 
     def delete_exercise(self, exercise_id: str) -> None:
-        """Удаляет упражнение по его идентификатору.
+        """Удаляет упражнение.
 
         Args:
             exercise_id: Идентификатор упражнения.
@@ -199,10 +136,10 @@ class ExercisesClient(ApiClient):
 
 
 def get_exercises_client(user: AuthenticationUserSchema) -> ExercisesClient:
-    """Создает API-клиент для работы с упражнениями.
+    """Создает авторизованный API-клиент для работы с упражнениями.
 
     Args:
-        user: Модель пользователя для аутентификации.
+        user: Учетные данные пользователя для аутентификации.
 
     Returns:
         Авторизованный экземпляр ExercisesClient.

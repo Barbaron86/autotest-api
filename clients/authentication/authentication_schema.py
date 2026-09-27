@@ -19,12 +19,12 @@ class LoginRequestSchema(BaseSchema):
 
 
 class LoginResponseSchema(BaseSchema):
-    """Данные ответа на аутентификацию."""
+    """Ответ на аутентификацию."""
 
     token: TokenSchema
 
 
 class RefreshRequestSchema(BaseSchema):
-    """Модель запроса на обновление токена."""
+    """Запрос на обновление токена."""
 
     refresh_token: str = Field(..., alias="refreshToken")

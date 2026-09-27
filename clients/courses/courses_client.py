@@ -1,76 +1,31 @@
-from typing import TypedDict
-
 from httpx import Response
 
 from clients.api_client import ApiClient
-from clients.files.files_client import FileDict
+from clients.courses.courses_schema import (
+    CreateCourseRequestSchema,
+    CreateCourseResponseSchema,
+    GetCoursesQuerySchema,
+    UpdateCourseRequestSchema,
+)
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
-from clients.users.private_users_client import UserDict
-
-
-class CourseDict(TypedDict):
-    """Описание структуры данных курса."""
-
-    id: str
-    title: str
-    maxScore: int | None
-    minScore: int | None
-    description: str
-    estimatedTime: str | None
-    previewFile: FileDict
-    createdByUserId: UserDict
-
-
-class GetCoursesQueryDict(TypedDict):
-    """Описание структуры query-параметров для получения курсов."""
-
-    userId: str
-
-
-class CreateCourseRequestDict(TypedDict):
-    """Описание структуры запроса на создание курса."""
-
-    title: str
-    maxScore: int | None
-    minScore: int | None
-    description: str
-    estimatedTime: str | None
-    previewFileId: str
-    createdByUserId: str
-
-
-class CreateCourseResponseDict(TypedDict):
-    """Описание структуры ответа на запрос создания курса."""
-
-    course: CourseDict
-
-
-class UpdateCourseRequestDict(TypedDict):
-    """Описание структуры запроса на обновление курса."""
-
-    title: str | None
-    maxScore: int | None
-    minScore: int | None
-    description: str | None
-    estimatedTime: str | None
 
 
 class CoursesClient(ApiClient):
     """API-клиент для работы с курсами."""
 
-    def get_courses_api(self, query: GetCoursesQueryDict) -> Response:
-        """Получает список курсов.
+    def get_courses_api(self, query: GetCoursesQuerySchema) -> Response:
+        """Выполняет запрос на получение списка курсов.
 
         Args:
-            query: Query-параметры для фильтрации списка курсов.
+            query: Query-параметры для получения курсов.
 
         Returns:
             HTTP-ответ API со списком курсов.
         """
-        return self.get("/api/v1/courses", params=query)
+        return self.get("/api/v1/courses", params=query.model_dump())
 
     def get_course_api(self, course_id: str) -> Response:
-        """Получает курс по его идентификатору.
+        """Выполняет запрос на получение курса.
 
         Args:
             course_id: Идентификатор курса.
@@ -80,8 +35,8 @@ class CoursesClient(ApiClient):
         """
         return self.get(f"/api/v1/courses/{course_id}")
 
-    def create_course_api(self, request: CreateCourseRequestDict) -> Response:
-        """Создает новый курс.
+    def create_course_api(self, request: CreateCourseRequestSchema) -> Response:
+        """Выполняет запрос на создание курса.
 
         Args:
             request: Данные для создания курса.
@@ -89,10 +44,10 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос создания курса.
         """
-        return self.post("/api/v1/courses", json=request)
+        return self.post("/api/v1/courses", json=request.model_dump())
 
-    def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
-        """Создает новый курс и возвращает данные курса.
+    def create_course(self, request: CreateCourseRequestSchema) -> CreateCourseResponseSchema:
+        """Создает курс.
 
         Args:
             request: Данные для создания курса.
@@ -103,11 +58,10 @@ class CoursesClient(ApiClient):
         response = self.create_course_api(request=request)
         response.raise_for_status()
 
-        response_data: CreateCourseResponseDict = response.json()
-        return response_data
+        return CreateCourseResponseSchema.model_validate_json(response.text)
 
-    def update_course_api(self, course_id: str, request: UpdateCourseRequestDict) -> Response:
-        """Обновляет существующий курс.
+    def update_course_api(self, course_id: str, request: UpdateCourseRequestSchema) -> Response:
+        """Выполняет запрос на обновление курса.
 
         Args:
             course_id: Идентификатор курса.
@@ -116,10 +70,10 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос обновления курса.
         """
-        return self.patch(f"/api/v1/courses/{course_id}", json=request)
+        return self.patch(f"/api/v1/courses/{course_id}", json=request.model_dump(exclude_unset=True))
 
     def delete_course_api(self, course_id: str) -> Response:
-        """Удаляет курс по его идентификатору.
+        """Выполняет запрос на удаление курса.
 
         Args:
             course_id: Идентификатор курса.
@@ -131,12 +85,12 @@ class CoursesClient(ApiClient):
 
 
 def get_courses_client(user: AuthenticationUserSchema) -> CoursesClient:
-    """Создает клиент для работы с курсами от имени пользователя.
+    """Создает авторизованный API-клиент для работы с курсами.
 
     Args:
-        user: Модель пользователя для аутентификации.
+        user: Учетные данные пользователя для аутентификации.
 
     Returns:
-        Экземпляр CoursesClient с авторизованным HTTP-клиентом.
+        Авторизованный экземпляр CoursesClient.
     """
     return CoursesClient(client=get_private_http_client(user))
