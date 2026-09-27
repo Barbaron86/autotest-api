@@ -1,61 +1,34 @@
-from typing import TypedDict
-
 from httpx import Response
 
 from clients.api_client import ApiClient
-from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
-
-
-class UserDict(TypedDict):
-    """Описание структуры данных пользователя."""
-
-    id: str
-    email: str
-    lastName: str
-    firstName: str
-    middleName: str
-
-
-class UserUpdateRequestDict(TypedDict):
-    """Описание структуры запроса на обновление информации о пользователе."""
-
-    email: str | None
-    lastName: str | None
-    firstName: str | None
-    middleName: str | None
-
-
-class GetUserResponseDict(TypedDict):
-    """Описание структуры ответа на запрос получения информации о пользователе."""
-
-    user: UserDict
+from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
+from clients.users.user_schema import GetUserResponseSchema, UpdateUserRequestSchema
 
 
 class PrivateUsersClient(ApiClient):
+    """API-клиент для работы с приватными методами пользователей."""
+
     def get_user_me_api(self) -> Response:
-        """
-        Метод получает информацию о текущем пользователе.
+        """Выполняет запрос на получение текущего пользователя.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API с данными текущего пользователя.
         """
         return self.get("/api/v1/users/me")
 
     def get_user_api(self, user_id: str) -> Response:
-        """
-        Метод получает информацию о пользователе по его идентификатору.
+        """Выполняет запрос на получение пользователя по идентификатору.
 
         Args:
             user_id: Идентификатор пользователя.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API с данными пользователя.
         """
         return self.get(f"/api/v1/users/{user_id}")
 
-    def get_user(self, user_id: str) -> GetUserResponseDict:
-        """
-        Метод получает информацию о пользователе по его идентификатору и возвращает данные пользователя.
+    def get_user(self, user_id: str) -> GetUserResponseSchema:
+        """Получает пользователя по идентификатору.
 
         Args:
             user_id: Идентификатор пользователя.
@@ -66,42 +39,39 @@ class PrivateUsersClient(ApiClient):
         response = self.get_user_api(user_id=user_id)
         response.raise_for_status()
 
-        response_data: GetUserResponseDict = response.json()
-        return response_data
+        return GetUserResponseSchema.model_validate_json(response.text)
 
     def delete_user_api(self, user_id: str) -> Response:
-        """
-        Метод удаляет пользователя по его идентификатору.
+        """Выполняет запрос на удаление пользователя.
 
         Args:
             user_id: Идентификатор пользователя.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API на запрос удаления пользователя.
         """
         return self.delete(f"/api/v1/users/{user_id}")
 
-    def update_user_api(self, user_id: str, request: UserUpdateRequestDict) -> Response:
-        """
-        Метод обновляет информацию о пользователе по его идентификатору.
+    def update_user_api(self, user_id: str, request: UpdateUserRequestSchema) -> Response:
+        """Выполняет запрос на обновление пользователя.
 
         Args:
             user_id: Идентификатор пользователя.
             request: Данные для обновления пользователя.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API на запрос обновления пользователя.
         """
-        return self.patch(f"/api/v1/users/{user_id}", json=request)
+        return self.patch(f"/api/v1/users/{user_id}", json=request.model_dump(exclude_unset=True))
 
 
-def get_private_users_client(user: AuthenticationUserDict) -> PrivateUsersClient:
-    """Создает клиент для работы с приватными методами пользователей.
+def get_private_users_client(user: AuthenticationUserSchema) -> PrivateUsersClient:
+    """Создает приватный API-клиент для работы с пользователями.
 
     Args:
         user: Учетные данные пользователя для аутентификации.
 
     Returns:
-        Экземпляр PrivateUsersClient с авторизованным HTTP-клиентом.
+        Авторизованный экземпляр PrivateUsersClient.
     """
     return PrivateUsersClient(client=get_private_http_client(user))

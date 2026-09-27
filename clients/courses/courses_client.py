@@ -4,7 +4,7 @@ from httpx import Response
 
 from clients.api_client import ApiClient
 from clients.files.files_client import FileDict
-from clients.private_http_builder import AuthenticationUserDict, get_private_http_client
+from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
 from clients.users.private_users_client import UserDict
 
 
@@ -130,11 +130,11 @@ class CoursesClient(ApiClient):
         return self.delete(f"/api/v1/courses/{course_id}")
 
 
-def get_courses_client(user: AuthenticationUserDict) -> CoursesClient:
+def get_courses_client(user: AuthenticationUserSchema) -> CoursesClient:
     """Создает клиент для работы с курсами от имени пользователя.
 
     Args:
-        user: Учетные данные пользователя для аутентификации.
+        user: Модель пользователя для аутентификации.
 
     Returns:
         Экземпляр CoursesClient с авторизованным HTTP-клиентом.

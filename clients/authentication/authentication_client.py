@@ -1,80 +1,48 @@
-from typing import TypedDict
-
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema, RefreshRequestSchema
 from clients.public_http_builder import get_public_http_client
-
-
-class LoginRequestDict(TypedDict):
-    """Описание структуры запроса на аутентификацию."""
-
-    email: str
-    password: str
-
-
-class RefreshRequestDict(TypedDict):
-    """Описание структуры запроса для обновления токена."""
-
-    refreshToken: str
-
-
-class TokenDict(TypedDict):
-    """Описание структуры токена."""
-
-    tokenType: str
-    accessToken: str
-    refreshToken: str
-
-
-class LoginResponseDict(TypedDict):
-    """Описание структуры ответа на запрос аутентификации."""
-
-    token: TokenDict
 
 
 class AuthenticationClient(ApiClient):
     """Клиент для работы с /api/v1/authentication"""
 
-    def login_api(self, request: LoginRequestDict) -> Response:
-        """
-        Метод выполняет аутентификацию пользователя.
+    def login_api(self, request: LoginRequestSchema) -> Response:
+        """Выполняет запрос на аутентификацию пользователя.
 
         Args:
-            request: Словарь с email и password.
+            request: Модель запроса на аутентификацию.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API на запрос аутентификации.
         """
-        return self.post("/api/v1/authentication/login", json=request)
+        return self.post("/api/v1/authentication/login", json=request.model_dump())
 
-    def refresh_api(self, request: RefreshRequestDict) -> Response:
-        """
-        Метод обновляет токен авторизации.
+    def refresh_api(self, request: RefreshRequestSchema) -> Response:
+        """Выполняет запрос на обновление токена.
 
         Args:
-            request: Словарь с refreshToken.
+            request: Модель запроса на обновление токена.
 
         Returns:
-            Ответ от сервера в виде объекта httpx.Response.
+            HTTP-ответ API на запрос обновления токена.
         """
-        return self.post("/api/v1/authentication/refresh", json=request)
+        return self.post("/api/v1/authentication/refresh", json=request.model_dump())
 
-    def login(self, request: LoginRequestDict) -> LoginResponseDict:
+    def login(self, request: LoginRequestSchema) -> LoginResponseSchema:
         """Аутентифицирует пользователя и возвращает данные авторизации.
 
         Args:
-            request: Данные пользователя для аутентификации,
-                содержащие email и password.
+            request: Модель запроса на аутентификацию.
 
         Returns:
-            Данные ответа аутентификации, содержащие access и refresh токены.
+            Модель ответа с данными авторизации.
         """
         response = self.login_api(request)
         response.raise_for_status()
 
-        response_data: LoginResponseDict = response.json()
-        return response_data
+        return LoginResponseSchema.model_validate_json(response.text)
 
 
 def get_authentication_client() -> AuthenticationClient:

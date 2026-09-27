@@ -1,7 +1,7 @@
 from collections.abc import Mapping
 from typing import Any
 
-from httpx import URL, Client, QueryParams, Response
+from httpx import URL, Client, Response
 
 
 class ApiClient:
