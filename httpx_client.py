@@ -11,7 +11,7 @@ print(login_response_data)
 client = httpx.Client(
     base_url="http://localhost:8000",
     timeout=10,
-    headers={"Authorization": f"Bearer {login_response_data['token']['accessToken']}"}
+    headers={"Authorization": f"Bearer {login_response_data['token']['accessToken']}"},
 )
 
 get_user_me_response = client.get("/api/v1/users/me")
