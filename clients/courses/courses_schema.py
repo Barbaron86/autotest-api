@@ -3,6 +3,7 @@ from pydantic import Field
 from clients.base_schema import BaseSchema
 from clients.files.files_schema import FileSchema
 from clients.users.user_schema import UserSchema
+from tools.fakers import fake
 
 
 class CourseSchema(BaseSchema):
@@ -27,11 +28,11 @@ class GetCoursesQuerySchema(BaseSchema):
 class CreateCourseRequestSchema(BaseSchema):
     """Запрос на создание курса."""
 
-    title: str
-    max_score: int | None = Field(default=None, alias="maxScore")
-    min_score: int | None = Field(default=None, alias="minScore")
-    description: str
-    estimated_time: str | None = Field(default=None, alias="estimatedTime")
+    title: str = Field(default_factory=fake.sentence)
+    max_score: int | None = Field(alias="maxScore", default_factory=fake.max_score)
+    min_score: int | None = Field(alias="minScore", default_factory=fake.min_score)
+    description: str = Field(default_factory=fake.text)
+    estimated_time: str | None = Field(alias="estimatedTime", default_factory=fake.estimated_time)
     preview_file_id: str = Field(alias="previewFileId")
     created_by_user_id: str = Field(alias="createdByUserId")
 

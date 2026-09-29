@@ -27,4 +27,4 @@ class LoginResponseSchema(BaseSchema):
 class RefreshRequestSchema(BaseSchema):
     """Запрос на обновление токена."""
 
-    refresh_token: str = Field(..., alias="refreshToken")
+    refresh_token: str = Field(alias="refreshToken")
