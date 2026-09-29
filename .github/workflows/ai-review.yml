@@ -1,0 +1,62 @@
+name: AI Review
+
+on:
+  workflow_dispatch:
+    inputs:
+      review-command:
+        description: AI Review command
+        required: true
+        type: choice
+        default: run-summary
+        options:
+          - run-summary
+          - run-inline
+          - run-context
+          - run
+          - run-inline-reply
+          - run-summary-reply
+          - clear-inline
+          - clear-summary
+
+      pull-request-number:
+        description: Pull Request number
+        required: true
+        type: string
+
+permissions:
+  contents: read
+  pull-requests: write
+
+concurrency:
+  group: ai-review-pr-${{ inputs.pull-request-number }}
+  cancel-in-progress: true
+
+jobs:
+  review:
+    name: "AI Review PR #${{ inputs.pull-request-number }}"
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Review pull request
+        uses: Nikita-Filonov/ai-review@26f47a31e998b550a12e787383049f27a37fc775 # v1.1.0
+        with:
+          review-command: ${{ inputs.review-command }}
+        env:
+          VCS__PROVIDER: GITHUB
+          VCS__PIPELINE__OWNER: ${{ github.repository_owner }}
+          VCS__PIPELINE__REPO: ${{ github.event.repository.name }}
+          VCS__PIPELINE__PULL_NUMBER: ${{ inputs.pull-request-number }}
+          VCS__HTTP_CLIENT__API_URL: https://api.github.com
+          VCS__HTTP_CLIENT__API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+          LLM__PROVIDER: OPENAI
+          LLM__META__MODEL: gpt-6-sol
+          LLM__HTTP_CLIENT__API_URL: https://api.openai.com/v1
+          LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENAI_API_KEY }}
