@@ -1,0 +1,64 @@
+name: CI
+
+on:
+  pull_request:
+    branches:
+      - main
+
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  PYTHON_VERSION: "3.12"
+  POETRY_VERSION: "2.4.3"
+
+jobs:
+  quality:
+    name: Code quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+
+      - name: Install Poetry
+        run: pipx install poetry==${{ env.POETRY_VERSION }}
+
+      - name: Set up Python and restore Poetry cache
+        id: setup_python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: poetry
+          cache-dependency-path: poetry.lock
+
+      - name: Select Python for Poetry
+        run: |
+          poetry env use "${{ steps.setup_python.outputs.python-path }}"
+          poetry run python --version
+
+      - name: Check Poetry configuration and lock file
+        run: poetry check --lock
+
+      - name: Install project dependencies
+        run: poetry install --no-interaction --no-root
+
+      - name: Check formatting with Ruff
+        run: poetry run ruff format --check .
+
+      - name: Run Ruff linter
+        run: poetry run ruff check --output-format=github .
+
+      - name: Run mypy
+        run: poetry run mypy .
