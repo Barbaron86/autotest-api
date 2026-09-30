@@ -26,3 +26,16 @@ def assert_equal(actual: Any, expected: Any, name: str) -> None:
         AssertionError: Если фактическое значение не совпадает с ожидаемым.
     """
     assert actual == expected, f"Incorrect value: {name}. Expected value: {expected!r}. Actual: {actual!r}."
+
+
+def assert_is_true(actual: Any, name: str) -> None:
+    """Проверяет, что фактическое значение является истинным.
+
+    Args:
+        actual: Фактическое значение.
+        name: Название проверяемого значения.
+
+    Raises:
+        AssertionError: Если фактическое значение ложно.
+    """
+    assert actual, f"Incorrect value: {name}. Expected truthy value, got: {actual!r}."
