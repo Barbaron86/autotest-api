@@ -7,4 +7,5 @@ class BaseSchema(BaseModel):
     model_config = ConfigDict(
         populate_by_name=True,
         serialize_by_alias=True,
+        strict=True,
     )

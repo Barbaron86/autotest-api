@@ -1,0 +1,28 @@
+from typing import Any
+
+
+def assert_status_code(actual: int, expected: int) -> None:
+    """Проверяет соответствие фактического HTTP-статуса ожидаемому.
+
+    Args:
+        actual: Фактический HTTP-статус ответа.
+        expected: Ожидаемый HTTP-статус ответа.
+
+    Raises:
+        AssertionError: Если фактический статус не совпадает с ожидаемым.
+    """
+    assert actual == expected, f"Incorrect status code. Expected: {expected}. Actual: {actual}."
+
+
+def assert_equal(actual: Any, expected: Any, name: str) -> None:
+    """Проверяет равенство фактического и ожидаемого значений.
+
+    Args:
+        actual: Фактическое значение.
+        expected: Ожидаемое значение.
+        name: Название проверяемого значения.
+
+    Raises:
+        AssertionError: Если фактическое значение не совпадает с ожидаемым.
+    """
+    assert actual == expected, f"Incorrect value: {name}. Expected value: {expected!r}. Actual: {actual!r}."
