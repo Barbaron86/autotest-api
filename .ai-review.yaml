@@ -1,0 +1,68 @@
+llm:
+  provider: OPENAI
+
+  meta:
+    model: gpt-6-sol
+
+  http_client:
+    verify: true
+    timeout: 180
+    api_url: https://api.openai.com/v1
+
+vcs:
+  provider: GITHUB
+
+  http_client:
+    verify: true
+    timeout: 120
+    api_url: https://api.github.com
+
+core:
+  concurrency: 3
+
+agent:
+  enabled: false
+
+prompt:
+  inline_prompt_files:
+    - ./.github/ai-review/python-api-review.md
+
+  context_prompt_files:
+    - ./.github/ai-review/python-api-review.md
+
+  summary_prompt_files:
+    - ./.github/ai-review/python-api-review.md
+
+  system_inline_reply_prompt_files:
+    - ./.github/ai-review/python-api-review.md
+
+  system_summary_reply_prompt_files:
+    - ./.github/ai-review/python-api-review.md
+
+  include_inline_system_prompts: true
+  include_context_system_prompts: true
+  include_summary_system_prompts: true
+  include_inline_reply_system_prompts: true
+  include_summary_reply_system_prompts: true
+
+review:
+  mode: FULL_FILE_DIFF
+  dry_run: false
+  ignore_pure_renames: true
+
+  ignore_changes:
+    - poetry.lock
+    - ".idea/*"
+    - ".venv/*"
+    - "*/__pycache__/*"
+    - ".pytest_cache/*"
+    - ".mypy_cache/*"
+    - ".ruff_cache/*"
+
+  max_inline_comments: 3
+  max_context_comments: 8
+  inline_comment_fallback: false
+
+artifacts:
+  llm_enabled: false
+  vcs_enabled: false
