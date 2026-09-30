@@ -10,11 +10,12 @@ from tools.assertions.users import assert_create_user_response
 def test_create_user():
     public_users_client = get_public_users_client()
 
-    request = CreateUserRequestSchema()
-    response = public_users_client.create_user_api(request=request)
-    response_data = CreateUserResponseSchema.model_validate_json(response.text)
+    with public_users_client.client:
+        request = CreateUserRequestSchema()
+        response = public_users_client.create_user_api(request=request)
 
-    assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
-    assert_create_user_response(request=request, response=response_data)
+        assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
+        response_data = CreateUserResponseSchema.model_validate_json(response.text)
+        assert_create_user_response(request=request, response=response_data)
 
-    validate_json_schema(response.json(), response_data.model_json_schema())
+        validate_json_schema(response.json(), response_data.model_json_schema())
