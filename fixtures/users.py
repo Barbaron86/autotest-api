@@ -59,9 +59,9 @@ def public_users_client() -> Iterator[PublicUsersClient]:
     Yields:
         API-клиент для работы с публичными методами пользователей.
     """
-    client = get_public_users_client()
-    with client.client:
-        yield client
+    public_client = get_public_users_client()
+    with public_client.client:
+        yield public_client
 
 
 @pytest.fixture
@@ -92,6 +92,6 @@ def private_users_client(function_user: UserFixture) -> Iterator[PrivateUsersCli
     Yields:
         API-клиент для работы с приватными методами пользователей.
     """
-    client = get_private_users_client(user=function_user.authentication_user)
-    with client.client:
-        yield client
+    private_client = get_private_users_client(user=function_user.authentication_user)
+    with private_client.client:
+        yield private_client

@@ -16,6 +16,6 @@ def authentication_client() -> Iterator[AuthenticationClient]:
     Yields:
         API-клиент для работы с аутентификацией.
     """
-    client = get_authentication_client()
-    with client.client:
-        yield client
+    auth_client = get_authentication_client()
+    with auth_client.client:
+        yield auth_client
