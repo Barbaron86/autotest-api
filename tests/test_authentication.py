@@ -2,10 +2,9 @@ from http import HTTPStatus
 
 import pytest
 
-from clients.authentication.authentication_client import get_authentication_client
+from clients.authentication.authentication_client import AuthenticationClient
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
-from clients.users.public_users_client import get_public_users_client
-from clients.users.user_schema import CreateUserRequestSchema
+from tests.conftest import UserFixture
 from tools.assertions.authentication import assert_login_response
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
@@ -13,30 +12,24 @@ from tools.assertions.schema import validate_json_schema
 
 @pytest.mark.regression
 @pytest.mark.authentication
-def test_login() -> None:
-    """Проверяет успешную аутентификацию нового пользователя.
+def test_login(function_user: UserFixture, authentication_client: AuthenticationClient) -> None:
+    """Проверяет успешную аутентификацию пользователя.
 
-    Создаёт пользователя с автоматически сгенерированными данными,
-    выполняет вход и проверяет HTTP-статус, токены и JSON Schema ответа.
+    Выполняет вход с учетными данными из фикстуры и проверяет
+    HTTP-статус, токены и JSON Schema ответа.
+
+    Args:
+        function_user: Фикстура с данными созданного пользователя.
+        authentication_client: Фикстура API-клиента аутентификации.
+
+    Raises:
+        AssertionError: Если HTTP-статус или токены не соответствуют ожиданиям.
     """
-    public_users_client = get_public_users_client()
-    authentication_client = get_authentication_client()
+    request = LoginRequestSchema(email=function_user.email, password=function_user.password)
+    response = authentication_client.login_api(request=request)
 
-    with public_users_client.client, authentication_client.client:
-        create_user_request = CreateUserRequestSchema()
-        public_users_client.create_user(request=create_user_request)
+    assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
+    response_data = LoginResponseSchema.model_validate_json(response.text)
+    assert_login_response(response=response_data)
 
-        login_request = LoginRequestSchema(
-            email=create_user_request.email,
-            password=create_user_request.password,
-        )
-        login_response = authentication_client.login_api(request=login_request)
-
-        assert_status_code(actual=login_response.status_code, expected=HTTPStatus.OK)
-        login_response_data = LoginResponseSchema.model_validate_json(login_response.text)
-        assert_login_response(response=login_response_data)
-
-        validate_json_schema(
-            instance=login_response.json(),
-            schema=LoginResponseSchema.model_json_schema(),
-        )
+    validate_json_schema(instance=response.json(), schema=LoginResponseSchema.model_json_schema())

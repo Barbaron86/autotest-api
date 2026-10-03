@@ -16,6 +16,8 @@ class AuthenticationUserSchema(BaseSchema):
 def get_private_http_client(user: AuthenticationUserSchema) -> Client:
     """Создает авторизованный HTTP-клиент для приватных API-методов.
 
+    Получает токен пользователя и закрывает временный клиент аутентификации.
+
     Args:
         user: Учетные данные пользователя для аутентификации.
 
@@ -23,8 +25,9 @@ def get_private_http_client(user: AuthenticationUserSchema) -> Client:
         Авторизованный HTTP-клиент.
     """
     authentication_client = get_authentication_client()
-    login_request = LoginRequestSchema(email=user.email, password=user.password)
-    login_response = authentication_client.login(login_request)
+    with authentication_client.client:
+        login_request = LoginRequestSchema(email=user.email, password=user.password)
+        login_response = authentication_client.login(login_request)
 
     return Client(
         base_url="http://localhost:8000",
