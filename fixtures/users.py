@@ -5,7 +5,6 @@ from collections.abc import Iterator
 import pytest
 from pydantic import BaseModel, EmailStr
 
-from clients.authentication.authentication_client import AuthenticationClient, get_authentication_client
 from clients.private_http_builder import AuthenticationUserSchema
 from clients.users.private_users_client import PrivateUsersClient, get_private_users_client
 from clients.users.public_users_client import PublicUsersClient, get_public_users_client
@@ -49,20 +48,6 @@ class UserFixture(BaseModel):
             Модель с email и паролем созданного пользователя.
         """
         return AuthenticationUserSchema(email=self.email, password=self.password)
-
-
-@pytest.fixture
-def authentication_client() -> Iterator[AuthenticationClient]:
-    """Создает клиент аутентификации для одного теста.
-
-    Закрывает HTTP-соединения при завершении фикстуры.
-
-    Yields:
-        API-клиент для работы с аутентификацией.
-    """
-    client = get_authentication_client()
-    with client.client:
-        yield client
 
 
 @pytest.fixture
