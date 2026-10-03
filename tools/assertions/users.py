@@ -1,4 +1,9 @@
-from clients.users.user_schema import CreateUserRequestSchema, CreateUserResponseSchema
+from clients.users.user_schema import (
+    CreateUserRequestSchema,
+    CreateUserResponseSchema,
+    GetUserResponseSchema,
+    UserSchema,
+)
 from tools.assertions.base import assert_equal
 
 
@@ -20,3 +25,41 @@ def assert_create_user_response(request: CreateUserRequestSchema, response: Crea
     assert_equal(response.user.first_name, request.first_name, "First name")
     assert_equal(response.user.last_name, request.last_name, "Last name")
     assert_equal(response.user.middle_name, request.middle_name, "Middle name")
+
+
+def assert_user(actual: UserSchema, expected: UserSchema) -> None:
+    """Проверяет совпадение данных пользователя.
+
+    Сравнивает идентификатор, email, фамилию, имя и отчество.
+
+    Args:
+        actual: Фактические данные пользователя.
+        expected: Ожидаемые данные пользователя.
+
+    Raises:
+        AssertionError: Если хотя бы одно поле пользователя не совпадает.
+    """
+    assert_equal(actual.id, expected.id, "ID")
+    assert_equal(actual.email, expected.email, "Email")
+    assert_equal(actual.last_name, expected.last_name, "Last name")
+    assert_equal(actual.first_name, expected.first_name, "First name")
+    assert_equal(actual.middle_name, expected.middle_name, "Middle name")
+
+
+def assert_get_user_response(
+    get_user_response: GetUserResponseSchema,
+    create_user_response: CreateUserResponseSchema,
+) -> None:
+    """Проверяет данные пользователя в ответе на запрос получения.
+
+    Сравнивает полученного пользователя с данными ответа на создание.
+
+    Args:
+        get_user_response: Ответ API на запрос получения пользователя.
+        create_user_response: Ответ API на запрос создания пользователя.
+
+    Raises:
+        AssertionError: Если данные полученного пользователя
+            не совпадают с данными созданного пользователя.
+    """
+    assert_user(actual=get_user_response.user, expected=create_user_response.user)
