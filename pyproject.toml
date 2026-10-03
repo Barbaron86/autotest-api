@@ -52,6 +52,10 @@ python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
 addopts = "-s -v -ra --strict-config"
+markers = [
+    "users: Маркировка для тестов, связанных с пользователями.",
+    "regression: Маркировка для регрессионных тестов."
+]
 
 
 [tool.mypy]
