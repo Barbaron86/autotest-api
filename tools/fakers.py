@@ -28,13 +28,17 @@ class Fake:
         """
         return self.faker.uuid4()
 
-    def email(self) -> str:
+    def email(self, domain: str | None = None) -> str:
         """Генерирует уникальный случайный email.
+
+        Args:
+            domain: Домен электронной почты. Если не указан,
+                Faker выбирает случайный домен.
 
         Returns:
             Уникальный email-адрес.
         """
-        return str(self.faker.unique.email())
+        return str(self.faker.unique.email(domain=domain))
 
     def sentence(self) -> str:
         """Генерирует случайное предложение.

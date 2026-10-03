@@ -9,24 +9,27 @@ from fixtures.users import UserFixture
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
 from tools.assertions.users import assert_create_user_response, assert_get_user_response
+from tools.fakers import fake
 
 
 @pytest.mark.users
 @pytest.mark.regression
-def test_create_user(public_users_client: PublicUsersClient) -> None:
-    """Проверяет успешное создание пользователя.
+@pytest.mark.parametrize("email", ["mail.ru", "gmail.com", "example.com"])
+def test_create_user(email: str, public_users_client: PublicUsersClient) -> None:
+    """Проверяет создание пользователя с email на заданном домене.
 
     Создает пользователя со сгенерированными данными и проверяет
     HTTP-статус, данные пользователя и JSON Schema ответа.
 
     Args:
+        email: Домен для генерации случайного email-адреса.
         public_users_client: Фикстура публичного API-клиента пользователей.
 
     Raises:
         AssertionError: Если HTTP-статус или данные пользователя
             не соответствуют ожиданиям.
     """
-    request = CreateUserRequestSchema()
+    request = CreateUserRequestSchema(email=fake.email(domain=email))
     response = public_users_client.create_user_api(request=request)
 
     assert_status_code(actual=response.status_code, expected=HTTPStatus.OK)
