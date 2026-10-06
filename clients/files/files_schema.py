@@ -18,10 +18,15 @@ class CreateFileRequestSchema(BaseSchema):
 
     filename: str = Field(default_factory=lambda: f"{fake.uuid4()}.png")
     directory: str = Field(default="tests")
-    upload_file: str
+    upload_file: str = Field(default="./testdata/files/image.png")
 
 
 class CreateFileResponseSchema(BaseSchema):
     """Ответ на создание файла."""
+
+    file: FileSchema
+
+
+class GetFileResponseSchema(BaseSchema):
 
     file: FileSchema
