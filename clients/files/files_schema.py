@@ -28,4 +28,6 @@ class CreateFileResponseSchema(BaseSchema):
 
 
 class GetFileResponseSchema(BaseSchema):
+    """Ответ на получение файла."""
+
     file: FileSchema
