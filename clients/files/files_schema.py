@@ -28,5 +28,4 @@ class CreateFileResponseSchema(BaseSchema):
 
 
 class GetFileResponseSchema(BaseSchema):
-
     file: FileSchema
