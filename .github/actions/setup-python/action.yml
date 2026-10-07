@@ -10,7 +10,7 @@ runs:
 
     - name: Set up Python and restore Poetry cache
       id: setup_python
-      uses: actions/setup-python@v7.0.0
+      uses: actions/setup-python@v7
       with:
         python-version: "3.12"
         cache: poetry
