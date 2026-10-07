@@ -53,7 +53,7 @@ testpaths = ["tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
-addopts = "-s -v -ra --strict-config"
+addopts = "-s -v -ra --strict-config --strict-markers"
 markers = [
     "users: Маркировка для тестов, связанных с пользователями.",
     "authentication: Маркировка для тестов аутентификации.",

@@ -47,6 +47,7 @@ jobs:
 
       - name: Check code quality
         run: |
+          poetry check --lock
           poetry run ruff format --check .
           poetry run ruff check --output-format=github .
           poetry run mypy .
@@ -74,42 +75,31 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Record test and backend versions
-        id: diagnostics
-        run: |
-          mkdir -p artifacts
-          git rev-parse HEAD > artifacts/tests-commit.txt
-          docker compose config > artifacts/compose.yaml
-
       - name: Set up project
         uses: ./.github/actions/setup-python
 
       - name: Build API and wait for readiness
         id: api_start
         run: |
-          docker compose up --build --wait --wait-timeout 90 2>&1 | tee artifacts/stack-startup.log
+          mkdir -p artifacts
+          docker compose up --build --wait --wait-timeout 90
 
       - name: Run API tests
-        run: |
-          poetry run pytest -m "$TEST_SUITE" --strict-markers --capture=tee-sys \
-            --junitxml=artifacts/junit.xml 2>&1 | tee artifacts/pytest.log
+        run: poetry run pytest -m "$TEST_SUITE"
 
       - name: Collect API diagnostics
         if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
-        run: |
-          docker compose logs --no-color --timestamps > artifacts/api.log
-          docker compose ps --all > artifacts/services.txt
+        run: docker compose logs --no-color --timestamps > artifacts/api.log
 
       - name: Stop API and remove test data
         if: ${{ always() && steps.api_start.outcome != 'skipped' }}
-        run: |
-          docker compose down --volumes 2>&1 | tee artifacts/stack-cleanup.log
+        run: docker compose down --volumes
 
-      - name: Upload test results and diagnostics
-        if: ${{ !cancelled() && steps.diagnostics.outcome == 'success' }}
+      - name: Upload API logs
+        if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
         uses: actions/upload-artifact@v7
         with:
           name: api-test-results-${{ github.run_id }}-${{ github.run_attempt }}
-          path: artifacts/
+          path: artifacts/api.log
           if-no-files-found: error
           retention-days: 14

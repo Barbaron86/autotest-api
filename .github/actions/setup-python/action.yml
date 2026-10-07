@@ -1,28 +1,18 @@
 name: Set up Python project
 description: Install pinned Poetry, select Python and restore project dependencies.
 
-inputs:
-  python-version:
-    description: Python version used by the project.
-    default: "3.12"
-  poetry-version:
-    description: Poetry version used to install locked dependencies.
-    default: "2.4.3"
-
 runs:
   using: composite
   steps:
     - name: Install Poetry
       shell: bash
-      env:
-        POETRY_VERSION: ${{ inputs.poetry-version }}
-      run: pipx install "poetry==$POETRY_VERSION"
+      run: pipx install poetry==2.4.3
 
     - name: Set up Python and restore Poetry cache
       id: setup_python
       uses: actions/setup-python@v7.0.0
       with:
-        python-version: ${{ inputs.python-version }}
+        python-version: "3.12"
         cache: poetry
         cache-dependency-path: poetry.lock
 
@@ -32,5 +22,4 @@ runs:
         PYTHON_PATH: ${{ steps.setup_python.outputs.python-path }}
       run: |
         poetry env use "$PYTHON_PATH"
-        poetry check --lock
         poetry install --no-interaction --no-root
