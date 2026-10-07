@@ -1,0 +1,25 @@
+name: Set up Python project
+description: Install pinned Poetry, select Python and restore project dependencies.
+
+runs:
+  using: composite
+  steps:
+    - name: Install Poetry
+      shell: bash
+      run: pipx install poetry==2.4.3
+
+    - name: Set up Python and restore Poetry cache
+      id: setup_python
+      uses: actions/setup-python@v7
+      with:
+        python-version: "3.12"
+        cache: poetry
+        cache-dependency-path: poetry.lock
+
+    - name: Install locked project dependencies
+      shell: bash
+      env:
+        PYTHON_PATH: ${{ steps.setup_python.outputs.python-path }}
+      run: |
+        poetry env use "$PYTHON_PATH"
+        poetry install --no-interaction --no-root

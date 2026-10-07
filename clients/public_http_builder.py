@@ -1,5 +1,7 @@
 from httpx import Client
 
+from config import settings
+
 
 def get_public_http_client() -> Client:
     """Создает HTTP-клиент для публичных API-методов.
@@ -7,4 +9,4 @@ def get_public_http_client() -> Client:
     Returns:
         HTTP-клиент без заголовка авторизации.
     """
-    return Client(base_url="http://localhost:8000", timeout=100)
+    return Client(base_url=str(settings.base_url), timeout=settings.timeout)

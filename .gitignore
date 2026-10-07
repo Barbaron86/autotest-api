@@ -14,5 +14,13 @@ __pycache__/
 .mypy_cache/
 .ruff_cache/
 
+# Local settings and generated test reports
+.env
+.env.*
+!.env.example
+artifacts/
+allure-results/
+allure-report/
+
 
 

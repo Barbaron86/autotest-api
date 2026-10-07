@@ -9,16 +9,26 @@ on:
     branches:
       - main
 
+  workflow_dispatch:
+    inputs:
+      test-suite:
+        description: API test suite
+        type: choice
+        default: regression
+        options:
+          - regression
+          - regression and users
+          - regression and authentication
+          - regression and files
+          - regression and courses
+          - regression and exercises
+
 permissions:
   contents: read
 
 concurrency:
   group: ci-${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
-env:
-  PYTHON_VERSION: "3.12"
-  POETRY_VERSION: "2.4.3"
 
 jobs:
   quality:
@@ -28,37 +38,73 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v6
+        uses: actions/checkout@v7
         with:
           persist-credentials: false
 
-      - name: Install Poetry
-        run: pipx install poetry==${{ env.POETRY_VERSION }}
+      - name: Set up Python project
+        uses: ./.github/actions/setup-python
 
-      - name: Set up Python and restore Poetry cache
-        id: setup_python
-        uses: actions/setup-python@v7.0.0
-        with:
-          python-version: ${{ env.PYTHON_VERSION }}
-          cache: poetry
-          cache-dependency-path: poetry.lock
-
-      - name: Select Python for Poetry
-        run: |
-          poetry env use "${{ steps.setup_python.outputs.python-path }}"
-          poetry run python --version
-
-      - name: Check Poetry configuration and lock file
+      - name: Validate Poetry configuration and lock file
         run: poetry check --lock
-
-      - name: Install project dependencies
-        run: poetry install --no-interaction --no-root
 
       - name: Check formatting with Ruff
         run: poetry run ruff format --check .
 
-      - name: Run Ruff linter
+      - name: Lint with Ruff
         run: poetry run ruff check --output-format=github .
 
-      - name: Run mypy
+      - name: Type check with mypy
         run: poetry run mypy .
+
+  api-tests:
+    name: API regression tests
+    needs: quality
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    defaults:
+      run:
+        shell: bash
+
+    env:
+      API_PORT: "8001"
+      API_BASE_URL: http://localhost:8001
+      API_TIMEOUT: "10"
+      COMPOSE_PROJECT_NAME: api-ci-${{ github.run_id }}-${{ github.run_attempt }}
+      TEST_SUITE: ${{ inputs.test-suite || 'regression' }}
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - name: Set up Python project
+        uses: ./.github/actions/setup-python
+
+      - name: Build and start API test environment
+        id: api_start
+        run: |
+          mkdir -p artifacts
+          docker compose up --build --wait --wait-timeout 90
+
+      - name: Run selected API tests
+        run: poetry run pytest -m "$TEST_SUITE"
+
+      - name: Collect API logs
+        if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
+        run: docker compose logs --no-color --timestamps > artifacts/api.log
+
+      - name: Tear down API test environment
+        if: ${{ always() && steps.api_start.outcome != 'skipped' }}
+        run: docker compose down --volumes
+
+      - name: Upload API logs
+        if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: api-logs-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts/api.log
+          if-no-files-found: error
+          retention-days: 14
