@@ -53,6 +53,7 @@ jobs:
 
   api-tests:
     name: API regression tests
+    needs: quality
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
