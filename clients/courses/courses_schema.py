@@ -25,6 +25,16 @@ class GetCoursesQuerySchema(BaseSchema):
     user_id: str = Field(alias="userId")
 
 
+class GetCoursesResponseSchema(BaseSchema):
+    """Ответ на получение списка курсов.
+
+    Attributes:
+        courses: Курсы, созданные указанным пользователем.
+    """
+
+    courses: list[CourseSchema]
+
+
 class CreateCourseRequestSchema(BaseSchema):
     """Запрос на создание курса."""
 
@@ -51,3 +61,13 @@ class UpdateCourseRequestSchema(BaseSchema):
     min_score: int | None = Field(default=None, alias="minScore")
     description: str | None = None
     estimated_time: str | None = Field(default=None, alias="estimatedTime")
+
+
+class UpdateCourseResponseSchema(BaseSchema):
+    """Ответ на обновление курса.
+
+    Attributes:
+        course: Данные курса после обновления.
+    """
+
+    course: CourseSchema

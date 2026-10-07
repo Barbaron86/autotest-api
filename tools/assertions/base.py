@@ -1,3 +1,4 @@
+from collections.abc import Sized
 from typing import Any
 
 
@@ -39,3 +40,19 @@ def assert_is_true(actual: Any, name: str) -> None:
         AssertionError: Если фактическое значение ложно.
     """
     assert actual, f"Incorrect value: {name}. Expected truthy value, got: {actual!r}."
+
+
+def assert_lens(actual: Sized, expected: Sized, name: str) -> None:
+    """Проверяет совпадение длины фактического и ожидаемого объектов.
+
+    Args:
+        actual: Фактический объект с поддержкой определения длины.
+        expected: Ожидаемый объект с поддержкой определения длины.
+        name: Название проверяемого объекта.
+
+    Raises:
+        AssertionError: Если длины объектов не совпадают.
+    """
+    assert len(actual) == len(expected), (
+        f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
+    )
