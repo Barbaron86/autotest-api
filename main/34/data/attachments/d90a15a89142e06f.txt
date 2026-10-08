@@ -1,0 +1,34 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make GET request to http://localhost:8001/api/v1/courses?userId=d5afed62-81d3-43e4-ba5f-c152a8b04be3
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses?userId=d5afed62-81d3-43e4-ba5f-c152a8b04be3
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:99 Check get courses response
+INFO     BASE_ASSERTIONS:base.py:69 Check that length of "courses" equals to 1
+INFO     COURSES_ASSERTIONS:courses.py:72 Check course
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to c8573bc4-851d-40cd-834f-f200ea9c9861
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Вообще мотоцикл мелькнуть аллея смелый сравнение аллея.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 81
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 49
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Лапа передо пропаганда серьезный низкий. Зеленый собеседник применяться рабочий. Художественный житель освободить бабочка направо ученый тута.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 7 weeks
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 785d022f-e08d-4826-a6de-eb5089102e56
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/2b98ba9c-89ce-40fd-9c26-74a2f0a6500d.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to 2b98ba9c-89ce-40fd-9c26-74a2f0a6500d.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to d5afed62-81d3-43e4-ba5f-c152a8b04be3
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to ostap_2025@example.net
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Якушев
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Климент
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Богданович
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

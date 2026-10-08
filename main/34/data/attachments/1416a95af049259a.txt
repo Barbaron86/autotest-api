@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE2LjY5NTEyOSIsInVzZXJfaWQiOiJiNzZiN2E1Ni00MzQyLTRiMTAtYmMyZS1hZWZhNzMyY2E3MDgifQ.7z_sLtgWtf09MTu7XMynryVgA8y6R4tXOeo1aI6FhxA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Шлем трубка исследование лететь ручей покинуть.","description":"Ломать прежний лететь понятный адвокат перебивать. Лететь армейский процесс направо госпожа смелый багровый что. Выражение провал хлеб исследование.","courseId":"465bf992-ed0c-4d7c-ad36-0092651a84d5","maxScore":52,"minScore":11,"orderIndex":28,"estimatedTime":"4 weeks"}'

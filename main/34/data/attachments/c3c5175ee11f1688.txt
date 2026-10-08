@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjExLjkwOTkyMSIsInVzZXJfaWQiOiJkNWFmZWQ2Mi04MWQzLTQzZTQtYmE1Zi1jMTUyYThiMDRiZTMifQ.Oz7gF6rT3tlX4zpRimP_DCfMkqDSwXdGmMh_Iq-O29U' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вообще мотоцикл мелькнуть аллея смелый сравнение аллея.","maxScore":81,"minScore":49,"description":"Лапа передо пропаганда серьезный низкий. Зеленый собеседник применяться рабочий. Художественный житель освободить бабочка направо ученый тута.","estimatedTime":"7 weeks","previewFileId":"785d022f-e08d-4826-a6de-eb5089102e56","createdByUserId":"d5afed62-81d3-43e4-ba5f-c152a8b04be3"}'

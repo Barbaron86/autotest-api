@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE0LjQ4NTk1MCIsInVzZXJfaWQiOiJkYjQ0OTk0MS0yN2I5LTQyYmYtYTFmYy0wMmFiY2I1Y2Y4N2QifQ.9n-VoOgf2Mrgq6SbG_Ps59w5IJrmPFwFN9uuxQPaZxA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Призыв исполнять полевой лететь покинуть выгнать тяжелый.","maxScore":62,"minScore":30,"description":"Металл бригада металл премьера волк. Монета добиться самостоятельно казнь. Мгновение очередной болото подземный означать вчера мальчишка. Школьный грудь ярко чувство.","estimatedTime":"5 weeks","previewFileId":"dc5df9ea-15c3-4d4d-9938-99caee7468cc","createdByUserId":"db449941-27b9-42bf-a1fc-02abcb5cf87d"}'

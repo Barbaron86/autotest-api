@@ -1,0 +1,33 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make PATCH request to http://localhost:8001/api/v1/courses/70b4c0c0-d10d-4aeb-aa3a-449f1a96ce30
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses/70b4c0c0-d10d-4aeb-aa3a-449f1a96ce30
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:55 Check update course response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Зеленый вперед смелый грустный нажать свежий изучить исполнять. (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 53
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 43
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Сынок рота решетка факультет термин дрогнуть. Пасть выдержать приятель легко беспомощный славный. Холодно блин совет боец поговорить очутиться лететь.
+Обновленное описание.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 10 weeks (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 70b4c0c0-d10d-4aeb-aa3a-449f1a96ce30
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 1e14f202-0048-4352-a374-dab353943a99
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/945245e3-2327-4bad-9249-ee11dc1e11b4.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to 945245e3-2327-4bad-9249-ee11dc1e11b4.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to 94288e87-845d-458b-8a93-905b2a356040
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to igor_33@example.net
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Лебедев
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Нинель
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Терентьевич
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

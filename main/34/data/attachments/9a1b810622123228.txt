@@ -1,0 +1,28 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:29 Make PATCH request to http://localhost:8001/api/v1/exercises/8aea1b8e-0f90-4d7c-8f22-be5cc059d491
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/exercises/8aea1b8e-0f90-4d7c-8f22-be5cc059d491
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     EXERCISES_ASSERTIONS:exercises.py:102 Check update exercise response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Прежде поговорить рота славный. (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Бетонный неправда поговорить секунда головной конференция выраженный. Металл ход нервно прежний факультет командование запретить. Войти пространство пространство аж хотеть постоянный.
+Обновленное описание.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 56
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 7
+INFO     BASE_ASSERTIONS:base.py:38 Check that "order_index" equals to 58
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 7 weeks (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 8aea1b8e-0f90-4d7c-8f22-be5cc059d491
+INFO     BASE_ASSERTIONS:base.py:38 Check that "course_id" equals to 9fef11f2-96ae-46e9-8150-d09efb697573
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

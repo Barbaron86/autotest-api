@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjA5LjkzMTY2NyIsInVzZXJfaWQiOiI5NDI4OGU4Ny04NDVkLTQ1OGItOGE5My05MDViMmEzNTYwNDAifQ.pauVOjr-yHH-7Pt0Fn9hCmNld1mgjcpJjSnL94pQzng' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Зеленый вперед смелый грустный нажать свежий изучить исполнять.","maxScore":52,"minScore":42,"description":"Сынок рота решетка факультет термин дрогнуть. Пасть выдержать приятель легко беспомощный славный. Холодно блин совет боец поговорить очутиться лететь.","estimatedTime":"10 weeks","previewFileId":"1e14f202-0048-4352-a374-dab353943a99","createdByUserId":"94288e87-845d-458b-8a93-905b2a356040"}'

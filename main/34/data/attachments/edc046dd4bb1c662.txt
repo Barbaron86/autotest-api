@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE1Ljc2ODM5MSIsInVzZXJfaWQiOiJlZTY4NzUxOC0wZTg3LTQ3YzItOGVjYi03NDg3ZDU5NjBhMTUifQ.FlerS3_pT2O_6uFS5AiO0Jsf31LLNkjtG-1D4R8Pgik' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Набор написать багровый а один господь уронить.","maxScore":88,"minScore":16,"description":"Хотеть функция хотеть отъезд художественный недостаток. Следовательно миг адвокат головной. Команда да близко коробка поздравлять.","estimatedTime":"8 weeks","previewFileId":"c0724b5d-705b-483a-82b1-5cf19b6f0387","createdByUserId":"ee687518-0e87-47c2-8ecb-7487d5960a15"}'

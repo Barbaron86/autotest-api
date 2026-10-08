@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE3LjA1ODk5MyIsInVzZXJfaWQiOiJiNzZiN2E1Ni00MzQyLTRiMTAtYmMyZS1hZWZhNzMyY2E3MDgifQ.3fb3JtHWEolAQAqosLvNAI7kEoDclPjEf36rQtYk6cM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Намерение сынок девка.","maxScore":64,"minScore":1,"description":"Зарплата порода болото. Эпоха витрина триста назначить.\nПропаганда сравнение покидать разнообразный равнодушный плод прощение. Неожиданный палец поймать тесно. Лапа тюрьма тревога порог.","estimatedTime":"5 weeks","previewFileId":"7b7bf08f-e819-46dc-9c89-5cdf6a509a91","createdByUserId":"b76b7a56-4342-4b10-bc2e-aefa732ca708"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE4LjM4Mzk2NSIsInVzZXJfaWQiOiI0MzlkMTFhMy00Yzc5LTRlNGUtOWQyNC03NzcwMGNjMGIxOGEifQ.68QS-mG3TPCyJy-im6RhHpal1aLNYnjuj1MfWO7WMfY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ученый порог пища крыса банк.","maxScore":56,"minScore":46,"description":"Основание ботинок солнце совещание ярко бак заплакать. Выдержать выкинуть трясти роса волк.","estimatedTime":"5 weeks","previewFileId":"371533f2-031d-4608-821d-bedd1b682489","createdByUserId":"439d11a3-4c79-4e4e-9d24-77700cc0b18a"}'

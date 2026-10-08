@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjEzLjE5Nzc3MSIsInVzZXJfaWQiOiI0ODE1NDg1Ni05NmE3LTQ4NWUtOWYzNi1iNDg5Y2M1YjljMzIifQ.lFk_B8ZBa3B5w7cIVaGXtdUM6e70x4paTy4m27DvMCw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Отдел факультет решетка угол выражаться уничтожение.","maxScore":60,"minScore":47,"description":"Непривычный направо сверкать. Спалить невозможно анализ подробность отражение угодный. Выразить степь выразить головка неправда затянуться выкинуть. Деловой посидеть тревога легко возбуждение сынок.","estimatedTime":"2 weeks","previewFileId":"230e01c1-e30a-4e89-9567-535f262a2dd3","createdByUserId":"48154856-96a7-485e-9f36-b489cc5b9c32"}'

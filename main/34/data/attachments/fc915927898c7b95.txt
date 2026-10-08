@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjEyLjg0MjY2NSIsInVzZXJfaWQiOiI0ODE1NDg1Ni05NmE3LTQ4NWUtOWYzNi1iNDg5Y2M1YjljMzIifQ.ZPlZMRmNq4gsGi8p-BwC-7LgckvZP3K6igQpJeMkLgo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Соответствие металл цвет исследование левый совещание выраженный.","description":"Мгновение ученый гулять табак заложить построить собеседник. Бабочка советовать монета висеть бегать сустав потянуться. Нож одиннадцать даль какой функция уточнить проход провал.","courseId":"971c8c03-85d2-4bb6-a2a3-d056ba2dd8e3","maxScore":60,"minScore":4,"orderIndex":79,"estimatedTime":"8 weeks"}'

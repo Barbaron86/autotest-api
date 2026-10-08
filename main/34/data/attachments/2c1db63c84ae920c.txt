@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/8aea1b8e-0f90-4d7c-8f22-be5cc059d491 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjM4OjE0LjEyNDc3NCIsInVzZXJfaWQiOiJkYjQ0OTk0MS0yN2I5LTQyYmYtYTFmYy0wMmFiY2I1Y2Y4N2QifQ.mBIuYNSaWzAC1ih45HS7BhV1oLBZJjMu-is1qPDcHyI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Прежде поговорить рота славный. (обновлено)","description":"Бетонный неправда поговорить секунда головной конференция выраженный. Металл ход нервно прежний факультет командование запретить. Войти пространство пространство аж хотеть постоянный.\nОбновленное описание.","maxScore":56,"minScore":7,"orderIndex":58,"estimatedTime":"7 weeks (обновлено)"}'
