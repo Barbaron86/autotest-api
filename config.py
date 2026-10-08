@@ -1,9 +1,8 @@
 """Настройки API-автотестов из окружения и локального файла .env."""
 
 from pathlib import Path
-from typing import Self
 
-from pydantic import AliasChoices, BaseModel, DirectoryPath, Field, FilePath, HttpUrl, field_validator
+from pydantic import AliasChoices, BaseModel, Field, FilePath, HttpUrl, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -80,18 +79,7 @@ class Settings(BaseSettings):
 
     http_client: HTTPClientConfig = Field(default_factory=HTTPClientConfig)
     test_data: TestDataConfig = Field(default_factory=TestDataConfig)
-    allure_results_dir: DirectoryPath
-
-    @classmethod
-    def initialize(cls) -> Self:
-        """Создает каталог Allure и загружает настройки автотестов.
-
-        Returns:
-            Проверенные настройки автотестов.
-        """
-        allure_results_dir = Path("allure-results")
-        allure_results_dir.mkdir(exist_ok=True)
-        return cls(allure_results_dir=allure_results_dir)
+    allure_results_dir: Path = Path("allure-results")
 
 
-settings = Settings.initialize()
+settings = Settings()
