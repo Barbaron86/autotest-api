@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM4LjQwNDkyMiIsInVzZXJfaWQiOiIwMjU0M2VmNC1mNzUxLTRiZGItYTIwZC05ZTBkMWE0YWVkMjcifQ.PAXVkr9WE9XPvUFvXtfvbgUw5Z3UMcBZGYqL1pFnUm8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Упор означать школьный важный цвет висеть порт.","maxScore":88,"minScore":11,"description":"Белье медицина коммунизм премьера болото. Темнеть возбуждение рай мотоцикл один.","estimatedTime":"3 weeks","previewFileId":"156aa39e-84b3-4f5d-a61d-de2f35ec956f","createdByUserId":"02543ef4-f751-4bdb-a20d-9e0d1a4aed27"}'

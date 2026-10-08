@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM4LjE5NTEwNiIsInVzZXJfaWQiOiIyZGYwN2YwNy1hNTU4LTQ5ZWEtYmFlMC0yZmNlMTA2YjA4YTQifQ.O1dnL4yBUw060qdZOrbiEFrnIb0m_qxuvJyzt24Qljc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Помимо очутиться солнце процесс четыре очередной.","description":"Важный ломать миг угроза. Школьный актриса понятный число.","courseId":"5f431d29-2faa-429c-8365-dd96961d3e44","maxScore":78,"minScore":9,"orderIndex":7,"estimatedTime":"7 weeks"}'

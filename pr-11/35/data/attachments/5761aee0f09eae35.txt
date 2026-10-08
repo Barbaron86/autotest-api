@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM5LjY1MDk4MSIsInVzZXJfaWQiOiI0MTAzYTQ2OS00NDI0LTQ3OGUtYWI0OC05ODE2ODUyNzM1ZGIifQ.qjmBrbYqr_91kp32xPs99FRJVINOhCPBvZ8jNTB0DkU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вскинуть выраженный рай.","description":"Решение конструкция дыхание. Карман лететь доставать беспомощный уронить выдержать неожиданный. Премьера разводить дружно материя один цель через.","courseId":"afb7ec73-2e97-4baa-b134-721f47f0c49c","maxScore":84,"minScore":45,"orderIndex":51,"estimatedTime":"1 weeks"}'

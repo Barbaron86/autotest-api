@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/3eebd476-e36b-4c83-b5ce-ff79b6ef48fc \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM2LjM0MzM5MCIsInVzZXJfaWQiOiI4MmI5NjI1OC01NzYyLTQ3NzAtODZjZi00MjJkZmZlYjcyODQifQ.T3vVMlgFgFEJ6Gw4sXPshZ7D2NMtSukPTzv7gYTfHCM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Роскошный цвет при единый зачем изменение. (обновлено)","description":"Сверкающий издали дремать лапа ответить точно неправда космос. Запустить тусклый висеть страсть житель тысяча нервно.\nОбновленное описание.","maxScore":81,"minScore":22,"orderIndex":73,"estimatedTime":"4 weeks (обновлено)"}'

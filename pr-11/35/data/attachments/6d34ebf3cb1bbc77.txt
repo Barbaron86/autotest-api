@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM2Ljc2NDMwOCIsInVzZXJfaWQiOiI4MmI5NjI1OC01NzYyLTQ3NzAtODZjZi00MjJkZmZlYjcyODQifQ.kiRvM7wMQZDZEfsWIRoIEovaWMZfFSLgpuAwiV4x_Bk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Спасть промолчать ставить точно помимо смелый штаб мальчишка.","maxScore":93,"minScore":39,"description":"Рис о очередной экзамен полоска приятель вывести совещание. Премьера армейский песенка зачем господь товар желание выраженный.","estimatedTime":"9 weeks","previewFileId":"9d7ce1fa-0b44-4d51-a7b1-755a6a8746bc","createdByUserId":"82b96258-5762-4770-86cf-422dffeb7284"}'

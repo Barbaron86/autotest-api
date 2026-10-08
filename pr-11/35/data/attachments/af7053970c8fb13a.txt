@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM3Ljk2NTI2OCIsInVzZXJfaWQiOiIwMjU0M2VmNC1mNzUxLTRiZGItYTIwZC05ZTBkMWE0YWVkMjcifQ.IyUocug81NoBmiFd8zP5c7oARXS5Abag89q1G44iTOU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дьявол применяться падаль анализ.","description":"Близко слишком командир нож. Понятный гулять светило построить манера князь. Мальчишка соответствие куча конструкция. Встать интеллектуальный очко бегать.","courseId":"b1445c61-562b-4710-8484-fff42df50b5f","maxScore":86,"minScore":32,"orderIndex":0,"estimatedTime":"5 weeks"}'

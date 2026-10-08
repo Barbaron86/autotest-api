@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjExOjM2LjExNzU1NyIsInVzZXJfaWQiOiIyNWNhMWZkOS0wZjBiLTRiNWYtOGUyNC1iNDhkM2M3NWViZTQifQ.lv_RLrny96Fp8MjJDaFXdjgptJBAWmUr4UeAQFyImqk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Изучить бак научить помимо нажать функция.","description":"Художественный сходить танцевать смертельный. Близко увеличиваться возникновение монета механический степь. Тяжелый потрясти гулять тяжелый страсть.","courseId":"d0648a25-3249-4bcb-a607-00e43e8eda11","maxScore":74,"minScore":44,"orderIndex":89,"estimatedTime":"5 weeks"}'
