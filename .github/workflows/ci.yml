@@ -95,7 +95,7 @@ jobs:
 
       - name: Run selected API tests
         id: api_tests
-        run: poetry run pytest -m "$TEST_SUITE"
+        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2
 
       - name: Check Allure results
         id: allure_results
