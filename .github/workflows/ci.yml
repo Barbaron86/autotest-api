@@ -38,7 +38,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -63,6 +63,10 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 20
 
+    outputs:
+      allure-available: ${{ steps.allure_results.outputs.available }}
+      allure-artifact: allure-results-${{ github.run_id }}-${{ github.run_attempt }}
+
     defaults:
       run:
         shell: bash
@@ -76,7 +80,7 @@ jobs:
 
     steps:
       - name: Check out repository
-        uses: actions/checkout@v7
+        uses: actions/checkout@v7.0.1
         with:
           persist-credentials: false
 
@@ -90,7 +94,18 @@ jobs:
           docker compose up --build --wait --wait-timeout 90
 
       - name: Run selected API tests
+        id: api_tests
         run: poetry run pytest -m "$TEST_SUITE"
+
+      - name: Check Allure results
+        id: allure_results
+        if: ${{ !cancelled() }}
+        run: |
+          if compgen -G "allure-results/*-result.json" > /dev/null; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - name: Collect API logs
         if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
@@ -102,9 +117,130 @@ jobs:
 
       - name: Upload API logs
         if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v7.0.2
         with:
           name: api-logs-${{ github.run_id }}-${{ github.run_attempt }}
           path: artifacts/api.log
           if-no-files-found: error
           retention-days: 14
+
+      - name: Upload raw Allure results
+        if: ${{ !cancelled() && steps.allure_results.outputs.available == 'true' }}
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: allure-results-${{ github.run_id }}-${{ github.run_attempt }}
+          path: allure-results/
+          if-no-files-found: error
+          retention-days: 14
+
+  reports:
+    name: Publish reports
+    needs:
+      - api-tests
+    if: >-
+      ${{ always() && !cancelled() && needs.api-tests.outputs.allure-available == 'true' &&
+          (github.event_name == 'pull_request' ||
+           (github.event_name == 'push' && github.ref == 'refs/heads/main')) }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    permissions:
+      contents: write
+
+    concurrency:
+      group: pages-${{ github.repository }}
+      cancel-in-progress: false
+      queue: max
+
+    defaults:
+      run:
+        shell: bash
+
+    steps:
+      - name: Download raw Allure results
+        uses: actions/download-artifact@v8.0.2
+        with:
+          name: ${{ needs.api-tests.outputs.allure-artifact }}
+          path: allure-results/
+
+      - name: Select Allure report target
+        id: report
+        env:
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            subfolder="pr-$PR_NUMBER"
+            name="API tests PR #$PR_NUMBER"
+          else
+            subfolder="main"
+            name="API tests main"
+          fi
+          {
+            echo "subfolder=$subfolder"
+            echo "name=$name"
+            echo "url=https://${GITHUB_REPOSITORY_OWNER}.github.io/${GITHUB_REPOSITORY#*/}/$subfolder/"
+          } >> "$GITHUB_OUTPUT"
+
+      - name: Get Allure history
+        id: history
+        uses: actions/checkout@v7.0.1
+        continue-on-error: true
+        with:
+          ref: gh-pages
+          path: gh-pages
+          persist-credentials: false
+
+      - name: Prepare Pages workspace
+        env:
+          REPORT_SUBFOLDER: ${{ steps.report.outputs.subfolder }}
+          HISTORY_OUTCOME: ${{ steps.history.outcome }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if [[ "$HISTORY_OUTCOME" == "failure" ]]; then
+            status=$(curl --silent --show-error --max-time 30 --output /dev/null --write-out '%{http_code}' \
+              --header "Authorization: Bearer $GH_TOKEN" \
+              "$GITHUB_API_URL/repos/$GITHUB_REPOSITORY/branches/gh-pages")
+            if [[ "$status" != "404" ]]; then
+              echo "Cannot restore existing Pages history (HTTP $status); refusing to publish."
+              exit 1
+            fi
+          fi
+          rm -rf gh-pages/.git
+          mkdir -p gh-pages
+          if [[ "$GITHUB_EVENT_NAME" == "pull_request" ]]; then
+            rm -rf "gh-pages/$REPORT_SUBFOLDER"
+          else
+            rm -rf "gh-pages/$REPORT_SUBFOLDER/$GITHUB_RUN_NUMBER"
+          fi
+          echo '<meta http-equiv="refresh" content="0; url=./main/">' > gh-pages/index.html
+
+      # Future static reports can be added to gh-pages here before the single publish.
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@385367cde61ac68c2568a117f7579f7f148dc459 # v1.15
+        with:
+          allure_results: allure-results
+          allure_report: allure-report
+          gh_pages: gh-pages
+          allure_history: allure-history
+          subfolder: ${{ steps.report.outputs.subfolder }}
+          report_name: ${{ steps.report.outputs.name }}
+          keep_reports: 50
+
+      - name: Publish reports to GitHub Pages
+        if: ${{ success() && !cancelled() }}
+        uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: allure-history
+
+      - name: Add report links to workflow summary
+        env:
+          REPORT_NAME: ${{ steps.report.outputs.name }}
+          REPORT_URL: ${{ steps.report.outputs.url }}
+        run: |
+          {
+            echo "## Allure report"
+            echo
+            echo "[Open $REPORT_NAME]($REPORT_URL)"
+          } >> "$GITHUB_STEP_SUMMARY"
