@@ -81,7 +81,7 @@ jobs:
       TEST_SUITE: ${{ inputs.test-suite || 'regression' }}
       COVERAGE_CANONICAL: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main' && (inputs.test-suite || 'regression') == 'regression' }}
       SWAGGER_COVERAGE_SERVICES: >-
-        [{"key":"api-course","name":"API Course","tags":["API","COURSES"],
+        [{"key":"api-course","name":"API Course",
           "repository":"https://github.com/Nikita-Filonov/qa-automation-engineer-api-course",
           "swagger_url":"http://localhost:8001/openapi.json"}]
       SWAGGER_COVERAGE_HTML_REPORT_FILE: ./coverage.html
