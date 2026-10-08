@@ -2,6 +2,7 @@ import allure
 from httpx import Response
 
 from clients.api_client import ApiClient
+from clients.api_coverage import tracker
 from clients.exercises.exercises_schema import (
     CreateExerciseRequestSchema,
     CreateExerciseResponseSchema,
@@ -19,6 +20,7 @@ class ExercisesClient(ApiClient):
     """API-клиент для работы с упражнениями."""
 
     @allure.step("Get exercises")
+    @tracker.track_coverage_httpx(APIRoutes.EXERCISES)
     def get_exercises_api(self, query: GetExercisesRequestSchema) -> Response:
         """Выполняет запрос на получение списка упражнений.
 
@@ -44,6 +46,7 @@ class ExercisesClient(ApiClient):
         return GetExercisesResponseSchema.model_validate_json(response.text)
 
     @allure.step("Create exercise")
+    @tracker.track_coverage_httpx(APIRoutes.EXERCISES)
     def create_exercise_api(self, request: CreateExerciseRequestSchema) -> Response:
         """Выполняет запрос на создание упражнения.
 
@@ -69,6 +72,7 @@ class ExercisesClient(ApiClient):
         return CreateExerciseResponseSchema.model_validate_json(response.text)
 
     @allure.step("Get exercise by id {exercise_id}")
+    @tracker.track_coverage_httpx(f"{APIRoutes.EXERCISES}/{{exercise_id}}")
     def get_exercise_api(self, exercise_id: str) -> Response:
         """Выполняет запрос на получение упражнения.
 
@@ -94,6 +98,7 @@ class ExercisesClient(ApiClient):
         return GetExerciseResponseSchema.model_validate_json(response.text)
 
     @allure.step("Update exercise by id {exercise_id}")
+    @tracker.track_coverage_httpx(f"{APIRoutes.EXERCISES}/{{exercise_id}}")
     def update_exercise_api(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> Response:
         """Выполняет запрос на обновление упражнения.
 
@@ -121,6 +126,7 @@ class ExercisesClient(ApiClient):
         return UpdateExerciseResponseSchema.model_validate_json(response.text)
 
     @allure.step("Delete exercise by id {exercise_id}")
+    @tracker.track_coverage_httpx(f"{APIRoutes.EXERCISES}/{{exercise_id}}")
     def delete_exercise_api(self, exercise_id: str) -> Response:
         """Выполняет запрос на удаление упражнения.
 

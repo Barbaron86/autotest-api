@@ -15,7 +15,8 @@ dependencies = [
     "pytest-rerunfailures (>=16.7,<17.0)",
     "pydantic-settings (>=2.7,<3.0)",
     "allure-pytest (>=2.16.2,<3.0.0)",
-    "pytest-xdist (>=3.8.0,<4.0.0)"
+    "pytest-xdist (>=3.8.0,<4.0.0)",
+    "swagger-coverage-tool (==0.34.0)"
 ]
 
 
