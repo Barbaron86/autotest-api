@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjEzLjk0ODczNSIsInVzZXJfaWQiOiIzMTQ1NTFlNi1kZDgxLTQ2YTctOTVhMS03NGExN2Y2OTNlYmUifQ.fri6mysBv45YWo5w40Tw2Jcf92RLvbapnCzlFC_iVHQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Совет посидеть академик сверкать мягкий.","maxScore":88,"minScore":35,"description":"Сутки совет спалить пространство что заложить интернет. Июнь ягода витрина сверкать войти тяжелый рота. Художественный собеседник счастье задрать.","estimatedTime":"1 weeks","previewFileId":"7bf21a44-e248-491a-8d2f-a8bf820ca6dd","createdByUserId":"314551e6-dd81-46a7-95a1-74a17f693ebe"}'

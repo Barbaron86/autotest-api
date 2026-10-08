@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjA5Ljk2NDcxOCIsInVzZXJfaWQiOiI3YmU2ZTgzZS1kNDJjLTRiNjMtOWE3Ny04YjJiOTczYWM5YzUifQ.D9WsYjbSyayxt4QlljDEtgWK558To6NJ6GYZPTN-i6g' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Более полоска роса неожиданно кпсс редактор точно видимо.","maxScore":98,"minScore":22,"description":"Спорт нервно дьявол посидеть танцевать страсть. Четко оставить пропасть за соответствие пропаганда. Неправда сравнение район бригада написать пламя выраженный.","estimatedTime":"4 weeks","previewFileId":"ebe6f9f3-3adb-488a-9886-d3dc4d3b132e","createdByUserId":"7be6e83e-d42c-4b63-9a77-8b2b973ac9c5"}'

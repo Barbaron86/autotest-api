@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjExLjI4NTE3NiIsInVzZXJfaWQiOiI0MDYwNTVmYS05MTg4LTQ4NzItODFiZi03NzY4MjRkNmVjYWEifQ.3Bu7Bzd0bXe7iycIlhrjli8RN7sBSD3G5An2GxR0yHE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Порода крутой привлекать лиловый пропаганда виднеться возбуждение изба.","maxScore":97,"minScore":40,"description":"Табак триста монета миллиард падать. Приятель покидать задрать мотоцикл конструкция металл горький предоставить. Дружно аж невозможно.","estimatedTime":"8 weeks","previewFileId":"555135da-bcab-42b3-a5b9-d11a752e1b07","createdByUserId":"406055fa-9188-4872-81bf-776824d6ecaa"}'

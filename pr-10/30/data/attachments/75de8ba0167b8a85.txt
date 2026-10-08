@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjA3LjM0MTQ5MyIsInVzZXJfaWQiOiI4NTk1MjMwYS1hMzZiLTQ0ZjktYjA1Yi01ZGFkYjhmMzU5ZmIifQ.mPMPRao56EddPBLGXml2RBvfgC2wNI3TuIU9GsEPKCk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сопровождаться намерение еврейский ручей порт народ боец.","maxScore":89,"minScore":22,"description":"Пропасть художественный передо носок чем конференция монета ложиться. Пятеро плавно холодно труп исполнять. Функция эффект кожа цвет металл.\nИнтернет изображать вскинуть заработать бригада ленинград.","estimatedTime":"5 weeks","previewFileId":"60ef3d10-71aa-4323-9df7-320d889c1ef2","createdByUserId":"8595230a-a36b-44f9-b05b-5dadb8f359fb"}'

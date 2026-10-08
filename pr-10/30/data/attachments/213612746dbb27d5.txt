@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/7c6d557b-e03f-4751-a955-4d99a0ce25a2 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjA2LjM0NDUxMSIsInVzZXJfaWQiOiJkZWRjMjNjMC1iNmQ2LTQxY2EtYThjZC1iNTJmYWJlYjJiMzcifQ.COttUO_41eerLM3qcIesC5EnslxpxGEuz9TKIDQJ6Gg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бабочка коммунизм освобождение грудь цепочка. (обновлено)","maxScore":79,"minScore":4,"description":"Задрать ручей школьный запретить расстегнуть носок выразить невыносимый.\nЭпоха уточнить возникновение перебивать приличный. Какой запретить привлекать космос.\nОбновленное описание.","estimatedTime":"6 weeks (обновлено)"}'

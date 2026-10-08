@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE3OjE0OjA1LjMzMDYzMyIsInVzZXJfaWQiOiI0OTI0NmVhMi0xYzlmLTQxOTgtOThhYS01ZjJmZmRiZDdlMWUifQ.nouqPHgI6mgVOZuQ5rGZsokcYPSl5olYca7S-mVxT7E' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бетонный полевой приходить соответствие бригада лететь запретить.","maxScore":83,"minScore":44,"description":"Бабочка сынок цепочка скользить столетие триста сынок. Видимо миг падать. Грудь рис командир стакан бабочка невозможно.","estimatedTime":"2 weeks","previewFileId":"536ac87a-1ca4-453c-8fdb-d601236063ab","createdByUserId":"49246ea2-1c9f-4198-98aa-5f2ffdbd7e1e"}'
