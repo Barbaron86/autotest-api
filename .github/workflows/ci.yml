@@ -90,7 +90,7 @@ jobs:
           docker compose up --build --wait --wait-timeout 90
 
       - name: Run selected API tests
-        run: poetry run pytest -m "$TEST_SUITE"
+        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2
 
       - name: Collect API logs
         if: ${{ !cancelled() && steps.api_start.outcome != 'skipped' }}

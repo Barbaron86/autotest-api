@@ -12,6 +12,7 @@ from clients.exercises.exercises_schema import (
     UpdateExerciseResponseSchema,
 )
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
+from tools.routes import APIRoutes
 
 
 class ExercisesClient(ApiClient):
@@ -27,7 +28,7 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API со списком упражнений.
         """
-        return self.get("/api/v1/exercises", params=query.model_dump())
+        return self.get(APIRoutes.EXERCISES, params=query.model_dump())
 
     def get_exercises(self, query: GetExercisesRequestSchema) -> GetExercisesResponseSchema:
         """Получает список упражнений.
@@ -52,7 +53,7 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос создания упражнения.
         """
-        return self.post("/api/v1/exercises", json=request.model_dump())
+        return self.post(APIRoutes.EXERCISES, json=request.model_dump())
 
     def create_exercise(self, request: CreateExerciseRequestSchema) -> CreateExerciseResponseSchema:
         """Создает упражнение.
@@ -77,7 +78,7 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API с данными упражнения.
         """
-        return self.get(f"/api/v1/exercises/{exercise_id}")
+        return self.get(f"{APIRoutes.EXERCISES}/{exercise_id}")
 
     def get_exercise(self, exercise_id: str) -> GetExerciseResponseSchema:
         """Получает упражнение.
@@ -103,7 +104,7 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос обновления упражнения.
         """
-        return self.patch(f"/api/v1/exercises/{exercise_id}", json=request.model_dump(exclude_unset=True))
+        return self.patch(f"{APIRoutes.EXERCISES}/{exercise_id}", json=request.model_dump(exclude_unset=True))
 
     def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> UpdateExerciseResponseSchema:
         """Обновляет упражнение.
@@ -129,7 +130,7 @@ class ExercisesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос удаления упражнения.
         """
-        return self.delete(f"/api/v1/exercises/{exercise_id}")
+        return self.delete(f"{APIRoutes.EXERCISES}/{exercise_id}")
 
     def delete_exercise(self, exercise_id: str) -> None:
         """Удаляет упражнение.

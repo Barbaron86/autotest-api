@@ -9,6 +9,7 @@ from clients.courses.courses_schema import (
     UpdateCourseRequestSchema,
 )
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
+from tools.routes import APIRoutes
 
 
 class CoursesClient(ApiClient):
@@ -24,7 +25,7 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API со списком курсов.
         """
-        return self.get("/api/v1/courses", params=query.model_dump())
+        return self.get(APIRoutes.COURSES, params=query.model_dump())
 
     @allure.step("Get course by id {course_id}")
     def get_course_api(self, course_id: str) -> Response:
@@ -36,7 +37,7 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API с данными курса.
         """
-        return self.get(f"/api/v1/courses/{course_id}")
+        return self.get(f"{APIRoutes.COURSES}/{course_id}")
 
     @allure.step("Create course")
     def create_course_api(self, request: CreateCourseRequestSchema) -> Response:
@@ -48,7 +49,7 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос создания курса.
         """
-        return self.post("/api/v1/courses", json=request.model_dump())
+        return self.post(APIRoutes.COURSES, json=request.model_dump())
 
     def create_course(self, request: CreateCourseRequestSchema) -> CreateCourseResponseSchema:
         """Создает курс.
@@ -75,7 +76,7 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос обновления курса.
         """
-        return self.patch(f"/api/v1/courses/{course_id}", json=request.model_dump(exclude_unset=True))
+        return self.patch(f"{APIRoutes.COURSES}/{course_id}", json=request.model_dump(exclude_unset=True))
 
     @allure.step("Delete course by id {course_id}")
     def delete_course_api(self, course_id: str) -> Response:
@@ -87,7 +88,7 @@ class CoursesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос удаления курса.
         """
-        return self.delete(f"/api/v1/courses/{course_id}")
+        return self.delete(f"{APIRoutes.COURSES}/{course_id}")
 
 
 def get_courses_client(user: AuthenticationUserSchema) -> CoursesClient:

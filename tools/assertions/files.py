@@ -10,6 +10,9 @@ from clients.files.files_schema import (
 from config import settings
 from tools.assertions.base import assert_equal
 from tools.assertions.errors import assert_internal_error_response, assert_validation_error_response
+from tools.logger import get_logger
+
+logger = get_logger("FILES_ASSERTIONS")
 
 
 @allure.step("Check create file response")
@@ -24,7 +27,8 @@ def assert_create_file_response(request: CreateFileRequestSchema, response: Crea
         AssertionError: Если URL, имя файла или директория
             не соответствуют ожидаемым значениям.
     """
-    expected_url = f"{str(settings.base_url).rstrip('/')}/static/{request.directory}/{request.filename}"
+    logger.info("Check create file response")
+    expected_url = f"{settings.http_client.client_url.rstrip('/')}/static/{request.directory}/{request.filename}"
 
     assert_equal(str(response.file.url), expected_url, "url")
     assert_equal(response.file.filename, request.filename, "filename")
@@ -43,6 +47,7 @@ def assert_file(actual: FileSchema, expected: FileSchema) -> None:
         AssertionError: Если идентификатор, URL, имя файла
             или директория не соответствуют ожидаемым значениям.
     """
+    logger.info("Check file")
     assert_equal(actual.id, expected.id, "id")
     assert_equal(actual.url, expected.url, "url")
     assert_equal(actual.filename, expected.filename, "filename")
@@ -64,6 +69,7 @@ def assert_get_file_response(
             не соответствуют данным созданного файла.
     """
 
+    logger.info("Check get file response")
     assert_file(get_file_response.file, create_file_response.file)
 
 
@@ -77,6 +83,7 @@ def assert_create_file_with_empty_filename_response(actual: ValidationErrorRespo
     Raises:
         AssertionError: Если ответ не соответствует ошибке пустого имени файла.
     """
+    logger.info("Check create file with empty filename response")
     expected = ValidationErrorResponseSchema(
         detail=[
             ValidationErrorSchema(
@@ -101,6 +108,7 @@ def assert_create_file_with_empty_directory_response(actual: ValidationErrorResp
     Raises:
         AssertionError: Если ответ не соответствует ошибке пустой директории.
     """
+    logger.info("Check create file with empty directory response")
     expected = ValidationErrorResponseSchema(
         detail=[
             ValidationErrorSchema(
@@ -125,6 +133,7 @@ def assert_file_not_found_response(actual: InternalErrorResponseSchema) -> None:
     Raises:
         AssertionError: Если ответ не содержит сообщение «File not found».
     """
+    logger.info("Check file not found response")
     expected = InternalErrorResponseSchema(detail="File not found")
     assert_internal_error_response(actual=actual, expected=expected)
 
@@ -140,6 +149,7 @@ def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorRespo
         AssertionError: Если ответ не соответствует ошибке разбора UUID
             в параметре пути file_id.
     """
+    logger.info("Check get file with incorrect file id response")
     error = "invalid character: expected an optional prefix of `urn:uuid:` followed by [0-9a-fA-F-], found `i` at 1"
     expected = ValidationErrorResponseSchema(
         detail=[
