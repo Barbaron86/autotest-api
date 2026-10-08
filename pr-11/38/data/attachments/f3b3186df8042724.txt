@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU2LjEyNzMwNyIsInVzZXJfaWQiOiIxZWFlNWY4NC1lNjFlLTRmZTYtOWFlNC0yODAyZmI4NTdkNzAifQ._2hDej1qPswOEK4LvyPFDylfUOJZAn3k0k9X7TPV4w8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Костер невыносимый кпсс миг очередной скрытый совет армейский.","maxScore":66,"minScore":13,"description":"Хотеть блин банда.\nТанцевать прежний секунда перебивать угодный пропадать смеяться естественный. Степь теория мучительно потрясти интернет материя пропадать.","estimatedTime":"4 weeks","previewFileId":"3fe0faa5-a2dd-4efe-b262-5b6e16d306a7","createdByUserId":"1eae5f84-e61e-4fe6-9ae4-2802fb857d70"}'

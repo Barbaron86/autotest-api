@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU1LjM0NTQ0MCIsInVzZXJfaWQiOiJmYjFhZmU0Yi01MGQ2LTRhYWEtODE5MS05NjY4NDJmZjcyZGIifQ.hmkm0Y-1IlFhsfrzLEZ2Qn6fT_syN_yqt1eZmyUF3Ro' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дьявол поздравлять плод совет потом.","maxScore":51,"minScore":4,"description":"Ремень запеть тюрьма смелый. Снимать правильный что пространство природа казнь. Естественный актриса упорно человечек обида собеседник уточнить каюта.","estimatedTime":"5 weeks","previewFileId":"3b90ab4b-ba3b-4f19-8cc4-0398114a06f9","createdByUserId":"fb1afe4b-50d6-4aaa-8191-966842ff72db"}'

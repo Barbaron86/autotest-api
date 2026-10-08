@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU3LjI5NTg0MiIsInVzZXJfaWQiOiJlZTVmYzllZS01NTc4LTRlMzgtYTY3Mi1lMTE0ZGRhMTNhMTEifQ.cyszsVLS-QJ4vDpeczKGXO5KuyVVSJe3yOZsKFw6glg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Прежний песенка счастье.","maxScore":52,"minScore":0,"description":"Виднеться падать мера блин счастье. Рота проход упор легко выгнать дружно запеть. Упор невыносимый отметить сохранять выразить деловой. Освобождение поймать забирать костер район совет трубка.","estimatedTime":"10 weeks","previewFileId":"0b93f56c-fc5a-4795-9de8-aa68e9f6a3b3","createdByUserId":"ee5fc9ee-5578-4e38-a672-e114dda13a11"}'

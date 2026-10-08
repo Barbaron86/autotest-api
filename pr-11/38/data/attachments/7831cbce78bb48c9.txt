@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjUzLjk0ODY2MiIsInVzZXJfaWQiOiIzYjI5NjlkOS02MjI5LTRiNDUtOGYyYS0wNDdjNGY5OTI3ZDQifQ.qJeqPYKl2psohTGxx0WvQcOczd4gipyTpWpbCSamHGE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Нервно полюбить роса трубка легко.","maxScore":58,"minScore":41,"description":"Магазин вообще выгнать инвалид сверкать рот новый. Теория салон приятель некоторый командование падать.","estimatedTime":"8 weeks","previewFileId":"22da9066-4dad-4034-8c18-99a9225e1ca7","createdByUserId":"3b2969d9-6229-4b45-8f2a-047c4f9927d4"}'

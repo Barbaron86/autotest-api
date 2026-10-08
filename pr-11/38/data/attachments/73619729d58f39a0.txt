@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/bacf3dd6-83bf-48f7-81c9-eb8c8498db61 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjUyLjAwMTM4OSIsInVzZXJfaWQiOiJiYWJiYjBmMy1kZTJhLTQ5YjUtYmJmMC04MDk5ZGJjMThjYzQifQ.cijPrZGx3_i9cPFUbgJFtIlRMx2wI621tYOBDEX8gsc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Набор вздрагивать приходить советовать вперед помимо бровь. (обновлено)","maxScore":73,"minScore":43,"description":"Естественный плясать редактор реклама. Сбросить металл факультет. Угроза провинция дружно другой спичка дыхание задрать.\nОбновленное описание.","estimatedTime":"4 weeks (обновлено)"}'

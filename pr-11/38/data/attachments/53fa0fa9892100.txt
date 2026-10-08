@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU4LjM5MTc2MyIsInVzZXJfaWQiOiI0MjlkYzdkNS04YWU2LTRkYmItYTBjYS1lZDM3N2JkZmNlNjIifQ.ytsr_-TyUZBTbyc1KhU2gxmX6JwpEe0eVhHWneQDJLQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Танцевать около армейский правление потрясти.","maxScore":59,"minScore":28,"description":"Запеть вскинуть степь встать полюбить костер. Команда настать пастух ныне сутки природа опасность. Спалить вскакивать бочок интеллектуальный какой число.","estimatedTime":"7 weeks","previewFileId":"01087e53-3464-46f8-a1b1-7f71f747d324","createdByUserId":"429dc7d5-8ae6-4dbb-a0ca-ed377bdfce62"}'

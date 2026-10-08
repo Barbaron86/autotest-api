@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjUzLjA4NDI2OCIsInVzZXJfaWQiOiI2MjliZDc3Zi03NmMyLTQ1MTUtOTJjZS1lNDk1N2EyYmNkMzMifQ.n4DE7btVfdbyEFyxPWsRWCWY0tKnASpqs9yxLkVf5s4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Отъезд проход слишком лететь.","maxScore":71,"minScore":36,"description":"Демократия банда исполнять. Четыре тута пища непривычный инфекция задержать процесс солнце.","estimatedTime":"5 weeks","previewFileId":"7b0e025f-5c4c-47e2-8d77-7634cb5bed5c","createdByUserId":"629bd77f-76c2-4515-92ce-e4957a2bcd33"}'

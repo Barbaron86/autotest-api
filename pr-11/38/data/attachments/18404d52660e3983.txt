@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU5LjUwOTQ4NSIsInVzZXJfaWQiOiI2MDVmOTMxOS02MWVjLTQzYmQtOTQxZi02N2Y4YzlkMGU2YzEifQ.LxAS0K8txDhdq56pdOusAD0qh7dL5Yj8EDyJia8u1ZQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очередной выразить предоставить.","maxScore":62,"minScore":4,"description":"Правильный тревога совет скрытый бетонный неудобно применяться провал. Набор направо тесно вариант оставить возбуждение. Около жидкий команда кидать.","estimatedTime":"2 weeks","previewFileId":"c3ca73fc-0566-492d-a032-46620e1ce6d7","createdByUserId":"605f9319-61ec-43bd-941f-67f8c9d0e6c1"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU0LjgyNDg1NiIsInVzZXJfaWQiOiJmYjFhZmU0Yi01MGQ2LTRhYWEtODE5MS05NjY4NDJmZjcyZGIifQ.p41UwoCe1RZ8AV40KDd7lp_sCnWNLMlJFfrK8PWZvj4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Плавно увеличиваться правильный близко неудобно сынок.","description":"Анализ мелочь функция возбуждение дружно. Проход затянуться недостаток. Бровь инфекция близко крыса вздрагивать совещание мрачно.","courseId":"7c017bc7-b021-4b40-b048-73870c487a26","maxScore":95,"minScore":2,"orderIndex":44,"estimatedTime":"7 weeks"}'

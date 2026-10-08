@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjUzOjU4LjA3OTUxMCIsInVzZXJfaWQiOiI0MjlkYzdkNS04YWU2LTRkYmItYTBjYS1lZDM3N2JkZmNlNjIifQ.mi3xFqzSHFr7NXUEInOF74r21nm_OFCxKxZqfIDZf60' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Белье решетка дорогой деловой пропадать ночь блин.","description":"Волк низкий набор четко смелый означать. Порядок интеллектуальный четыре приличный спорт предоставить прелесть мгновение.","courseId":"0ebcd5a2-d08b-4505-ab35-7ebddcead229","maxScore":73,"minScore":36,"orderIndex":23,"estimatedTime":"5 weeks"}'
