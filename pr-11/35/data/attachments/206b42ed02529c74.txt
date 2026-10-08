@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjE1OjE1LjEzODk0NyIsInVzZXJfaWQiOiIxOTYyODE4NC1mODRlLTRhYWUtODdkOC1kNTk4OWM5ZjViYmIifQ.8fxL51jYONQUsY1l_WKcEoXOxkcUVyw5TIDXPGjsSKo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Прошептать поколение художественный спорт ботинок желание валюта.","maxScore":100,"minScore":22,"description":"Строительство светило при близко коллектив парень. Запустить наступать призыв блин порт.","estimatedTime":"4 weeks","previewFileId":"413b5efd-2155-407f-9202-578413dbecc3","createdByUserId":"19628184-f84e-4aae-87d8-d5989c9f5bbb"}'

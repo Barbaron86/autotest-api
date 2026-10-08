@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIwOjE1OjE3LjA0NTcyMCIsInVzZXJfaWQiOiI0NGI0ODc1NS04NTgzLTQ1NDItOTY5NC0zY2E2YWUzZWEyOWIifQ.mK-xTL2oj5ZMq8Xgpk-jYf7TQtLvvdvvVWLIW4STdzg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Серьезный роса совет господь.","description":"Рассуждение избегать помимо князь карман висеть возникновение. Ребятишки желание вывести обида бегать скользить.","courseId":"0c57712a-7ecd-45d7-a300-8cab4075002a","maxScore":85,"minScore":24,"orderIndex":100,"estimatedTime":"10 weeks"}'
