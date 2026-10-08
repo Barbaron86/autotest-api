@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ3Ljk5Nzc1NiIsInVzZXJfaWQiOiJiYTlmZTE4Ni05YWUyLTQyYjItYTBmZC04Mjc5OWU1NDgzNjgifQ.gBp3LrAdjDaB2-5IalM2vx77XERAe2NQxbLfFWr14kc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Задержать разуметься горький умирать.","maxScore":58,"minScore":10,"description":"Смелый плод приятель слать куча тусклый. Упор прелесть крыса сынок спорт угроза. Близко командир миг второй сохранять освобождение опасность.","estimatedTime":"1 weeks","previewFileId":"fc3e2d44-473f-4493-9b06-cd5d08d69253","createdByUserId":"ba9fe186-9ae2-42b2-a0fd-82799e548368"}'

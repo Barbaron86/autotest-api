@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ0LjA4ODcyNiIsInVzZXJfaWQiOiI3ZjhiNmRlOS01ZDMzLTQyNGUtOWVhOC1mMzBiN2UzYTRjZWYifQ.s1yrDxWTaGgWJSE7VezHOG_7mJ1MM2Kd8cs6Ws7e6KQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Коричневый тута покинуть.","maxScore":74,"minScore":24,"description":"Князь мелочь левый степь. Через возможно скрытый спасть ведь адвокат ребятишки.\nЧеловечек понятный инвалид назначить деньги.\nОсвободить функция четко плод четко. Танцевать солнце издали порт.","estimatedTime":"6 weeks","previewFileId":"297d1d00-1dc0-4ae6-9425-15a9787b3de0","createdByUserId":"7f8b6de9-5d33-424e-9ea8-f30b7e3a4cef"}'

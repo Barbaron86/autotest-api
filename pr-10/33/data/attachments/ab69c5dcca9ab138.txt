@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ5LjA3MzYzNiIsInVzZXJfaWQiOiJiZjM0MTY4OS0zMWM1LTQzOWUtOGQ4ZS0xYmRjMzEwNWRiM2MifQ.3RY-9DJD5ICXibvfCkeFSRc6cZM_RW_V8sEyq32m_IU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Карандаш привлекать кпсс сынок дорогой терапия.","maxScore":100,"minScore":37,"description":"Эпоха манера некоторый рота реклама войти некоторый. Очутиться заплакать снимать подземный командующий серьезный. Выраженный собеседник сынок грустный пересечь выбирать.","estimatedTime":"4 weeks","previewFileId":"e6f5104d-97dc-4bf9-b944-a160a9fc82a9","createdByUserId":"bf341689-31c5-439e-8d8e-1bdc3105db3c"}'

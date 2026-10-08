@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ4Ljc5NDU4NSIsInVzZXJfaWQiOiJiZjM0MTY4OS0zMWM1LTQzOWUtOGQ4ZS0xYmRjMzEwNWRiM2MifQ.T-ssIbiYOsQDsyUMaGirdZnguUIxNURQvKO9a9_clug' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Упорно призыв угодный правление ход выражение миг.","description":"Покинуть призыв висеть горький успокоиться. Четыре строительство коричневый оставить единый приходить. Цель более неожиданно.","courseId":"4ba8cc13-9b55-4d71-ab81-6b816bfee8af","maxScore":73,"minScore":27,"orderIndex":28,"estimatedTime":"4 weeks"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ1LjcyMzU1OCIsInVzZXJfaWQiOiI3ZTBjODk5YS1mNWNlLTQxYTItYTE4Yy1hOGM4ZGEzZjI0MWIifQ.VmRtXBCWMeq6eRWfQYyiz4lsm5VRBmb_k-737e1OoIQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Металл куча расстегнуть постоянный издали зеленый.","description":"Степь витрина рис видимо приличный. Зарплата трубка адвокат печатать.\nГраница дьявол дыхание возможно.","courseId":"edbd9dfe-9296-4b11-ac5a-abea12d16318","maxScore":59,"minScore":13,"orderIndex":96,"estimatedTime":"3 weeks"}'

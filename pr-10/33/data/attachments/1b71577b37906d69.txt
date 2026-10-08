@@ -1,0 +1,33 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:31 Check create course response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Коричневый тута покинуть.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 74
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 24
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Князь мелочь левый степь. Через возможно скрытый спасть ведь адвокат ребятишки.
+Человечек понятный инвалид назначить деньги.
+Освободить функция четко плод четко. Танцевать солнце издали порт.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 6 weeks
+INFO     BASE_ASSERTIONS:base.py:38 Check that "preview_file_id" equals to 297d1d00-1dc0-4ae6-9425-15a9787b3de0
+INFO     BASE_ASSERTIONS:base.py:38 Check that "created_by_user_id" equals to 7f8b6de9-5d33-424e-9ea8-f30b7e3a4cef
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 297d1d00-1dc0-4ae6-9425-15a9787b3de0
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/8b4d4fd0-d0b4-4c32-bd7b-11c11fcf363d.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to 8b4d4fd0-d0b4-4c32-bd7b-11c11fcf363d.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to 7f8b6de9-5d33-424e-9ea8-f30b7e3a4cef
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to adrian62@example.org
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Дмитриева
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Кузьма
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Кузьминична
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

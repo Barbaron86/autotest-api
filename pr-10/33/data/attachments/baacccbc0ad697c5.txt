@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ2LjAwMzE0NiIsInVzZXJfaWQiOiI3ZTBjODk5YS1mNWNlLTQxYTItYTE4Yy1hOGM4ZGEzZjI0MWIifQ.wZMBAK5KFmae-HaiqbhZpqrG4ymc1_VtcXzcGs5VJjw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Миг находить какой сравнение головка.","maxScore":52,"minScore":49,"description":"Необычный волк основание стакан тяжелый природа при. Протягивать правление космос сынок.\nНалоговый тюрьма налоговый ленинград. Заплакать необычный рота исполнять расстройство.","estimatedTime":"7 weeks","previewFileId":"fb7d4f4a-8ae8-4a10-ba97-01f976529f87","createdByUserId":"7e0c899a-f5ce-41a2-a18c-a8c8da3f241b"}'

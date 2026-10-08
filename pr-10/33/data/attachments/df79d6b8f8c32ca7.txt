@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ0Ljk5OTMyMyIsInVzZXJfaWQiOiI0N2ZkMTgxYi1lOTRjLTRkNGItYmVmOS01MjE0N2UwMmU5ZTcifQ.rJvFoeP9CdVIGUmWPVC4aTLEFOv2Qz72lGrOHSEF-YU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Боец чувство ремень зарплата посидеть.","maxScore":52,"minScore":31,"description":"Хозяйка услать печатать порядок одиннадцать команда низкий. Основание вперед запустить миф беспомощный. Пересечь наслаждение белье спешить находить.","estimatedTime":"4 weeks","previewFileId":"def044c5-ff28-420b-8e28-a3010dada900","createdByUserId":"47fd181b-e94c-4d4b-bef9-52147e02e9e7"}'

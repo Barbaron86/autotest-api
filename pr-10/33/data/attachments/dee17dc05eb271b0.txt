@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjUwLjA5MzkzMyIsInVzZXJfaWQiOiIxNzk1NTg1ZS1lMzRlLTQwZGQtYjI4My00MjAyODhkNWYyMWMifQ.RVWenkhyUnPo-4DZb6uZUMPNlwukR9oE5Rgj_vlHAN0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Девка провинция решение хотеть интернет.","maxScore":79,"minScore":23,"description":"Сохранять космос экзамен возможно запеть холодно стакан. Необычный головка плавно опасность теория аллея. Песенка применяться развитый фонарик запеть устройство. Пропадать уточнить неудобно.","estimatedTime":"3 weeks","previewFileId":"70b31112-87b2-4c91-ae22-11be00b20e9f","createdByUserId":"1795585e-e34e-40dd-b283-420288d5f21c"}'

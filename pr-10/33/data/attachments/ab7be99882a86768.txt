@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/7883bff2-ed2b-4763-9163-5ed270563ca1 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQzLjM0MDE0MyIsInVzZXJfaWQiOiJlMmMwYTc0ZS0zODBhLTQ3MDAtYmRiNS03OTk3NGMwYzY4NTQifQ.58Nj6HXFwibbaIcFglKcX3hQhjMPwS9BXlbxSFBBmN0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тяжелый ягода призыв приходить. (обновлено)","maxScore":95,"minScore":42,"description":"Танцевать зима ныне очередной экзамен идея прощение возникновение. Эффект указанный мгновение. Солнце слишком школьный. Рассуждение прежде конференция мелочь предоставить.\nОбновленное описание.","estimatedTime":"8 weeks (обновлено)"}'

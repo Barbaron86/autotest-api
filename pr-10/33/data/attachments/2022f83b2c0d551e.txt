@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/50e2a2ec-fc37-4d64-a830-859be20c5cdd \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDE5OjIzOjQ2LjcyMTIwMyIsInVzZXJfaWQiOiIwM2U0Mjk3NS05NTYzLTRjMjItODM5OC01NWRhZWRmODYyNGIifQ.0ARcAkjUbKq_3kD5PuB0R_1zoGKo-h6QZh0CpmGFxr4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ремень школьный костер наступать покидать плод правильный. (обновлено)","description":"Ход совещание металл школьный интернет монета. Призыв крутой пастух вскакивать команда ставить сынок. Чувство виднеться свежий район пол протягивать ленинград покинуть.\nОбновленное описание.","maxScore":97,"minScore":2,"orderIndex":9,"estimatedTime":"4 weeks (обновлено)"}'
