@@ -1,5 +1,6 @@
 import httpx
 
+from config import settings
 from tools.fakers import fake
 
 create_user_payload = {
@@ -29,7 +30,7 @@ create_file_headers = {"Authorization": f"Bearer {login_response_data['token']['
 create_file_response = httpx.post(
     "http://localhost:8000/api/v1/files",
     data={"filename": "image.png", "directory": "courses"},
-    files={"upload_file": open("./testdata/files/image.png", "rb")},
+    files={"upload_file": settings.test_data.image_png_file.read_bytes()},
     headers=create_file_headers,
 )
 

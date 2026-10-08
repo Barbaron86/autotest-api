@@ -11,6 +11,9 @@ from clients.courses.courses_schema import (
 from tools.assertions.base import assert_equal, assert_lens
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
+from tools.logger import get_logger
+
+logger = get_logger("COURSES_ASSERTIONS")
 
 
 @allure.step("Check create course response")
@@ -25,6 +28,7 @@ def assert_create_course_response(request: CreateCourseRequestSchema, response: 
         AssertionError: Если поля курса или идентификаторы вложенных
             файла превью и автора не совпадают с данными запроса.
     """
+    logger.info("Check create course response")
     assert_equal(response.course.title, request.title, name="title")
     assert_equal(response.course.max_score, request.max_score, name="max_score")
     assert_equal(response.course.min_score, request.min_score, name="min_score")
@@ -48,6 +52,7 @@ def assert_update_course_response(request: UpdateCourseRequestSchema, response: 
     Raises:
         AssertionError: Если хотя бы одно переданное поле не обновилось.
     """
+    logger.info("Check update course response")
     for name, expected in request.model_dump(exclude_unset=True, by_alias=False).items():
         assert_equal(getattr(response.course, name), expected, name=name)
 
@@ -64,6 +69,7 @@ def assert_course(actual: CourseSchema, expected: CourseSchema) -> None:
         AssertionError: Если хотя бы одно поле курса или вложенных
             файла превью и автора не соответствует ожиданиям.
     """
+    logger.info("Check course")
     assert_equal(actual.id, expected.id, name="id")
     assert_equal(actual.title, expected.title, name="title")
     assert_equal(actual.max_score, expected.max_score, name="max_score")
@@ -90,6 +96,7 @@ def assert_get_courses_response(
         AssertionError: Если количество, порядок или данные курсов
             не соответствуют ожидаемым значениям.
     """
+    logger.info("Check get courses response")
     assert_lens(get_courses_response.courses, create_course_responses, name="courses")
 
     for index, create_course_response in enumerate(create_course_responses):

@@ -1,14 +1,17 @@
 """Настройки API-автотестов из окружения и локального файла .env."""
 
-from pydantic import Field, HttpUrl, field_validator
+from pathlib import Path
+from typing import Self
+
+from pydantic import AliasChoices, BaseModel, DirectoryPath, Field, FilePath, HttpUrl, field_validator
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-class Settings(BaseSettings):
-    """Настройки соединения с тестируемым API.
+class HTTPClientConfig(BaseSettings):
+    """Настройки HTTP-клиента.
 
     Attributes:
-        base_url: Адрес API из переменной API_BASE_URL.
+        url: Адрес API, совместимый с переменной API_BASE_URL.
         timeout: Положительный конечный таймаут HTTP-запросов в секундах.
     """
 
@@ -19,10 +22,18 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
-    base_url: HttpUrl = HttpUrl("http://localhost:8000")
+    url: HttpUrl = Field(
+        default=HttpUrl("http://localhost:8000"),
+        validation_alias=AliasChoices("url", "API_BASE_URL"),
+    )
     timeout: float = Field(default=100, gt=0, allow_inf_nan=False)
 
-    @field_validator("base_url")
+    @property
+    def client_url(self) -> str:
+        """Возвращает адрес API в строковом формате для HTTPX."""
+        return str(self.url)
+
+    @field_validator("url")
     @classmethod
     def validate_base_url(cls, value: HttpUrl) -> HttpUrl:
         """Отклоняет компоненты URL, мешающие присоединению пути запроса.
@@ -41,4 +52,46 @@ class Settings(BaseSettings):
         return value
 
 
-settings = Settings()
+class TestDataConfig(BaseModel):
+    """Пути к тестовым данным.
+
+    Attributes:
+        image_png_file: Существующий PNG-файл для загрузки через API.
+    """
+
+    image_png_file: FilePath = Field(default=Path("testdata/files/image.png"), validate_default=True)
+
+
+class Settings(BaseSettings):
+    """Настройки автотестов из окружения и файла .env.
+
+    Attributes:
+        http_client: Настройки соединения с API.
+        test_data: Пути к тестовым данным.
+        allure_results_dir: Каталог с результатами Allure.
+    """
+
+    model_config = SettingsConfigDict(
+        env_file=".env",
+        env_file_encoding="utf-8",
+        env_nested_delimiter=".",
+        extra="ignore",
+    )
+
+    http_client: HTTPClientConfig = Field(default_factory=HTTPClientConfig)
+    test_data: TestDataConfig = Field(default_factory=TestDataConfig)
+    allure_results_dir: DirectoryPath
+
+    @classmethod
+    def initialize(cls) -> Self:
+        """Создает каталог Allure и загружает настройки автотестов.
+
+        Returns:
+            Проверенные настройки автотестов.
+        """
+        allure_results_dir = Path("allure-results")
+        allure_results_dir.mkdir(exist_ok=True)
+        return cls(allure_results_dir=allure_results_dir)
+
+
+settings = Settings.initialize()

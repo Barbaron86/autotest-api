@@ -4,6 +4,7 @@ from httpx import Response
 from clients.api_client import ApiClient
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
 from clients.private_http_builder import AuthenticationUserSchema, get_private_http_client
+from tools.routes import APIRoutes
 
 
 class FilesClient(ApiClient):
@@ -19,10 +20,11 @@ class FilesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос загрузки файла.
         """
-        with open(request.upload_file, "rb") as upload_file:
-            return self.post(
-                "/api/v1/files", data=request.model_dump(exclude={"upload_file"}), files={"upload_file": upload_file}
-            )
+        return self.post(
+            APIRoutes.FILES,
+            data=request.model_dump(exclude={"upload_file"}),
+            files={"upload_file": request.upload_file.read_bytes()},
+        )
 
     def create_file(self, request: CreateFileRequestSchema) -> CreateFileResponseSchema:
         """Загружает файл.
@@ -48,7 +50,7 @@ class FilesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос получения файла.
         """
-        return self.get(f"/api/v1/files/{file_id}")
+        return self.get(f"{APIRoutes.FILES}/{file_id}")
 
     @allure.step("Delete file by id {file_id}")
     def delete_file_api(self, file_id: str) -> Response:
@@ -60,7 +62,7 @@ class FilesClient(ApiClient):
         Returns:
             HTTP-ответ API на запрос удаления файла.
         """
-        return self.delete(f"/api/v1/files/{file_id}")
+        return self.delete(f"{APIRoutes.FILES}/{file_id}")
 
 
 def get_files_client(user: AuthenticationUserSchema) -> FilesClient:
