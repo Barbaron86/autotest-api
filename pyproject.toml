@@ -13,7 +13,8 @@ dependencies = [
     "faker (>=40.40.0,<41.0.0)",
     "pytest (>=9.1.1,<10.0.0)",
     "pytest-rerunfailures (>=16.7,<17.0)",
-    "pydantic-settings (>=2.7,<3.0)"
+    "pydantic-settings (>=2.7,<3.0)",
+    "allure-pytest (>=2.16.2,<3.0.0)"
 ]
 
 
@@ -53,7 +54,7 @@ testpaths = ["tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
-addopts = "-s -v -ra --strict-config --strict-markers"
+addopts = "-s -v -ra --strict-config --strict-markers --alluredir=allure-results --clean-alluredir"
 markers = [
     "users: Маркировка для тестов, связанных с пользователями.",
     "authentication: Маркировка для тестов аутентификации.",

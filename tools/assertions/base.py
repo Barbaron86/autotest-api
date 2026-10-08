@@ -1,7 +1,10 @@
 from collections.abc import Sized
 from typing import Any
 
+import allure
 
+
+@allure.step("Check that response status code equals to {expected}")
 def assert_status_code(actual: int, expected: int) -> None:
     """Проверяет соответствие фактического HTTP-статуса ожидаемому.
 
@@ -15,6 +18,7 @@ def assert_status_code(actual: int, expected: int) -> None:
     assert actual == expected, f"Incorrect status code. Expected: {expected}. Actual: {actual}."
 
 
+@allure.step("Check that {name} equals to {expected}")
 def assert_equal(actual: Any, expected: Any, name: str) -> None:
     """Проверяет равенство фактического и ожидаемого значений.
 
@@ -29,6 +33,7 @@ def assert_equal(actual: Any, expected: Any, name: str) -> None:
     assert actual == expected, f"Incorrect value: {name}. Expected value: {expected!r}. Actual: {actual!r}."
 
 
+@allure.step("Check that {name} is true")
 def assert_is_true(actual: Any, name: str) -> None:
     """Проверяет, что фактическое значение является истинным.
 
@@ -53,6 +58,7 @@ def assert_lens(actual: Sized, expected: Sized, name: str) -> None:
     Raises:
         AssertionError: Если длины объектов не совпадают.
     """
-    assert len(actual) == len(expected), (
-        f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
-    )
+    with allure.step(f"Check that length of {name} equals to {len(expected)}"):
+        assert len(actual) == len(expected), (
+            f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
+        )

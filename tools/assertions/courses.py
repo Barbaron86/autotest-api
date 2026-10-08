@@ -1,3 +1,5 @@
+import allure
+
 from clients.courses.courses_schema import (
     CourseSchema,
     CreateCourseRequestSchema,
@@ -11,6 +13,7 @@ from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
 
 
+@allure.step("Check create course response")
 def assert_create_course_response(request: CreateCourseRequestSchema, response: CreateCourseResponseSchema) -> None:
     """Проверяет соответствие созданного курса исходному запросу.
 
@@ -31,6 +34,7 @@ def assert_create_course_response(request: CreateCourseRequestSchema, response: 
     assert_equal(response.course.created_by_user.id, request.created_by_user_id, name="created_by_user_id")
 
 
+@allure.step("Check update course response")
 def assert_update_course_response(request: UpdateCourseRequestSchema, response: UpdateCourseResponseSchema) -> None:
     """Проверяет соответствие обновленных полей курса запросу.
 
@@ -48,6 +52,7 @@ def assert_update_course_response(request: UpdateCourseRequestSchema, response: 
         assert_equal(getattr(response.course, name), expected, name=name)
 
 
+@allure.step("Check course")
 def assert_course(actual: CourseSchema, expected: CourseSchema) -> None:
     """Проверяет все поля курса, включая файл превью и автора.
 
@@ -69,6 +74,7 @@ def assert_course(actual: CourseSchema, expected: CourseSchema) -> None:
     assert_user(actual=actual.created_by_user, expected=expected.created_by_user)
 
 
+@allure.step("Check get courses response")
 def assert_get_courses_response(
     get_courses_response: GetCoursesResponseSchema,
     create_course_responses: list[CreateCourseResponseSchema],
