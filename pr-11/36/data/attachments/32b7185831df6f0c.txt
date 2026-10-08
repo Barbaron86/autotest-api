@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjMyOjUwLjIxMDYzNiIsInVzZXJfaWQiOiIyNmE3NmFjMy1jY2YxLTRlN2ItOTRkZi04MzE0NmVkY2RlNzkifQ.h2eHb8reHugWBwiULZzyRbS_hEtnZ-2qK0oHX8IKxEA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Счастье устройство казнь сынок угол спалить.","maxScore":97,"minScore":7,"description":"Оборот ставить прежний за руководитель возникновение сравнение белье. Основание рай способ обида боец иной серьезный через. Умирать мимо горький песня потрясти четко штаб зато.","estimatedTime":"10 weeks","previewFileId":"3f3bf8de-23b8-4335-ab6d-8aead3ed905c","createdByUserId":"26a76ac3-ccf1-4e7b-94df-83146edcde79"}'

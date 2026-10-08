@@ -1,0 +1,34 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make GET request to http://localhost:8001/api/v1/courses?userId=7171a960-0e5d-4a29-9d5e-dc04556877b5
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses?userId=7171a960-0e5d-4a29-9d5e-dc04556877b5
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:99 Check get courses response
+INFO     BASE_ASSERTIONS:base.py:69 Check that length of "courses" equals to 1
+INFO     COURSES_ASSERTIONS:courses.py:72 Check course
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to f23265e0-d7ea-4cf9-b301-39833e20500e
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Разнообразный нервно бригада зато провинция салон.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 91
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 8
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Горький спешить вывести терапия порог ручей демократия. Прелесть сравнение правление металл свежий рассуждение угодный низкий. Миф порядок холодно серьезный.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 10 weeks
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 091c304d-566e-464e-9908-f4be8861bf52
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/985e53db-d0b7-47af-a0f5-897f23d150d8.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to 985e53db-d0b7-47af-a0f5-897f23d150d8.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to 7171a960-0e5d-4a29-9d5e-dc04556877b5
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to oksanarodionova@example.net
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Суханов
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Платон
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Владиславович
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjMyOjUxLjM4OTI4MiIsInVzZXJfaWQiOiJhMWQxMjUxMC03NTI5LTQ1MjItOTBlZC0wMzY4NjU4MTUzNDUifQ.54My8YVHMkw-bVYm9n1YkpaL5lBJLn9_36g_M12MdUg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Головка изучить миг темнеть миллиард белье.","maxScore":67,"minScore":49,"description":"Ложиться даль пробовать валюта вскакивать кожа совещание покидать. Интернет космос опасность банк четыре. Дыхание изменение слишком сравнение роса печатать пространство.","estimatedTime":"8 weeks","previewFileId":"0e677f2e-b461-442f-982c-68fbec125250","createdByUserId":"a1d12510-7529-4522-90ed-036865815345"}'

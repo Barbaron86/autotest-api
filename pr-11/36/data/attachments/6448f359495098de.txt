@@ -1,0 +1,24 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/exercises
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/exercises
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     EXERCISES_ASSERTIONS:exercises.py:34 Check create exercise response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to За аллея наткнуться обида решетка естественный ученый.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Полоска увеличиваться грудь. Около головной смелый цель умирать растеряться прошептать. Подробность предоставить табак уточнить желание заявление.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "course_id" equals to 4490239c-2335-4869-814f-2aec9d8b0eb1
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 99
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 31
+INFO     BASE_ASSERTIONS:base.py:38 Check that "order_index" equals to 53
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 7 weeks
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

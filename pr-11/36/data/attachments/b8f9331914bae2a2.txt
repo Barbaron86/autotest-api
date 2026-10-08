@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA4VDIxOjMyOjUzLjcxNTc5NCIsInVzZXJfaWQiOiJkYjY5MGExYS0xODFlLTQ5Y2UtYjc3My1iY2FmNWNlMzliYjcifQ.vRKBkMfRTzU-Z3uWx7T-7nShq7nIjiZtnVzWKIwSCcY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Направо конференция художественный мягкий мелочь умирать поговорить.","maxScore":51,"minScore":27,"description":"Горький смелый картинка применяться фонарик пробовать запеть. Дурацкий единый место скрытый конференция написать граница сомнительный. Штаб прежде вздрогнуть вперед пламя научить правый пространство.","estimatedTime":"9 weeks","previewFileId":"c4a57231-342c-497b-8722-4fe2f0bc88f3","createdByUserId":"db690a1a-181e-49ce-b773-bcaf5ce39bb7"}'
