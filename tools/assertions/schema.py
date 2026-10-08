@@ -1,9 +1,11 @@
 from collections.abc import Mapping
 from typing import Any
 
+import allure
 from jsonschema import Draft202012Validator, validate
 
 
+@allure.step("Validate JSON schema")
 def validate_json_schema(
     instance: Any,
     schema: Mapping[str, Any],

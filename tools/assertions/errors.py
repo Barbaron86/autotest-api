@@ -1,7 +1,10 @@
+import allure
+
 from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema, ValidationErrorSchema
 from tools.assertions.base import assert_equal, assert_lens
 
 
+@allure.step("Check validation error")
 def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationErrorSchema) -> None:
     """Проверяет соответствие ошибки валидации ожидаемой.
 
@@ -19,6 +22,7 @@ def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationE
     assert_equal(actual.location, expected.location, name="location")
 
 
+@allure.step("Check validation error response")
 def assert_validation_error_response(
     actual: ValidationErrorResponseSchema,
     expected: ValidationErrorResponseSchema,
@@ -38,6 +42,7 @@ def assert_validation_error_response(
         assert_validation_error(actual=actual.detail[index], expected=detail)
 
 
+@allure.step("Check internal error response")
 def assert_internal_error_response(
     actual: InternalErrorResponseSchema,
     expected: InternalErrorResponseSchema,

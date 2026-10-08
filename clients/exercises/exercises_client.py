@@ -1,3 +1,4 @@
+import allure
 from httpx import Response
 
 from clients.api_client import ApiClient
@@ -16,6 +17,7 @@ from clients.private_http_builder import AuthenticationUserSchema, get_private_h
 class ExercisesClient(ApiClient):
     """API-клиент для работы с упражнениями."""
 
+    @allure.step("Get exercises")
     def get_exercises_api(self, query: GetExercisesRequestSchema) -> Response:
         """Выполняет запрос на получение списка упражнений.
 
@@ -27,6 +29,7 @@ class ExercisesClient(ApiClient):
         """
         return self.get("/api/v1/exercises", params=query.model_dump())
 
+    @allure.step("Get exercises with validated response")
     def get_exercises(self, query: GetExercisesRequestSchema) -> GetExercisesResponseSchema:
         """Получает список упражнений.
 
@@ -40,6 +43,7 @@ class ExercisesClient(ApiClient):
         response.raise_for_status()
         return GetExercisesResponseSchema.model_validate_json(response.text)
 
+    @allure.step("Create exercise")
     def create_exercise_api(self, request: CreateExerciseRequestSchema) -> Response:
         """Выполняет запрос на создание упражнения.
 
@@ -51,6 +55,7 @@ class ExercisesClient(ApiClient):
         """
         return self.post("/api/v1/exercises", json=request.model_dump())
 
+    @allure.step("Create exercise with validated response")
     def create_exercise(self, request: CreateExerciseRequestSchema) -> CreateExerciseResponseSchema:
         """Создает упражнение.
 
@@ -64,6 +69,7 @@ class ExercisesClient(ApiClient):
         response.raise_for_status()
         return CreateExerciseResponseSchema.model_validate_json(response.text)
 
+    @allure.step("Get exercise by id {exercise_id}")
     def get_exercise_api(self, exercise_id: str) -> Response:
         """Выполняет запрос на получение упражнения.
 
@@ -75,6 +81,7 @@ class ExercisesClient(ApiClient):
         """
         return self.get(f"/api/v1/exercises/{exercise_id}")
 
+    @allure.step("Get exercise by id {exercise_id} with validated response")
     def get_exercise(self, exercise_id: str) -> GetExerciseResponseSchema:
         """Получает упражнение.
 
@@ -88,6 +95,7 @@ class ExercisesClient(ApiClient):
         response.raise_for_status()
         return GetExerciseResponseSchema.model_validate_json(response.text)
 
+    @allure.step("Update exercise by id {exercise_id}")
     def update_exercise_api(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> Response:
         """Выполняет запрос на обновление упражнения.
 
@@ -100,6 +108,7 @@ class ExercisesClient(ApiClient):
         """
         return self.patch(f"/api/v1/exercises/{exercise_id}", json=request.model_dump(exclude_unset=True))
 
+    @allure.step("Update exercise by id {exercise_id} with validated response")
     def update_exercise(self, exercise_id: str, request: UpdateExerciseRequestSchema) -> UpdateExerciseResponseSchema:
         """Обновляет упражнение.
 
@@ -114,6 +123,7 @@ class ExercisesClient(ApiClient):
         response.raise_for_status()
         return UpdateExerciseResponseSchema.model_validate_json(response.text)
 
+    @allure.step("Delete exercise by id {exercise_id}")
     def delete_exercise_api(self, exercise_id: str) -> Response:
         """Выполняет запрос на удаление упражнения.
 
@@ -125,6 +135,7 @@ class ExercisesClient(ApiClient):
         """
         return self.delete(f"/api/v1/exercises/{exercise_id}")
 
+    @allure.step("Delete exercise by id {exercise_id} and check status")
     def delete_exercise(self, exercise_id: str) -> None:
         """Удаляет упражнение.
 

@@ -1,0 +1,18 @@
+from enum import StrEnum
+
+
+class AllureTag(StrEnum):
+    """Единые теги для фильтрации тестов в Allure-отчете."""
+
+    USERS = "USERS"
+    FILES = "FILES"
+    COURSES = "COURSES"
+    EXERCISES = "EXERCISES"
+    REGRESSION = "REGRESSION"
+    AUTHENTICATION = "AUTHENTICATION"
+    GET_ENTITY = "GET_ENTITY"
+    GET_ENTITIES = "GET_ENTITIES"
+    CREATE_ENTITY = "CREATE_ENTITY"
+    UPDATE_ENTITY = "UPDATE_ENTITY"
+    DELETE_ENTITY = "DELETE_ENTITY"
+    VALIDATE_ENTITY = "VALIDATE_ENTITY"

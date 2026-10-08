@@ -1,7 +1,10 @@
+import allure
+
 from clients.authentication.authentication_schema import LoginResponseSchema
 from tools.assertions.base import assert_equal, assert_is_true
 
 
+@allure.step("Check login response")
 def assert_login_response(response: LoginResponseSchema) -> None:
     """Проверяет токены в ответе при успешной аутентификации.
 
