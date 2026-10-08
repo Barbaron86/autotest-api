@@ -22,5 +22,11 @@ artifacts/
 allure-results/
 allure-report/
 
+# Swagger Coverage
+coverage-results/
+coverage.html
+coverage-report.json
+coverage-history.json
+
 
 

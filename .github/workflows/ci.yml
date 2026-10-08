@@ -77,6 +77,11 @@ jobs:
       API_TIMEOUT: "10"
       COMPOSE_PROJECT_NAME: api-ci-${{ github.run_id }}-${{ github.run_attempt }}
       TEST_SUITE: ${{ inputs.test-suite || 'regression' }}
+      SWAGGER_COVERAGE_SERVICES: >-
+        [{"key":"api-course","name":"API Course","tags":["API","COURSES"],
+          "repository":"https://github.com/Nikita-Filonov/qa-automation-engineer-api-course",
+          "swagger_url":"http://localhost:8001/openapi.json"}]
+      SWAGGER_COVERAGE_HTML_REPORT_FILE: ./coverage.html
 
     steps:
       - name: Check out repository
@@ -93,9 +98,68 @@ jobs:
           mkdir -p artifacts
           docker compose up --build --wait --wait-timeout 90
 
+      - name: Restore Coverage history
+        uses: actions/cache/restore@v6.1.0
+        with:
+          path: coverage-history.json
+          key: coverage-history-${{ runner.os }}-${{ github.ref }}-${{ env.TEST_SUITE }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            coverage-history-${{ runner.os }}-${{ github.ref }}-${{ env.TEST_SUITE }}-
+
+      - name: Clear previous Coverage results
+        run: poetry run swagger-coverage-tool clear-results
+
       - name: Run selected API tests
         id: api_tests
         run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2
+
+      - name: Check Coverage results
+        id: coverage_results
+        if: ${{ !cancelled() }}
+        run: |
+          if compgen -G "coverage-results/*.json" > /dev/null; then
+            echo "available=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "available=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Generate Coverage report
+        id: coverage_report
+        if: ${{ !cancelled() && steps.api_start.outcome == 'success' && steps.coverage_results.outputs.available == 'true' }}
+        run: |
+          poetry run swagger-coverage-tool save-report
+          test -s coverage.html
+          test -s coverage-report.json
+          test -s coverage-history.json
+
+      - name: Cache Coverage history
+        if: ${{ !cancelled() && steps.coverage_report.outcome == 'success' }}
+        uses: actions/cache/save@v6.1.0
+        with:
+          path: coverage-history.json
+          key: coverage-history-${{ runner.os }}-${{ github.ref }}-${{ env.TEST_SUITE }}-${{ github.run_id }}-${{ github.run_attempt }}
+
+      - name: Upload Coverage report
+        if: ${{ !cancelled() && steps.coverage_report.outcome == 'success' }}
+        uses: actions/upload-artifact@v7.0.2
+        with:
+          name: coverage-report
+          path: |
+            coverage.html
+            coverage-report.json
+            coverage-history.json
+          if-no-files-found: error
+          retention-days: 14
+
+      - name: Add Coverage report link to workflow summary
+        if: ${{ !cancelled() && steps.coverage_report.outcome == 'success' }}
+        run: |
+          {
+            echo "## Swagger Coverage"
+            echo
+            echo "Download the coverage-report artifact and open coverage.html."
+            echo "[Workflow artifacts]($GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID#artifacts)"
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Check Allure results
         id: allure_results
