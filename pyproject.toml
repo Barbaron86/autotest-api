@@ -16,7 +16,8 @@ dependencies = [
     "pydantic-settings (>=2.7,<3.0)",
     "allure-pytest (>=2.16.2,<3.0.0)",
     "pytest-xdist (>=3.8.0,<4.0.0)",
-    "swagger-coverage-tool (==0.34.0)"
+    "swagger-coverage-tool (==0.34.0)",
+    "loguru (>=0.7.3,<0.8.0)"
 ]
 
 
@@ -56,7 +57,7 @@ testpaths = ["tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
-addopts = "-s -v -ra --strict-config --strict-markers --alluredir=allure-results --clean-alluredir"
+addopts = "--capture=sys -v -raP --strict-config --strict-markers --alluredir=allure-results --clean-alluredir"
 markers = [
     "users: Маркировка для тестов, связанных с пользователями.",
     "authentication: Маркировка для тестов аутентификации.",

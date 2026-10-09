@@ -1,10 +1,8 @@
 import allure
 from httpx import Request, Response
+from loguru import logger
 
 from tools.http.curl import make_curl_from_request
-from tools.logger import get_logger
-
-logger = get_logger("HTTP_CLIENT")
 
 
 def curl_event_hook(request: Request) -> None:
@@ -26,7 +24,8 @@ def log_request_event_hook(request: Request) -> None:
     Args:
         request: Подготовленный запрос HTTPX.
     """
-    logger.info("Make %s request to %s", request.method, request.url)
+    url = request.url.copy_with(username=None, password=None, query=None, fragment=None)
+    logger.info("→ {} {}", request.method, url)
 
 
 def log_response_event_hook(response: Response) -> None:
@@ -35,4 +34,10 @@ def log_response_event_hook(response: Response) -> None:
     Args:
         response: Ответ HTTPX.
     """
-    logger.info("Got response %s %s from %s", response.status_code, response.reason_phrase, response.url)
+    logger.info(
+        "← {} {} {} {}",
+        response.status_code,
+        response.reason_phrase,
+        response.request.method,
+        response.url.path,
+    )

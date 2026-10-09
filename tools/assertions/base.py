@@ -2,10 +2,7 @@ from collections.abc import Sized
 from typing import Any
 
 import allure
-
-from tools.logger import get_logger
-
-logger = get_logger("BASE_ASSERTIONS")
+from loguru import logger
 
 
 @allure.step("Check that response status code equals to {expected}")
@@ -19,8 +16,12 @@ def assert_status_code(actual: int, expected: int) -> None:
     Raises:
         AssertionError: Если фактический статус не совпадает с ожидаемым.
     """
-    logger.info("Check that response status code equals to %s", expected)
-    assert actual == expected, f"Incorrect status code. Expected: {expected}. Actual: {actual}."
+    logger.debug("Check that response status code equals to {}", expected)
+    try:
+        assert actual == expected, f"Incorrect status code. Expected: {expected}. Actual: {actual}."
+    except AssertionError:
+        logger.error("✖ Incorrect status code. Expected: {}. Actual: {}.", expected, actual)
+        raise
 
 
 @allure.step("Check that {name} equals to {expected}")
@@ -35,8 +36,12 @@ def assert_equal(actual: Any, expected: Any, name: str) -> None:
     Raises:
         AssertionError: Если фактическое значение не совпадает с ожидаемым.
     """
-    logger.info('Check that "%s" equals to %s', name, expected)
-    assert actual == expected, f"Incorrect value: {name}. Expected value: {expected!r}. Actual: {actual!r}."
+    logger.debug('Check equality of "{}"', name)
+    try:
+        assert actual == expected, f"Incorrect value: {name}. Expected value: {expected!r}. Actual: {actual!r}."
+    except AssertionError:
+        logger.error('✖ Incorrect value: "{}".', name)
+        raise
 
 
 @allure.step("Check that {name} is true")
@@ -50,8 +55,12 @@ def assert_is_true(actual: Any, name: str) -> None:
     Raises:
         AssertionError: Если фактическое значение ложно.
     """
-    logger.info('Check that "%s" is true', name)
-    assert actual, f"Incorrect value: {name}. Expected truthy value, got: {actual!r}."
+    logger.debug('Check that "{}" is true', name)
+    try:
+        assert actual, f"Incorrect value: {name}. Expected truthy value, got: {actual!r}."
+    except AssertionError:
+        logger.error('✖ Expected truthy value: "{}".', name)
+        raise
 
 
 def assert_lens(actual: Sized, expected: Sized, name: str) -> None:
@@ -66,7 +75,11 @@ def assert_lens(actual: Sized, expected: Sized, name: str) -> None:
         AssertionError: Если длины объектов не совпадают.
     """
     with allure.step(f"Check that length of {name} equals to {len(expected)}"):
-        logger.info('Check that length of "%s" equals to %s', name, len(expected))
-        assert len(actual) == len(expected), (
-            f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
-        )
+        logger.debug('Check that length of "{}" equals to {}', name, len(expected))
+        try:
+            assert len(actual) == len(expected), (
+                f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
+            )
+        except AssertionError:
+            logger.error('✖ Incorrect object length: "{}".', name)
+            raise

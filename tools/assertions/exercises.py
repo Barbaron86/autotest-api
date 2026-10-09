@@ -1,4 +1,5 @@
 import allure
+from loguru import logger
 
 from clients.error_schema import InternalErrorResponseSchema
 from clients.exercises.exercises_schema import (
@@ -12,9 +13,6 @@ from clients.exercises.exercises_schema import (
 )
 from tools.assertions.base import assert_equal, assert_lens
 from tools.assertions.errors import assert_internal_error_response
-from tools.logger import get_logger
-
-logger = get_logger("EXERCISES_ASSERTIONS")
 
 
 @allure.step("Check create exercise response")
@@ -31,7 +29,7 @@ def assert_create_exercise_response(
         AssertionError: Если хотя бы одно поле задания не совпадает
             с данными запроса.
     """
-    logger.info("Check create exercise response")
+    logger.info("🔎 Check create exercise response")
     assert_equal(response.exercise.title, request.title, name="title")
     assert_equal(response.exercise.description, request.description, name="description")
     assert_equal(response.exercise.course_id, request.course_id, name="course_id")
@@ -52,7 +50,7 @@ def assert_exercise(actual: ExerciseSchema, expected: ExerciseSchema) -> None:
     Raises:
         AssertionError: Если хотя бы одно поле задания не совпадает.
     """
-    logger.info("Check exercise")
+    logger.info("🔎 Check exercise")
     assert_equal(actual.id, expected.id, name="id")
     assert_equal(actual.title, expected.title, name="title")
     assert_equal(actual.description, expected.description, name="description")
@@ -78,7 +76,7 @@ def assert_get_exercise_response(
         AssertionError: Если данные полученного задания не совпадают
             с данными созданного задания.
     """
-    logger.info("Check get exercise response")
+    logger.info("🔎 Check get exercise response")
     assert_exercise(actual=get_exercise_response.exercise, expected=create_exercise_response.exercise)
 
 
@@ -99,7 +97,7 @@ def assert_update_exercise_response(
     Raises:
         AssertionError: Если хотя бы одно переданное поле не обновилось.
     """
-    logger.info("Check update exercise response")
+    logger.info("🔎 Check update exercise response")
     for name, expected in request.model_dump(exclude_unset=True, by_alias=False).items():
         assert_equal(getattr(response.exercise, name), expected, name=name)
 
@@ -114,7 +112,7 @@ def assert_exercise_not_found_response(actual: InternalErrorResponseSchema) -> N
     Raises:
         AssertionError: Если ответ не содержит сообщение «Exercise not found».
     """
-    logger.info("Check exercise not found response")
+    logger.info("🔎 Check exercise not found response")
     expected = InternalErrorResponseSchema(detail="Exercise not found")
     assert_internal_error_response(actual=actual, expected=expected)
 
@@ -135,7 +133,7 @@ def assert_get_exercises_response(
         AssertionError: Если количество, порядок или данные заданий
             не соответствуют ожидаемым значениям.
     """
-    logger.info("Check get exercises response")
+    logger.info("🔎 Check get exercises response")
     assert_lens(get_exercises_response.exercises, create_exercise_responses, name="exercises")
 
     for index, create_exercise_response in enumerate(create_exercise_responses):
