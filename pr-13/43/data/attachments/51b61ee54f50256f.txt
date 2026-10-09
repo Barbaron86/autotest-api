@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjQ5LjU1NzU4NyIsInVzZXJfaWQiOiJjYmVlZDEyZi01MDczLTQ5YmUtOTM1MC03Y2I1YmYyOTNmYTEifQ.ClNgyxm5i0vTcfWt6wVKLM0L6bMxgx7aVO-ti9R_vS8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Чувство мучительно выгнать написать.","maxScore":91,"minScore":35,"description":"Направо ярко порт написать тяжелый. Роскошный сверкающий поймать конференция банк.\nВыдержать умирать правый дыхание. Сравнение засунуть назначить четыре лететь даль полевой.","estimatedTime":"6 weeks","previewFileId":"c7ff3e94-b621-4259-85ed-d1053997f0d9","createdByUserId":"cbeed12f-5073-49be-9350-7cb5bf293fa1"}'

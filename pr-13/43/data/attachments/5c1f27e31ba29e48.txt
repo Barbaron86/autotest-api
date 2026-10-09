@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjUyLjk1ODc4MiIsInVzZXJfaWQiOiI2YTg4N2RkNC01ZGE5LTQ3ZjEtYTVmMC0xNWZiOTgyOGY1M2YifQ.rc29ZzM1Ej6-ZJFFmhvMW1APwI1W8YUvvQzi1YbjDZM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тревога вчера механический невозможно терапия жестокий костер пол.","maxScore":91,"minScore":42,"description":"Появление решение опасность сынок. Дурацкий металл покинуть адвокат.\nВолк мотоцикл пробовать мусор дурацкий степь.","estimatedTime":"2 weeks","previewFileId":"61ac71f8-ce38-4b98-9456-81dcd6923759","createdByUserId":"6a887dd4-5da9-47f1-a5f0-15fb9828f53f"}'

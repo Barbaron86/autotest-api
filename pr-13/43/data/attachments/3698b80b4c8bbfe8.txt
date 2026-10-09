@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjQ4LjY2NDUwNyIsInVzZXJfaWQiOiI3ZThlOWZlMC1jYTQ1LTRkMGUtYTc3ZS05M2IyZWFkYjYyOTEifQ.cVrqlKaSWPKKUokfl97h5XSGJ3J8yKmjvta6hpYsgLQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Карман правление строительство назначить.","maxScore":94,"minScore":29,"description":"Назначить сверкать палата наступать. Наслаждение конструкция настать кидать правильный подробность.\nБровь аж приятель более интернет налево провинция. Очередной рот возмутиться аж горький девка.","estimatedTime":"10 weeks","previewFileId":"488eff4e-0875-495b-afdd-4d3882e4f53f","createdByUserId":"7e8e9fe0-ca45-4d0e-a77e-93b2eadb6291"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjUwLjY4NjAzNiIsInVzZXJfaWQiOiJhMzdkMzUyNy1jNzE0LTQ3MTItYTgzYy1mYmUwZWI1YjRmY2MifQ.NWJ7VgaTDxDXoYcdUs9DcwOXpvNEeVlMok06Cesq06U' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Встать мелочь счастье написать социалистический.","maxScore":98,"minScore":20,"description":"Вздрагивать художественный болото магазин. Премьера выражение уточнить прежний грустный. Засунуть медицина да плод результат.","estimatedTime":"10 weeks","previewFileId":"c1b29ca8-ed4d-4c0f-919e-8a5806f1f107","createdByUserId":"a37d3527-c714-4712-a83c-fbe0eb5b4fcc"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjU1LjI1NTA0OCIsInVzZXJfaWQiOiIwNTZhOTJiMy01NjFhLTRlZWItODAwMS0wYjQ5ZjkwYzQ4NTgifQ.qOMG1rLfR1JCM5Se2UUgPxU27g847XsbGr75K38OOTE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Солнце направо прежний некоторый жидкий при.","maxScore":76,"minScore":11,"description":"Расстегнуть роскошный вряд. Протягивать дремать равнодушный разнообразный. Миф пропадать зачем какой пропаганда расстегнуть поговорить невыносимый.","estimatedTime":"4 weeks","previewFileId":"3c24f041-5305-41d2-94a0-5491070d29c6","createdByUserId":"056a92b3-561a-4eeb-8001-0b49f90c4858"}'

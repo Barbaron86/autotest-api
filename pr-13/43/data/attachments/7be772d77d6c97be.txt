@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/09f1eb39-7e50-4185-bc7a-4e607662fa4e \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE5OjQ2OjQ3Ljg0NzMwOSIsInVzZXJfaWQiOiI4Nzg1ZDI4OS0xOTYzLTQyYmItOThiZS00ODlhMTBhMDI2NTcifQ.SCidCqJnyIHlc7nYw_1TPSQcYbO0nGsS2JcSW98BqgU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ребятишки налево приятель засунуть. (обновлено)","maxScore":66,"minScore":48,"description":"Вскинуть неправда полностью появление виднеться подземный. Да возмутиться дружно легко угол.\nОбновленное описание.","estimatedTime":"7 weeks (обновлено)"}'
