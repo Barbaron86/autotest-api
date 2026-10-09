@@ -19,25 +19,26 @@ def curl_event_hook(request: Request) -> None:
 
 
 def log_request_event_hook(request: Request) -> None:
-    """Записывает метод и адрес отправляемого HTTP-запроса.
+    """Записывает метод и URL запроса с query-параметрами.
 
     Args:
         request: Подготовленный запрос HTTPX.
     """
-    url = request.url.copy_with(username=None, password=None, query=None, fragment=None)
+    url = request.url.copy_with(username=None, password=None, fragment=None)
     logger.info("→ {} {}", request.method, url)
 
 
 def log_response_event_hook(response: Response) -> None:
-    """Записывает статус и адрес полученного HTTP-ответа.
+    """Записывает статус, метод и URL ответа с query-параметрами.
 
     Args:
         response: Ответ HTTPX.
     """
+    url = response.url.copy_with(username=None, password=None, fragment=None)
     logger.info(
         "← {} {} {} {}",
         response.status_code,
         response.reason_phrase,
         response.request.method,
-        response.url.path,
+        url,
     )

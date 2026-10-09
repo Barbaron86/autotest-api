@@ -57,7 +57,7 @@ testpaths = ["tests"]
 python_files = "test_*.py"
 python_classes = "Test*"
 python_functions = "test_*"
-addopts = "--capture=sys -v -raP --strict-config --strict-markers --alluredir=allure-results --clean-alluredir"
+addopts = "-s -v -ra --strict-config --strict-markers --alluredir=allure-results --clean-alluredir"
 markers = [
     "users: Маркировка для тестов, связанных с пользователями.",
     "authentication: Маркировка для тестов аутентификации.",

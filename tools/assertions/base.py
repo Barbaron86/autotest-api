@@ -80,6 +80,6 @@ def assert_lens(actual: Sized, expected: Sized, name: str) -> None:
             assert len(actual) == len(expected), (
                 f"Incorrect object length: '{name}'. Expected length: {len(expected)}. Actual: {len(actual)}."
             )
-        except AssertionError:
-            logger.error('✖ Incorrect object length: "{}".', name)
+        except AssertionError as error:
+            logger.error("✖ {}", error)
             raise

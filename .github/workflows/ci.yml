@@ -120,7 +120,7 @@ jobs:
         id: api_tests
         env:
           LOGURU_COLORIZE: "True"
-        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2
+        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2 --capture=sys -raP
 
       - name: Check Swagger Coverage results
         id: coverage_results
