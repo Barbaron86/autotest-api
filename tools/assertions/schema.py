@@ -3,10 +3,8 @@ from typing import Any
 
 import allure
 from jsonschema import Draft202012Validator, validate
-
-from tools.logger import get_logger
-
-logger = get_logger("SCHEMA_ASSERTIONS")
+from jsonschema.exceptions import SchemaError, ValidationError
+from loguru import logger
 
 
 @allure.step("Validate JSON schema")
@@ -29,10 +27,14 @@ def validate_json_schema(
         jsonschema.exceptions.SchemaError:
             Если переданная JSON Schema некорректна.
     """
-    logger.info("Validate JSON schema")
-    validate(
-        instance=instance,
-        schema=schema,
-        cls=Draft202012Validator,
-        format_checker=Draft202012Validator.FORMAT_CHECKER,
-    )
+    logger.info("🔎 Validate JSON schema")
+    try:
+        validate(
+            instance=instance,
+            schema=schema,
+            cls=Draft202012Validator,
+            format_checker=Draft202012Validator.FORMAT_CHECKER,
+        )
+    except (ValidationError, SchemaError):
+        logger.error("✖ JSON schema validation failed.")
+        raise

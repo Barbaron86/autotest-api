@@ -1,10 +1,8 @@
 import allure
+from loguru import logger
 
 from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema, ValidationErrorSchema
 from tools.assertions.base import assert_equal, assert_lens
-from tools.logger import get_logger
-
-logger = get_logger("ERRORS_ASSERTIONS")
 
 
 @allure.step("Check validation error")
@@ -18,7 +16,7 @@ def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationE
     Raises:
         AssertionError: Если хотя бы одно поле ошибки не совпадает.
     """
-    logger.info("Check validation error")
+    logger.info("🔎 Check validation error")
     assert_equal(actual.type, expected.type, name="type")
     assert_equal(actual.input, expected.input, name="input")
     assert_equal(actual.context, expected.context, name="context")
@@ -40,7 +38,7 @@ def assert_validation_error_response(
     Raises:
         AssertionError: Если количество, порядок или поля ошибок не совпадают.
     """
-    logger.info("Check validation error response")
+    logger.info("🔎 Check validation error response")
     assert_lens(actual.detail, expected.detail, "details")
 
     for index, detail in enumerate(expected.detail):
@@ -61,5 +59,5 @@ def assert_internal_error_response(
     Raises:
         AssertionError: Если сообщения об ошибке не совпадают.
     """
-    logger.info("Check internal error response")
+    logger.info("🔎 Check internal error response")
     assert_equal(actual.detail, expected.detail, name="detail")

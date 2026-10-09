@@ -118,7 +118,9 @@ jobs:
 
       - name: Run selected API tests
         id: api_tests
-        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2
+        env:
+          LOGURU_COLORIZE: "True"
+        run: poetry run pytest -m "$TEST_SUITE" --numprocesses=2 --capture=sys -raP
 
       - name: Check Swagger Coverage results
         id: coverage_results
