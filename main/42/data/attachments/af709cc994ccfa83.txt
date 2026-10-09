@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjIxLjcyMTIzNCIsInVzZXJfaWQiOiIzYzYwOGMzMi0wNzBlLTRkYzAtYTkyNC03OWViNzcyMjAxMTcifQ.-IWeAKttnMyhktOly_LXX8IcYI--rAoFlE2UuRQkRhY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Порода доставать ученый оборот доставать.","maxScore":64,"minScore":38,"description":"Неожиданный второй упор торговля совет багровый соответствие лететь. Поговорить миллиард бровь выражение потрясти находить райком. Холодно кожа совет дружно рай пропадать нажать.","estimatedTime":"9 weeks","previewFileId":"d16712f1-10a3-4ebe-afa2-98e6a01ecaf9","createdByUserId":"3c608c32-070e-4dc0-a924-79eb77220117"}'

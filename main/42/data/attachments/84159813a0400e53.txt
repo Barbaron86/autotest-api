@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/24840176-e104-4e0d-9f21-5e911fc78336 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE4LjY3MTA3NiIsInVzZXJfaWQiOiI1Y2E5NTkxNC02OWVmLTRjMzAtYmM2My05OWNiYWNhZTFhZWYifQ.NtmE6ahWKQpWym48NiT0XXf0LPkuNiSm_e7UskhVrtY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Развитый вообще сверкающий дыхание серьезный желание функция. (обновлено)","description":"Носок недостаток построить кузнец. Одиннадцать более степь один набор задрать порт блин.\nОбновленное описание.","maxScore":89,"minScore":49,"orderIndex":22,"estimatedTime":"10 weeks (обновлено)"}'

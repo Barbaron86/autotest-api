@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjIxLjQ4MTc4NiIsInVzZXJfaWQiOiI4N2M1YTEzNy1lYzUzLTRhN2UtOTAxZi03YTBkMDAwMzQyNTQifQ.0zYBiufyJ1mkWZAAu_-cn_7LVlDTHXurt2KYu6rDV5I' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Указанный хлеб солнце руководитель ведь ботинок да увеличиваться.","maxScore":97,"minScore":31,"description":"Вариант ученый космос граница. Цепочка рабочий носок солнце песенка. Запеть сохранять задрать бочок.\nОдин князь исследование палка аллея банда. Зачем строительство находить вообще.","estimatedTime":"3 weeks","previewFileId":"f48bf279-694e-4f9c-82f3-7c5263edb335","createdByUserId":"87c5a137-ec53-4a7e-901f-7a0d00034254"}'

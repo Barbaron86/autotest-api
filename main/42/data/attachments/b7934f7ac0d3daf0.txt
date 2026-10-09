@@ -1,0 +1,34 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make GET request to http://localhost:8001/api/v1/courses?userId=b567b182-39ff-45f8-9728-da11dbe89660
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses?userId=b567b182-39ff-45f8-9728-da11dbe89660
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:99 Check get courses response
+INFO     BASE_ASSERTIONS:base.py:69 Check that length of "courses" equals to 1
+INFO     COURSES_ASSERTIONS:courses.py:72 Check course
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 5a9fd091-b615-4d78-a8da-49cce54c8b93
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Рай гулять пересечь рай валюта секунда.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 69
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 9
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Умирать самостоятельно пропасть кольцо господь войти. Ленинград белье очередной пол.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 8 weeks
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to a5b5f27d-1512-41a4-a210-779b13ab5cbf
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/ad54a019-05c6-4ed3-9018-5e7f4c175246.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to ad54a019-05c6-4ed3-9018-5e7f4c175246.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to b567b182-39ff-45f8-9728-da11dbe89660
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to martin_2022@example.com
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Власов
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Гурий
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Аверьянович
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

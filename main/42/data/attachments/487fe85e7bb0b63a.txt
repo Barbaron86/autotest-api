@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE2LjA0NTY3NiIsInVzZXJfaWQiOiIyMzI3YTUwNS01YzM2LTRjN2QtOGE2NC1kMjE3NmVmZDAzZmQifQ.Hc-NLlHhHPjJ2fGsUUBaFsgdqTbVwpVxvxF4ORhRUs8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Другой выраженный аллея аж командование.","maxScore":62,"minScore":36,"description":"Металл боец новый выбирать порядок разнообразный сынок предоставить. Господь ход перебивать посвятить ломать. Поезд тысяча потрясти мрачно командующий задержать.","estimatedTime":"1 weeks","previewFileId":"72fe9bd4-c60a-4108-bc74-5f7961ad22d6","createdByUserId":"2327a505-5c36-4c7d-8a64-d2176efd03fd"}'

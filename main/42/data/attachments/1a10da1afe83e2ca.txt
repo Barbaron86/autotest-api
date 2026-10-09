@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/0ea4d1b9-bcc0-43a8-95a1-151c3f7c347e \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE1LjMxMjgwMiIsInVzZXJfaWQiOiJhZDFmYWRiOC00MTViLTQ0YWQtOGUxOC01N2UzYmFlNDU0MmIifQ.8S-LhiXAsINvuT2J4EKFwxpFFxanxfWzNiWBBh6cnsk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Научить аж шлем сынок. (обновлено)","maxScore":79,"minScore":6,"description":"Заработать засунуть выраженный неправда. Находить вперед очко жестокий изменение сверкающий. Желание разнообразный магазин дремать устройство манера добиться.\nОбновленное описание.","estimatedTime":"10 weeks (обновлено)"}'

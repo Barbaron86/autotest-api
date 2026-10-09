@@ -1,0 +1,31 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:31 Check create course response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Другой выраженный аллея аж командование.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 62
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 36
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Металл боец новый выбирать порядок разнообразный сынок предоставить. Господь ход перебивать посвятить ломать. Поезд тысяча потрясти мрачно командующий задержать.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 1 weeks
+INFO     BASE_ASSERTIONS:base.py:38 Check that "preview_file_id" equals to 72fe9bd4-c60a-4108-bc74-5f7961ad22d6
+INFO     BASE_ASSERTIONS:base.py:38 Check that "created_by_user_id" equals to 2327a505-5c36-4c7d-8a64-d2176efd03fd
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 72fe9bd4-c60a-4108-bc74-5f7961ad22d6
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/c409dced-526a-42d5-8fae-a4dfaf3ae1b6.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to c409dced-526a-42d5-8fae-a4dfaf3ae1b6.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to 2327a505-5c36-4c7d-8a64-d2176efd03fd
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to artemimakarov@example.org
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Степанова
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Святослав
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Георгиевич
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

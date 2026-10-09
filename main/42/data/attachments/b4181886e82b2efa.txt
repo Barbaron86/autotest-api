@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE5LjkyOTMzMyIsInVzZXJfaWQiOiJlN2IzNTgwZi01MWZmLTRmNGUtOTU1Yi1mNzE2Njg3YmRkMWYifQ.W35azejjsqQ9soLnNvm6DczGsQUDORDj7-z2ixze_5k' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дыхание слишком намерение выражаться дрогнуть желание мелькнуть.","maxScore":100,"minScore":0,"description":"Задержать ленинград развитый легко тута. Тесно деловой свежий горький необычный висеть. Применяться вперед устройство самостоятельно ложиться выразить запретить. Рай мрачно возникновение.","estimatedTime":"9 weeks","previewFileId":"0928c75a-8adf-4b51-b4ac-ea4dd8b9b55b","createdByUserId":"e7b3580f-51ff-4f4e-955b-f716687bdd1f"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE5LjE4OTM5MyIsInVzZXJfaWQiOiI1Y2E5NTkxNC02OWVmLTRjMzAtYmM2My05OWNiYWNhZTFhZWYifQ.02wCliCgbWOJ1XUKhG2QEXV3RySvx0s-jh6Il9_DrQg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Плавно торопливый вывести редактор.","maxScore":99,"minScore":21,"description":"Пробовать жидкий смелый трубка зима граница. Столетие спасть терапия. Упор увеличиваться бетонный степь мусор.","estimatedTime":"5 weeks","previewFileId":"b8e8fc3a-a092-4aec-8437-f8c23b6a2a2b","createdByUserId":"5ca95914-69ef-4c30-bc63-99cbacae1aef"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE2LjgyNDMxNSIsInVzZXJfaWQiOiJiNTY3YjE4Mi0zOWZmLTQ1ZjgtOTcyOC1kYTExZGJlODk2NjAifQ.ag3eziD0WgU_gFrH5vDJ4Ht49bYrS45W6C_NMFvXEOg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Рай гулять пересечь рай валюта секунда.","maxScore":69,"minScore":9,"description":"Умирать самостоятельно пропасть кольцо господь войти. Ленинград белье очередной пол.","estimatedTime":"8 weeks","previewFileId":"a5b5f27d-1512-41a4-a210-779b13ab5cbf","createdByUserId":"b567b182-39ff-45f8-9728-da11dbe89660"}'

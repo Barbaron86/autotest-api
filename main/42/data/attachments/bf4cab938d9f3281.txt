@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE3LjU0ODEzNCIsInVzZXJfaWQiOiIwNzE2NjRjYS1iYWJlLTQwNTctYjY2Yy0yOTI5ZDljNWQzZWQifQ.cCF7kD-p4dUZqRPwy7sOyXOXI0qR54APEXqhFjzms6Y' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Настать снимать карман сравнение деловой.","description":"Второй следовательно набор зачем. Засунуть реклама каюта головной.","courseId":"6da03eb3-6baa-4392-b992-0b81111bfed7","maxScore":83,"minScore":3,"orderIndex":48,"estimatedTime":"3 weeks"}'

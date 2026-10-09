@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjE4OjE3LjgyNDQ4OCIsInVzZXJfaWQiOiIwNzE2NjRjYS1iYWJlLTQwNTctYjY2Yy0yOTI5ZDljNWQzZWQifQ.EjgEW1XZbz2YPRXqJUmt432iGysguU0GQrgXXu-mEBs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Слишком самостоятельно коллектив забирать ягода.","maxScore":87,"minScore":5,"description":"Сустав спорт волк голубчик слать бочок. Протягивать командование тревога точно.\nЖить способ космос инструкция танцевать костер. При мучительно четко пастух.","estimatedTime":"1 weeks","previewFileId":"8198ea4c-c73c-4ead-90d4-3b4f846f5b50","createdByUserId":"071664ca-babe-4057-b66c-2929d9c5d3ed"}'
