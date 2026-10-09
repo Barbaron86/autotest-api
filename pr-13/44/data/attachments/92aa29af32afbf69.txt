@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA4Ljc2NTk1NSIsInVzZXJfaWQiOiI2MTkyNjZlMC1iOWVkLTRlYjgtODk5MC05MjIxZmZmZmVhMTgifQ.CwWDJbUP7TkocKXiX5O-fYccnS0TM9t2lRce-Dj82y4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Передо желание выраженный скрытый выгнать проход командир.","maxScore":58,"minScore":24,"description":"Достоинство потрясти аллея кольцо выгнать вытаскивать. Порядок анализ слать бочок приятель.\nСопровождаться угроза бабочка бабочка. Встать народ тревога недостаток девка изображать.","estimatedTime":"5 weeks","previewFileId":"5840a268-7b7d-41b3-8d18-b5415afbe2eb","createdByUserId":"619266e0-b9ed-4eb8-8990-9221ffffea18"}'

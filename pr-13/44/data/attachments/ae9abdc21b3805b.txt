@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA5LjkxMTk0NiIsInVzZXJfaWQiOiJkZGM1MzU5Yi1kYTYzLTQ2NTUtYWUzZC0zYjQwMzBmZDIxNmEifQ.Q4Syzc9OkfTjEIxmvBVR8bini_30fxNVBlKqj3sqyfw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ученый рота триста палка очередной сверкающий кольцо.","maxScore":60,"minScore":31,"description":"Карандаш адвокат головка прежде горький выбирать. Багровый прежде грудь торговля один поезд. Левый запретить функция коллектив освободить исследование.","estimatedTime":"6 weeks","previewFileId":"875abd8c-be9c-4cba-9ece-7e048e580976","createdByUserId":"ddc5359b-da63-4655-ae3d-3b4030fd216a"}'

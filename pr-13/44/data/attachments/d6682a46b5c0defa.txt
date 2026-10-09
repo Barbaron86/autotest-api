@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/5230bbfa-cd43-43ea-910e-e51e8c247d02 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA5LjU5MDI4NCIsInVzZXJfaWQiOiJkZGM1MzU5Yi1kYTYzLTQ2NTUtYWUzZC0zYjQwMzBmZDIxNmEifQ.cgaAjdKhl2C4gV32qvKrqRObsNlJQYmmmjvhn7ULH7s' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Нажать вскинуть зарплата чем. (обновлено)","description":"Инфекция район конференция пламя за. Встать сутки социалистический дремать поймать ставить выгнать лапа.\nОбновленное описание.","maxScore":91,"minScore":27,"orderIndex":79,"estimatedTime":"4 weeks (обновлено)"}'

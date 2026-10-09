@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjEzLjA1NjY0OCIsInVzZXJfaWQiOiI0ZGYxZDQyOS05MDU5LTQxNWEtOWMzNC00NjUyM2JmMDBjNDgifQ.2rZZIk17CjOcs14HhCXDXrNPcwG12xj3-oZopWA0Ct8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мера тута подземный анализ потом.","description":"Неожиданно грудь один самостоятельно.\nПередо поезд единый ленинград один одиннадцать. Налоговый неправда еврейский помимо потом спорт налоговый упор.","courseId":"d6cab954-b2f7-4c97-9727-385dd5aec3dc","maxScore":58,"minScore":42,"orderIndex":48,"estimatedTime":"7 weeks"}'

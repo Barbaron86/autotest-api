@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA3LjU5MzIxNyIsInVzZXJfaWQiOiI4NTY0NGEyOS05ZDRmLTRkYzMtYmNhYS04NjA2MTA4ZTVhODMifQ.cdm0mH2X76gel5j80GVvjYtpUIWyqQIcQKWCm7FlSc4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выраженный умолять каюта бабочка.","maxScore":59,"minScore":25,"description":"Научить сустав мучительно деньги отражение карандаш коричневый. Изменение отметить провал намерение дьявол житель.","estimatedTime":"2 weeks","previewFileId":"e78eb995-6c4a-4be2-8502-853d9b5a10ff","createdByUserId":"85644a29-9d4f-4dc3-bcaa-8606108e5a83"}'

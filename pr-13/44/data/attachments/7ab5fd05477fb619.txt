@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjEyLjIyNDUyNiIsInVzZXJfaWQiOiIzZDU2NGFkYi0xY2M2LTQ2NTAtYWFiNy05OGVkZTIyYjA1MjcifQ.gx09jVHWcXBOIqM7GZLXUOx9xMnTp7ISa2GMxkYQBTU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Зима природа сопровождаться расстегнуть выраженный оборот.","maxScore":87,"minScore":21,"description":"Успокоиться выраженный о поговорить провал написать. Угол поймать трубка добиться равнодушный умирать иной нервно. Прелесть валюта зима.","estimatedTime":"2 weeks","previewFileId":"698bc88d-6a1a-4cde-a8c4-d6a0b4a5b08d","createdByUserId":"3d564adb-1cc6-4650-aab7-98ede22b0527"}'

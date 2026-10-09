@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjExLjA4MDM2OCIsInVzZXJfaWQiOiI4N2Y5Njk4NS1jM2IxLTQzMDEtOGQxOC02ZDM1NWQ2YTEwZGUifQ.SvxyOcIBKe8HX7vvX5B8jU8SQV8MmLQQkOh5SFrzb30' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Видимо пропасть отметить бочок конференция бетонный.","maxScore":80,"minScore":34,"description":"Слишком человечек доставать вздрагивать. Рай товар инструкция. Тута карандаш висеть господь левый четко очко.","estimatedTime":"7 weeks","previewFileId":"f7989a99-40ac-40e7-bcd9-b63cd0eceeff","createdByUserId":"87f96985-c3b1-4301-8d18-6d355d6a10de"}'

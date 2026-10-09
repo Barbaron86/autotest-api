@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA2LjY5NDUwMCIsInVzZXJfaWQiOiI0NjBlN2MxOS0wMzZjLTRlMzYtYTYyOC1mY2U1YmU3ZGZjNTYifQ.3sX5PKW7l2NVqYy8eSIGsVHQJ1FREVyIoaVxyq8bkHg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"При пол банк отдел июнь.","maxScore":79,"minScore":28,"description":"Выраженный второй прежде непривычный спасть жить. Наслаждение сынок белье выдержать пол ручей эпоха спасть. Болото тревога приличный блин угроза штаб сомнительный термин.","estimatedTime":"9 weeks","previewFileId":"1cf6d16c-3976-4050-b035-f0862728cb52","createdByUserId":"460e7c19-036c-4e36-a628-fce5be7dfc56"}'

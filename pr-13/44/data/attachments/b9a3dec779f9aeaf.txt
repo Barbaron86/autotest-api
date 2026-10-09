@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjA1Ljg2Nzk0NSIsInVzZXJfaWQiOiI5NzQ2ZTJiYi0yN2U1LTRmNTMtOWQ5NC00ZDU5MGE0YTEyMDEifQ.9c4an6yiuNLl2afVXjW3ABT3sK5D4hSn0TZGGmsfaeI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Что смелый интернет помолчать.","maxScore":50,"minScore":37,"description":"Умолять развитый покидать сутки за. Мера точно премьера помолчать совещание решение. Полюбить бровь дрогнуть сынок задрать пламя избегать.","estimatedTime":"9 weeks","previewFileId":"e79716b9-b8ed-40ce-86ae-8bb9bfde03cf","createdByUserId":"9746e2bb-27e5-4f53-9d94-4d590a4a1201"}'

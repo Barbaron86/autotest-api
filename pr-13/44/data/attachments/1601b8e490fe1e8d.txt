@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjIxOjEzLjQxMDU5MyIsInVzZXJfaWQiOiI0ZGYxZDQyOS05MDU5LTQxNWEtOWMzNC00NjUyM2JmMDBjNDgifQ.QKMl_f7qMRsf8-bLT2z-iseyrM10dn1pDIhtZjK3pFw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Витрина четыре карман следовательно обида головка.","maxScore":65,"minScore":23,"description":"Недостаток торговля житель порядок факультет. Мгновение район написать премьера заведение о. Набор господь правильный ставить заложить материя.\nПрисесть достоинство настать решение цепочка.","estimatedTime":"5 weeks","previewFileId":"b65e08c5-6e6a-416a-8194-80b0e7f84f91","createdByUserId":"4df1d429-9059-415a-9c34-46523bf00c48"}'
