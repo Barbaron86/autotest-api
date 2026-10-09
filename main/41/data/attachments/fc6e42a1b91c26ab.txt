@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/184881e6-7524-4361-bdc6-bf0b8cbb1860 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjIxLjA5NDg1NyIsInVzZXJfaWQiOiJkNzU4MWU2Zi0yMTVmLTQ1OTgtODhmMi01MmE1ODY0OGVlNjMifQ.66k4u7H52C6ZXaVS-D0lLnRagImAaeRk5OkktfggBiY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Темнеть еврейский прежний неожиданный боец скользить дыхание. (обновлено)","maxScore":69,"minScore":50,"description":"Инвалид вскинуть природа цель народ. Парень ленинград жестокий.\nЛететь бригада господь один цель совет блин кожа. Около аж угроза настать желание слишком устройство. Райком присесть идея.\nОбновленное описание.","estimatedTime":"4 weeks (обновлено)"}'

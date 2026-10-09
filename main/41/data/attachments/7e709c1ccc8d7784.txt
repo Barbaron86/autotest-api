@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjIzLjI3MzEwNiIsInVzZXJfaWQiOiI0ZDdkOGU0NS0yMGE4LTRkMWYtOTYzYy02OGQ2NWRhNjQ4YTgifQ.sB9fM8q23DNL12a4Dh5m3lRlE3MH_l-S3ujUK3Lj264' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Еврейский поколение полностью лапа построить возбуждение остановить.","description":"Предоставить войти слишком настать мусор наслаждение. Появление изредка адвокат головка.\nНервно одиннадцать падать. Приличный ремень миф товар за наслаждение.","courseId":"29e927c0-53a2-4e08-802a-cd2236af2a4f","maxScore":94,"minScore":0,"orderIndex":91,"estimatedTime":"7 weeks"}'

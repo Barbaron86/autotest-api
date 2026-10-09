@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjIxLjkzNDM1OCIsInVzZXJfaWQiOiIzMTZlZThiMi01YjhhLTQ5ZTktODJkMS02OGIzOWZiYTA4YmYifQ.oDDDLZIPui55oIgeyGFiX_N_S6bjiOp48dkUfWG-OjM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тусклый бабочка второй штаб неудобно.","maxScore":94,"minScore":16,"description":"Коммунизм теория командующий. Ложиться скользить столетие решетка трубка неожиданный народ.","estimatedTime":"6 weeks","previewFileId":"fbc48e3b-3c07-4b4e-97eb-0e3f5dc4fd52","createdByUserId":"316ee8b2-5b8a-49e9-82d1-68b39fba08bf"}'

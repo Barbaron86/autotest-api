@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjI3LjA5NDQ1NyIsInVzZXJfaWQiOiIyY2E4ZWRjYS1iODAyLTQ3ZTQtYTJjOC1mYzVjZmYwMmZlOGYifQ.AjVJMNOo2M4WZ5aIvB6Q2uFaUaZ7ZJn58XlyO94LJN8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Беспомощный блин деловой сынок поздравлять.","maxScore":66,"minScore":16,"description":"Угроза бегать монета вздрагивать очко точно наткнуться. Школьный сомнительный наступать совет.","estimatedTime":"10 weeks","previewFileId":"db457912-3227-4e21-bb72-ec30aea69291","createdByUserId":"2ca8edca-b802-47e4-a2c8-fc5cff02fe8f"}'

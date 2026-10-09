@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjI0LjM4MzY3MCIsInVzZXJfaWQiOiI5YWE5Y2U4Mi1iZTI3LTQyNDgtYjIwZi0xOTU4ZGJjNGU1NDMifQ.IjRPnIqMNZ5zdNaj40RXU2WzYeGG2b9bxL2BtOTfQR4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Налоговый металл тесно монета рассуждение.","maxScore":84,"minScore":9,"description":"Правильный возможно смертельный присесть теория второй зато.","estimatedTime":"7 weeks","previewFileId":"07c6ba38-1b32-4450-a9bd-37bdb59c0e12","createdByUserId":"9aa9ce82-be27-4248-b20f-1958dbc4e543"}'

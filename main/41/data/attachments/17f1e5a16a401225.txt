@@ -1,0 +1,35 @@
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/users
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/users
+INFO     SWAGGER_COVERAGE_TRACKER_STORAGE:storage.py:63 Results directory does not exist, creating: /home/runner/work/autotest-api/autotest-api/coverage-results
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/authentication/login
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/files
+INFO     HTTP_CLIENT:event_hooks.py:29 Make POST request to http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses
+INFO     HTTP_CLIENT:event_hooks.py:29 Make PATCH request to http://localhost:8001/api/v1/courses/184881e6-7524-4361-bdc6-bf0b8cbb1860
+INFO     HTTP_CLIENT:event_hooks.py:38 Got response 200 OK from http://localhost:8001/api/v1/courses/184881e6-7524-4361-bdc6-bf0b8cbb1860
+INFO     BASE_ASSERTIONS:base.py:22 Check that response status code equals to 200
+INFO     COURSES_ASSERTIONS:courses.py:55 Check update course response
+INFO     BASE_ASSERTIONS:base.py:38 Check that "title" equals to Темнеть еврейский прежний неожиданный боец скользить дыхание. (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "max_score" equals to 69
+INFO     BASE_ASSERTIONS:base.py:38 Check that "min_score" equals to 50
+INFO     BASE_ASSERTIONS:base.py:38 Check that "description" equals to Инвалид вскинуть природа цель народ. Парень ленинград жестокий.
+Лететь бригада господь один цель совет блин кожа. Около аж угроза настать желание слишком устройство. Райком присесть идея.
+Обновленное описание.
+INFO     BASE_ASSERTIONS:base.py:38 Check that "estimated_time" equals to 4 weeks (обновлено)
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 184881e6-7524-4361-bdc6-bf0b8cbb1860
+INFO     FILES_ASSERTIONS:files.py:50 Check file
+INFO     BASE_ASSERTIONS:base.py:38 Check that "id" equals to 82e1fab3-bb18-4dc3-988a-8fa998f7b469
+INFO     BASE_ASSERTIONS:base.py:38 Check that "url" equals to http://localhost:8001/static/tests/37611260-aa0b-4a9d-820a-4f6277c7b34c.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "filename" equals to 37611260-aa0b-4a9d-820a-4f6277c7b34c.png
+INFO     BASE_ASSERTIONS:base.py:38 Check that "directory" equals to tests
+INFO     USERS_ASSERTIONS:users.py:50 Check user
+INFO     BASE_ASSERTIONS:base.py:38 Check that "ID" equals to d7581e6f-215f-4598-88f2-52a58648ee63
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Email" equals to mishinradim@example.net
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Last name" equals to Дорофеев
+INFO     BASE_ASSERTIONS:base.py:38 Check that "First name" equals to Павел
+INFO     BASE_ASSERTIONS:base.py:38 Check that "Middle name" equals to Вилорович
+INFO     SCHEMA_ASSERTIONS:schema.py:32 Validate JSON schema

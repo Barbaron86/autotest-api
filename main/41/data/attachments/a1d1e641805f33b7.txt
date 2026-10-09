@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/b5fbb03d-5829-49af-a42c-33730304d3b5 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjI0LjE0MjI2MyIsInVzZXJfaWQiOiI5YWE5Y2U4Mi1iZTI3LTQyNDgtYjIwZi0xOTU4ZGJjNGU1NDMifQ.LwJrilLtnZF-jJnRZW8Gv8PDAQqAAd1YS9Y4fH9Sp3Y' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Уточнить сынок столетие бак степь. (обновлено)","description":"Присесть танцевать даль. Порог мгновение палец миллиард. Похороны заявление валюта прошептать интеллектуальный.\nЦепочка тесно инструкция второй. Деньги мгновение точно цвет князь.\nОбновленное описание.","maxScore":54,"minScore":50,"orderIndex":46,"estimatedTime":"6 weeks (обновлено)"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjIyLjYyNjc2NSIsInVzZXJfaWQiOiI3OThmYTE5NC02NzEzLTRhODAtYjE5MC00OWZiOTM4NjBhYTYifQ.lONuFOgQ-wT0uJFnyKIqW32GlX1G04k9OjDRUQOR7rc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мгновение приходить костер основание мальчишка ленинград.","maxScore":79,"minScore":46,"description":"Возможно магазин ныне заплакать сопровождаться степь ленинград цель. Отъезд помолчать опасность растеряться снимать.","estimatedTime":"1 weeks","previewFileId":"e1661801-7c58-48f4-8c0e-5ec64a49079b","createdByUserId":"798fa194-6713-4a80-b190-49fb93860aa6"}'

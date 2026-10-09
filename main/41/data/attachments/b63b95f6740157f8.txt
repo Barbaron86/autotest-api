@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjI1LjI3OTc2MiIsInVzZXJfaWQiOiI2ZDU1MDM2Yi01NzJjLTRkNTktODVkZC0yYTEyMjIyM2Q4YmYifQ.8Sd1P3VisKgmnVtZLLIW0Fcf8vWm1T0q3EqH-5AYbr8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Военный вскакивать а умирать запретить носок предоставить.","maxScore":77,"minScore":16,"description":"Важный сынок намерение заложить научить домашний. Желание нажать художественный штаб. Собеседник число расстройство около аллея. Расстройство передо пасть разнообразный.","estimatedTime":"3 weeks","previewFileId":"501e6951-c240-4ee2-ab4b-d5d60b0643ac","createdByUserId":"6d55036b-572c-4d59-85dd-2a122223d8bf"}'

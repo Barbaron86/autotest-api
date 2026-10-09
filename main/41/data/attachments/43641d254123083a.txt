@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjI2LjE2MjUxNSIsInVzZXJfaWQiOiJjMjM2OWViNy00MmEyLTQxMjYtYTQxYS1kZjJkZDFkZmIyOTYifQ.UM1yCbvBCUgpXhLWvaPN8k2-z7vY0gc8rPK5lCGv16g' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Разнообразный расстегнуть выражаться человечек пропасть развитый художественный.","maxScore":91,"minScore":49,"description":"Кольцо мотоцикл счастье горький зеленый палка. Решение пересечь цвет трубка костер. Приличный уточнить забирать витрина рабочий упор разводить.","estimatedTime":"10 weeks","previewFileId":"b0d49b53-f60c-4e61-991a-118cc966289f","createdByUserId":"c2369eb7-42a2-4126-a41a-df2dd1dfb296"}'

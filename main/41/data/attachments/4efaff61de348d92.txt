@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjEyOjIzLjUxMTQ2NiIsInVzZXJfaWQiOiI0ZDdkOGU0NS0yMGE4LTRkMWYtOTYzYy02OGQ2NWRhNjQ4YTgifQ.T5Py0ao4lm1i0R74QptqKZkQrxvwVwdo4lLGB3pyM1M' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Крутой серьезный правильный разводить висеть выражение место.","maxScore":60,"minScore":29,"description":"Ставить каюта передо достоинство заведение чувство. Виднеться волк новый.\nЗадрать волк поговорить академик табак провинция.","estimatedTime":"5 weeks","previewFileId":"cb8a7d11-2722-4740-a1df-a753cd84b657","createdByUserId":"4d7d8e45-20a8-4d1f-963c-68d65da648a8"}'
