@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI0LjA0NzM0NSIsInVzZXJfaWQiOiI0ODI4ZGVmZi04ZDZlLTRkM2EtOTQ5MS01OTc2NzcwZDAzZWYifQ.Lyg-f-12_qT6MK6fPUVAaJlLMfzrHl9QfeFDbMWhWYE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поколение функция наступать растеряться засунуть карман дружно.","maxScore":92,"minScore":46,"description":"Четко вообще иной.\nПротягивать рабочий перебивать свежий очутиться. Жить космос ученый вскинуть непривычный бегать холодно.\nПравый устройство через. Левый расстройство жить степь.","estimatedTime":"8 weeks","previewFileId":"5f3edb2e-e98b-41b1-bc9a-856863e55016","createdByUserId":"4828deff-8d6e-4d3a-9491-5976770d03ef"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI1Ljc4Nzg5NyIsInVzZXJfaWQiOiI4MDZhM2UyZC1lMjczLTQ2NDItYjVjZi04MzdjZDY5NDQ3ODIifQ.Q6sK5QZYZGg1aEDkIln1uPqxHaWqb0jmB79s24aRfE4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Войти войти теория господь отметить манера кожа.","maxScore":86,"minScore":4,"description":"Возбуждение эпоха социалистический желание трубка дошлый засунуть четко. Исследование хозяйка расстегнуть тысяча карман армейский пропасть. Изба сынок лететь.","estimatedTime":"6 weeks","previewFileId":"9021c6a8-3cac-407e-a0d3-de010b9fe9d6","createdByUserId":"806a3e2d-e273-4642-b5cf-837cd6944782"}'

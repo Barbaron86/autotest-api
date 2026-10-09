@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI0Ljg3MTUzNCIsInVzZXJfaWQiOiI3NTM4ODk2Yi1kMjkyLTRhODItYjM5MC0xNTc3MDAwMmNkMDEifQ.Y2CIFRJr7BxRe2fRUnVhTFD_8w480elLKpkSKysQdy4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тяжелый угроза песня привлекать еврейский скрытый куча выкинуть.","maxScore":65,"minScore":20,"description":"Промолчать пересечь пища засунуть спорт миг оборот темнеть. Деловой монета куча металл материя висеть человечек. Единый госпожа дремать материя разнообразный тесно.","estimatedTime":"1 weeks","previewFileId":"df31fc49-09d5-4e88-97fc-3573ba070591","createdByUserId":"7538896b-d292-4a82-b390-15770002cd01"}'

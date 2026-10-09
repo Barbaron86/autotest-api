@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjMwLjM5ODYxNSIsInVzZXJfaWQiOiIyYjdhNjczZS0zMGJhLTQxMWEtYmExMi1lNzM2MTdjOGI3MDYifQ.kL6ubjFpxGYm8syUJI1Q1P7A8DPS88Zzudp7KdudwFU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Столетие невыносимый головка военный находить основание.","maxScore":86,"minScore":41,"description":"Степь песня вскакивать четыре зачем приятель палец порог. Казнь песня изредка конструкция триста свежий.","estimatedTime":"9 weeks","previewFileId":"4f1e8b8b-3b7d-47e0-8bd7-c58f38bd8ef9","createdByUserId":"2b7a673e-30ba-411a-ba12-e73617c8b706"}'

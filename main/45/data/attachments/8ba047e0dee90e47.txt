@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI4LjkwNTUxOCIsInVzZXJfaWQiOiJmMTUyNWZlNS01ZTBlLTQ3MDItOTczYS1iZjk0ZDY5NTUyMjUifQ.FPN701xW78rSvt71Gc_9LhbPHSZ7r-Jf7mxdO4tjLg8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мелочь вздрагивать оборот.","description":"Зачем каюта крыса июнь. Космос роскошный тусклый спешить ягода космос.\nОзначать услать место единый. Сходить функция вариант какой деньги мелочь неожиданный.","courseId":"ac1bb33e-5fc4-4ef8-9b54-072080bcc78f","maxScore":97,"minScore":3,"orderIndex":74,"estimatedTime":"4 weeks"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/8dbbbb18-946c-45d4-adc8-d6e872fda43b \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI0LjA0NzM0NSIsInVzZXJfaWQiOiI0ODI4ZGVmZi04ZDZlLTRkM2EtOTQ5MS01OTc2NzcwZDAzZWYifQ.Lyg-f-12_qT6MK6fPUVAaJlLMfzrHl9QfeFDbMWhWYE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поколение функция наступать растеряться засунуть карман дружно. (обновлено)","maxScore":93,"minScore":47,"description":"Четко вообще иной.\nПротягивать рабочий перебивать свежий очутиться. Жить космос ученый вскинуть непривычный бегать холодно.\nПравый устройство через. Левый расстройство жить степь.\nОбновленное описание.","estimatedTime":"8 weeks (обновлено)"}'

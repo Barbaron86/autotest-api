@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI2LjkzMzYxNSIsInVzZXJfaWQiOiJlN2VhOTAyMi0wZmQ4LTQzZDctODQyYS0xZjEzMTU2OGVlMGMifQ.DU6X9IaOR5cjGQklLLIjW4GjjC5xb7FtrnJIi0oVnkQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очутиться спалить кидать за результат.","maxScore":91,"minScore":22,"description":"Коричневый вариант тюрьма выгнать слишком космос. Второй зеленый расстегнуть пространство. При металл носок уточнить пятеро.","estimatedTime":"10 weeks","previewFileId":"829939a3-73ae-4a55-a8b3-c214646f724d","createdByUserId":"e7ea9022-0fd8-43d7-842a-1f131568ee0c"}'

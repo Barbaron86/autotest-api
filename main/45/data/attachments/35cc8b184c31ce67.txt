@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI2LjYxMzQyMyIsInVzZXJfaWQiOiJlN2VhOTAyMi0wZmQ4LTQzZDctODQyYS0xZjEzMTU2OGVlMGMifQ.mOzrwZQ6k3HNkFNQV2jb3mAmo8SYxoLfdNDDelpcXro' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Светило академик предоставить потянуться.","description":"Эпоха пробовать райком вчера. Мгновение термин основание хотеть. Сынок инвалид пятеро одиннадцать доставать разводить.\nЖестокий способ жидкий посидеть. Поезд снимать собеседник манера заработать.","courseId":"818d10b3-876c-4cec-b1df-ae2e5097d719","maxScore":90,"minScore":32,"orderIndex":90,"estimatedTime":"9 weeks"}'

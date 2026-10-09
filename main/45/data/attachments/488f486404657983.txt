@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI5LjI0MzMzNyIsInVzZXJfaWQiOiJmMTUyNWZlNS01ZTBlLTQ3MDItOTczYS1iZjk0ZDY5NTUyMjUifQ.rejRmEo7ltDcAWMobIAo1TrEE0zrewFCVpg4V7ZEtss' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вывести изба заложить хлеб протягивать решение постоянный.","maxScore":80,"minScore":42,"description":"Командующий палец исследование выгнать пропасть багровый вчера. Труп порог термин боец. Пятеро сверкающий разнообразный порт выбирать налоговый медицина.","estimatedTime":"7 weeks","previewFileId":"de88b6f9-1821-4904-a9ce-6c485e6f2a0d","createdByUserId":"f1525fe5-5e0e-4702-973a-bf94d6955225"}'

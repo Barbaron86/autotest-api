@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjMxLjU1Nzc1NiIsInVzZXJfaWQiOiJjNjJlMzgwZS00MmFkLTQ3ZjYtYjg0NS1iNGU0MzJkNWIxZDMifQ.R18JS9-EKo_irmp4ZGKg36Wfan9_aixgNJigZ144MsA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Посвятить наслаждение близко пространство выбирать разводить.","maxScore":63,"minScore":41,"description":"Цепочка присесть второй. Заведение еврейский решение войти нажать голубчик выраженный. Даль деловой район степь направо.","estimatedTime":"7 weeks","previewFileId":"c618e8b2-a8f0-4571-84dc-5d34144765c0","createdByUserId":"c62e380e-42ad-47f6-b845-b4e432d5b1d3"}'

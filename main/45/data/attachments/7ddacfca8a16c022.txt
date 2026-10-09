@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDIwOjI0OjI4LjA3OTkzNCIsInVzZXJfaWQiOiI1YmJmMzdhOC1kZGQ2LTRmM2YtYTdiYy1kNzJjNTIxOWU4NGUifQ.rWWeuYOvuLOG07bO1Mw7ucH43w7vkhSl3Gims9FciFY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пространство передо демократия свежий.","maxScore":85,"minScore":32,"description":"Бок возбуждение пространство дыхание поймать. Необычный тревога ботинок близко число. Естественный пастух порода интернет появление остановить.","estimatedTime":"7 weeks","previewFileId":"68f723c1-ea9b-4916-8c58-26336bbf6965","createdByUserId":"5bbf37a8-ddd6-4f3f-a7bc-d72c5219e84e"}'
