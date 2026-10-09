@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/ae1a5207-91b1-49d6-b02f-fec914a71bbf \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEyLjk2Mzc0MiIsInVzZXJfaWQiOiJlMGVkN2IxYy05NjE3LTQyZDktYmIyYi1kMTYzYjY3MDY0NzgifQ.oqLXi_T2nWhtq5n6yMQ4RZTLoJGLHG8nj7VyAiWiDVQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Правый смелый задержать боец ложиться. (обновлено)","description":"Белье банк падать. Мучительно правильный устройство вздрагивать означать смертельный.\nОбновленное описание.","maxScore":68,"minScore":50,"orderIndex":60,"estimatedTime":"8 weeks (обновлено)"}'

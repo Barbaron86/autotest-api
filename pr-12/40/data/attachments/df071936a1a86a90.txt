@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjE0LjQ1MTI4MCIsInVzZXJfaWQiOiIwODQ4NDAzYy1mZjM3LTRmOTItYTRhNy1iNWZjZDQzNTM3ODUifQ.26eKojM4WFuA9StpgXE-uOlrnOFdbTcVD5YNIn_JKPQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пламя какой близко художественный изба.","maxScore":67,"minScore":10,"description":"Направо потянуться сустав спичка редактор носок банда чувство. Основание дружно конструкция тревога еврейский передо тысяча.","estimatedTime":"9 weeks","previewFileId":"80b161c6-32ad-4168-8440-b185607d6299","createdByUserId":"0848403c-ff37-4f92-a4a7-b5fcd4353785"}'

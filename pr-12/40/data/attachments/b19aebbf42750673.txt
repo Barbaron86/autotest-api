@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/a79efc57-6871-4812-a0e8-42bf5d18f06d \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjA5LjIxNzY0MCIsInVzZXJfaWQiOiJmOTFmZWUwNC0xNDFmLTRmNzQtOTkxNS0zMzNkYjIzYTMyNTEifQ.QkstWsdjNZqIIO-Wmh5gLv0zQpZ16SYzaIOyIi8Qc9M' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дремать мелькнуть миф холодно растеряться порт. (обновлено)","maxScore":75,"minScore":36,"description":"Затянуться цвет кидать жить ведь мелькнуть доставать. Ныне вытаскивать обида налево иной зачем блин. Решетка приходить поймать носок порядок покинуть.\nОбновленное описание.","estimatedTime":"2 weeks (обновлено)"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEwLjk3MDkzNiIsInVzZXJfaWQiOiJjNTEzOGEwOS1jNTRjLTQwYzMtYWU0NC1mMTIxNzM0NTY4NWQifQ.NbQ7dK-Y4H8_CDp_9L3ajXLPLxy9LL7gaIR7Bz8Toxk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Низкий дружно подземный ярко пропадать желание.","maxScore":64,"minScore":26,"description":"Светило промолчать призыв интернет запретить. Витрина интеллектуальный тревога тяжелый близко коммунизм. Неправда инвалид угол прелесть палата дорогой тута.","estimatedTime":"5 weeks","previewFileId":"3b095317-1aaf-490b-9e0b-767cf3070001","createdByUserId":"c5138a09-c54c-40c3-ae44-f1217345685d"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjE2Ljc1MTU2NiIsInVzZXJfaWQiOiIxZTZlY2FmMS1mYWZlLTQyZmEtOTliYi0xODNmN2RhM2Q3NWMifQ.HZaykowEQpbttzrmYB5YB38glOQV85qiYIpRAKvLyw4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Банк товар привлекать коробка приходить успокоиться.","maxScore":85,"minScore":47,"description":"Дорогой возмутиться услать близко. Советовать торопливый сынок заявление команда песенка.","estimatedTime":"10 weeks","previewFileId":"c200c8ab-aa1f-49f4-92f1-ccb95440c888","createdByUserId":"1e6ecaf1-fafe-42fa-99bb-183f7da3d75c"}'

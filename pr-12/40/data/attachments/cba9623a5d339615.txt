@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEyLjk2Mzc0MiIsInVzZXJfaWQiOiJlMGVkN2IxYy05NjE3LTQyZDktYmIyYi1kMTYzYjY3MDY0NzgifQ.oqLXi_T2nWhtq5n6yMQ4RZTLoJGLHG8nj7VyAiWiDVQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Правый смелый задержать боец ложиться.","description":"Белье банк падать. Мучительно правильный устройство вздрагивать означать смертельный.","courseId":"560503c6-356a-4b42-8608-90f5c4d5ef8e","maxScore":67,"minScore":49,"orderIndex":59,"estimatedTime":"8 weeks"}'

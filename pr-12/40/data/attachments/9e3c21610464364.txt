@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjE2LjQyNjE4NyIsInVzZXJfaWQiOiIxZTZlY2FmMS1mYWZlLTQyZmEtOTliYi0xODNmN2RhM2Q3NWMifQ.Yf2GPjLzbLi6OZfu_mKNmczsIYqDblQKGRi5075d2L4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Монета шлем основание сверкать.","description":"Ночь чем белье издали. Вчера желание ставить палец функция возмутиться. Направо полоска число разводить пол блин премьера.","courseId":"d1b1b9f6-339e-4034-ad5c-7045f719abfa","maxScore":78,"minScore":24,"orderIndex":8,"estimatedTime":"10 weeks"}'

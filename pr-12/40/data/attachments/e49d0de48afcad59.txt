@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEwLjA0ODU0NyIsInVzZXJfaWQiOiI1M2RjZmI4Zi0yZmM5LTRjMmYtODM1NC01ZTVjNTVhZjZlY2IifQ.6WkaM3gO_OrrvllIF_OUrVpR7T3p1w6O_PGMEdNr-WA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ленинград дьявол рассуждение командующий художественный славный карандаш.","maxScore":59,"minScore":33,"description":"Какой сравнение задержать неудобно набор потрясти. Мелькнуть банда изредка вздрогнуть полюбить. Отражение бровь холодно головной инвалид господь. Снимать передо штаб факультет.","estimatedTime":"8 weeks","previewFileId":"78ffbba8-d9b4-4c22-8e91-6552f7158d59","createdByUserId":"53dcfb8f-2fc9-4c2f-8354-5e5c55af6ecb"}'

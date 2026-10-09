@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjE1LjYwMTQ2MyIsInVzZXJfaWQiOiIzNjExMWQ5Ny1jZTJmLTQzYWEtYTQ0Mi1kYmFjMjk1MTEzY2EifQ.bBKCjioeaZW41_twCCaWGX72XjiehXQFAaFYu0Xk00s' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очередной палка роскошный еврейский очутиться.","maxScore":68,"minScore":20,"description":"Зачем покидать солнце скользить доставать. Четыре отъезд художественный правление. Засунуть военный сбросить спорт советовать штаб слишком.","estimatedTime":"2 weeks","previewFileId":"5cf45687-d7d2-4e1b-90e5-bd15775b1bd9","createdByUserId":"36111d97-ce2f-43aa-a442-dbac295113ca"}'

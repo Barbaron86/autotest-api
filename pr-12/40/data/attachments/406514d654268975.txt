@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEzLjI4NDQ2NCIsInVzZXJfaWQiOiJlMGVkN2IxYy05NjE3LTQyZDktYmIyYi1kMTYzYjY3MDY0NzgifQ.vRj6eDhlKJBZ1UlXBJEfWke8xtN96I_PVcaXMvpRDUo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Хозяйка экзамен прелесть избегать витрина.","maxScore":89,"minScore":39,"description":"Палата плавно настать триста трясти. Обида ломать разводить головной аж желание назначить. Страсть неправда ленинград космос плавно кпсс эффект.","estimatedTime":"2 weeks","previewFileId":"68f0792d-f885-484c-8cbe-c5d8bebb3fc7","createdByUserId":"e0ed7b1c-9617-42d9-bb2b-d163b6706478"}'

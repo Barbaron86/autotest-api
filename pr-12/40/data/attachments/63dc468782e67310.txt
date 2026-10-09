@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjE0LjEwOTI2NiIsInVzZXJfaWQiOiIwODQ4NDAzYy1mZjM3LTRmOTItYTRhNy1iNWZjZDQzNTM3ODUifQ.kSRubk42mi2gUxBbRmDWgh51JarPGwpUPO79KCT5Wxo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Факультет изменение ботинок изредка идея означать головной.","description":"Лететь потянуться прелесть наступать. Ставить промолчать выразить светило потом.\nГраница уточнить дружно иной. Темнеть наслаждение запретить да призыв. Слишком поймать степь.","courseId":"aae178c7-f8fa-4fad-a8a2-4f459f375691","maxScore":79,"minScore":16,"orderIndex":52,"estimatedTime":"4 weeks"}'

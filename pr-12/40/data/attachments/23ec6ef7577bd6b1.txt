@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTA5VDE4OjA5OjEyLjEzNzA3OSIsInVzZXJfaWQiOiJkNTdmYzJmNi00ZDc1LTRmZDMtOWIyYy0xM2M1NmNiZmZlNDEifQ.KOtgP6G_-HNdtW4OpXO1GJ-bgM8BR_zsr30e5V2yGtw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Торопливый собеседник поговорить наступать терапия хлеб.","maxScore":83,"minScore":36,"description":"Палка палата единый необычный цвет мелькнуть. Висеть более тысяча мелькнуть.","estimatedTime":"1 weeks","previewFileId":"581d3b20-2eec-4a27-a8c3-79aa7a28878c","createdByUserId":"d57fc2f6-4d75-4fd3-9b2c-13c56cbffe41"}'
