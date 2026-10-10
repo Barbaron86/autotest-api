@@ -127,6 +127,17 @@ Fixtures подготавливают тестовые ресурсы, а Pydant
 HTTPX event hooks записывают запросы и ответы в лог и прикрепляют cURL-команды к Allure.
 Декорированные методы клиентов записывают покрытие операций API по спецификации OpenAPI.
 
+### Design Decisions
+
+- **Layered API clients** — Domain API Clients выносят детали endpoints и payloads из
+  тестовых сценариев, а общий `ApiClient` позволяет не дублировать HTTP-операции.
+- **Explicit response validation** — исходные HTTP responses позволяют проверять статусы и ошибки в негативных сценариях;
+  Pydantic models и общие assertions проверяют данные ответов и сгенерированные JSON Schemas.
+- **Function-scoped fixtures** — fixtures подготавливают пользователей, ресурсы и авторизованные clients для каждого теста,
+  уменьшая зависимость от порядка запуска и закрывая HTTP connections после использования.
+- **Centralized diagnostics & coverage** — HTTPX hooks собирают logs и вложения cURL, а декораторы clients
+  записывают Swagger Coverage, вынося диагностику запросов и сбор покрытия из отдельных тестов.
+
 ## 📁 Структура проекта
 
 Основные исходные файлы и конфигурация; сгенерированные отчёты и кеши не показаны.

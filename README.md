@@ -126,6 +126,17 @@ while Pydantic models and shared assertions validate API responses.
 HTTPX event hooks log requests and responses and attach cURL commands to Allure.
 Decorated domain client methods record API operation coverage against OpenAPI.
 
+### Design Decisions
+
+- **Layered API clients** — domain clients keep endpoint and payload details out of
+  test scenarios, while the shared `ApiClient` avoids duplicating HTTP operations.
+- **Explicit response validation** — raw HTTP responses allow status and error checks in negative scenarios;
+  Pydantic models and shared assertions verify response data and generated JSON Schemas.
+- **Function-scoped fixtures** — fixtures prepare each test's users, resources and authenticated clients,
+  reducing order dependence and closing HTTP connections after use.
+- **Centralized diagnostics & coverage** — HTTPX hooks collect logs and cURL attachments, while client decorators
+  record Swagger Coverage, keeping request diagnostics and coverage instrumentation out of individual tests.
+
 ## 📁 Project Structure
 
 Main source and configuration files; generated reports and caches are omitted.
