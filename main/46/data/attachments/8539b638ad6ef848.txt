@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA2LjExNDAzOSIsInVzZXJfaWQiOiJkMTM2NjdkNC1lZGI5LTQ0ZDUtYmEyNS1hMjZjYjRmMWM5MjIifQ.TtbHeVbNPcMWZU6awsV80QEJjd06FtVvM2e6Dw7LPSg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Домашний медицина монета затянуться близко бегать задержать расстегнуть.","maxScore":90,"minScore":45,"description":"Носок помимо пища пересечь растеряться. Правый тута расстегнуть.\nВстать интернет наслаждение. Плод указанный рабочий.","estimatedTime":"2 weeks","previewFileId":"c95c41a3-93ed-414c-b7b8-5cc8e63ce151","createdByUserId":"d13667d4-edb9-44d5-ba25-a26cb4f1c922"}'

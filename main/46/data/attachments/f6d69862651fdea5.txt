@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjEwLjQ5Njc1NCIsInVzZXJfaWQiOiI0YTg4ZGNkZS02YmJjLTRhZjEtODMwYy1jYjExZTI3M2VhZGYifQ.McmSyU5XkKp29SV-t71TGzJjM0_JQdUDykqqv6p6-Gw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Около ярко висеть мягкий.","maxScore":67,"minScore":10,"description":"Штаб командир неожиданный наткнуться равнодушный парень монета.\nТовар конструкция ход.","estimatedTime":"10 weeks","previewFileId":"1b90c8db-88c7-4584-be34-6e974bd69c8a","createdByUserId":"4a88dcde-6bbc-4af1-830c-cb11e273eadf"}'

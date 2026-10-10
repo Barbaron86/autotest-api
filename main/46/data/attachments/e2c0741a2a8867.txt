@@ -1,0 +1,9 @@
+curl --request POST \
+  http://localhost:8001/api/v1/files \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjE2LjAzMjQyNSIsInVzZXJfaWQiOiJiZTUzMmFmYS1hM2FjLTRkMWQtYTI2OC0wNjM1YjljMmYyMWMifQ.vvb7661k93ZYwtdXKqShdFyZaQKG8SYMygfyFf9lLLY' \
+  --header 'content-type: multipart/form-data; boundary=bd4e6e70ec22335d48a2ff31f6eb467d'

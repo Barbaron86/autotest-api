@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA4LjE4NjE4NyIsInVzZXJfaWQiOiI1NTc4YWU3Yi03MzkzLTQwOGItYjNhNy1iOGU1OTQ5NGViOTAifQ.2xyWkKRzBUn_hgQ-mxLoXVLKjka6TJ_4j_2WRxWk5T0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пасть единый вряд наткнуться полоска грустный.","maxScore":74,"minScore":3,"description":"Ведь приятель банк. Сынок услать вытаскивать разводить функция порядок.","estimatedTime":"7 weeks","previewFileId":"9da86d8f-0dff-4117-8e32-308002eadaf2","createdByUserId":"5578ae7b-7393-408b-b3a7-b8e59494eb90"}'

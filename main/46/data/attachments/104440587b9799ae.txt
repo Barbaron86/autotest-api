@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/1fc0db42-ed21-4f7f-bf6f-d76aec3f3086 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA5LjAxMDMzMCIsInVzZXJfaWQiOiIyZjNmYTBiMS0zODJlLTQ4YTYtOGM2ZC1lMmIzMDU1YWRmYWYifQ.QSTusJw3d2CC9fRoQ3UEkKFXvB91Baz2b9dlV252LTY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Покидать указанный постоянный прошептать миллиард бетонный. (обновлено)","description":"Зарплата манера палка отъезд понятный. Войти инвалид девка.\nЮный оборот лететь палата райком. Дремать пропаганда актриса стакан решение протягивать грустный. Коробка приходить приходить невозможно.\nОбновленное описание.","maxScore":87,"minScore":24,"orderIndex":38,"estimatedTime":"2 weeks (обновлено)"}'

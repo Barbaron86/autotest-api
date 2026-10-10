@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjExLjY1MzE3MSIsInVzZXJfaWQiOiI0ODQ5NTBmMy00NzNjLTQwYWItYmJhZS0wYmRhN2M3YjZlOGEifQ.haNU3IMzAftU9wrvJhUZS6OCKGUtnUiT2KrxRnZ3Ln0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Обида порода тысяча правление выдержать выбирать коммунизм.","maxScore":86,"minScore":16,"description":"Услать приятель нервно карман что некоторый.\nСвежий остановить прелесть головка растеряться полоска второй прежде. Волк рабочий падать назначить развернуться пятеро.","estimatedTime":"8 weeks","previewFileId":"f87c6150-b41f-4f2f-9d3c-fc958ccfce7f","createdByUserId":"484950f3-473c-40ab-bbae-0bda7c7b6e8a"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/ff659d5e-152c-414c-bdff-72980282df06 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA0Ljk4ODI3NyIsInVzZXJfaWQiOiJlNjNlYzkyNy00YzI3LTQ1NGQtODIxYS01NjkzY2JiMThhOWMifQ.Y6or64ThUHulxwPoG8ezW00wwHw3btefYXao_VO_RUw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Через выраженный выраженный еврейский гулять. (обновлено)","maxScore":99,"minScore":24,"description":"Дошлый деловой радость поезд. Пространство поставить подробность разуметься необычный кожа одиннадцать полюбить. Еврейский ночь потрясти.\nОбновленное описание.","estimatedTime":"4 weeks (обновлено)"}'

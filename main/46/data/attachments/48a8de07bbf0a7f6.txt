@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA5LjM0Nzk3NSIsInVzZXJfaWQiOiIyZjNmYTBiMS0zODJlLTQ4YTYtOGM2ZC1lMmIzMDU1YWRmYWYifQ.Kemjkcb7h9Mazw8F_ZVUwrTzWN-E7JmDJ7w9T_Yx72Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ложиться пастух ботинок инвалид плод чувство инвалид ход.","maxScore":85,"minScore":1,"description":"Рай развитый написать забирать спалить уточнить. Второй смеяться витрина запустить.","estimatedTime":"9 weeks","previewFileId":"438cf2df-1362-47af-8d8e-1425f7125b4a","createdByUserId":"2f3fa0b1-382e-48a6-8c6d-e2b3055adfaf"}'

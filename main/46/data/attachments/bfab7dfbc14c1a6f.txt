@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjEyLjc5OTQ3NyIsInVzZXJfaWQiOiI0MzI3NDIxNC1mZGE2LTQwZWEtODBkYy05OWQwMzhiYzczNTYifQ.90xkcB-PjTAZNYfRhYgzV25hOKsPoJQIag4eaU4LwyY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Карандаш а протягивать вперед школьный.","maxScore":51,"minScore":26,"description":"Демократия угодный мелькнуть плод. Научить трубка бровь.\nСопровождаться социалистический второй около печатать багровый. Угроза торговля исполнять спорт необычный социалистический построить.","estimatedTime":"1 weeks","previewFileId":"53a35df5-230f-4081-90c2-685b529511cf","createdByUserId":"43274214-fda6-40ea-80dc-99d038bc7356"}'

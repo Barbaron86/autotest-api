@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE4OjM2OjA3LjAyNzQ5OCIsInVzZXJfaWQiOiJmZjc0MDdmOC1iMTFhLTRhZmMtYTlmYy0xODhmOWU3ZWUyZTQifQ.Ch1wdRI549Opumo4vk08EVBufeO4lXnpYrEjsSQ8vS0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бровь спорт очередной правый.","maxScore":80,"minScore":16,"description":"Смеяться каюта приятель выраженный пространство расстегнуть сынок. Построить каюта деньги написать понятный демократия возникновение. Сынок головной господь подземный пространство дальний сравнение.","estimatedTime":"2 weeks","previewFileId":"29fe1277-5b1d-49c6-89f9-62e5cdb427cf","createdByUserId":"ff7407f8-b11a-4afc-a9fc-188f9e7ee2e4"}'
