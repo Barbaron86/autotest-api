@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjI4LjE4NTIyNyIsInVzZXJfaWQiOiIxYzg4NjIyOS01Y2I2LTRhZGMtYTQ2ZS03ZDNkNjVmYzQwMDUifQ.t7608G5tlf54xRtGJ_xNXnF2lE2fm9Ztgpdm6hwmOJM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Господь слать порядок слать посвятить изба применяться.","maxScore":51,"minScore":11,"description":"Фонарик более нажать неправда сынок исследование. Мрачно зато покидать вздрогнуть важный чем академик. Функция освобождение выбирать предоставить пространство нажать.","estimatedTime":"4 weeks","previewFileId":"f0d1c91c-63d4-4f8a-96bf-506920838973","createdByUserId":"1c886229-5cb6-4adc-a46e-7d3d65fc4005"}'

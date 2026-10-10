@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjMwLjQ5OTE5OCIsInVzZXJfaWQiOiJiNDQzZmFmNy0xZTI1LTQ1MzUtYjMzNy1iZDY2ZDM3NmE1MTAifQ.gt8WRDG0pyMfuDRvHEwwM8TafiCuPf8-uAtlQVpLcug' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Господь вскинуть функция коробка решетка отражение.","maxScore":59,"minScore":49,"description":"Вздрагивать угодный интернет художественный число. Услать господь указанный недостаток.\nКожа порт беспомощный ныне ручей. Наступать эпоха естественный пятеро уточнить заплакать запретить.","estimatedTime":"6 weeks","previewFileId":"b38e8a44-aaf7-45e6-a1e5-78fa97358090","createdByUserId":"b443faf7-1e25-4535-b337-bd66d376a510"}'

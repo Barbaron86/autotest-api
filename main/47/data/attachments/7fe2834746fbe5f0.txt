@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjI3LjAzMTkyNiIsInVzZXJfaWQiOiJlZDMwOGE0MC1hYTBiLTRjNGQtODA1ZC0wMzVmMzlmZjFjMTIifQ.--r-27zztTuZfyk0lQ2ZxSVrU1saI5xydBJIl44L1Ns' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Гулять левый провинция.","maxScore":70,"minScore":5,"description":"Дошлый падать да художественный.\nСпалить сутки естественный сверкать спорт. Правый аллея сверкать вряд присесть. Бабочка хотеть протягивать порядок вздрогнуть.","estimatedTime":"10 weeks","previewFileId":"fd20d757-dd66-4809-8082-cb9166a1603a","createdByUserId":"ed308a40-aa0b-4c4d-805d-035f39ff1c12"}'

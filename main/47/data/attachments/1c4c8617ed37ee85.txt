@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjMwLjE3MzQ4OCIsInVzZXJfaWQiOiJiNDQzZmFmNy0xZTI1LTQ1MzUtYjMzNy1iZDY2ZDM3NmE1MTAifQ.EJwvSlblKXBoMPpm6LfQSEiqD_3Tg2dQibWOARSZK2E' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Снимать социалистический ярко белье пространство умолять.","description":"Покинуть изредка труп устройство. Поколение картинка нажать растеряться выдержать товар. Пространство факультет подробность монета космос прощение багровый.","courseId":"953e620f-d8a5-4cbd-b591-33d3ede8f980","maxScore":78,"minScore":20,"orderIndex":41,"estimatedTime":"6 weeks"}'

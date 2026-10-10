@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjI5LjM0ODI4NCIsInVzZXJfaWQiOiJkNjA3N2IwOS1hMmU5LTQ2MDQtOWQ4Ni00YjU1OTM4MDI5ZWIifQ.lvIUCPQgOY0Yoa5aRUyWPsQb8Al802nJtFLlBJeueLg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Материя зима дремать.","maxScore":91,"minScore":42,"description":"Протягивать заплакать носок товар изменение собеседник ставить. Пол трубка домашний правление табак. Степь гулять светило.","estimatedTime":"10 weeks","previewFileId":"3442b791-3a36-4d86-b690-860a60b769c5","createdByUserId":"d6077b09-a2e9-4604-9d86-4b55938029eb"}'

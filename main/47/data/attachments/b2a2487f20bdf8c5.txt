@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/694b9c23-d1b2-4aa0-b129-378a8bbe08b4 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjI3Ljg1NTY2MiIsInVzZXJfaWQiOiIxYzg4NjIyOS01Y2I2LTRhZGMtYTQ2ZS03ZDNkNjVmYzQwMDUifQ.wqAeQG-WUOaXWJCOSU6Os27ERVHiP6c4-wDSDhMIcGw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Намерение витрина страсть виднеться дошлый. (обновлено)","description":"Висеть бровь грустный. Картинка аллея славный исполнять человечек дремать. Механический порядок новый банда.\nОбновленное описание.","maxScore":75,"minScore":41,"orderIndex":66,"estimatedTime":"10 weeks (обновлено)"}'

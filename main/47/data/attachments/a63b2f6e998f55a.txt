@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjMxLjY3ODEzNyIsInVzZXJfaWQiOiI5ZjQ0OWI0Yi01MjdiLTRmZDAtYWFjYy0wZWZjNmZkMjE4NmIifQ.nirglKJfZ5sRbFLH3wHK3cP9nj7JVcKy5QxWlWc_GEA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дремать следовательно монета возмутиться школьный трясти да.","maxScore":92,"minScore":35,"description":"Трясти премьера остановить механический.\nНизкий четыре забирать материя ярко. Намерение анализ роскошный четыре. Гулять голубчик народ тревога куча академик товар.","estimatedTime":"3 weeks","previewFileId":"a90adb45-a8b6-4b3c-8a95-829402018245","createdByUserId":"9f449b4b-527b-4fd0-aacc-0efc6fd2186b"}'

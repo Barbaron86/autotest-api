@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTEwVDE5OjQwOjI0LjE0OTg4MSIsInVzZXJfaWQiOiI4NTNmN2ZhNi1mNDM1LTRhYTMtYWNjZC05YTZiOWY1Zjc4ZjIifQ.6-uVq_UA2kuo-wP6pebVWdjpmEbA2C3-yJcACJUg2-U' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Руководитель освободить художественный армейский тысяча костер.","maxScore":50,"minScore":35,"description":"Необычный заработать волк торопливый витрина миг. Сверкать развитый космос.","estimatedTime":"2 weeks","previewFileId":"89cb87d3-2fe2-4418-8427-cf52b010ba3c","createdByUserId":"853f7fa6-f435-4aa3-accd-9a6b9f5f78f2"}'
