@@ -17,52 +17,176 @@ on:
           - run-summary-reply
           - clear-inline
           - clear-summary
-
       pull-request-number:
-        description: Pull Request number
-        required: true
+        description: PR number (leave empty for smoke test)
+        required: false
         type: string
+      agent-mode:
+        description: Explore related project sources
+        type: choice
+        default: 'off'
+        options: ['off', 'on']
+      dry-run:
+        description: Review without publishing comments (still uses the API)
+        type: boolean
+        default: true
+      smoke-test:
+        description: Run ONE bounded agent test instead of reviewing a PR
+        type: boolean
+        default: false
 
 permissions:
   contents: read
-  pull-requests: write
 
 concurrency:
-  group: ai-review-pr-${{ inputs.pull-request-number }}
-  cancel-in-progress: true
+  group: ai-review-${{ github.repository }}-${{ inputs.smoke-test && 'smoke' || inputs.pull-request-number }}
+  cancel-in-progress: false
 
 jobs:
   review:
+    if: ${{ !inputs.smoke-test }}
     name: "AI Review PR #${{ inputs.pull-request-number }}"
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
+    permissions:
+      contents: read
+      pull-requests: write
     steps:
-      - name: Check out repository
+      - name: Check out trusted workflow branch
         uses: actions/checkout@v7.0.1
         with:
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Check review configuration
+      - name: Validate manual inputs
+        env:
+          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
+          REVIEW_COMMAND: ${{ inputs.review-command }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
         run: |
-          test -s .ai-review.yaml
-          test -s .github/ai-review/python-api-review.md
+          test "$GITHUB_REF_NAME" = "$DEFAULT_BRANCH" || { echo 'Run PR review from the default branch'; exit 1; }
+          [[ "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid PR number'; exit 1; }
+          case "$REVIEW_COMMAND" in
+            run-summary|run-inline|run-context|run|run-inline-reply|run-summary-reply|clear-inline|clear-summary) ;;
+            *) echo 'Invalid review command'; exit 1 ;;
+          esac
+
+      - name: Set up trusted preparation runtime
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install preparation dependency
+        run: python -m pip install PyYAML==6.0.3
+
+      - name: Save trusted configuration, prompts and helpers
+        run: |
+          python tools/ai_review/prepare_repository.py snapshot \
+            --source "$GITHUB_WORKSPACE" --destination "$RUNNER_TEMP/ai-review-policy"
+
+      - name: Fetch and check out PR head
+        id: prepare
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
+        run: |
+          python "$RUNNER_TEMP/ai-review-policy/tools/ai_review/prepare_repository.py" prepare \
+            --repository-root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
+            --number "$PR_NUMBER" --state "$RUNNER_TEMP/ai-review-state.json"
+
+      - name: Prepare bounded review configuration
+        env:
+          AGENT_MODE: ${{ inputs.agent-mode }}
+          DRY_RUN: ${{ inputs.dry-run }}
+          REVIEW_COMMAND: ${{ inputs.review-command }}
+        run: |
+          case "$REVIEW_COMMAND" in clear-*) AGENT_MODE=off ;; esac
+          python "$RUNNER_TEMP/ai-review-policy/tools/ai_review/prepare_config.py" \
+            --policy-root "$RUNNER_TEMP/ai-review-policy" --repository-root "$GITHUB_WORKSPACE" \
+            --output "$RUNNER_TEMP/ai-review-runtime/review.yaml" \
+            --agent-mode "$AGENT_MODE" --dry-run "$DRY_RUN"
+
+      - name: Recheck PR before spending API tokens
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
+        run: |
+          python "$RUNNER_TEMP/ai-review-policy/tools/ai_review/prepare_repository.py" check \
+            --repository-root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
+            --number "$PR_NUMBER" --state "$RUNNER_TEMP/ai-review-state.json"
+          cat "$RUNNER_TEMP/ai-review-state.json" >> "$GITHUB_STEP_SUMMARY"
 
       - name: Review pull request
+        id: review
         uses: Nikita-Filonov/ai-review@199446c8a08954d1f33eeb754af4040e5f22d81f # v1.4.0
         with:
           review-command: ${{ inputs.review-command }}
         env:
-          AI_REVIEW_CONFIG_FILE_YAML: .ai-review.yaml
-
+          AI_REVIEW_CONFIG_FILE_YAML: ${{ runner.temp }}/ai-review-runtime/review.yaml
+          AI_REVIEW_CONFIG_FILE_ENV: ${{ runner.temp }}/absent.env
+          AI_REVIEW_CONFIG_FILE_JSON: ${{ runner.temp }}/absent.json
           VCS__PROVIDER: GITHUB
           VCS__PIPELINE__OWNER: ${{ github.repository_owner }}
           VCS__PIPELINE__REPO: ${{ github.event.repository.name }}
           VCS__PIPELINE__PULL_NUMBER: ${{ inputs.pull-request-number }}
           VCS__HTTP_CLIENT__API_URL: https://api.github.com
           VCS__HTTP_CLIENT__API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
           LLM__PROVIDER: OPENAI
           LLM__HTTP_CLIENT__API_URL: https://api.openai.com/v1
           LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Detect stale result after review
+        if: ${{ always() && steps.prepare.outcome == 'success' && steps.review.outcome != 'skipped' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
+        run: |
+          python "$RUNNER_TEMP/ai-review-policy/tools/ai_review/prepare_repository.py" check \
+            --repository-root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
+            --number "$PR_NUMBER" --state "$RUNNER_TEMP/ai-review-state.json"
+
+  agent-smoke:
+    if: ${{ inputs.smoke-test }}
+    name: One bounded agent smoke (no PR comments)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Check out reviewed workflow branch
+        uses: actions/checkout@v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Set up Python
+        uses: actions/setup-python@v7.0.0
+        with:
+          python-version: '3.12'
+
+      - name: Install offline check dependencies
+        run: python -m pip install -r checks/ai_review/requirements.txt
+
+      - name: Run free checks first
+        run: python -m pytest checks/ai_review --confcutdir=checks/ai_review -o addopts='' -q
+
+      - name: Prepare local diff and show request limits
+        run: |
+          python checks/ai_review/smoke_agent.py --prepare-only \
+            --policy-root "$GITHUB_WORKSPACE" --source-repository "$GITHUB_WORKSPACE" \
+            --work-dir "$RUNNER_TEMP/agent-smoke" --output "$RUNNER_TEMP/agent-smoke-result.json"
+
+      - name: Run the single paid smoke
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: |
+          python checks/ai_review/smoke_agent.py --live \
+            --policy-root "$GITHUB_WORKSPACE" --source-repository "$GITHUB_WORKSPACE" \
+            --work-dir "$RUNNER_TEMP/agent-smoke" --output "$RUNNER_TEMP/agent-smoke-result.json"
+
+      - name: Record smoke result
+        if: ${{ always() }}
+        run: |
+          if test -f "$RUNNER_TEMP/agent-smoke-result.json"; then
+            cat "$RUNNER_TEMP/agent-smoke-result.json" >> "$GITHUB_STEP_SUMMARY"
+          fi
