@@ -47,180 +47,39 @@ jobs:
       contents: read
       pull-requests: write
     steps:
-      - name: Check out trusted workflow branch
+      - name: Check out workflow branch
         uses: actions/checkout@v7.0.1
         with:
-          fetch-depth: 0
           persist-credentials: false
 
-      - name: Validate manual inputs
-        env:
-          REVIEW_COMMAND: ${{ inputs.review-command }}
-          PR_NUMBER: ${{ inputs.pull-request-number }}
+      - name: Save review configuration and prompts
         run: |
-          [[ "$PR_NUMBER" =~ ^[1-9][0-9]*$ ]] || { echo 'Invalid PR number'; exit 1; }
-          case "$REVIEW_COMMAND" in
-            run-summary|run-inline|run-context|run|run-inline-reply|run-summary-reply|clear-inline|clear-summary) ;;
-            *) echo 'Invalid review command'; exit 1 ;;
-          esac
-
-      - name: Save trusted configuration and prompts
-        run: |
-          mkdir -p "$RUNNER_TEMP/ai-review-policy/.github"
-          cp .ai-review.yaml "$RUNNER_TEMP/ai-review-policy/"
-          cp -R .github/ai-review "$RUNNER_TEMP/ai-review-policy/.github/"
-
-      - name: Resolve pull request
-        id: pr
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ inputs.pull-request-number }}
-        run: |
-          gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" > "$RUNNER_TEMP/ai-review-pr.json"
-          jq -e --arg repository "$GITHUB_REPOSITORY" \
-            '.state == "open" and .head.repo.full_name == $repository' \
-            "$RUNNER_TEMP/ai-review-pr.json" > /dev/null
-          head_sha="$(jq -r '.head.sha' "$RUNNER_TEMP/ai-review-pr.json")"
-          [[ "$head_sha" =~ ^[0-9a-f]{40}$ ]] || { echo 'Invalid PR SHA'; exit 1; }
-          printf 'head-sha=%s\n' "$head_sha" >> "$GITHUB_OUTPUT"
-
-      - name: Set up preparation runtime
-        uses: actions/setup-python@v7.0.0
-        with:
-          python-version: '3.12'
-
-      - name: Install configuration dependency
-        run: python -m pip install PyYAML==6.0.3
+          mkdir -p "$RUNNER_TEMP/ai-review"
+          cp .ai-review.yaml "$RUNNER_TEMP/ai-review/review.yaml"
+          cp -R .github/ai-review "$RUNNER_TEMP/ai-review/prompts"
 
       - name: Check out pull request sources
         uses: actions/checkout@v7.0.1
         with:
-          ref: ${{ steps.pr.outputs.head-sha }}
+          ref: refs/pull/${{ inputs.pull-request-number }}/head
           fetch-depth: 0
           persist-credentials: false
 
-      - name: Prepare permitted repository commands
-        env:
-          PR_HEAD_SHA: ${{ steps.pr.outputs.head-sha }}
-          AGENT_MODE: ${{ inputs.agent-mode }}
-          DRY_RUN: ${{ inputs.dry-run }}
-          REVIEW_COMMAND: ${{ inputs.review-command }}
+      - name: Restore review prompts
         run: |
-          python -I - <<'PY'
-          import fnmatch
-          import os
-          import re
-          import subprocess
-          from pathlib import Path, PurePosixPath
-
-          import yaml
-
-          policy = Path(os.environ["RUNNER_TEMP"]) / "ai-review-policy"
-          runtime = Path(os.environ["RUNNER_TEMP"]) / "ai-review-runtime"
-          runtime.mkdir(exist_ok=True)
-          config = yaml.safe_load((policy / ".ai-review.yaml").read_text(encoding="utf-8"))
-          profile = config.pop("repository_profile", {})
-          sha = os.environ["PR_HEAD_SHA"]
-          actual = subprocess.check_output(["git", "rev-parse", "HEAD"], text=True).strip()
-          if actual != sha:
-              raise ValueError("Checkout differs from the selected PR SHA")
-          raw = subprocess.check_output(["git", "ls-tree", "-r", "-z", sha], text=True, encoding="utf-8")
-          entries = [record.split("\t", 1) for record in raw.split("\0") if record]
-          blocked_dirs = {
-              ".git", ".venv", "venv", "node_modules", "__pycache__", ".pytest_cache",
-              ".mypy_cache", ".ruff_cache", ".superpowers", "artifacts", "allure-results",
-              "allure-report", "coverage-results", "secrets", "credentials", "certificates", "private-keys",
-          }
-          secret_names = (".env*", "credentials.*", "secrets.*", "id_rsa*", "id_ed25519*", "*.pem", "*.key", "*.p12", "*.pfx")
-          extensions = set(profile.get("file_extensions", [".py", ".toml", ".md", ".yml", ".yaml"]))
-          roots = profile.get("source_roots", ["."])
-          files = []
-          for metadata, name in entries:
-              path = PurePosixPath(name)
-              if metadata.split()[0] not in {"100644", "100755"}:
-                  continue
-              if not re.fullmatch(r"[A-Za-z0-9_./-]+", name) or name.startswith("/"):
-                  continue
-              if any(part in {"", ".", ".."} for part in name.split("/")):
-                  continue
-              if any(part.lower() in blocked_dirs for part in path.parts):
-                  continue
-              if any(fnmatch.fnmatchcase(path.name.lower(), pattern) for pattern in secret_names):
-                  continue
-              if path.suffix.lower() not in extensions:
-                  continue
-              if not any(root == "." or name.startswith(root.rstrip("/") + "/") for root in roots):
-                  continue
-              if any(fnmatch.fnmatchcase(name.lower(), pattern.lower()) for pattern in profile.get("exclude_paths", [])):
-                  continue
-              files.append(name)
-          if not files:
-              raise ValueError("No permitted source files")
-          denied_parents = {
-              parent.as_posix() for _, name in entries if name not in files
-              for parent in PurePosixPath(name).parents
-          }
-          directories = sorted({
-              parent.as_posix() for name in files for parent in PurePosixPath(name).parents
-              if parent.as_posix() != "."
-          } - denied_parents)
-          file_pattern = "(?:" + "|".join(re.escape(name) for name in sorted(files)) + ")"
-          path_pattern = "(?:" + "|".join(re.escape(name) for name in sorted(files + directories)) + ")"
-          paths_pattern = path_pattern + "(?: " + path_pattern + ")*"
-          symbol = r"[A-Za-z_][A-Za-z_0-9.:-]{0,99}"
-          config["agent"]["enabled"] = os.environ["AGENT_MODE"] == "on" and not os.environ["REVIEW_COMMAND"].startswith("clear-")
-          config["agent"]["allow_commands"] = [
-              r"git ls-files(?: -- " + paths_pattern + r")?",
-              re.escape(f"git show {sha}:") + file_pattern,
-              r"git grep(?: --heading)? -n -I -F(?: -C 12)? -e " + symbol + " " + sha + " -- " + paths_pattern,
-              re.escape(f"git grep --heading -n -I -E -e '^' {sha} -- ") + file_pattern + "(?: " + file_pattern + "){0,7}",
-          ]
-          prompts = config["prompt"]
-          for key, names in list(prompts.items()):
-              if key.endswith("_files"):
-                  prompts[key] = [str(policy / name) for name in names]
-          top_dirs = [name for name in directories if not any(parent.as_posix() in directories for parent in PurePosixPath(name).parents)]
-          search_paths = sorted(top_dirs + [name for name in files if not any(name.startswith(root + "/") for root in top_dirs)])
-          access = runtime / "repository-access.md"
-          access.write_text(
-              "# Repository access\n\n"
-              "Use only these forms; replace SYMBOL, FILE or PATHS. Commands run without a shell.\n"
-              "List: git ls-files (optionally append -- PATHS).\n"
-              f"Read: git show {sha}:FILE\n"
-              f"Search: git grep --heading -n -I -F -e SYMBOL {sha} -- PATHS\n"
-              f"Focused search: git grep --heading -n -I -F -C 12 -e SYMBOL {sha} -- PATHS\n"
-              f"Read 1 to 8 files: git grep --heading -n -I -E -e '^' {sha} -- FILES\n"
-              f"Search across permitted sources: git grep --heading -n -I -F -e SYMBOL {sha} -- {' '.join(search_paths)}\n\n"
-              f"Searchable directories: {', '.join(directories)}.\n"
-              "FILE must be a permitted source path; PATHS may be source files or listed directories.\n"
-              "List may show excluded filenames; secrets, generated files and symlinks cannot be read.\n"
-              "SYMBOL is a literal identifier, not a pattern. No extra options, pipelines or commands.\n"
-              "Read small groups. After truncation, use focused search for the relevant definition.\n",
-              encoding="utf-8",
-          )
-          prompts.setdefault("system_agent_prompt_files", []).append(str(access))
-          config["review"]["dry_run"] = os.environ["DRY_RUN"] == "true"
-          (runtime / "review.yaml").write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False), encoding="utf-8")
-          PY
-
-      - name: Recheck pull request before review
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ inputs.pull-request-number }}
-          PR_HEAD_SHA: ${{ steps.pr.outputs.head-sha }}
-        run: |
-          current="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq '[.state, .head.sha, .head.repo.full_name] | join(" ")')"
-          [[ "$current" == "open $PR_HEAD_SHA $GITHUB_REPOSITORY" ]] || { echo 'PR changed before review'; exit 1; }
+          mkdir -p .github/ai-review
+          cp -R "$RUNNER_TEMP/ai-review/prompts/." .github/ai-review/
 
       - name: Review pull request
-        id: review
         uses: Nikita-Filonov/ai-review@199446c8a08954d1f33eeb754af4040e5f22d81f # v1.4.0
         with:
           review-command: ${{ inputs.review-command }}
         env:
-          AI_REVIEW_CONFIG_FILE_YAML: ${{ runner.temp }}/ai-review-runtime/review.yaml
+          AI_REVIEW_CONFIG_FILE_YAML: ${{ runner.temp }}/ai-review/review.yaml
           AI_REVIEW_CONFIG_FILE_ENV: ${{ runner.temp }}/absent.env
           AI_REVIEW_CONFIG_FILE_JSON: ${{ runner.temp }}/absent.json
+          AGENT__ENABLED: ${{ inputs.agent-mode == 'on' }}
+          REVIEW__DRY_RUN: ${{ inputs.dry-run }}
           VCS__PROVIDER: GITHUB
           VCS__PIPELINE__OWNER: ${{ github.repository_owner }}
           VCS__PIPELINE__REPO: ${{ github.event.repository.name }}
@@ -230,13 +89,3 @@ jobs:
           LLM__PROVIDER: OPENAI
           LLM__HTTP_CLIENT__API_URL: https://api.openai.com/v1
           LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENAI_API_KEY }}
-
-      - name: Detect stale result after review
-        if: ${{ always() && steps.pr.outcome == 'success' && steps.review.outcome != 'skipped' }}
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          PR_NUMBER: ${{ inputs.pull-request-number }}
-          PR_HEAD_SHA: ${{ steps.pr.outputs.head-sha }}
-        run: |
-          current="$(gh api "repos/$GITHUB_REPOSITORY/pulls/$PR_NUMBER" --jq '[.state, .head.sha, .head.repo.full_name] | join(" ")')"
-          [[ "$current" == "open $PR_HEAD_SHA $GITHUB_REPOSITORY" ]] || { echo 'PR changed during review'; exit 1; }

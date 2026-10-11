@@ -22,23 +22,10 @@ core:
   concurrency: 1
 
 agent:
-  enabled: true
   max_iterations: 6
   max_command_output_chars: 10000
-  # The workflow supplies permitted Git commands for the selected PR SHA.
-  allow_commands: []
-
-repository_profile:
-  source_roots: ["."]
-  file_extensions: [".py", ".toml", ".md", ".yml", ".yaml"]
-  exclude_paths: []
 
 prompt:
-  system_agent_prompt_files:
-    - ./.github/ai-review/repository-exploration.md
-
-  include_agent_system_prompts: true
-
   inline_prompt_files:
     - ./.github/ai-review/python-api-review.md
 
@@ -68,7 +55,6 @@ prompt:
 
 review:
   mode: FULL_FILE_DIFF
-  dry_run: false
   ignore_pure_renames: true
 
   ignore_changes:
