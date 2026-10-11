@@ -3,6 +3,7 @@ llm:
 
   meta:
     model: gpt-6-sol
+    max_tokens: 4000
 
   http_client:
     verify: true
@@ -18,12 +19,26 @@ vcs:
     api_url: https://api.github.com
 
 core:
-  concurrency: 3
+  concurrency: 1
 
 agent:
-  enabled: false
+  enabled: true
+  max_iterations: 6
+  max_command_output_chars: 10000
+  # The workflow supplies permitted Git commands for the selected PR SHA.
+  allow_commands: []
+
+repository_profile:
+  source_roots: ["."]
+  file_extensions: [".py", ".toml", ".md", ".yml", ".yaml"]
+  exclude_paths: []
 
 prompt:
+  system_agent_prompt_files:
+    - ./.github/ai-review/repository-exploration.md
+
+  include_agent_system_prompts: true
+
   inline_prompt_files:
     - ./.github/ai-review/python-api-review.md
 
@@ -33,6 +48,12 @@ prompt:
   summary_prompt_files:
     - ./.github/ai-review/python-api-review.md
 
+  system_context_prompt_files:
+    - ./.github/ai-review/context-review.md
+
+  system_summary_prompt_files:
+    - ./.github/ai-review/summary-review.md
+
   system_inline_reply_prompt_files:
     - ./.github/ai-review/python-api-review.md
 
@@ -40,8 +61,8 @@ prompt:
     - ./.github/ai-review/python-api-review.md
 
   include_inline_system_prompts: true
-  include_context_system_prompts: true
-  include_summary_system_prompts: true
+  include_context_system_prompts: false
+  include_summary_system_prompts: false
   include_inline_reply_system_prompts: true
   include_summary_reply_system_prompts: true
 
@@ -60,8 +81,11 @@ review:
     - ".ruff_cache/*"
 
   max_inline_comments: 3
-  max_context_comments: 8
+  max_context_comments: null
   inline_comment_fallback: false
+
+logger:
+  level: DEBUG
 
 artifacts:
   llm_enabled: false
