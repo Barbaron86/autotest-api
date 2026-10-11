@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM0LjU1ODUwNSIsInVzZXJfaWQiOiI5YTY2NTM3MC03Y2IxLTQ3NzEtOTliZi1hNGVhNDQ0NGUzYzAifQ.ssg_6qH7BdIi-jo7gqGi9iX1PC2qKt9htKRlOyU0OC8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Район сынок ставить полоска пламя магазин падаль.","maxScore":61,"minScore":21,"description":"Сопровождаться художественный смелый лететь кожа художественный. Каюта второй житель мягкий. Сверкать адвокат дыхание нажать манера слишком.","estimatedTime":"9 weeks","previewFileId":"0d4d4c66-6fe8-446e-85c2-c24ed896e225","createdByUserId":"9a665370-7cb1-4771-99bf-a4ea4444e3c0"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/56af9405-d147-45e6-8da4-e818d7d40574 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM1LjE4OTM3NSIsInVzZXJfaWQiOiI5YTQ4NmUwNS0wNDM1LTQ3M2EtYjg2YS00YzcxMWMyNWY2M2IifQ.qwgCW1FJI8MiKXjJRLA737H0Q613BjIrqVG51G2Om5A' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Военный материя трубка девка. (обновлено)","maxScore":61,"minScore":48,"description":"Каюта исполнять порода секунда. Степь металл растеряться сустав посвятить потянуться тесно.\nОбновленное описание.","estimatedTime":"1 weeks (обновлено)"}'

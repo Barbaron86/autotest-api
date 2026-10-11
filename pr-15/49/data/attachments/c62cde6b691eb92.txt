@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM4Ljc5NjY1MyIsInVzZXJfaWQiOiI2ZjQ3NmI1ZC1hYjdkLTQ1YWItOTA3Yy0yM2JlMmQzYWQ4MzgifQ.gPssNtZH-bUXw6ItqfWPwHaP9msL6mGRJa2uD7BhXJ4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Помолчать прошептать перебивать.","maxScore":64,"minScore":39,"description":"Бегать инвалид сходить невыносимый совещание сходить помимо. Аллея карандаш стакан проход сынок.","estimatedTime":"4 weeks","previewFileId":"91af7ead-684f-408a-9d92-70f3844cdb11","createdByUserId":"6f476b5d-ab7d-45ab-907c-23be2d3ad838"}'

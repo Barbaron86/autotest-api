@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjQwLjU0MjgxNiIsInVzZXJfaWQiOiIxY2QwN2FmMS01Nzk3LTQyNWQtYmM0Mi0yMDQzNzA0YjJlMGEifQ.2CORXr_-Ls7v8xJ1H1pW8xTXdUuxOuuqd86e7AJ1yRM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Увеличиваться школьный дружно какой банда пастух песня.","maxScore":57,"minScore":34,"description":"Написать выраженный дружно через слать. Изменение естественный факультет экзамен равнодушный. Ответить спичка печатать порода шлем бровь важный.\nМонета промолчать премьера палата приятель бак.","estimatedTime":"9 weeks","previewFileId":"983c0e1d-1dd6-443c-b719-1178716866dd","createdByUserId":"1cd07af1-5797-425d-bc42-2043704b2e0a"}'

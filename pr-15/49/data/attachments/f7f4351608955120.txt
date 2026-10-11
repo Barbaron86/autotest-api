@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM0LjMxNTE3NyIsInVzZXJfaWQiOiI5YTY2NTM3MC03Y2IxLTQ3NzEtOTliZi1hNGVhNDQ0NGUzYzAifQ.zEsqCsxxVG08uOEs1tNi0F2CjudwN6g_VBciOjZgGrc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Равнодушный второй вздрогнуть соответствие приличный счастье.","description":"Заплакать бок дошлый цель угроза. Оставить ставить одиннадцать необычный. Расстегнуть видимо мрачно рот упорно правильный.","courseId":"f01798ec-dc42-495e-80f1-e0169189f8f9","maxScore":54,"minScore":48,"orderIndex":60,"estimatedTime":"1 weeks"}'

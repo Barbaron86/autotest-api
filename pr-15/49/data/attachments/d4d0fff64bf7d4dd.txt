@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjMyLjk4NDYwNSIsInVzZXJfaWQiOiIxNGQzOWFhZS00YzdjLTQyZDgtODZhYi04MzI1OGU3NmE5MjcifQ.yucEgJdFNTOclKnfMql_9qneBdBOMH4a2Zz4ycCsmoc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Зарплата кпсс экзамен неправда подземный тревога задержать.","maxScore":86,"minScore":31,"description":"Успокоиться что прелесть нервно разнообразный. Число соответствие очутиться достоинство пересечь присесть поговорить посвятить.","estimatedTime":"8 weeks","previewFileId":"c6f9370b-5705-4913-93d2-f43c56c1c20a","createdByUserId":"14d39aae-4c7c-42d8-86ab-83258e76a927"}'

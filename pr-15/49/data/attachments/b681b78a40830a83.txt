@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjMzLjYyMDkyOSIsInVzZXJfaWQiOiI4ODkwMDA3Zi1iNTkyLTQ1MDEtYmFiMi05Yjk4NDIxNTRkY2IifQ.RMVn10AQVhTXFNuDOc2M_7Ahe-o3-8LHMIEa5sg-reA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Район отдел потянуться да коллектив палата художественный.","maxScore":67,"minScore":29,"description":"Карандаш карман пасть холодно намерение мальчишка нервно. Возмутиться сомнительный функция крутой. Решетка пропадать присесть налево.","estimatedTime":"3 weeks","previewFileId":"2ff4aaf1-48cb-47f9-82a0-32d4d93b9065","createdByUserId":"8890007f-b592-4501-bab2-9b9842154dcb"}'

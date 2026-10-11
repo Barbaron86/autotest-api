@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM2Ljk5OTM5OCIsInVzZXJfaWQiOiIyYzIyODQxYS0yZGNlLTQ0ODMtYTY3NS1kNjM2YzBlZmEyZWIifQ.51wd4mmdHnSYSFoFFPcr15qbqEKVuLpedvaHDMXNouI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Парень салон дошлый порт.","maxScore":64,"minScore":14,"description":"Горький сравнение единый потрясти. Радость выдержать рот природа.\nЭффект изучить светило советовать художественный задержать. Проход появление зачем поколение важный пламя.","estimatedTime":"1 weeks","previewFileId":"7ada451c-2124-4311-abc2-6932675a7e6f","createdByUserId":"2c22841a-2dce-4483-a675-d636c0efa2eb"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM2LjEyMzkyNyIsInVzZXJfaWQiOiJlOWUwYzgyMy05OGVmLTRlNWMtYTI4YS1iMzlhZjQzYzQ2NjkifQ.Fs-UbTX6EcDpxNUMFQTdgVrxIQEzavohMBiXeJ_aHQU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Коричневый важный собеседник свежий белье триста стакан.","maxScore":95,"minScore":3,"description":"Свежий тюрьма вскинуть хлеб построить решетка трубка сустав. Свежий неожиданно карман теория космос инвалид вчера тревога.","estimatedTime":"8 weeks","previewFileId":"94980eeb-b622-47cc-b00b-074108e71f32","createdByUserId":"e9e0c823-98ef-4e5c-a28a-b39af43c4669"}'

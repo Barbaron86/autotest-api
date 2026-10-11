@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjAxOjM1LjE4OTM3NSIsInVzZXJfaWQiOiI5YTQ4NmUwNS0wNDM1LTQ3M2EtYjg2YS00YzcxMWMyNWY2M2IifQ.qwgCW1FJI8MiKXjJRLA737H0Q613BjIrqVG51G2Om5A' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Военный материя трубка девка.","maxScore":60,"minScore":47,"description":"Каюта исполнять порода секунда. Степь металл растеряться сустав посвятить потянуться тесно.","estimatedTime":"1 weeks","previewFileId":"975dee6b-5151-4a09-8f8d-e91cf1020c35","createdByUserId":"9a486e05-0435-473a-b86a-4c711c25f63b"}'
