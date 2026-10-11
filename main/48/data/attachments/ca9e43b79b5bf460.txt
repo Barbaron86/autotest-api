@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjUzLjk2MTI0OCIsInVzZXJfaWQiOiJkY2JlMjEyYS00MmRiLTRmZjEtYjhiNC1hYjJlOWFkZjM3MWMifQ.i53JfJBtvhRZgAmiSrMx2KYz3Fnt7wArximiZ45oWVU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Плавно достоинство нажать совет изменение.","maxScore":56,"minScore":18,"description":"Неправда термин вообще гулять очко спешить. Сынок угодный выкинуть хлеб адвокат академик. Светило новый чувство находить.","estimatedTime":"3 weeks","previewFileId":"66589a05-98aa-461b-aef4-05d4604eba51","createdByUserId":"dcbe212a-42db-4ff1-b8b4-ab2e9adf371c"}'

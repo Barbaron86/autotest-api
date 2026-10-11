@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjUxLjY1MTUzMSIsInVzZXJfaWQiOiJiYmNhZTA2Mi1mNjU3LTRhMTQtOWYzOS1mM2M2YTc0MzUxZTYifQ.aJIV7TCc7bcyS3VnIYim7VJFKEpJPN5v9xaMngua12U' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ленинград строительство покидать изучить белье.","maxScore":76,"minScore":37,"description":"Правый через спалить невозможно танцевать. Присесть чем очко четко построить. Бровь уничтожение житель исполнять понятный витрина. Тута танцевать кидать подробность ягода.","estimatedTime":"5 weeks","previewFileId":"a58224bc-31f4-4452-b34a-fbfa0daf62f1","createdByUserId":"bbcae062-f657-4a14-9f39-f3c6a74351e6"}'

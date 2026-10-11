@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjQ5LjU4NDgzNyIsInVzZXJfaWQiOiJiNDFjZDllMy1lNTkxLTQ2MmYtOGQ0Ny04ZDc0M2E2NGE1MWIifQ.xqBGU1E1T7QKTzufICVFqlEJe-6odx_flbs-FWQu19c' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сустав беспомощный свежий.","maxScore":95,"minScore":34,"description":"Носок возбуждение багровый освобождение ведь товар. Строительство успокоиться отдел карандаш тусклый ученый цель. Налево изредка передо печатать следовательно неожиданно задрать.","estimatedTime":"1 weeks","previewFileId":"72d136bf-f604-4d7a-8daf-56a922301190","createdByUserId":"b41cd9e3-e591-462f-8d47-8d743a64a51b"}'

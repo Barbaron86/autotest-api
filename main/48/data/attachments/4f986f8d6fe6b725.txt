@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjUwLjQ4OTMxNCIsInVzZXJfaWQiOiJkMGViOGUyZC0wZTk3LTRiNTQtOTVkOC0zMmMyZDU4NDZkODAifQ.3IGNoxocd-gyFPQp7wfOQoZobPyPD9FWuTg6IkQZevs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Некоторый издали неправда аллея дурацкий отдел бетонный металл.","maxScore":58,"minScore":39,"description":"Запеть рай пространство эффект. Лететь полоска освободить граница конференция.\nСовещание эффект запретить инфекция поколение деловой страсть. Правый решетка новый ложиться.","estimatedTime":"5 weeks","previewFileId":"72b0dcc8-be5d-411e-9af9-89574e20b208","createdByUserId":"d0eb8e2d-0e97-4b54-95d8-32c2d5846d80"}'

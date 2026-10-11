@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjUyLjQ3NzMzNSIsInVzZXJfaWQiOiI0MjM0NTMzZS05ZWI5LTRiNzItOWMxYS05OGZkNWM0ZWQ0NzEifQ.d2DddA4NBUnyyYGbjFTlpAVQAhL24d3hAWmYw5bkgCk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Неудобно порядок тревога угроза салон.","description":"Необычный издали означать монета означать космос команда. Привлекать нервно уточнить ставить гулять. Мимо цвет результат медицина.","courseId":"27ea10d0-491e-4584-98f0-5f2ec86e4787","maxScore":58,"minScore":37,"orderIndex":44,"estimatedTime":"4 weeks"}'

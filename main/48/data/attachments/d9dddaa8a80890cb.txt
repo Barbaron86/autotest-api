@@ -1,0 +1,17 @@
+[2m15:14:47.551[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m15:14:48.140[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+2026-10-11 15:14:48,141 | SWAGGER_COVERAGE_TRACKER_STORAGE | INFO | Results directory does not exist, creating: /home/runner/work/autotest-api/autotest-api/coverage-results
+[2m15:14:48.171[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:48.724[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:48.797[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:49.314[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:49.342[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m15:14:49.597[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m15:14:49.599[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m15:14:49.618[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m15:14:49.621[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/courses/ed55e3a7-6a5f-447b-858d-fd9cb3dfaf1e
+[2m15:14:49.637[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK PATCH http://localhost:8001/api/v1/courses/ed55e3a7-6a5f-447b-858d-fd9cb3dfaf1e
+[2m15:14:49.639[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check update course response
+[2m15:14:49.640[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m15:14:49.640[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
+[2m15:14:49.645[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjU2LjI5NDA3OSIsInVzZXJfaWQiOiI3Y2UyODNmNS1lYjE4LTQyMzgtYWZlMi04NDA5NzVhNTg1NzUifQ.U9r81958blJ5qASul6X2tc0lOlplHJc5X7ZZ8qWOLNY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Приятель дошлый освободить оставить добиться строительство наступать.","maxScore":96,"minScore":33,"description":"Построить сопровождаться господь разуметься. Желание возмутиться кидать магазин. Художественный мера кольцо прелесть налево.\nАж прежде помолчать отъезд низкий.","estimatedTime":"6 weeks","previewFileId":"0b5e6fb0-71db-4948-b7c0-216e8b25a084","createdByUserId":"7ce283f5-eb18-4238-afe2-840975a58575"}'

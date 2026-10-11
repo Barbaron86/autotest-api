@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/ed55e3a7-6a5f-447b-858d-fd9cb3dfaf1e \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjQ4LjQ1MTQ4MiIsInVzZXJfaWQiOiJkZmNkNmUyNS0xZmM0LTQ1MzItYWJhNC1iZjFmMThlZjFhNDYifQ.pcC7wi2PwXnmkSBGOtm1EIIiKEM5JPCr_kcWm86HnhI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Постоянный приятель палата слишком трубка. (обновлено)","maxScore":78,"minScore":24,"description":"Место очко налево кпсс другой налоговый тута. Войти некоторый холодно дурацкий обида.\nОбновленное описание.","estimatedTime":"7 weeks (обновлено)"}'

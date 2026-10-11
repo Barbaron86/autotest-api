@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE1OjQ0OjU1LjExMDExMSIsInVzZXJfaWQiOiJhYzhmYjdiZi03YzRjLTQ5ZGQtYTM2Yi02MDRjMTY2YzEzZDMifQ.4lU3BZMOhSFg6K7IncuKn1wzawaTpqX7cjr-uCbRIHA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Горький счастье сустав тревога темнеть.","maxScore":73,"minScore":41,"description":"Реклама ученый инфекция славный желание. Возможно деньги расстройство. Совет теория карандаш пища изба кожа выкинуть социалистический.","estimatedTime":"4 weeks","previewFileId":"9a66597e-3369-4b44-9dd7-04acd37fcf36","createdByUserId":"ac8fb7bf-7c4c-49dd-a36b-604c166c13d3"}'

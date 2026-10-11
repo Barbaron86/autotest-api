@@ -1,0 +1,13 @@
+[2m15:14:58.448[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m15:14:58.989[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m15:14:59.014[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:59.535[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m15:14:59.557[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m15:14:59.569[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m15:14:59.571[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → DELETE http://localhost:8001/api/v1/files/181371fb-98e6-462b-87db-d92794a100d8
+[2m15:14:59.581[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK DELETE http://localhost:8001/api/v1/files/181371fb-98e6-462b-87db-d92794a100d8
+[2m15:14:59.582[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/files/181371fb-98e6-462b-87db-d92794a100d8
+[2m15:14:59.861[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 404 Not Found GET http://localhost:8001/api/v1/files/181371fb-98e6-462b-87db-d92794a100d8
+[2m15:14:59.862[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file not found response
+[2m15:14:59.862[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check internal error response
+[2m15:14:59.863[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
