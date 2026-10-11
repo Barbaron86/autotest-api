@@ -2,7 +2,6 @@
 
 import argparse
 import fnmatch
-import json
 import re
 import shlex
 import subprocess
@@ -182,10 +181,6 @@ def prepare_config(
     config.setdefault("core", {})["concurrency"] = 1
     config.setdefault("llm", {}).setdefault("meta", {})["max_tokens"] = 3_000
     output_path.write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False), encoding="utf-8")
-    output_path.with_suffix(".access.json").write_text(
-        json.dumps(access, indent=2, ensure_ascii=False) + "\n",
-        encoding="utf-8",
-    )
     return output_path
 
 

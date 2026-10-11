@@ -51,28 +51,25 @@ def validate_pr(payload: dict[str, Any], repository: str, number: str) -> dict[s
     return result
 
 
-def get_pr(repository: str, number: str, metadata: Path | None) -> dict[str, Any]:
+def get_pr(repository: str, number: str) -> dict[str, Any]:
     # Validate before constructing a URL or sending a credential.
     if not re.fullmatch(r"[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+", repository):
         raise ValueError("Invalid repository name")
     if not re.fullmatch(r"[1-9][0-9]*", number):
         raise ValueError("PR number must be a positive integer")
-    if metadata is not None:
-        payload = json.loads(metadata.read_text(encoding="utf-8"))
-    else:
-        token = os.environ.get("GH_TOKEN")
-        if not token:
-            raise ValueError("GH_TOKEN is required")
-        request = urllib.request.Request(
-            f"https://api.github.com/repos/{repository}/pulls/{number}",
-            headers={
-                "Authorization": f"Bearer {token}",
-                "Accept": "application/vnd.github+json",
-                "X-GitHub-Api-Version": "2022-11-28",
-            },
-        )
-        with urllib.request.urlopen(request, timeout=30) as response:
-            payload = json.load(response)
+    token = os.environ.get("GH_TOKEN")
+    if not token:
+        raise ValueError("GH_TOKEN is required")
+    request = urllib.request.Request(
+        f"https://api.github.com/repos/{repository}/pulls/{number}",
+        headers={
+            "Authorization": f"Bearer {token}",
+            "Accept": "application/vnd.github+json",
+            "X-GitHub-Api-Version": "2022-11-28",
+        },
+    )
+    with urllib.request.urlopen(request, timeout=30) as response:
+        payload = json.load(response)
     return validate_pr(payload, repository, number)
 
 
@@ -101,17 +98,16 @@ def git(root: Path, *args: str, authenticated: bool = False) -> str:
     ).stdout.strip()
 
 
-def prepare(root: Path, identity: dict[str, Any], state: Path, *, skip_fetch: bool = False) -> None:
-    if not skip_fetch:
-        git(
-            root,
-            "fetch",
-            "--no-tags",
-            f"https://github.com/{identity['repository']}.git",
-            identity["head_sha"],
-            identity["base_sha"],
-            authenticated=True,
-        )
+def prepare(root: Path, identity: dict[str, Any], state: Path) -> None:
+    git(
+        root,
+        "fetch",
+        "--no-tags",
+        f"https://github.com/{identity['repository']}.git",
+        identity["head_sha"],
+        identity["base_sha"],
+        authenticated=True,
+    )
     for side in ("head_sha", "base_sha"):
         git(root, "cat-file", "-e", identity[side] + "^{commit}")
     git(root, "checkout", "--detach", identity["head_sha"])
@@ -139,17 +135,14 @@ def main() -> None:
         command.add_argument("--repository", required=True)
         command.add_argument("--number", required=True)
         command.add_argument("--state", type=Path, required=True)
-        command.add_argument("--metadata", type=Path, help="Offline fixture; omit for GitHub API")
-        if name == "prepare":
-            command.add_argument("--skip-fetch", action="store_true", help="Offline commits already fetched")
     args = parser.parse_args()
     try:
         if args.command == "snapshot":
             snapshot(args.source, args.destination)
         else:
-            identity = get_pr(args.repository, args.number, args.metadata)
+            identity = get_pr(args.repository, args.number)
             if args.command == "prepare":
-                prepare(args.repository_root, identity, args.state, skip_fetch=args.skip_fetch)
+                prepare(args.repository_root, identity, args.state)
             else:
                 check(args.repository_root, identity, args.state)
             print(f"Verified PR #{identity['number']}: head={identity['head_sha']} base={identity['base_sha']}")
