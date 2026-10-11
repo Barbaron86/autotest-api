@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE1Ljg1NTQ4MyIsInVzZXJfaWQiOiIyMThkNjg4MC01Zjg3LTQ0ZDktOTkxMi0wNjk2ZmY2NTJjZGIifQ.qGUoXWQn6YBdoOlGHIn6BGj7QyZlEcQUUCb8ZpL8l7Y' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Освобождение дальний бак.","description":"Запретить находить перебивать потрясти задержать устройство. Виднеться ученый ныне прелесть гулять намерение жить. Головка головка радость упор зарплата.","courseId":"c3ce06d8-f8d0-4540-8695-08ca3237af6b","maxScore":65,"minScore":13,"orderIndex":9,"estimatedTime":"6 weeks"}'

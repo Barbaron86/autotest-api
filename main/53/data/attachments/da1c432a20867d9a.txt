@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE4LjQwNDEyNyIsInVzZXJfaWQiOiJmNDQ2ZWU2Yi05ZTI3LTQzMjEtOGQxMy0xM2NmMDUxOTM0ZGMifQ.0l-_1tcaBpM0eOXmdEgfiEJziH48SeG6T-UrMId2Dsw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мимо около ведь запустить поставить бок второй.","maxScore":82,"minScore":21,"description":"Казнь каюта хозяйка.\nПровинция палка возникновение мгновение угол легко падаль покинуть.\nКоманда правый отражение сопровождаться сынок упорно более. Мусор разнообразный дорогой что.","estimatedTime":"2 weeks","previewFileId":"0b33c390-4e63-4ee3-a573-1cb6a40e332a","createdByUserId":"f446ee6b-9e27-4321-8d13-13cf051934dc"}'

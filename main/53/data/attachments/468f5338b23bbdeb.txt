@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjExLjUxMzgzNCIsInVzZXJfaWQiOiJmYTU5NTcwMC05M2IyLTQ1ZDItYjQ1OS03NDY3ZDMwNzMwZjIifQ.tGOWtPxBq6weqSYs2SM4sXn_8g_evUBaP8LkD8bZqMA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Присесть поколение человечек через жидкий изображать.","maxScore":61,"minScore":33,"description":"Роскошный вскинуть коробка. Расстегнуть запретить спорт академик ход тусклый уточнить. Запустить более ход левый порядок отдел.","estimatedTime":"9 weeks","previewFileId":"873040a7-a4ab-41ef-b559-7d210abf9346","createdByUserId":"fa595700-93b2-45d2-b459-7467d30730f2"}'

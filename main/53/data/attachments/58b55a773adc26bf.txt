@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjEzLjAzNjcyNiIsInVzZXJfaWQiOiIwMTNjZGQ1Zi0xMDkwLTQzOTAtOTMzYy04NTUzNGMyYmExYTAifQ.NHaUFniZqt6o91EznoLj95_b6LSvJv-LF1X7or6wHok' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Страсть промолчать печатать назначить райком.","maxScore":76,"minScore":13,"description":"Совещание падать казнь князь мгновение. Премьера результат вариант жестокий пространство. А второй цель невозможно цель спорт командир иной.","estimatedTime":"8 weeks","previewFileId":"fa49f301-05e7-4ec6-8f70-86f50b7ffe82","createdByUserId":"013cdd5f-1090-4390-933c-85534c2ba1a0"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE0LjM1MTkwNCIsInVzZXJfaWQiOiJjODIwNjE1ZS1jMmJlLTQ5NzQtODA1Ni04ZmIxM2Y4ZTk4NmIifQ.ZaB9kBBcaUP_y7fRYwE9HcLTt2qop3TZEOlKOelgW-Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Неожиданный недостаток кузнец угроза фонарик горький плясать.","maxScore":53,"minScore":14,"description":"Назначить посидеть сходить провинция волк пасть четыре. Упор сохранять космос некоторый сохранять. Ставить тяжелый деньги горький академик.","estimatedTime":"5 weeks","previewFileId":"dae4d27e-9068-4327-ae76-ad3f39cd1292","createdByUserId":"c820615e-c2be-4974-8056-8fb13f8e986b"}'

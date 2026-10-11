@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE4LjE2NDY0MCIsInVzZXJfaWQiOiI2YzYyMjEwNy0wMDQ1LTQ2MmMtOTNhYy1kNTJjNWU4ZGY2MDkifQ.GrbULOnPW4A8V0sYjvxQFoIILQ_8qj4--vG1mJ60ySQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Висеть поймать мимо радость.","maxScore":99,"minScore":38,"description":"Выбирать виднеться пища шлем о командующий. Кпсс дошлый металл упорно слишком исследование.\nИздали помолчать коричневый издали роскошный да советовать военный. Наткнуться похороны слишком бак.","estimatedTime":"1 weeks","previewFileId":"e308642a-13e5-4990-9b90-fb45a5a0b40b","createdByUserId":"6c622107-0045-462c-93ac-d52c5e8df609"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/fe489deb-bc7b-4a9b-a007-78f151858e99 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjEyLjMxNjc3NSIsInVzZXJfaWQiOiJkZGQxY2U3Yy03MTAxLTRkMGQtYTgxMy00MDU1NWJkMzVlZTIifQ.71RXzwrrLvVUZ8TIse92wS98YAvs2nTeTif4kOB-dhE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Результат приятель банда бак ботинок возмутиться зачем. (частично)"}'

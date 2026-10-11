@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjIwLjE4NzI1MSIsInVzZXJfaWQiOiJiM2QzMWE3NS01Y2I0LTQ4ZmMtYmRjNS01YTc5Y2I1MWE5OGEifQ.ZDMRZU3Ke42b_s6m2Oe1HJmFP-k7oPu1sYltA-kZLk0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Грудь командование механический около ночь лапа терапия.","maxScore":59,"minScore":19,"description":"Слишком наткнуться мера второй уточнить рис протягивать. Плод возникновение свежий редактор премьера.\nРедактор сынок ботинок горький.","estimatedTime":"10 weeks","previewFileId":"7352244f-87f1-4254-a335-5908be9eb1f1","createdByUserId":"b3d31a75-5cb4-48fc-bdc5-5a79cb51a98a"}'

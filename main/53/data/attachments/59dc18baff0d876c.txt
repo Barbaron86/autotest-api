@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/59313a37-723d-4fd1-bfde-05a4bf56dacb \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE3LjY4ODEwNCIsInVzZXJfaWQiOiI2YzYyMjEwNy0wMDQ1LTQ2MmMtOTNhYy1kNTJjNWU4ZGY2MDkifQ.mkq3OVwhjOHECFeBFrRvXHmFFXoDfqRxpBcYqAVAAik' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Похороны встать очередной хотеть ремень. (обновлено)","description":"Следовательно выгнать налоговый куча ремень естественный четыре. Пропаганда войти следовательно бочок. Освободить новый витрина угодный смертельный заплакать приличный пропадать.\nОбновленное описание.","maxScore":63,"minScore":27,"orderIndex":25,"estimatedTime":"2 weeks (обновлено)"}'

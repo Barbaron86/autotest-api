@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE2LjM0MDA4NSIsInVzZXJfaWQiOiIyMThkNjg4MC01Zjg3LTQ0ZDktOTkxMi0wNjk2ZmY2NTJjZGIifQ.OBtQ4TRH24g6KH0gKYteZYjhzbJLKk8LPL352CcmuJs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Промолчать скрытый функция интеллектуальный процесс пробовать металл.","maxScore":75,"minScore":23,"description":"Мальчишка бочок заведение рассуждение жестокий совещание. Прежний следовательно ведь способ аж степь. Металл присесть мелочь перебивать ботинок.","estimatedTime":"6 weeks","previewFileId":"86a1ac7e-42d5-4150-a1a5-bc3ccb3fc1cf","createdByUserId":"218d6880-5f87-44d9-9912-0696ff652cdb"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjEwLjc5NTE2MyIsInVzZXJfaWQiOiI2ZTI3NTc2OS1iMmE4LTRlMDctOTUzNi00Y2Y0YzAzOGM2MmYifQ.CeVcHlmOZR_Z9nuLns77X5Rs1oxC_JcilE_UWd8mgl0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Чем зато песня решетка тута заявление.","maxScore":86,"minScore":13,"description":"Тюрьма зарплата мелочь табак какой. Июнь манера отметить школьный господь тяжелый намерение. Вывести ягода необычный спорт что около передо.","estimatedTime":"2 weeks","previewFileId":"bedb74b7-193b-4de6-99b7-05defb92a215","createdByUserId":"6e275769-b2a8-4e07-9536-4cf4c038c62f"}'

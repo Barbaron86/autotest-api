@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjE0LjU5MDc1NiIsInVzZXJfaWQiOiI1YjFmYmIzYy1iMTRjLTRiNzEtOTI5NC1lNTRmMDcxNDM2YzgifQ.rJBEDC_Gvsg-c1FLyY5Ncy8EXF4LX5vGj94E2KqkqVg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Приятель приходить пространство да выраженный столетие торопливый жидкий.","maxScore":80,"minScore":23,"description":"Спорт выражаться точно изучить пропасть строительство. Передо запретить потом анализ тута кпсс близко. Снимать инструкция карандаш инструкция.","estimatedTime":"5 weeks","previewFileId":"d5dbcee6-961d-4af6-9a20-aca1db7ff78b","createdByUserId":"5b1fbb3c-b14c-4b71-9294-e54f071436c8"}'

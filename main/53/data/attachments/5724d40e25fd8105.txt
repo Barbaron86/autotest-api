@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjE1OjEyLjMxNjc3NSIsInVzZXJfaWQiOiJkZGQxY2U3Yy03MTAxLTRkMGQtYTgxMy00MDU1NWJkMzVlZTIifQ.71RXzwrrLvVUZ8TIse92wS98YAvs2nTeTif4kOB-dhE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Результат приятель банда бак ботинок возмутиться зачем.","maxScore":67,"minScore":31,"description":"Слишком задрать волк желание. Поймать угроза правление увеличиваться приятель левый. Ярко приходить вряд нож построить. Добиться крыса затянуться.","estimatedTime":"8 weeks","previewFileId":"918dec86-787d-4df1-921f-a226117f5db9","createdByUserId":"ddd1ce7c-7101-4d0d-a813-40555bd35ee2"}'
