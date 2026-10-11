@@ -12,9 +12,23 @@ from typing import Any
 import yaml
 
 GENERATED_DIRS = {
-    ".git", ".venv", "venv", "node_modules", "__pycache__", ".pytest_cache", ".mypy_cache",
-    ".ruff_cache", ".superpowers", "artifacts", "allure-results", "allure-report", "coverage-results",
-    "secrets", "credentials", "certificates", "private-keys",
+    ".git",
+    ".venv",
+    "venv",
+    "node_modules",
+    "__pycache__",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".superpowers",
+    "artifacts",
+    "allure-results",
+    "allure-report",
+    "coverage-results",
+    "secrets",
+    "credentials",
+    "certificates",
+    "private-keys",
 }
 SECRET_NAMES = (".env*", "credentials.*", "secrets.*", "id_rsa*", "id_ed25519*", "*.pem", "*.key", "*.p12", "*.pfx")
 DEFAULT_EXTENSIONS = [".py", ".toml", ".md", ".yml", ".yaml"]
@@ -22,14 +36,21 @@ DEFAULT_EXTENSIONS = [".py", ".toml", ".md", ".yml", ".yaml"]
 
 def git(repository: Path, *args: str) -> str:
     return subprocess.run(
-        ["git", *args], cwd=repository, capture_output=True, text=True, encoding="utf-8",
-        check=True, timeout=10,
+        ["git", *args],
+        cwd=repository,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=True,
+        timeout=10,
     ).stdout
 
 
 def safe_path(path: str) -> bool:
-    return bool(re.fullmatch(r"[A-Za-z0-9_./-]+", path)) and not path.startswith("/") and all(
-        part not in ("", ".", "..") for part in path.split("/")
+    return (
+        bool(re.fullmatch(r"[A-Za-z0-9_./-]+", path))
+        and not path.startswith("/")
+        and all(part not in ("", ".", "..") for part in path.split("/"))
     )
 
 
@@ -69,7 +90,8 @@ def build_access(repository: Path, profile: dict[str, Any]) -> dict[str, Any]:
         raise ValueError("No permitted source files at HEAD")
     pathspecs = [
         f":(glob){'' if root == '.' else root.rstrip('/') + '/'}**/*{extension}"
-        for root in roots for extension in extensions
+        for root in roots
+        for extension in extensions
     ]
     pathspecs.extend(f":(exclude,literal){name}" for _, name in entries if name not in files)
     suffix = shlex.join(pathspecs)
@@ -89,15 +111,23 @@ def build_access(repository: Path, profile: dict[str, Any]) -> dict[str, Any]:
 
 def without_tokens(value: Any) -> Any:
     if isinstance(value, dict):
-        return {key: without_tokens(item) for key, item in value.items()
-                if key.lower() not in {"api_token", "api_key", "password", "secret"}}
+        return {
+            key: without_tokens(item)
+            for key, item in value.items()
+            if key.lower() not in {"api_token", "api_key", "password", "secret"}
+        }
     if isinstance(value, list):
         return [without_tokens(item) for item in value]
     return value
 
 
 def prepare_config(
-    policy_root: Path, repository_root: Path, output_path: Path, *, agent_enabled: bool, dry_run: bool,
+    policy_root: Path,
+    repository_root: Path,
+    output_path: Path,
+    *,
+    agent_enabled: bool,
+    dry_run: bool,
 ) -> Path:
     policy_root = policy_root.resolve()
     output_path = output_path.resolve()
@@ -130,22 +160,31 @@ def prepare_config(
     prompts.setdefault("system_agent_prompt_files", []).append(str(access_prompt))
     prompts["include_agent_system_prompts"] = True
     search_pattern = re.escape(access["search_template"]).replace(
-        re.escape("<SYMBOL>"), r"[A-Za-z_][A-Za-z_0-9.:-]{0,99}",
+        re.escape("<SYMBOL>"),
+        r"[A-Za-z_][A-Za-z_0-9.:-]{0,99}",
     )
     file_pattern = "(?:" + "|".join(re.escape(name) for name in access["files"]) + ")"
     agent = config.setdefault("agent", {})
     agent.update(
-        enabled=agent_enabled, max_iterations=6, max_protocol_violations=2,
-        command_timeout=10, max_total_context_chars=30_000, max_command_output_chars=6_000,
-        allow_commands=[re.escape(access["list_command"]), search_pattern,
-                        re.escape(f"git show {access['head_sha']}:") + file_pattern],
+        enabled=agent_enabled,
+        max_iterations=6,
+        max_protocol_violations=2,
+        command_timeout=10,
+        max_total_context_chars=30_000,
+        max_command_output_chars=6_000,
+        allow_commands=[
+            re.escape(access["list_command"]),
+            search_pattern,
+            re.escape(f"git show {access['head_sha']}:") + file_pattern,
+        ],
     )
     config.setdefault("review", {})["dry_run"] = dry_run
     config.setdefault("core", {})["concurrency"] = 1
     config.setdefault("llm", {}).setdefault("meta", {})["max_tokens"] = 3_000
     output_path.write_text(yaml.safe_dump(config, allow_unicode=True, sort_keys=False), encoding="utf-8")
     output_path.with_suffix(".access.json").write_text(
-        json.dumps(access, indent=2, ensure_ascii=False) + "\n", encoding="utf-8",
+        json.dumps(access, indent=2, ensure_ascii=False) + "\n",
+        encoding="utf-8",
     )
     return output_path
 
@@ -159,8 +198,15 @@ def main() -> None:
     parser.add_argument("--dry-run", choices=["true", "false"], required=True)
     args = parser.parse_args()
     try:
-        print(prepare_config(args.policy_root, args.repository_root, args.output,
-                             agent_enabled=args.agent_mode == "on", dry_run=args.dry_run == "true"))
+        print(
+            prepare_config(
+                args.policy_root,
+                args.repository_root,
+                args.output,
+                agent_enabled=args.agent_mode == "on",
+                dry_run=args.dry_run == "true",
+            )
+        )
     except (ValueError, OSError, subprocess.SubprocessError) as error:
         parser.exit(1, f"Cannot prepare AI Review: {error}\n")
 

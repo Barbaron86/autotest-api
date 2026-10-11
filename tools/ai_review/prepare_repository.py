@@ -65,8 +65,11 @@ def get_pr(repository: str, number: str, metadata: Path | None) -> dict[str, Any
             raise ValueError("GH_TOKEN is required")
         request = urllib.request.Request(
             f"https://api.github.com/repos/{repository}/pulls/{number}",
-            headers={"Authorization": f"Bearer {token}", "Accept": "application/vnd.github+json",
-                     "X-GitHub-Api-Version": "2022-11-28"},
+            headers={
+                "Authorization": f"Bearer {token}",
+                "Accept": "application/vnd.github+json",
+                "X-GitHub-Api-Version": "2022-11-28",
+            },
         )
         with urllib.request.urlopen(request, timeout=30) as response:
             payload = json.load(response)
@@ -81,16 +84,34 @@ def git(root: Path, *args: str, authenticated: bool = False) -> str:
         if not token:
             raise ValueError("GH_TOKEN is required for fetch")
         credential = base64.b64encode(f"x-access-token:{token}".encode()).decode()
-        environment.update(GIT_CONFIG_COUNT="1", GIT_CONFIG_KEY_0="http.https://github.com/.extraheader",
-                           GIT_CONFIG_VALUE_0=f"AUTHORIZATION: basic {credential}")
-    return subprocess.run(["git", *args], cwd=root, env=environment, capture_output=True,
-                          text=True, encoding="utf-8", check=True, timeout=120).stdout.strip()
+        environment.update(
+            GIT_CONFIG_COUNT="1",
+            GIT_CONFIG_KEY_0="http.https://github.com/.extraheader",
+            GIT_CONFIG_VALUE_0=f"AUTHORIZATION: basic {credential}",
+        )
+    return subprocess.run(
+        ["git", *args],
+        cwd=root,
+        env=environment,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+        check=True,
+        timeout=120,
+    ).stdout.strip()
 
 
 def prepare(root: Path, identity: dict[str, Any], state: Path, *, skip_fetch: bool = False) -> None:
     if not skip_fetch:
-        git(root, "fetch", "--no-tags", f"https://github.com/{identity['repository']}.git",
-            identity["head_sha"], identity["base_sha"], authenticated=True)
+        git(
+            root,
+            "fetch",
+            "--no-tags",
+            f"https://github.com/{identity['repository']}.git",
+            identity["head_sha"],
+            identity["base_sha"],
+            authenticated=True,
+        )
     for side in ("head_sha", "base_sha"):
         git(root, "cat-file", "-e", identity[side] + "^{commit}")
     git(root, "checkout", "--detach", identity["head_sha"])

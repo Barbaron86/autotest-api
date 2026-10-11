@@ -18,7 +18,7 @@ on:
           - clear-inline
           - clear-summary
       pull-request-number:
-        description: PR number (leave empty for smoke test)
+        description: PR number (optional controlled PR for smoke)
         required: false
         type: string
       agent-mode:
@@ -152,7 +152,13 @@ jobs:
     timeout-minutes: 15
     permissions:
       contents: read
+      pull-requests: read
     steps:
+      - name: Refuse an automatic paid rerun
+        env:
+          RUN_ATTEMPT: ${{ github.run_attempt }}
+        run: test "$RUN_ATTEMPT" = 1 || { echo 'Paid smoke must not be rerun automatically'; exit 1; }
+
       - name: Check out reviewed workflow branch
         uses: actions/checkout@v7.0.1
         with:
@@ -170,18 +176,45 @@ jobs:
       - name: Run free checks first
         run: python -m pytest checks/ai_review --confcutdir=checks/ai_review -o addopts='' -q
 
-      - name: Prepare local diff and show request limits
+      - name: Save trusted smoke runner and policy
         run: |
-          python checks/ai_review/smoke_agent.py --prepare-only \
-            --policy-root "$GITHUB_WORKSPACE" --source-repository "$GITHUB_WORKSPACE" \
-            --work-dir "$RUNNER_TEMP/agent-smoke" --output "$RUNNER_TEMP/agent-smoke-result.json"
+          python tools/ai_review/prepare_repository.py snapshot \
+            --source "$GITHUB_WORKSPACE" --destination "$RUNNER_TEMP/ai-review-smoke-policy"
+          mkdir -p "$RUNNER_TEMP/ai-review-smoke-policy/checks/ai_review"
+          cp checks/ai_review/smoke_agent.py "$RUNNER_TEMP/ai-review-smoke-policy/checks/ai_review/"
+
+      - name: Prepare controlled PR or local diff and show request limits
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
+        run: |
+          PR_ARGS=()
+          if test -n "$PR_NUMBER"; then
+            python "$RUNNER_TEMP/ai-review-smoke-policy/tools/ai_review/prepare_repository.py" prepare \
+              --repository-root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
+              --number "$PR_NUMBER" --state "$RUNNER_TEMP/ai-review-smoke-state.json"
+            PR_ARGS=(--pr-state "$RUNNER_TEMP/ai-review-smoke-state.json")
+          fi
+          python "$RUNNER_TEMP/ai-review-smoke-policy/checks/ai_review/smoke_agent.py" --prepare-only \
+            --policy-root "$RUNNER_TEMP/ai-review-smoke-policy" --source-repository "$GITHUB_WORKSPACE" \
+            --work-dir "$RUNNER_TEMP/agent-smoke" --output "$RUNNER_TEMP/agent-smoke-result.json" "${PR_ARGS[@]}"
+
+      - name: Recheck controlled PR before the paid smoke
+        if: ${{ inputs.pull-request-number != '' }}
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ inputs.pull-request-number }}
+        run: |
+          python "$RUNNER_TEMP/ai-review-smoke-policy/tools/ai_review/prepare_repository.py" check \
+            --repository-root "$GITHUB_WORKSPACE" --repository "$GITHUB_REPOSITORY" \
+            --number "$PR_NUMBER" --state "$RUNNER_TEMP/ai-review-smoke-state.json"
 
       - name: Run the single paid smoke
         env:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
         run: |
-          python checks/ai_review/smoke_agent.py --live \
-            --policy-root "$GITHUB_WORKSPACE" --source-repository "$GITHUB_WORKSPACE" \
+          python "$RUNNER_TEMP/ai-review-smoke-policy/checks/ai_review/smoke_agent.py" --live \
+            --policy-root "$RUNNER_TEMP/ai-review-smoke-policy" --source-repository "$GITHUB_WORKSPACE" \
             --work-dir "$RUNNER_TEMP/agent-smoke" --output "$RUNNER_TEMP/agent-smoke-result.json"
 
       - name: Record smoke result

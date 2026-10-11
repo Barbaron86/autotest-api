@@ -34,8 +34,7 @@ agent:
 repository_profile:
   source_roots: ["."]
   file_extensions: [".py", ".toml", ".md", ".yml", ".yaml"]
-  exclude_paths:
-    - "docs/superpowers/*"
+  exclude_paths: []
 
 prompt:
   system_agent_prompt_files:

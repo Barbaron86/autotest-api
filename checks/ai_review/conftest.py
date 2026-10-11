@@ -1,16 +1,18 @@
 """Offline checks deliberately isolated from the API integration fixtures."""
 
 import os
-import subprocess
 from pathlib import Path
 
 import pytest
 import yaml
 
+from checks.ai_review.support import git
+
 PROJECT = Path(__file__).resolve().parents[2]
 for kind in ("YAML", "JSON", "ENV"):
     os.environ[f"AI_REVIEW_CONFIG_FILE_{kind}"] = str(PROJECT / "checks" / f"absent.{kind.lower()}")
 os.environ.update(
+    PYTHONUTF8="1",
     LLM__PROVIDER="OPENAI",
     LLM__META__MODEL="gpt-6-sol",
     LLM__HTTP_CLIENT__API_URL="https://api.openai.com/v1",
@@ -24,18 +26,11 @@ os.environ.update(
 )
 
 
-def git(root: Path, *args: str, input_text: str | None = None) -> str:
-    return subprocess.run(
-        ["git", *args], cwd=root, input=input_text, text=True, encoding="utf-8",
-        capture_output=True, check=True,
-    ).stdout.strip()
-
-
 @pytest.fixture
 def repository(tmp_path: Path) -> Path:
     root = tmp_path / "repository"
     root.mkdir()
-    git(root, "init", "-q")
+    git(root, "init", "-q", "-b", "feat/offline-check")
     git(root, "config", "user.name", "Offline Check")
     git(root, "config", "user.email", "offline@example.invalid")
     files = {
@@ -55,7 +50,7 @@ def repository(tmp_path: Path) -> Path:
     git(root, "add", ".")
     blob = git(root, "hash-object", "-w", "--stdin", input_text="/etc/passwd")
     git(root, "update-index", "--add", "--cacheinfo", f"120000,{blob},clients/link.py")
-    git(root, "commit", "-qm", "Fixture sources")
+    git(root, "commit", "-qm", "test: подготовить исходники фикстуры")
     return root
 
 
@@ -66,16 +61,20 @@ def policy_root(tmp_path: Path) -> Path:
     for name in ("domain.md", "repository-exploration.md"):
         (root / ".github" / "ai-review" / name).write_text("Review carefully.\n", encoding="utf-8")
     config = {
-        "llm": {"provider": "OPENAI", "meta": {"model": "gpt-6-sol"},
-                "http_client": {"api_token": "MUST_NOT_BE_WRITTEN"}},
+        "llm": {
+            "provider": "OPENAI",
+            "meta": {"model": "gpt-6-sol"},
+            "http_client": {"api_token": "MUST_NOT_BE_WRITTEN"},
+        },
         "vcs": {"provider": "GITHUB", "http_client": {"api_token": "MUST_NOT_BE_WRITTEN"}},
         "agent": {"enabled": False},
         "review": {"dry_run": False},
-        "prompt": {"summary_prompt_files": [".github/ai-review/domain.md"],
-                   "system_agent_prompt_files": [".github/ai-review/repository-exploration.md"],
-                   "include_agent_system_prompts": True},
-        "repository_profile": {"source_roots": ["."],
-                               "file_extensions": [".py", ".md", ".yaml"]},
+        "prompt": {
+            "summary_prompt_files": [".github/ai-review/domain.md"],
+            "system_agent_prompt_files": [".github/ai-review/repository-exploration.md"],
+            "include_agent_system_prompts": True,
+        },
+        "repository_profile": {"source_roots": ["."], "file_extensions": [".py", ".md", ".yaml"]},
     }
     (root / ".ai-review.yaml").write_text(yaml.safe_dump(config), encoding="utf-8")
     return root
