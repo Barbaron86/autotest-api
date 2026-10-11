@@ -37,7 +37,7 @@ repository_profile:
   exclude_paths: []
 
 prompt:
-  system_agent_prompt_files:
+  agent_prompt_files:
     - ./.github/ai-review/repository-exploration.md
 
   include_agent_system_prompts: true
