@@ -170,7 +170,13 @@ def build_prompts(fixture: dict[str, Any]) -> tuple[str, str]:
         GitService(repo_dir=root), [CASE_FILE], fixture["base_sha"], fixture["head_sha"]
     )
     context = PromptContextSchema(review_title="File creation test update", changed_files=[CASE_FILE])
-    return (PromptService.build_summary_request(rendered, context), PromptService.build_system_summary_request(context))
+    system = PromptService.build_system_summary_request(context)
+    system += (
+        "\nFor this controlled smoke, no mypy results are available for the reviewed PR. "
+        "Do not exclude defects only because a type checker could detect them. "
+        "Other review rules still apply."
+    )
+    return (PromptService.build_summary_request(rendered, context), system)
 
 
 class OfflineLLM:
