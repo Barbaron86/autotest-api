@@ -2,8 +2,11 @@ llm:
   provider: OPENAI
 
   meta:
-    model: gpt-6-sol
+    model: gpt-6-luna
     max_tokens: 4000
+    reasoning:
+      effort: high
+      mode: pro
 
   http_client:
     verify: true
