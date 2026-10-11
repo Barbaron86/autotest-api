@@ -35,6 +35,12 @@ class GetCoursesResponseSchema(BaseSchema):
     courses: list[CourseSchema]
 
 
+class GetCourseResponseSchema(BaseSchema):
+    """Ответ на получение курса по идентификатору."""
+
+    course: CourseSchema
+
+
 class CreateCourseRequestSchema(BaseSchema):
     """Запрос на создание курса."""
 
