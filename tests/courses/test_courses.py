@@ -8,11 +8,13 @@ from clients.courses.courses_client import CoursesClient
 from clients.courses.courses_schema import (
     CreateCourseRequestSchema,
     CreateCourseResponseSchema,
+    GetCourseResponseSchema,
     GetCoursesQuerySchema,
     GetCoursesResponseSchema,
     UpdateCourseRequestSchema,
     UpdateCourseResponseSchema,
 )
+from clients.error_schema import InternalErrorResponseSchema
 from fixtures.courses import CourseFixture
 from fixtures.files import FileFixture
 from fixtures.users import UserFixture
@@ -22,10 +24,12 @@ from tools.allure.stories import AllureStory
 from tools.allure.tags import AllureTag
 from tools.assertions.base import assert_equal, assert_status_code
 from tools.assertions.courses import (
+    assert_course,
     assert_create_course_response,
     assert_get_courses_response,
     assert_update_course_response,
 )
+from tools.assertions.errors import assert_internal_error_response
 from tools.assertions.files import assert_file
 from tools.assertions.schema import validate_json_schema
 from tools.assertions.users import assert_user
@@ -114,6 +118,106 @@ class TestCourses:
         assert_file(actual=response_data.course.preview_file, expected=original_course.preview_file)
         assert_user(actual=response_data.course.created_by_user, expected=original_course.created_by_user)
         validate_json_schema(response.json(), UpdateCourseResponseSchema.model_json_schema())
+
+    @allure.tag(AllureTag.UPDATE_ENTITY)
+    @allure.story(AllureStory.UPDATE_ENTITY)
+    @allure.sub_suite(AllureStory.UPDATE_ENTITY)
+    @allure.title("Partial update course")
+    @allure.severity(Severity.CRITICAL)
+    def test_partial_update_course(self, courses_client: CoursesClient, function_course: CourseFixture) -> None:
+        """Проверяет обновление названия без изменения остальных полей курса.
+
+        Args:
+            courses_client: Фикстура авторизованного API-клиента курсов.
+            function_course: Фикстура с исходными данными созданного курса.
+
+        Raises:
+            AssertionError: Если название не обновилось или изменились
+                другие поля в ответе PATCH либо при повторном GET.
+        """
+        assert_create_course_response(request=function_course.request, response=function_course.response)
+        original_course = function_course.response.course
+        request = UpdateCourseRequestSchema(title=f"{original_course.title[:230]} (частично)")
+        expected_course = original_course.model_copy(update={"title": request.title})
+
+        response = courses_client.update_course_api(course_id=original_course.id, request=request)
+
+        assert_status_code(response.status_code, HTTPStatus.OK)
+        validate_json_schema(response.json(), UpdateCourseResponseSchema.model_json_schema())
+        response_data = UpdateCourseResponseSchema.model_validate_json(response.text)
+
+        assert_update_course_response(request=request, response=response_data)
+        assert_course(actual=response_data.course, expected=expected_course)
+
+        get_response = courses_client.get_course_api(course_id=original_course.id)
+
+        assert_status_code(get_response.status_code, HTTPStatus.OK)
+        validate_json_schema(get_response.json(), GetCourseResponseSchema.model_json_schema())
+        get_response_data = GetCourseResponseSchema.model_validate_json(get_response.text)
+
+        assert_course(actual=get_response_data.course, expected=expected_course)
+
+    @allure.tag(AllureTag.DELETE_ENTITY)
+    @allure.story(AllureStory.DELETE_ENTITY)
+    @allure.sub_suite(AllureStory.DELETE_ENTITY)
+    @allure.title("Delete course")
+    @allure.severity(Severity.CRITICAL)
+    def test_delete_course(self, courses_client: CoursesClient, function_course: CourseFixture) -> None:
+        """Проверяет удаление курса и его недоступность при повторном GET.
+
+        Args:
+            courses_client: Фикстура авторизованного API-клиента курсов.
+            function_course: Фикстура с данными созданного курса.
+
+        Raises:
+            AssertionError: Если HTTP-статусы или сообщение об отсутствии
+                удаленного курса не соответствуют ожиданиям.
+        """
+        course_id = function_course.response.course.id
+        delete_response = courses_client.delete_course_api(course_id=course_id)
+
+        assert_status_code(delete_response.status_code, HTTPStatus.OK)
+
+        get_response = courses_client.get_course_api(course_id=course_id)
+
+        assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
+        validate_json_schema(get_response.json(), InternalErrorResponseSchema.model_json_schema())
+        response_data = InternalErrorResponseSchema.model_validate_json(get_response.text)
+
+        assert_internal_error_response(
+            actual=response_data,
+            expected=InternalErrorResponseSchema(detail="Course not found"),
+        )
+
+    @allure.tag(AllureTag.GET_ENTITY)
+    @allure.story(AllureStory.GET_ENTITY)
+    @allure.sub_suite(AllureStory.GET_ENTITY)
+    @allure.title("Get course by id")
+    @allure.severity(Severity.BLOCKER)
+    def test_get_course(self, courses_client: CoursesClient, function_course: CourseFixture) -> None:
+        """Проверяет получение созданного курса по идентификатору.
+
+        Подтверждает исходное состояние курса по запросу создания,
+        проверяет структуру JSON и все поля курса, включая превью и автора.
+
+        Args:
+            courses_client: Фикстура авторизованного API-клиента курсов.
+            function_course: Фикстура с запросом и ответом создания курса.
+
+        Raises:
+            AssertionError: Если HTTP-статус или данные курса
+                не соответствуют ожидаемым значениям.
+        """
+        assert_create_course_response(request=function_course.request, response=function_course.response)
+        expected_course = function_course.response.course
+
+        response = courses_client.get_course_api(course_id=expected_course.id)
+
+        assert_status_code(response.status_code, HTTPStatus.OK)
+        validate_json_schema(response.json(), GetCourseResponseSchema.model_json_schema())
+        response_data = GetCourseResponseSchema.model_validate_json(response.text)
+
+        assert_course(actual=response_data.course, expected=expected_course)
 
     @allure.tag(AllureTag.GET_ENTITIES)
     @allure.story(AllureStory.GET_ENTITIES)
