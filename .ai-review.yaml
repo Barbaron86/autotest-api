@@ -3,6 +3,7 @@ llm:
 
   meta:
     model: gpt-6-sol
+    max_tokens: 3000
 
   http_client:
     verify: true
@@ -18,12 +19,30 @@ vcs:
     api_url: https://api.github.com
 
 core:
-  concurrency: 3
+  concurrency: 1
 
 agent:
   enabled: false
+  max_iterations: 6
+  max_protocol_violations: 2
+  command_timeout: 10
+  max_total_context_chars: 30000
+  max_command_output_chars: 6000
+  # The trusted helper supplies exact Git-only commands for the selected PR SHA.
+  allow_commands: []
+
+repository_profile:
+  source_roots: ["."]
+  file_extensions: [".py", ".toml", ".md", ".yml", ".yaml"]
+  exclude_paths:
+    - "docs/superpowers/*"
 
 prompt:
+  system_agent_prompt_files:
+    - ./.github/ai-review/repository-exploration.md
+
+  include_agent_system_prompts: true
+
   inline_prompt_files:
     - ./.github/ai-review/python-api-review.md
 
