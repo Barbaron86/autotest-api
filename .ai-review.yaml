@@ -24,10 +24,7 @@ core:
 agent:
   enabled: true
   max_iterations: 6
-  max_protocol_violations: 2
-  command_timeout: 10
-  max_total_context_chars: 30000
-  max_command_output_chars: 6000
+  max_command_output_chars: 10000
   # The trusted helper supplies exact Git-only commands for the selected PR SHA.
   allow_commands: []
 
@@ -80,6 +77,9 @@ review:
   max_inline_comments: 3
   max_context_comments: 8
   inline_comment_fallback: false
+
+logger:
+  level: DEBUG
 
 artifacts:
   llm_enabled: false

@@ -7,7 +7,10 @@ Put the task's review text or JSON only inside FINAL.content, not outside the en
 
 Before reporting a defect that depends on other code, read the relevant definition.
 Read a known path directly; use Search or List when you need to locate it.
-Search across the whole permitted project, including unchanged files and other directories.
+Follow imports and references into unchanged files and other directories as needed.
+Read small batches of related files. Search broadly only when the needed location is unknown.
+Do not list or read the whole project by default. For truncated files, use focused search
+with surrounding lines to inspect the relevant definition instead of rereading the same output.
 Check existing callers when they help establish the contract. Do not propose helpers
 or API behavior before checking the existing implementation.
 
