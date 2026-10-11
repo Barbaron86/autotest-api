@@ -237,12 +237,5 @@ CI preserves Allure history for `main` and removes its test containers and volum
 
 ### AI Review
 
-The optional [AI review workflow](.github/workflows/ai-review.yml) uses
-`Nikita-Filonov/ai-review` with OpenAI to review pull request changes and post
-summary or inline feedback to GitHub. It runs separately from the test pipeline.
-
-Start it from **GitHub Actions → AI Review → Run workflow**, enter the PR number
-and select a review command (for example, `run-summary` or `run-inline`).
-The workflow requires an `OPENAI_API_KEY` repository secret.
-[.ai-review.yaml](.ai-review.yaml) configures the provider and review behavior;
-[python-api-review.md](.github/ai-review/python-api-review.md) contains project-specific review instructions.
+Manual AI-assisted pull request review through [GitHub Actions](.github/workflows/ai-review.yml).
+It checks the changes and can search related project code to help find defects.

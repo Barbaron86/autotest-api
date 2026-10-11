@@ -50,7 +50,7 @@ jobs:
           test -s .github/ai-review/python-api-review.md
 
       - name: Review pull request
-        uses: Nikita-Filonov/ai-review@26f47a31e998b550a12e787383049f27a37fc775 # v1.1.0
+        uses: Nikita-Filonov/ai-review@199446c8a08954d1f33eeb754af4040e5f22d81f # v1.4.0
         with:
           review-command: ${{ inputs.review-command }}
         env:

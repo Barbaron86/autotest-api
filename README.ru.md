@@ -238,12 +238,5 @@ CI сохраняет историю Allure для `main` и удаляет те
 
 ### AI Review
 
-Необязательный [workflow AI review](.github/workflows/ai-review.yml) использует
-`Nikita-Filonov/ai-review` с OpenAI для ревью изменений pull request и публикации
-общего заключения или комментариев к строкам кода в GitHub. Он запускается отдельно от тестового pipeline.
-
-Откройте **GitHub Actions → AI Review → Run workflow**, укажите номер PR
-и выберите команду ревью (например, `run-summary` или `run-inline`).
-Workflow требует секрет репозитория `OPENAI_API_KEY`.
-[.ai-review.yaml](.ai-review.yaml) задаёт провайдера и поведение ревью;
-[python-api-review.md](.github/ai-review/python-api-review.md) содержит инструкции ревью для этого проекта.
+Ручное AI-ревью pull request через [GitHub Actions](.github/workflows/ai-review.yml).
+Проверяет изменения и может искать связанный код проекта, чтобы находить ошибки.
