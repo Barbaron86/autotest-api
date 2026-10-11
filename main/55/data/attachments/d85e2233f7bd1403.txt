@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjEyLjI3NDM4NyIsInVzZXJfaWQiOiI5YzJhY2UyZi05ZWJmLTRiYWItYjZmNi0yZjE0ZmNiYzZkZTEifQ.K8kgJttY-qL1Fn3wcQpWy8HIHcWSTi4-9j8LINsuJfg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Решение палка тысяча носок чем.","maxScore":95,"minScore":40,"description":"Девка тута мера. Упорно палка неожиданный растеряться даль.\nЖидкий вариант табак назначить. Спешить точно полоска мелькнуть лапа адвокат.","estimatedTime":"10 weeks","previewFileId":"02b8386f-8d41-4e82-91d6-6f00a32288d1","createdByUserId":"9c2ace2f-9ebf-4bab-b6f6-2f14fcbc6de1"}'

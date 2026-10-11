@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjA5LjQ0MTk2MSIsInVzZXJfaWQiOiI1MThhZDliYi1lZGQ3LTQwZDQtYmUwYi03Y2E2Zjk5NzIwY2UifQ.eX6GOAU7qr7dsNxMvlgo1grNPlw7ySxP1T0JBGjwpUc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Разуметься чувство хозяйка потом.","maxScore":53,"minScore":40,"description":"Ярко секунда вывести запустить табак близко. Приходить пространство труп смертельный посидеть болото. Появление бабочка исследование монета карандаш. Порода бочок граница строительство дошлый.","estimatedTime":"9 weeks","previewFileId":"3d4b32ae-432f-4cb1-a569-344af15964db","createdByUserId":"518ad9bb-edd7-40d4-be0b-7ca6f99720ce"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjEyLjUxMzQyOCIsInVzZXJfaWQiOiJjNWE4ZGY2MC1iNDM4LTRiYTYtYjgyMi04MDIxMGQ2Y2FiMjkifQ.3XASyYWW8nMbLeSAe1DLVX92sELA0mx6KD9liPflLfU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Банда развернуться протягивать возмутиться появление ручей исследование.","maxScore":84,"minScore":23,"description":"Миф зима возбуждение ягода ответить. Ученый холодно отъезд художественный сомнительный упор новый правление. Пропадать князь пропадать заплакать инструкция.","estimatedTime":"9 weeks","previewFileId":"f9e61c44-c52e-4344-88b0-98dab52d6715","createdByUserId":"c5a8df60-b438-4ba6-b822-80210d6cab29"}'

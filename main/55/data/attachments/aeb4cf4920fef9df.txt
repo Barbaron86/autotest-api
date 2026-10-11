@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjE2LjU1MjAwOSIsInVzZXJfaWQiOiI4ZDdjMDZkYi0zN2Q1LTRkMDMtODMzOS03OGM2NmEyMGQ5MGMifQ.yzndS4vhPB1wXZSmOvd3n2lMJ1psMJizCd5trgYr5Rw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Монета гулять сверкать доставать адвокат доставать призыв.","maxScore":93,"minScore":34,"description":"Налоговый место решетка ягода освободить. Успокоиться направо решение разуметься пробовать набор вперед.","estimatedTime":"5 weeks","previewFileId":"054eff8c-d8f1-44a4-b4d0-2f3e340a5d56","createdByUserId":"8d7c06db-37d5-4d03-8339-78c66a20d90c"}'

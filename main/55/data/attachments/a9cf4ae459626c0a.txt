@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjE1LjgzNDUyMyIsInVzZXJfaWQiOiJlNTJjMzI3Zi0yOTJjLTRlODYtOTMwYi1hMTBlYWNhNjRhODcifQ.zBH1UD2uoUg6ELVFRBOrfKlXbXUDJeYIuVJYF2OBxUg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вывести рис полностью совещание похороны.","maxScore":69,"minScore":36,"description":"Плавно бегать развитый полностью висеть сбросить. Редактор сынок покидать смелый.\nПомолчать мера выраженный степь металл. Чувство поезд танцевать цепочка ломать. Мальчишка трубка четыре поговорить.","estimatedTime":"6 weeks","previewFileId":"f16fa593-610f-49a3-bf29-38f1273c5f8c","createdByUserId":"e52c327f-292c-4e86-930b-a10eaca64a87"}'

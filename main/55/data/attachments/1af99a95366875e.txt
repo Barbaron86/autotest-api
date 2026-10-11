@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjA4LjcyMDUxOSIsInVzZXJfaWQiOiJkODNkYjk2MS1lZjEwLTQ5MzctOWU1NS00MWY1MmFhNTc4YTQifQ.-H0UHvEjYRxX-0nON3M202_TuJaC09X6xawUibWaVbs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Каюта художественный трясти указанный.","maxScore":74,"minScore":34,"description":"Пламя передо дружно анализ смертельный решетка задержать. Сопровождаться прощение сопровождаться написать отдел.","estimatedTime":"2 weeks","previewFileId":"b6ac60d7-fde5-48b7-a653-6f0bfb8ffb39","createdByUserId":"d83db961-ef10-4937-9e55-41f52aa578a4"}'

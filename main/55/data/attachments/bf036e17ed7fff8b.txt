@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjEwLjI0NjM0NSIsInVzZXJfaWQiOiIwOGY2OTM2YS0zOWEwLTQzMjItOTAwOC0xY2E1ZmQxMDM0MDIifQ.woytjP-cbx-n-bTBTj3u8cFlZwEFjw3BQQKOBRZGRQs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Означать зарплата мелькнуть некоторый сомнительный находить.","maxScore":89,"minScore":27,"description":"Неожиданно полевой каюта покидать мрачно подробность. Эффект смертельный встать предоставить. Правление деловой пересечь прежде развитый.","estimatedTime":"3 weeks","previewFileId":"75a3555c-40c0-4ec8-a682-eb3da3e1d725","createdByUserId":"08f6936a-39a0-4322-9008-1ca5fd103402"}'

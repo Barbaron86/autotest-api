@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjE0LjI2NTEwNSIsInVzZXJfaWQiOiJjOGQ5ZWM3MC01NmQ0LTQxYmQtOTFkMS0xZjViYWQ5NGM0YTcifQ.Mi9vOBBEldR8sQRX_-udqUku6d4Ri9hV665zLyBOJF4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Прежний тревога бок мрачно хлеб около.","maxScore":85,"minScore":28,"description":"Рай холодно лететь отдел иной июнь призыв. Наслаждение правление палка рота.\nПламя аллея услать какой счастье торопливый. Человечек проход единый. Пламя спорт опасность.","estimatedTime":"5 weeks","previewFileId":"7a3c0903-93a5-4275-b360-8d6e57e7a082","createdByUserId":"c8d9ec70-56d4-41bd-91d1-1f5bad94c4a7"}'

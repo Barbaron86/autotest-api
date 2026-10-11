@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjE4LjYyOTYyMSIsInVzZXJfaWQiOiJjNDJhMmRiZi02MzY5LTRmYzktYThmZS1kYzUzZjIxYjI2MTYifQ.1zZ0MsBzj0t-2b28qgAB2wpjzDP5iwUSh6g1DZC3MEY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пересечь горький способ вывести.","maxScore":67,"minScore":14,"description":"Понятный полюбить что постоянный изменение горький. Войти дыхание пламя построить. Очутиться славный эпоха да смелый передо спалить рай.","estimatedTime":"1 weeks","previewFileId":"495d67dc-dc77-4815-b731-1d21f7e981ff","createdByUserId":"c42a2dbf-6369-4fc9-a8fe-dc53f21b2616"}'

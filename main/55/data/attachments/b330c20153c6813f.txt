@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIxOjQ3OjE0LjAyMzc1NCIsInVzZXJfaWQiOiJlYWJkOWU4My03ZTFhLTRlMTktOGM4MS05Yjk1OTU4MTdkZTEifQ.hVYH2ACbsz3RNoM4vnfV3M_p3OYjHlLIdL5sQlDmNzI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Народ расстройство скрытый настать.","maxScore":52,"minScore":42,"description":"Виднеться протягивать прежде конструкция куча потянуться. Столетие медицина ложиться медицина затянуться посидеть сопровождаться.","estimatedTime":"10 weeks","previewFileId":"2dbe9531-455b-4421-a101-b242256b9473","createdByUserId":"eabd9e83-7e1a-4e19-8c81-9b9595817de1"}'
