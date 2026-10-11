@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/2ee65999-d56e-4f3b-81d4-9621e9263be6 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA1OjU5LjMzNTQxNyIsInVzZXJfaWQiOiJmYzViNGQ2NC1iYmIwLTQ3NTYtYjJiNi1hMzgyNjQwYmZkOTEifQ.5lqQXOec-DnesF11etI5VZF_mJ0f576n0yqKEt2k2oI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Точно освободить домашний конструкция рота. (обновлено)","maxScore":87,"minScore":43,"description":"Вытаскивать низкий тусклый мимо способ горький ставить расстегнуть. Слишком светило поймать.\nСмелый монета спасть художественный.\nОбновленное описание.","estimatedTime":"1 weeks (обновлено)"}'

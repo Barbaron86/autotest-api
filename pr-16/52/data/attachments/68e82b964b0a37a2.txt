@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjAwLjQ5ODk3MCIsInVzZXJfaWQiOiIxNTM0M2FkNS0zZDQxLTQxYzItYWY2Ni1mOThmYWJjZmE1YTQifQ.NwfzwKgXocnMx_IOqRaFi_KHR97a7SLPBrHDWLVFV3o' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Совещание перебивать падаль нажать зима пропадать.","maxScore":64,"minScore":8,"description":"Еврейский страсть неожиданный сохранять. Необычный единый подробность витрина левый костер. Цвет идея оставить падаль проход.\nВыраженный изменение интернет металл избегать добиться командир.","estimatedTime":"7 weeks","previewFileId":"e434516c-9ce5-4ee9-9c6c-46f19212c19a","createdByUserId":"15343ad5-3d41-41c2-af66-f98fabcfa5a4"}'

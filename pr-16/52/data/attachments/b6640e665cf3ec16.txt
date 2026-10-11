@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjEwLjYwMTA5NCIsInVzZXJfaWQiOiJkZWY5NjEzZS0zODhmLTRhZGYtYjJmMS04N2FhZmQ1N2VkMmUifQ.X4KdBrS0B5mMVO_KFzIE54wINzqrPFbxN251SJMkOyc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Появление очередной пасть рассуждение помолчать социалистический важный да.","maxScore":98,"minScore":16,"description":"Народ выражение угроза совещание секунда наступать развитый видимо. Дыхание ломать художественный бетонный. Успокоиться эффект неправда мусор еврейский висеть роскошный палец.","estimatedTime":"9 weeks","previewFileId":"63ce0210-aad1-43e4-a347-33db384abc12","createdByUserId":"def9613e-388f-4adf-b2f1-87aafd57ed2e"}'

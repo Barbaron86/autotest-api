@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA0LjM1MjcwMyIsInVzZXJfaWQiOiI4MThiZDJiZi1iMmZlLTQ0OTctYTU4Yy03Y2EzYzA3ZTU0ZDYifQ.M0Dz4GkG7q7byPRyS13uhmBu1E_ZGKlsOaAfLIPql2w' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Жестокий пространство демократия монета багровый.","maxScore":90,"minScore":20,"description":"Спасть процесс правление изучить помимо беспомощный ныне. Пятеро советовать кожа неудобно вытаскивать помимо за.","estimatedTime":"1 weeks","previewFileId":"19efff64-36d1-49d8-ac2e-ed566f9e33e7","createdByUserId":"818bd2bf-b2fe-4497-a58c-7ca3c07e54d6"}'

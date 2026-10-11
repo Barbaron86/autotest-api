@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA4LjUxNzY5NCIsInVzZXJfaWQiOiI0MjcwZmVlYi1kYTI3LTRkZjMtOTAxNi1jZTcwYzAzNzA3NTIifQ.kBiTYJixNbRtjUxy9KbpHp4WmKoxxiKnknC6AVArM_4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дремать песенка аж академик приятель девка дорогой.","maxScore":68,"minScore":5,"description":"Плавно покидать угол. Запеть заложить цепочка сбросить крутой бак художественный порт. Спалить пятеро бегать тысяча вскинуть коричневый приходить плавно.","estimatedTime":"6 weeks","previewFileId":"b61fe750-f005-4447-bd23-5125db479c08","createdByUserId":"4270feeb-da27-4df3-9016-ce70c0370752"}'

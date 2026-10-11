@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjAxLjQxNzM0MiIsInVzZXJfaWQiOiJhMGYxZTRkMS00MDlhLTRlMGQtYjIzOS01MWUwOTA4ZGYwYTEifQ.Fe_J309u6nGXnWTnn-SyKijoaDZAYQbEjxvLP7OSAMQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Стакан бабочка чем бетонный роскошный космос задрать бабочка.","maxScore":95,"minScore":49,"description":"Запеть налоговый даль смелый ягода означать советовать поговорить.\nПравление выдержать мрачно умолять. Слишком написать новый анализ необычный.","estimatedTime":"3 weeks","previewFileId":"894214a9-b59d-4f6f-8816-5738ab236f03","createdByUserId":"a0f1e4d1-409a-4e0d-b239-51e0908df0a1"}'

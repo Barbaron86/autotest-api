@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/4cef4c4c-0b6a-42f0-a4ed-97b1d610f781 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA3LjY5MzYyMSIsInVzZXJfaWQiOiJjNGU3MzAwZC1mNTVlLTQzMWYtOTM3Ni1iNzI4MzI0M2E3YTIifQ.aL4zf-nptu8i4RO2OC5V6en7iwuDfGxONMMyIVSctnE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Кожа около магазин мотоцикл деловой. (обновлено)","description":"Аж триста провал изучить исследование сопровождаться. Головной настать упор естественный.\nОбновленное описание.","maxScore":52,"minScore":12,"orderIndex":59,"estimatedTime":"5 weeks (обновлено)"}'

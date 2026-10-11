@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA1LjU5MzEzMSIsInVzZXJfaWQiOiIwODQwNDMzZi0yN2IzLTRmMDMtYTcwNi1lMGJkODg2M2RlYTIifQ.C0_Bi601I8p5_ArRAYCS0nQ034Zdasy_akfjAliJ4Kc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Лететь указанный господь строительство успокоиться носок карандаш картинка.","maxScore":63,"minScore":32,"description":"Медицина ложиться мрачно выгнать какой тусклый. Командование прежний наслаждение руководитель выдержать доставать провал. Пересечь заложить бабочка предоставить болото уронить.","estimatedTime":"2 weeks","previewFileId":"de354cb8-c54f-4cee-9e34-6cd478e429e5","createdByUserId":"0840433f-27b3-4f03-a706-e0bd8863dea2"}'

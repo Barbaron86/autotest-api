@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjAyLjI1MzgzMCIsInVzZXJfaWQiOiI1ODNkMTE3My1lODhjLTRhOTQtOTg1Yy00OGI3MjVjYTU2ODYifQ.NGn2dNeVMF1Ssf2Zu6jTPciCQBqS0CMH28eN0kyFym4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Боец разнообразный командир радость страсть угол.","maxScore":98,"minScore":1,"description":"Радость добиться ставить. Головка триста инвалид изучить. Аллея блин неправда зачем лиловый.\nИнфекция сынок зима четыре. Перебивать исполнять багровый понятный помимо выбирать страсть вытаскивать.","estimatedTime":"7 weeks","previewFileId":"51c2677b-996a-421c-9d60-6d27deafd5b8","createdByUserId":"583d1173-e88c-4a94-985c-48b725ca5686"}'

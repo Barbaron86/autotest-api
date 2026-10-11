@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA4LjI0Mjg5MSIsInVzZXJfaWQiOiJjNGU3MzAwZC1mNTVlLTQzMWYtOTM3Ni1iNzI4MzI0M2E3YTIifQ.u-tDxuArLwXVUjsNR7-iKQ9H26TdS9pFaCnZwyprI04' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Провал изучить экзамен рай плавно выражение.","maxScore":65,"minScore":7,"description":"Крутой мучительно эффект командование потрясти естественный тревога. Неправда мотоцикл блин багровый терапия.","estimatedTime":"6 weeks","previewFileId":"772d4a32-9252-49ec-981e-7c9de1f500a2","createdByUserId":"c4e7300d-f55e-431f-9376-b7283243a7a2"}'

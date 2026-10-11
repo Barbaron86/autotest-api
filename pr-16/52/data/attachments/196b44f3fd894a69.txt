@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjAzLjIwMDM5NSIsInVzZXJfaWQiOiJhMzU3ZTkyNi0yMWY5LTQ0MTEtODc0MS0xMjQ5MGIxYTFmMTIifQ.jzciGr9g-eUMpIXGa-xRcFmz-PfVk8R6O1edLJJDWMg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пространство командир слишком.","description":"Поколение протягивать социалистический назначить. Инструкция сверкающий командующий человечек.\nТанцевать мучительно плясать металл. Салон поколение место порог песенка равнодушный миллиард издали.","courseId":"1cf4945a-b414-4fa2-bdfc-47fd4ac48d24","maxScore":93,"minScore":5,"orderIndex":80,"estimatedTime":"3 weeks"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA2LjQyMzg5MyIsInVzZXJfaWQiOiI0YjAzZWEzMy01NzI2LTRkNDctYWI4Ny0wMmZmOGQzODRjNzUifQ.F26fpGQMseoBTBXSWnYmPKC6WtM3IlhqF8ofTrELkZc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Возбуждение пол угол другой коробка холодно.","maxScore":96,"minScore":2,"description":"Запретить команда плавно решетка анализ жестокий труп. Разуметься мгновение крутой присесть райком хлеб заработать. Один интернет забирать мелочь.","estimatedTime":"6 weeks","previewFileId":"65945939-cbbb-4500-8ae0-8d676f57141e","createdByUserId":"4b03ea33-5726-4d47-ab87-02ff8d384c75"}'

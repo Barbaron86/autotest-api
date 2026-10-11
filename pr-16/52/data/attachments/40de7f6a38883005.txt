@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjA3LjY5MzYyMSIsInVzZXJfaWQiOiJjNGU3MzAwZC1mNTVlLTQzMWYtOTM3Ni1iNzI4MzI0M2E3YTIifQ.aL4zf-nptu8i4RO2OC5V6en7iwuDfGxONMMyIVSctnE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Кожа около магазин мотоцикл деловой.","description":"Аж триста провал изучить исследование сопровождаться. Головной настать упор естественный.","courseId":"5c30d02c-3fe6-4cff-9505-0cd5477da362","maxScore":51,"minScore":11,"orderIndex":58,"estimatedTime":"5 weeks"}'

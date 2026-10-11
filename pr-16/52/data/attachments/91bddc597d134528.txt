@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjA2OjAzLjUyNzg1MyIsInVzZXJfaWQiOiJhMzU3ZTkyNi0yMWY5LTQ0MTEtODc0MS0xMjQ5MGIxYTFmMTIifQ.YwSOf46o8XFlU3ED7ImQtTAcwuj_jALd3b3padpvd2I' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Устройство пространство запеть вряд бак.","maxScore":69,"minScore":49,"description":"Господь что жить исполнять отметить. Металл добиться металл сынок термин.","estimatedTime":"1 weeks","previewFileId":"c24d4b63-c536-4477-b6c1-033d27cb26aa","createdByUserId":"a357e926-21f9-4411-8741-12490b1a1f12"}'
