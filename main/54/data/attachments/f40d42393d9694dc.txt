@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU2LjcxMDcxMiIsInVzZXJfaWQiOiIxMzFlMTBlNy1jZjM2LTRiYTYtOWQ5Ni0zYTVkOGRmMGU5ZDgifQ.svPxKeUfXzf21ioQcMzG03HIgwX0xx9zLUaLvBmowqI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Доставать казнь потрясти заведение плясать.","maxScore":56,"minScore":0,"description":"Ставить господь результат космос мелькнуть командир пастух. Плясать коричневый покидать еврейский видимо демократия. Четыре теория слать.","estimatedTime":"3 weeks","previewFileId":"e38188fa-9afa-4bfa-9bc3-85144616e666","createdByUserId":"131e10e7-cf36-4ba6-9d96-3a5d8df0e9d8"}'

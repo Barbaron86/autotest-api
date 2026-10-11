@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjUzLjgwODk4MCIsInVzZXJfaWQiOiI2NDgxZjJkOS1kOTc5LTQ1MzItODhjZS03OGZkZmUzNGQ4YWEifQ.Olbx2ky6G2-zpbHrmFN7xRlM_ynkunk7oMPA7w8GBjo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Команда изучить командование исполнять.","description":"Кидать смелый прелесть изба предоставить. Задержать витрина эпоха угол.\nВозможно отметить отметить сустав инфекция интеллектуальный госпожа. Вчера беспомощный неправда. Горький вчера монета гулять.","courseId":"43ee316f-433e-4d8a-badb-aa1377cb02c4","maxScore":73,"minScore":11,"orderIndex":11,"estimatedTime":"7 weeks"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU0LjM1NTQ1NCIsInVzZXJfaWQiOiI2NDgxZjJkOS1kOTc5LTQ1MzItODhjZS03OGZkZmUzNGQ4YWEifQ.ncPAO7XmWNr94CNCkdxqGwujatwkmvPxzlIHcIR9Cho' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Отъезд спасть пасть ручей.","maxScore":100,"minScore":8,"description":"Оборот упорно роса ботинок отдел порт похороны пламя. Скрытый миллиард интеллектуальный решетка дальний мягкий команда полоска.","estimatedTime":"8 weeks","previewFileId":"859611ab-aa8b-41ed-8bcd-70361614d524","createdByUserId":"6481f2d9-d979-4532-88ce-78fdfe34d8aa"}'

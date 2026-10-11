@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU1Ljg5MDA1OCIsInVzZXJfaWQiOiIxNGMwY2VhMS0wYmIwLTQzYWUtODllOC05ODk0NDJmNGY3NWEifQ.bW0kzkrbemOB1oiMYVdKujer8NXp0eCSKSWSI-8DF84' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Место мимо мелькнуть степь кпсс куча войти.","description":"Счастье самостоятельно господь запустить ремень очутиться боец. Свежий совет еврейский счастье.\nСветило народ секунда применяться мелочь мера. Дыхание видимо дорогой.","courseId":"829ea850-9e13-4c8d-8ca2-a53a245131ce","maxScore":73,"minScore":48,"orderIndex":32,"estimatedTime":"2 weeks"}'

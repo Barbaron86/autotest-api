@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjQ4LjgxNDM5NCIsInVzZXJfaWQiOiJlYjRjNmU3NS04MDY0LTQzYWQtYjc3MS1kMjY0NWI2MDZiYjQifQ.bYDEmviqJVQ7PjMzKD5Y4MSFl_eWGoeeXgr4_vRovyQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вздрогнуть спорт пища иной.","maxScore":100,"minScore":43,"description":"Покинуть командующий изба о. Привлекать запустить равнодушный тусклый сутки.\nПрирода столетие витрина ныне.","estimatedTime":"2 weeks","previewFileId":"7a6f6657-f715-451f-aff3-852c7c005d46","createdByUserId":"eb4c6e75-8064-43ad-b771-d2645b606bb4"}'

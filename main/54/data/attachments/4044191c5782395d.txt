@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU2LjQzNzAwNyIsInVzZXJfaWQiOiIxNGMwY2VhMS0wYmIwLTQzYWUtODllOC05ODk0NDJmNGY3NWEifQ.jS5yxLI6jw-FJspB-1FWvI6yk4iPFXRElsvoB6SUaLc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вытаскивать металл бок постоянный конструкция сынок ответить.","maxScore":79,"minScore":39,"description":"Поговорить видимо запретить прежний проход поговорить. Отдел видимо жестокий спорт порода адвокат налоговый.","estimatedTime":"3 weeks","previewFileId":"cebae270-c58b-47c9-b04e-0e6df84d2d83","createdByUserId":"14c0cea1-0bb0-43ae-89e8-989442f4f75a"}'

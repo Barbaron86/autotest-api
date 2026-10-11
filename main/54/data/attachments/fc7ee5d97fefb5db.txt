@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjUyLjM0NjYwNyIsInVzZXJfaWQiOiI3OGQ2NWM5Zi0wMWViLTRjYmUtYjJiZi02NDIxNDE4MGMyYjgifQ.lv3isD9uDa4nTHVLH7jzrTQ7U73Z7cISq3yX31K0noY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Руководитель плясать роса набор число.","maxScore":76,"minScore":0,"description":"Цепочка пропаганда дремать. Цель картинка заложить падать шлем картинка пламя. Выкинуть спорт что зарплата лететь смеяться.","estimatedTime":"1 weeks","previewFileId":"221577df-dca1-4862-8394-d5d4aaa30f66","createdByUserId":"78d65c9f-01eb-4cbe-b2bf-64214180c2b8"}'

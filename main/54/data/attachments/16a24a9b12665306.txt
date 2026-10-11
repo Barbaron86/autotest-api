@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjQ5LjcyNjc5NCIsInVzZXJfaWQiOiJhMGUxMjZiZS1lYzBjLTQ4MDMtYmY3Yi1jNGUwOTU2NjZlZTAifQ.-JK3auuqLpzteWnfJwJr3fXUqBdG7W8MfMPrJffX5-g' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Налево ленинград единый миг вариант растеряться покинуть.","maxScore":77,"minScore":21,"description":"Сверкать умолять товар провал неправда подробность спешить деньги. Издали сверкать конструкция пасть вариант налоговый. Да дружно покидать инвалид прелесть снимать решение естественный.","estimatedTime":"4 weeks","previewFileId":"c656a886-da76-4f55-abe9-0df7e9106a33","createdByUserId":"a0e126be-ec0c-4803-bf7b-c4e095666ee0"}'

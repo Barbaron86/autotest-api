@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/55956a95-503a-49c5-9a9e-d8e11a1aa6b1 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjQ3Ljk4OTg0MyIsInVzZXJfaWQiOiI4MGJjNjYyZi04NWQyLTQ2MDItYTliMi1hNTFjYTNhNjI5ZDgifQ.xh7lJJ9Jda3eHEMc9XYt-RIbXGNytIl4w-dzyREw8ZI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Запустить строительство выраженный более житель выраженный адвокат дружно. (обновлено)","maxScore":84,"minScore":44,"description":"Непривычный тусклый секунда покинуть вывести банда порог. Дальний волк конструкция теория палата.\nОбновленное описание.","estimatedTime":"8 weeks (обновлено)"}'

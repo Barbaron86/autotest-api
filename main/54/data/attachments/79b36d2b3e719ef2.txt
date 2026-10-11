@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/cf344224-999c-4016-94ba-637a1f8dc5f9 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjQ5LjcyNjc5NCIsInVzZXJfaWQiOiJhMGUxMjZiZS1lYzBjLTQ4MDMtYmY3Yi1jNGUwOTU2NjZlZTAifQ.-JK3auuqLpzteWnfJwJr3fXUqBdG7W8MfMPrJffX5-g' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Налево ленинград единый миг вариант растеряться покинуть. (частично)"}'

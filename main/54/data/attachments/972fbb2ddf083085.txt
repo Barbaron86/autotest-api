@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjUyLjA3MzQ0MiIsInVzZXJfaWQiOiI5YzRkNDZmZS02YzBhLTQxMGUtYmIxZS1mMmQ2MjI3NmM2YWIifQ.1nh6ORJnvA2qhxLDmeg3fuTXwsh_1RkVEmaaw5UavFY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Боец пища штаб господь висеть что возбуждение.","maxScore":100,"minScore":23,"description":"Порядок понятный секунда головка. Непривычный картинка провал что необычный прежде мгновение.","estimatedTime":"4 weeks","previewFileId":"2984d206-2e25-4433-b304-5c9222a0dfb2","createdByUserId":"9c4d46fe-6c0a-410e-bb1e-f2d62276c6ab"}'

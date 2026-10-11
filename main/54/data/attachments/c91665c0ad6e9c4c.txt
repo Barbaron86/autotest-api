@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU5LjA1NjI5MiIsInVzZXJfaWQiOiIwODYwMDQ3Ni00YzE1LTQ1NzEtYjU4Yy00MzE3NGM2OGVkMWMifQ.WsjXXb3_ob9ATMtCDZOBw-UMxjETVEKqUGfhYm1uaVg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Монета плавно через при.","maxScore":63,"minScore":16,"description":"Природа уронить тысяча непривычный выраженный житель пересечь. Советовать подземный важный банк. Затянуться успокоиться дурацкий применяться мучительно запустить.","estimatedTime":"3 weeks","previewFileId":"6128f63b-ca3e-4648-a4d5-ab2a05120d94","createdByUserId":"08600476-4c15-4571-b58c-43174c68ed1c"}'

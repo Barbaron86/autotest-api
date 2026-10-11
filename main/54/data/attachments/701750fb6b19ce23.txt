@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDIwOjU4OjU0LjA4MjExNCIsInVzZXJfaWQiOiJlZGUzNzBhNy0xNTExLTQzOGUtYmFiZS1jNjY2YWM3NWRhYTcifQ.ioctdZLpHkVqjy9nYQGsKAI89DLA3MURZOaFspzy8Jg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Число смеяться направо художественный угол.","maxScore":50,"minScore":34,"description":"Стакан зима указанный. Развернуться спешить настать хозяйка.\nДошлый эффект торопливый банк нажать головной банк смеяться.","estimatedTime":"4 weeks","previewFileId":"e89a5ea5-32fa-49d4-aaa4-2c8234ccd232","createdByUserId":"ede370a7-1511-438e-babe-c666ac75daa7"}'
