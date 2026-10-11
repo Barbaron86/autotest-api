@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQwLjkwMDU5OSIsInVzZXJfaWQiOiIwMTQ1ZjhjZi03OWRjLTQ0N2YtOTFiZC1kNDU5M2MyM2ZjOTgifQ.Hkx0DaYPg3LjFQAZ7GQGsmZeZAKC3fr6LEALnPSRVNA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Смертельный цвет передо умолять слишком неожиданно основание.","maxScore":73,"minScore":42,"description":"Иной багровый коммунизм провинция пропадать грустный триста падать. Девка заявление вскинуть мусор идея пол приличный.","estimatedTime":"4 weeks","previewFileId":"1581f379-5e6c-4898-be45-62301492a3f3","createdByUserId":"0145f8cf-79dc-447f-91bd-d4593c23fc98"}'

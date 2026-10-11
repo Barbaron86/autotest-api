@@ -1,0 +1,10 @@
+[2m16:50:47.773[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m16:50:48.018[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m16:50:48.040[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:50:48.282[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:50:48.300[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/files/incorrect-file-id
+[2m16:50:48.527[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 422 Unprocessable Entity GET http://localhost:8001/api/v1/files/incorrect-file-id
+[2m16:50:48.527[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check get file with incorrect file id response
+[2m16:50:48.528[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error response
+[2m16:50:48.528[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error
+[2m16:50:48.529[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQwLjYyMjcwNiIsInVzZXJfaWQiOiIwMTQ1ZjhjZi03OWRjLTQ0N2YtOTFiZC1kNDU5M2MyM2ZjOTgifQ.-LKjYGxKFSMlBeLCEu0Av1gYWK-3cAVqS_UWZNuOeOU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Болото дружно покидать построить армейский возмутиться.","description":"Казнь коричневый чувство дыхание пропадать. Поймать бабочка терапия порог монета факультет растеряться. Заплакать факультет мотоцикл зеленый пространство самостоятельно.","courseId":"dc46b944-f283-48b5-91f1-df324c2a1ff0","maxScore":63,"minScore":6,"orderIndex":48,"estimatedTime":"9 weeks"}'

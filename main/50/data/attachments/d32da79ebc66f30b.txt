@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQ0Ljk0MDY0NCIsInVzZXJfaWQiOiJjOGNjODY2NC1iN2QwLTRiN2UtODhjNC1jMjUzNGJjYzJhNTYifQ.64K6wseE6Q9RJJTlzzYQJOCiN1DvCjipKT7Yf3G77kk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пространство пасть протягивать написать.","maxScore":65,"minScore":10,"description":"Народ угроза помолчать число. Палата выкинуть торговля успокоиться перебивать сынок выбирать. Одиннадцать бак легко совет разводить. Запеть порог еврейский.","estimatedTime":"1 weeks","previewFileId":"181661a8-76a6-4410-95fe-7af870c41eac","createdByUserId":"c8cc8664-b7d0-4b7e-88c4-c2534bcc2a56"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQzLjkwODY4MiIsInVzZXJfaWQiOiI3ODFjNjQwMi02NWUyLTQ2OTYtYmE2ZC0xMjc2YzZmYWJiZmIifQ.PvHPmJmvo6IQhWa0AWVh9emZdstyaefk_RxOxawyeuw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выражение печатать опасность покидать.","maxScore":87,"minScore":33,"description":"Угроза указанный манера актриса результат войти. Упор холодно перебивать боец цвет страсть набор.","estimatedTime":"6 weeks","previewFileId":"1bbdb4b6-5c3f-4da4-a1b1-dcf1f76a003d","createdByUserId":"781c6402-65e2-4696-ba6d-1276c6fabbfb"}'

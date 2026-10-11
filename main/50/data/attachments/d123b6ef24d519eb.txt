@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjM5LjkwMDkxNCIsInVzZXJfaWQiOiI5ZmYwNjVlNC1lY2Q4LTQ0NWMtOTk0Ni1kOWFhZWZhZGFhNjEifQ.WaWlY687Vmv5SCAVxy1Yt1dMQ1mbIVj4kvFRrdG4Zqg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Полюбить ход правый крутой парень.","maxScore":92,"minScore":46,"description":"Свежий монета приходить помимо ярко миллиард проход. Плод солнце назначить актриса тысяча дальний увеличиваться. Сопровождаться выдержать смелый самостоятельно.","estimatedTime":"5 weeks","previewFileId":"f0557870-b02e-4789-839c-37e5d81483ac","createdByUserId":"9ff065e4-ecd8-445c-9946-d9aaefadaa61"}'

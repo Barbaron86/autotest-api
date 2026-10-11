@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQyLjkxNDA4MiIsInVzZXJfaWQiOiIxNTNlYzk4ZS1jOTgzLTRlY2QtODg3YS1iYjdjYmJlMmQ0MzIifQ.D7CdufBqpYrb0VZ_NMJvqhXCj4tddcmTQihhRtK4r4M' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Какой наступать танцевать исполнять дурацкий избегать число князь.","maxScore":56,"minScore":13,"description":"Реклама командующий светило помимо. Бегать темнеть мелькнуть цепочка мелочь.\nЗеленый встать ночь сверкающий теория инструкция горький. Домашний потрясти невозможно призыв.","estimatedTime":"5 weeks","previewFileId":"7545970d-31b3-4536-8a6a-30d51d76f31b","createdByUserId":"153ec98e-c983-4ecd-887a-bb7cbbe2d432"}'

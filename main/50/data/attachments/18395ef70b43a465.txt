@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjM5LjExMjc2NyIsInVzZXJfaWQiOiIyZmYzMWYzMi01NGUyLTRkZTktOTgyNC1jNzI1MjQ0NmQxYjAifQ.sMXS9IKiBtWcVt6Os9d7Nnn3U2fv_uK_LOtKfdfmG1Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вскакивать слать горький инструкция спасть холодно.","maxScore":95,"minScore":33,"description":"Смелый инфекция дружно домашний желание салон рота. Набор выраженный означать поговорить умолять. Присесть витрина слишком слишком еврейский пропадать изба.","estimatedTime":"7 weeks","previewFileId":"75a08961-99ce-4df1-a169-34670c661912","createdByUserId":"2ff31f32-54e2-4de9-9824-c7252446d1b0"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/0878a4a7-32a9-405d-b401-78fc9890f4b4 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQxLjYyOTA1NCIsInVzZXJfaWQiOiJjN2Q1NWY0Ni05YTkzLTRhYmYtYWEwNi05NDJmYWM5MmE4ODMifQ.wZxcScGwUVesm0wo5NCoYfv0Dvds58b_GbNLSStS2FY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Граница покинуть второй соответствие опасность. (обновлено)","description":"Что приятель господь госпожа голубчик равнодушный неожиданный. Дорогой другой командование сустав успокоиться уточнить растеряться.\nОбновленное описание.","maxScore":83,"minScore":38,"orderIndex":75,"estimatedTime":"2 weeks (обновлено)"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/1d55a24f-c2b4-4874-99f2-37d13521f4dc \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjM4LjM2MDgyOCIsInVzZXJfaWQiOiJjNWM4Y2QwNy0xNjhhLTQxMDktYTUzZC1mMzNjZGQ4ZGExNmIifQ.FcW-pOL-HQdV-ok_xVNVwgDj9e8WwDpvg6rbEWX-j4I' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выкинуть очко фонарик. (обновлено)","maxScore":78,"minScore":38,"description":"Указанный провинция июнь палец лететь жить самостоятельно. Один триста скрытый. Сбросить передо тюрьма витрина. Страсть тута второй выгнать эпоха помолчать слишком строительство.\nОбновленное описание.","estimatedTime":"8 weeks (обновлено)"}'

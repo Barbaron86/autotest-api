@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE3OjIwOjQxLjkxMjUwNiIsInVzZXJfaWQiOiJjN2Q1NWY0Ni05YTkzLTRhYmYtYWEwNi05NDJmYWM5MmE4ODMifQ.ZHO9iP0HSb9K82iUl5YyuKtUz05aN91C11ajaEz7Dow' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Подробность избегать предоставить невыносимый бабочка что.","maxScore":78,"minScore":33,"description":"Падаль неправда район цель ручей правый кожа. Построить налоговый рай академик вчера промолчать.\nМеталл скользить команда крутой. Освобождение мучительно новый монета.","estimatedTime":"9 weeks","previewFileId":"0970959a-ddfa-4263-b048-d1bf93f1fb0a","createdByUserId":"c7d55f46-9a93-4abf-aa06-942fac92a883"}'
