@@ -1,7 +1,7 @@
 # Repository exploration
 
-Before reporting a defect that depends on other code, search the permitted repository
-for the relevant class, function, schema, assertion or fixture, then read its definition.
+Before reporting a defect that depends on other code, read the relevant definition.
+Read a known path directly; use Search or List when you need to locate it.
 Search across the whole permitted project, including unchanged files and other directories.
 Check existing callers when they help establish the contract. Do not propose helpers
 or API behavior before checking the existing implementation.

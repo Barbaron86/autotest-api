@@ -22,7 +22,7 @@ core:
   concurrency: 1
 
 agent:
-  enabled: false
+  enabled: true
   max_iterations: 6
   max_protocol_violations: 2
   command_timeout: 10
