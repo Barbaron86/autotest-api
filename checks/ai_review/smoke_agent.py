@@ -250,36 +250,48 @@ async def run_loop(fixture: dict[str, Any], *, live: bool, report: dict[str, Any
             result = await loop.run(prompt, system)
         finally:
             report["http_requests"] = transport.requests
+    return summarize_result(result, fixture, live=live, report=report)
+
+
+def summarize_result(result: Any, fixture: dict[str, Any], *, live: bool, report: dict[str, Any]) -> dict[str, Any]:
+    # The library accepts both an agent envelope and a plain-text forced final.
+    # Persist the returned evidence before assessing whether the review succeeded.
+    report.update(
+        final_text=result.final_text,
+        traces=[trace.model_dump(mode="json") for trace in result.traces],
+        stop_reason=result.stop_reason,
+        model_calls=len(result.traces),
+        input_tokens=result.prompt_tokens if live else None,
+        output_tokens=result.completion_tokens if live else None,
+        estimated_usd=round((result.prompt_tokens * 2 + result.completion_tokens * 10) / 1_000_000, 6)
+        if live
+        else None,
+    )
     commands = [trace.step.command for trace in result.traces if trace.step and trace.step.command]
     completed = successful_commands(result.traces)
     searched = any(command.startswith("git grep ") for command in completed)
     read = f"git show {fixture['head_sha']}:{REFERENCE_FILE}" in completed
     text = result.final_text
-    final = json.loads(result.traces[-1].raw_output) if result.traces else {}
     found = all(word in text for word in ("payload", "request", "create_file_api", "test_agent_sample.py"))
-    passed = (
-        searched
-        and read
-        and found
-        and bool(re.search(r"[А-Яа-я]", text))
-        and final.get("action") == "FINAL"
-        and not text.lstrip().startswith(("{", "[", "#", "```"))
-    )
+    checks = {
+        "no_successful_source_search": searched,
+        "related_source_not_read": read,
+        "expected_issue_not_identified": found,
+        "answer_not_in_russian": bool(re.search(r"[А-Яа-я]", text)),
+        "final_answer_missing": bool(
+            result.traces and result.traces[-1].step and result.traces[-1].step.action.is_final
+        ),
+        "answer_has_invalid_format": not text.lstrip().startswith(("{", "[", "#", "```")),
+    }
+    failure_reasons = [reason for reason, passed in checks.items() if not passed]
     report.update(
-        passed=passed,
+        passed=not failure_reasons,
+        failure_reasons=failure_reasons,
         searched=searched,
         read_related_file=read,
-        final_text=text,
+        found_expected_issue=found,
         commands=commands,
         successful_commands=completed,
-        stop_reason=result.stop_reason,
-        model_calls=len(result.traces),
-        input_tokens=result.prompt_tokens if live else None,
-        output_tokens=result.completion_tokens if live else None,
-        # Uncached Standard estimate, not an invoice; source/date documented in rollout guide.
-        estimated_usd=round((result.prompt_tokens * 2 + result.completion_tokens * 10) / 1_000_000, 6)
-        if live
-        else None,
     )
     return report
 

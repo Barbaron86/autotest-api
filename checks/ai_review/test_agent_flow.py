@@ -9,6 +9,59 @@ import httpx
 import pytest
 
 
+@pytest.mark.parametrize("raw_kind", ["plain", "embedded", "invalid_action"])
+def test_smoke_preserves_final_answer_and_usage_without_requiring_raw_json(raw_kind):
+    from ai_review.services.agent.loop.schema import (
+        AgentAction,
+        AgentLoopResultSchema,
+        AgentStepSchema,
+        AgentTraceSchema,
+    )
+
+    from checks.ai_review.smoke_agent import summarize_result
+
+    head = "a" * 40
+    answer = "В test_agent_sample.py вызов create_file_api использует payload вместо request."
+    raw = (
+        answer
+        if raw_kind == "plain"
+        else json.dumps({"action": "FINAL", "content": answer}, ensure_ascii=False) + "\nГотово."
+    )
+    if raw_kind == "invalid_action":
+        raw = '{"action":"TOOL_CALL"} {"action":"FINAL"}'
+        answer = raw
+    traces = [
+        AgentTraceSchema(
+            iteration=index,
+            step=AgentStepSchema(action=AgentAction.TOOL_CALL, command=command),
+            raw_output="tool request",
+            tool_output="command: example\nexit_code: 0\nstdout: source\nstderr: ",
+            prompt_tokens=10,
+            completion_tokens=2,
+        )
+        for index, command in enumerate(
+            ("git grep -n -I -F -e create_file_api", f"git show {head}:clients/files/files_client.py"), 1
+        )
+    ]
+    traces.append(
+        AgentTraceSchema(
+            iteration=3,
+            step=AgentStepSchema(action=AgentAction.FINAL, content=answer),
+            raw_output=raw,
+            prompt_tokens=20,
+            completion_tokens=5,
+        )
+    )
+    result = AgentLoopResultSchema(traces=traces, final_text=answer, stop_reason="max_requests_or_context_limit")
+    report = summarize_result(result, {"head_sha": head}, live=True, report={"http_requests": 3})
+    assert report["passed"] is (raw_kind != "invalid_action")
+    assert report["final_text"] == answer
+    assert report["input_tokens"] == 40 and report["output_tokens"] == 9
+    assert report["traces"][-1]["raw_output"] == raw
+    assert len(report["successful_commands"]) == 2
+    assert bool(report["failure_reasons"]) is (raw_kind == "invalid_action")
+
+
 def test_blocked_failed_and_duplicate_commands_do_not_count_as_successful_exploration():
     from checks.ai_review.smoke_agent import successful_commands
 
