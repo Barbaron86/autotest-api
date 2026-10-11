@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjIzLjk2NTcxNSIsInVzZXJfaWQiOiJiMDEwNDhmNC0yMjFhLTQyYWMtYjQ5YS1lYzM3MWU1N2IyMjkifQ.8EqHEjBgxioO2DIPWH2TPN7xXzB0zgIZkPuAHy28xfs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дыхание издали пропадать смеяться ученый дыхание.","maxScore":54,"minScore":8,"description":"Ход вчера магазин вперед. Неожиданный точно намерение цепочка палец прежде.\nКартинка зачем сынок сохранять изба миллиард разуметься. Светило бок коммунизм стакан.","estimatedTime":"3 weeks","previewFileId":"265457c6-229e-478f-8fc9-9451112bd219","createdByUserId":"b01048f4-221a-42ac-b49a-ec371e57b229"}'

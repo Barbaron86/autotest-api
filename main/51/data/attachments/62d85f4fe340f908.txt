@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjIyLjYxODExNCIsInVzZXJfaWQiOiI4MTRjNDFiZS1lZmFmLTRhMWMtOWU1ZS0yMTcwZmM0N2FhYTgifQ.Fr6kjGMLQtXcsrgS43B0r9hSGz1UYU0mjYfNiT0GwM0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"А вывести дальний через вскакивать механический слать.","maxScore":98,"minScore":45,"description":"Сходить изучить пространство задержать. Светило блин прелесть исследование счастье. Покинуть столетие торговля палка сынок. За близко факультет разуметься.","estimatedTime":"3 weeks","previewFileId":"d7e63a10-d38c-4b57-9210-9f706f03830a","createdByUserId":"814c41be-efaf-4a1c-9e5e-2170fc47aaa8"}'

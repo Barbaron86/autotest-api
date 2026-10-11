@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjI0LjY4NDQ0NSIsInVzZXJfaWQiOiJlMDNhYjRjNy01Y2I0LTQzOWUtYjNhYi1lNTNiMzFhNGFmYjQifQ.FxSqV6n-wPy4kQVRu5EzRCSjZMvFfGRd9gCo_MkPRjw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Райком совещание исполнять понятный уничтожение.","maxScore":84,"minScore":6,"description":"Указанный фонарик июнь металл. Медицина засунуть медицина сбросить.\nЮный что рис наступать скрытый прошептать. Горький ход поезд дурацкий помимо. Порода миллиард цепочка. Угол находить решение.","estimatedTime":"10 weeks","previewFileId":"0f65e6e8-5281-45f3-9ac7-9d75fa97063a","createdByUserId":"e03ab4c7-5cb4-439e-b3ab-e53b31a4afb4"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/0f9277ee-a184-46b0-8862-66e1429f0196 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjE3LjMxMTk4NSIsInVzZXJfaWQiOiI1N2EzY2JlNy0yOGM2LTQ1OTItOWJkMS0wYWFmYTllYzU5M2MifQ.gPBtX6nFidgwvsfD3zjfX-RdVkxRFTrPStvFrl2CmEU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поговорить смеяться слишком эффект. (обновлено)","maxScore":58,"minScore":45,"description":"Поговорить страсть военный. Витрина неправда эпоха шлем один.\nСобеседник вздрогнуть хозяйка жить. Интернет зачем вывести пробовать.\nОбновленное описание.","estimatedTime":"10 weeks (обновлено)"}'

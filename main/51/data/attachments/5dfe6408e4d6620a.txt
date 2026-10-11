@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjE4LjI5NTAyMSIsInVzZXJfaWQiOiJlZjZkMmUwYy1hN2Y0LTRiMmEtYjhjMy0wMGU3MTI0YmE3OTAifQ.4LpjhXMR7hJW1W5qzfZPSkdIuh6rIqfPwVaA2wYBrAI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ремень горький штаб висеть парень.","maxScore":96,"minScore":19,"description":"Пастух плод выдержать означать космос забирать оборот. Невозможно затянуться очко народ выкинуть приятель.","estimatedTime":"10 weeks","previewFileId":"a3b50481-8b37-41d6-bdb5-57d231ad566d","createdByUserId":"ef6d2e0c-a7f4-4b2a-b8c3-00e7124ba790"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/01396703-b67f-49e8-8b4c-5f5d066b62c3 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjIwLjkyMzEwMSIsInVzZXJfaWQiOiIyOTA2MzkxYS02NDk0LTRlZmYtODJmMC1hZDk1OTVkNTk2ZGYifQ.Wp5TvT72eWzuMZgtYCI6hnaEe3CfPIp-bzprx-O6LCg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тяжелый даль госпожа художественный промолчать. (обновлено)","description":"Второй реклама уронить появление страсть.\nДругой изображать смертельный цепочка вздрагивать. Лететь кольцо табак танцевать.\nВздрагивать войти уничтожение грудь. Сомнительный славный бак вряд.\nОбновленное описание.","maxScore":68,"minScore":7,"orderIndex":43,"estimatedTime":"2 weeks (обновлено)"}'

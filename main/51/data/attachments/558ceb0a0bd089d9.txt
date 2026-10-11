@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTExVDE5OjU1OjIwLjIwMTc0OCIsInVzZXJfaWQiOiIyZDIwMDA1OS1iNjVmLTQ4YzMtYjNjNS02NDQ2YjRkM2E2ZjIifQ.eLW9nPlV2frU04l2Yzynp1maHUIWyIW66BwIpwjUZK8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Светило картинка деловой чем мрачно монета.","maxScore":95,"minScore":5,"description":"Вскакивать житель смертельный госпожа пространство палец ломать. Товар медицина сутки четко умирать функция. Рот подземный ученый карандаш.","estimatedTime":"5 weeks","previewFileId":"bd95b37e-39e2-41c6-b092-fbe23fafdbe0","createdByUserId":"2d200059-b65f-48c3-b3c5-6446b4d3a6f2"}'
