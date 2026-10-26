@@ -11,3 +11,4 @@ class AllureStory(StrEnum):
     UPDATE_ENTITY = "Update entity"
     DELETE_ENTITY = "Delete entity"
     VALIDATE_ENTITY = "Validate entity"
+    REFRESH_TOKEN = "Refresh token"

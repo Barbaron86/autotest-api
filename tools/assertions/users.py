@@ -5,6 +5,8 @@ from clients.users.user_schema import (
     CreateUserRequestSchema,
     CreateUserResponseSchema,
     GetUserResponseSchema,
+    UpdateUserRequestSchema,
+    UpdateUserResponseSchema,
     UserSchema,
 )
 from tools.assertions.base import assert_equal
@@ -72,3 +74,29 @@ def assert_get_user_response(
     """
     logger.info("🔎 Check get user response")
     assert_user(actual=get_user_response.user, expected=create_user_response.user)
+
+
+@allure.step("Check update user response")
+def assert_update_user_response(
+    request: UpdateUserRequestSchema,
+    response: UpdateUserResponseSchema,
+    original_user: UserSchema,
+) -> None:
+    """Формирует ожидаемое состояние пользователя на основе исходных данных
+    и полей, переданных в запросе PATCH. Проверяет, что указанные поля
+    обновились, а остальные, включая идентификатор, остались неизменными.
+
+    Args:
+        request: Данные запроса на частичное обновление пользователя.
+        response: Ответ API после обновления пользователя.
+        original_user: Исходные данные пользователя до обновления.
+
+    Raises:
+        AssertionError: Если обновленные поля не соответствуют запросу
+            или остальные данные пользователя изменились.
+    """
+    logger.info("🔎 Check update user response")
+
+    expected_user = original_user.model_copy(update=request.model_dump(exclude_unset=True, by_alias=False))
+
+    assert_user(actual=response.user, expected=expected_user)
