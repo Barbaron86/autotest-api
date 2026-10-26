@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAwLjU2NjQ1OCIsInVzZXJfaWQiOiIwYTk5OWU0Yi02ZjZhLTQ5NzctYTI1Ni05NGEwZWIyZTYwMmIifQ.3qIXiG9u0zxzSELL_RzSwvwPqWgaX-ScffbIZNJ8-ow' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Плясать ботинок направо доставать лапа выразить вздрогнуть.","maxScore":76,"minScore":45,"description":"Куча головной увеличиваться порядок доставать вряд. Приятель вздрогнуть правый спешить бегать вытаскивать витрина карман. Ягода заработать жить грудь житель художественный космос.","estimatedTime":"7 weeks","previewFileId":"7a3f1e25-c011-4614-ad27-67e7f2326ccd","createdByUserId":"0a999e4b-6f6a-4977-a256-94a0eb2e602b"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAzLjUzMzM4NSIsInVzZXJfaWQiOiI4YzQxM2ZkMy03OGUzLTQ2YzAtODhmMi05OWFjM2M4ZGVlNmIifQ.6FVa9ATyTyiZmvD9IQsaDWi06oZK20Bs2jGsIKFvrkU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Факультет редактор лапа.","maxScore":77,"minScore":18,"description":"Добиться умирать хозяйка призыв сходить войти девка. Результат бетонный лететь реклама идея мера господь. Вряд прощение умирать кидать.","estimatedTime":"5 weeks","previewFileId":"b1e7b4af-0101-4f97-9c4c-48f97f665193","createdByUserId":"8c413fd3-78e3-46c0-88f2-99ac3c8dee6b"}'

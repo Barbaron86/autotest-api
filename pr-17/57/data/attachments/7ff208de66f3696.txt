@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAyLjY3NjM3NyIsInVzZXJfaWQiOiJjODY4MDFhNi1jNGMyLTQ3ZWMtOGJmMi0zMzIzYTU1ZjIxZWIifQ.Z92njMJjmvjno-rjoBI7WuRi0Rswrpi6Q_L388JBbPs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Парень запустить тревога тревога.","maxScore":92,"minScore":6,"description":"Предоставить товар полевой. Приятель порт появление соответствие жидкий.\nКостер спорт сопровождаться способ выражение гулять вздрогнуть. Дорогой наслаждение кидать штаб металл грудь.","estimatedTime":"2 weeks","previewFileId":"a8cb2a4a-1212-41c1-9f82-e479af908a28","createdByUserId":"c86801a6-c4c2-47ec-8bf2-3323a55f21eb"}'

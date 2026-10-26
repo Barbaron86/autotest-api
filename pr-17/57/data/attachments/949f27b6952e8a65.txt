@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjA2LjY1OTQyMSIsInVzZXJfaWQiOiI4NmJlNmY5ZS04Y2IyLTQ0ZDMtODQxNC0yNTUzZmQ2MDAwNTIifQ.c4Mgek4BBuCP-rojU06BQ3oFFcLwE0NotdcRYzf2JTs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Народ вообще эффект руководитель передо степь спешить.","description":"Непривычный дорогой неожиданный миллиард. Освободить полностью изменение пересечь фонарик.","courseId":"d10f518a-1e19-4f81-b903-64af10af3682","maxScore":64,"minScore":26,"orderIndex":5,"estimatedTime":"6 weeks"}'

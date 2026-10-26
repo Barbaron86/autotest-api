@@ -1,0 +1,9 @@
+curl --request POST \
+  http://localhost:8001/api/v1/users \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'content-type: application/json' \
+  --data-raw '{"email":"sofron86@mail.ru","password":"_f665HFy&t","lastName":"Дроздов","firstName":"Гордей","middleName":"Владимировна"}'

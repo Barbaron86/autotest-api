@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjA1LjIyNTYyMiIsInVzZXJfaWQiOiIxYmUxMDg3ZS01Mzk3LTRlODYtOWE2My1kZDljMzEzMGQzMDEifQ.T1p-1X5bv-1tRO4Gw7ilEVwUURGZe9WA1wdqtM5teBI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Даль аллея правильный посидеть.","maxScore":63,"minScore":29,"description":"Медицина славный затянуться лететь трясти заложить. Жить танцевать князь.\nДаль боец деньги плясать. Спалить роскошный каюта запретить тусклый пространство. Спорт ответить ребятишки носок.","estimatedTime":"8 weeks","previewFileId":"ec16e82e-780e-4c58-89aa-4dff70579435","createdByUserId":"1be1087e-5397-4e86-9a63-dd9c3130d301"}'

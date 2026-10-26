@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjA2LjAxNTgyNiIsInVzZXJfaWQiOiIzZDNkYjQ4Mi02MGQzLTQwYTctYmIxZC1lY2I3ZDI3ZmU2ZDUifQ.RjHzFbImzbhtqoQ6ITXj79dMFXXNajlbZ1UMhCmbmkg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Освобождение солнце сутки постоянный потрясти конференция.","maxScore":62,"minScore":12,"description":"Господь покидать танцевать приходить совещание написать следовательно похороны. Боец наступать покинуть командование.","estimatedTime":"10 weeks","previewFileId":"8f184d09-f1c7-4d8b-9c55-300de2cdeff2","createdByUserId":"3d3db482-60d3-40a7-bb1d-ecb7d27fe6d5"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjA2Ljg4Mjg2MyIsInVzZXJfaWQiOiI4NmJlNmY5ZS04Y2IyLTQ0ZDMtODQxNC0yNTUzZmQ2MDAwNTIifQ.w0BX0NqWwOFMgGVp5Yk0U4TlkrKgN-75q4sZLJ1B1ac' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Тяжелый белье июнь роскошный нажать пастух при.","maxScore":77,"minScore":25,"description":"Невыносимый инфекция войти задержать призыв. Интернет зима разводить направо результат.\nСустав задержать сопровождаться спасть заплакать выраженный. Отметить медицина приличный увеличиваться спешить.","estimatedTime":"3 weeks","previewFileId":"e6b0ec7f-d496-4f68-a817-56f350e8ce72","createdByUserId":"86be6f9e-8cb2-44d3-8414-2553fd600052"}'

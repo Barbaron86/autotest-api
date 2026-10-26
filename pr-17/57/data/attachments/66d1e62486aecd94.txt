@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAwLjM3MjMzNCIsInVzZXJfaWQiOiJmNDk2YWFiNC03NGMyLTQyZDgtYjZmZC1iNDNkZDhhYWU5NGEifQ.sDQnpqj3MIGxjY5RjC-wHHzzBQ2L4VQYTkGO9cqkMQU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выражаться командующий триста зачем госпожа мера дорогой.","maxScore":58,"minScore":38,"description":"Изучить неправда полевой миг материя сверкать висеть правый. Проход трубка издали природа смеяться коробка блин.\nПалец порог сохранять бровь.","estimatedTime":"2 weeks","previewFileId":"c23c201c-5f57-42a1-8dca-dd6598e3d523","createdByUserId":"f496aab4-74c2-42d8-b6fd-b43dd8aae94a"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAxLjQyNjEyMiIsInVzZXJfaWQiOiI1Y2I2MjdlYS01ODkwLTQ4MDgtYTg3NS05NTk0MGZlNDYyNDUifQ.EIHAnWsVM5pHqBYbHEZOA6Jagv7rtqDgizgQ-qXjsas' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Изменение выражение палата снимать сохранять уронить указанный.","maxScore":83,"minScore":37,"description":"Багровый вздрогнуть мучительно пропадать. Ночь куча гулять собеседник вскинуть. Видимо выбирать снимать приятель пасть.","estimatedTime":"10 weeks","previewFileId":"a4af67b7-e060-465a-9848-11882f0f2b8e","createdByUserId":"5cb627ea-5890-4808-a875-95940fe46245"}'

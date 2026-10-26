@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjA0LjM3NTgyNCIsInVzZXJfaWQiOiIwOWU1MThhZi04YWZjLTQ5ODEtYWFmNC1mOWM0NWM3ZGQ4ZDcifQ.e7yGVOIqYRUH9zZFBi4oo0wkPl2m4pzgCECN6ieMwQI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Порядок поезд жидкий порог рабочий.","maxScore":99,"minScore":22,"description":"Слишком некоторый советовать отражение невыносимый ботинок сверкать появление. Призыв пастух конструкция единый сверкающий холодно задрать мотоцикл. Угодный картинка человечек серьезный плод горький.","estimatedTime":"5 weeks","previewFileId":"3ae8ea7a-332a-4c80-8e40-4bdecc6457a2","createdByUserId":"09e518af-8afc-4981-aaf4-f9c45c7dd8d7"}'

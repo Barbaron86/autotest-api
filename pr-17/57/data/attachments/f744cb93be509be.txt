@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjA0OjAyLjAwODkzNiIsInVzZXJfaWQiOiJmNGJlOTQ2OC02MGU2LTQ1OTAtYTE2My00YmRlZDg0M2ZlN2UifQ.dR_sxdirwFgtYbYAgDveeZK6qcf-QCo7o794vKyvozw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Аж степь вообще порт другой.","maxScore":82,"minScore":35,"description":"Означать угол терапия мусор опасность. Достоинство научить цепочка. Выраженный дорогой зима ручей.","estimatedTime":"9 weeks","previewFileId":"52769619-2f3d-4631-bb66-8bb5d383666a","createdByUserId":"f4be9468-60e6-4590-a163-4bded843fe7e"}'

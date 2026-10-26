@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/099e0483-d809-44c8-b276-65c1c97fc012 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjAzOjU5LjE1NzY5OSIsInVzZXJfaWQiOiI0MGUyODU0OS0zNjYxLTRjMmQtOTJiMC02YmQ5ZTRhYzYwY2UifQ.h3CqZUbiYesyxldIvz75Gk2SZBMAPIam9cD92raHmVk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Потом сверкать избегать славный промолчать бак секунда оборот. (обновлено)","maxScore":98,"minScore":4,"description":"Райком промолчать вытаскивать терапия степь затянуться плод. Бегать пасть падаль. Близко висеть мрачно народ порода палка.\nОбновленное описание.","estimatedTime":"4 weeks (обновлено)"}'
