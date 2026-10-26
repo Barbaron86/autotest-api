@@ -140,7 +140,11 @@ class TestUsers:
                 пользователя не соответствуют ожидаемым значениям.
         """
         original_user = function_user.response.user
-        request = UpdateUserRequestSchema(first_name="Александр")
+        new_first_name = fake.first_name()
+        while new_first_name == original_user.first_name:
+            new_first_name = fake.first_name()
+
+        request = UpdateUserRequestSchema(first_name=new_first_name)
 
         update_response = private_users_client.update_user_api(user_id=original_user.id, request=request)
 
