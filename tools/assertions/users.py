@@ -95,7 +95,7 @@ def assert_update_user_response(
         AssertionError: Если обновленные поля не соответствуют запросу
             или остальные данные пользователя изменились.
     """
-    logger.info("🔎 Check partial update user response")
+    logger.info("🔎 Check update user response")
 
     expected_user = original_user.model_copy(update=request.model_dump(exclude_unset=True, by_alias=False))
 

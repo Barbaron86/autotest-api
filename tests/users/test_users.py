@@ -96,7 +96,7 @@ class TestUsers:
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)
     @allure.sub_suite(AllureStory.GET_ENTITY)
-    @allure.title("Get user me by {user_id}")
+    @allure.title("Get user by ID")
     @allure.severity(Severity.NORMAL)
     def test_get_user_by_id(self, private_users_client: PrivateUsersClient, function_user: UserFixture) -> None:
         """Проверяет получение данных пользователя по идентификатору.
