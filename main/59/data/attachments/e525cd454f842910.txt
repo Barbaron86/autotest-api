@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE5LjI3OTg0OCIsInVzZXJfaWQiOiJmYWQwMmM2MC02M2ZmLTQ4MzAtOWU0Ny0xNjJmYWQwZDY4ODUifQ.Je1hbBu7-faVrQvtN3Jwzb6PiW15tKpJMrxN1mbQDZs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Даль означать запустить кпсс тысяча плавно посидеть валюта.","maxScore":55,"minScore":24,"description":"Спалить разводить ленинград редактор какой. Упорно ягода успокоиться зарплата.\nТочно возмутиться растеряться господь встать. Карандаш кольцо смелый тесно жидкий.","estimatedTime":"4 weeks","previewFileId":"ce6c287a-6c66-4ab4-8866-8ef2407f34e5","createdByUserId":"fad02c60-63ff-4830-9e47-162fad0d6885"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjIwLjE1Njg4OCIsInVzZXJfaWQiOiI1ZjE2ZjI3Mi1lYjU3LTQzMzYtYTY4OC1iMmRkZWJlZGMyMzAifQ.NOFNJ5J4c85nJUh00lvnGIo22mNUP_QRgJxyAgAofNA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Солнце бочок эффект аж провал проход означать подробность.","maxScore":99,"minScore":33,"description":"Секунда крутой точно угол более тута домашний написать. Очутиться светило командование кольцо угроза лиловый понятный еврейский.","estimatedTime":"3 weeks","previewFileId":"e9ba6536-7ce8-46b9-91e4-3be8057b2879","createdByUserId":"5f16f272-eb57-4336-a688-b2ddebedc230"}'

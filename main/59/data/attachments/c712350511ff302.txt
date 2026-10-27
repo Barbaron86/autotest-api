@@ -1,0 +1,9 @@
+curl --request POST \
+  http://localhost:8001/api/v1/authentication/refresh \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'content-type: application/json' \
+  --data-raw '{"refreshToken":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEyLTI1VDIwOjUyOjEzLjMxMDEzNSIsInVzZXJfaWQiOiIzNWU3ZWM1Ni1kNDg1LTRhNjAtOGRmNy0wNDRlMjY1N2I1M2UifQ.5DXdN3FACcdbK4ucxVVMcrkhDjk55INAhcazRjOurnQ"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjEyLjQ1MDM4NSIsInVzZXJfaWQiOiJlMGY4NTgzMS01NTY0LTRmNjEtOTM0YS0zZWI1OGYzZjQ0MTcifQ.PLSEuP4HdBJoInJE0uyTD6egQCB5OjwGRn3Gr9tMHVY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Низкий белье снимать другой.","maxScore":65,"minScore":0,"description":"Приличный ход палата равнодушный песня ночь деньги.\nНаучить командующий эффект белье порт. Неправда поздравлять товар мимо.\nВряд построить близко изредка бабочка. Хотеть миг вообще вытаскивать.","estimatedTime":"6 weeks","previewFileId":"b4408c56-9302-48c9-9ece-a9a523ebd8d8","createdByUserId":"e0f85831-5564-4f61-934a-3eb58f3f4417"}'

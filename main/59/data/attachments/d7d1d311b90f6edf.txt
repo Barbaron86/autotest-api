@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE0LjE3OTg4MSIsInVzZXJfaWQiOiI3ZGMwNTBiYy0wYzc0LTRjNmEtODRlMS01MTI2OTU0MmM2N2YifQ._O8xdnKKGq-V1lIM6nEbyUUPmUJYcwmGNqRWnDGCnJI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Падаль лететь витрина художественный прежде единый.","maxScore":79,"minScore":36,"description":"Торговля смертельный видимо появление низкий. Куча угроза мрачно бок изба. Четко плавно коричневый пропаганда конференция функция голубчик.","estimatedTime":"4 weeks","previewFileId":"fdf39e96-b112-4fe8-be27-846d6d9bc8cc","createdByUserId":"7dc050bc-0c74-4c6a-84e1-51269542c67f"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/9fdf213d-89f1-4c80-944d-e84b868a1d81 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE5LjAxNjA0MSIsInVzZXJfaWQiOiJmYWQwMmM2MC02M2ZmLTQ4MzAtOWU0Ny0xNjJmYWQwZDY4ODUifQ.1OVUiJJ6vB1Mewzsse_Jl2FjPdP1QdCvVWQYrDAyqWo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Отражение валюта висеть поговорить граница. (обновлено)","description":"Что услать новый белье художественный. Запретить о похороны вывести аж банк передо. Гулять кидать солнце успокоиться присесть.\nОбновленное описание.","maxScore":74,"minScore":34,"orderIndex":29,"estimatedTime":"10 weeks (обновлено)"}'

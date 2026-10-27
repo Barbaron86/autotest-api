@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE1Ljc3NDY0MyIsInVzZXJfaWQiOiJlYWU4Mjc2Yy0zNzg0LTQ5MTUtYWZjZi0zYWQwNTcwMmM4MTYifQ.nhNiARYzlkkmZjbBzryUfslMbmPhBI3cbXKeecoZbis' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бригада господь июнь угроза нож мальчишка.","maxScore":92,"minScore":33,"description":"Некоторый металл командование покидать хлеб поезд. Изба ломать выразить отметить жить ночь белье.","estimatedTime":"10 weeks","previewFileId":"82329efb-f7f3-45b5-8150-28031cc09ff9","createdByUserId":"eae8276c-3784-4915-afcf-3ad05702c816"}'

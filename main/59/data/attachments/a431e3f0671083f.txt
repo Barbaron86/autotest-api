@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE2LjQ2MjE1NyIsInVzZXJfaWQiOiIyMTgxOTIwYS03ZTM1LTRiY2ItYTAxMS0zMDE0NWY2NjBkZTEifQ.MVst1HdZsIk61_AsRIIMqdlcYo04r438hFDYW5JEs78' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бетонный вскинуть неудобно.","maxScore":55,"minScore":48,"description":"Район носок посвятить невыносимый. Оборот о да приличный миллиард передо. Мальчишка полностью совет металл инфекция ручей лапа выразить.","estimatedTime":"9 weeks","previewFileId":"e9af94c8-e646-4d66-bb36-f3925b47732c","createdByUserId":"2181920a-7e35-4bcb-a011-30145f660de1"}'

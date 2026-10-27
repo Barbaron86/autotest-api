@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE1LjEzOTc4MiIsInVzZXJfaWQiOiI5NmRiNjdjMi02MmZjLTRkMTMtYTYzNS1hMWY1NDM3M2JjYTAifQ._aaEAIatV23ZcFDiC-0pUVPOoz0Tr5ptrNKo2v-PQFM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Передо освободить боец развернуться горький.","maxScore":50,"minScore":40,"description":"Выраженный поколение подробность отъезд другой заработать. Пасть степь чувство.","estimatedTime":"4 weeks","previewFileId":"a4c6ce7e-20ab-4436-83b0-ab163b5f5031","createdByUserId":"96db67c2-62fc-4d13-a635-a1f54373bca0"}'

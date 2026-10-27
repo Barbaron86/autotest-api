@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE3LjQwNTYzOSIsInVzZXJfaWQiOiJhMTY3N2YyNi1iNGJkLTQ0ZGYtODViNy1mZGFkNjNkNjZhMjAifQ.TtADNP1ckxPoIBCbzKvs121NXUuo7jvPedWQy4MSads' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Нервно вздрагивать очередной головка функция горький.","maxScore":87,"minScore":35,"description":"Хлеб понятный бочок самостоятельно лететь указанный падаль засунуть. Рай сынок войти. Сопровождаться жестокий через неожиданный развернуться мальчишка прежде.","estimatedTime":"5 weeks","previewFileId":"eda296f7-1cdd-41c1-902e-9901e60f9ddb","createdByUserId":"a1677f26-b4bd-44df-85b7-fdad63d66a20"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjIxLjAyMTkwNyIsInVzZXJfaWQiOiIwOGI5NGVkNC03YTY0LTQyMzAtYTJmNS1jM2RiYTY4OGFhZTMifQ.0eJ9QVXHA3Tp9stOvegNdV5kYrB9boHsa_DS3TZMURs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Командующий новый жестокий стакан район спешить.","maxScore":56,"minScore":19,"description":"Упорно перебивать деньги вздрагивать какой. Жестокий порода витрина помолчать. Адвокат монета армейский заплакать еврейский.","estimatedTime":"1 weeks","previewFileId":"29d4acae-6ee5-4414-ada8-08e57dcb855b","createdByUserId":"08b94ed4-7a64-4230-a2f5-c3dba688aae3"}'

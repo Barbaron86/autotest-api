@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE4LjMzNzQwOSIsInVzZXJfaWQiOiI2ZWE5OTAzMy1jMDJhLTQ5OTYtYjQxOS0zMDBmNjQ5N2MxM2YifQ.yW_Rm7I12nl0pp_sy-tXfRruDB48coX3sETvQebHWDs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Карман сверкать полюбить коммунизм палата ныне тусклый.","maxScore":93,"minScore":1,"description":"Отдел степь болото карандаш сынок вчера. Изображать банда забирать стакан.\nПорог товар сравнение задержать слишком. Поздравлять кпсс присесть бровь. Настать ярко забирать достоинство что вздрогнуть.","estimatedTime":"10 weeks","previewFileId":"62acb800-1c39-4f93-b333-03795798dca3","createdByUserId":"6ea99033-c02a-4996-b419-300f6497c13f"}'

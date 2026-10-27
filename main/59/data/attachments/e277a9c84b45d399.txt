@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjE3LjE1ODYyMCIsInVzZXJfaWQiOiJhMTY3N2YyNi1iNGJkLTQ0ZGYtODViNy1mZGFkNjNkNjZhMjAifQ.GZ5diMHtS55NCskr6VBH_-7IarccmsED9IRibI4r5XU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ручей пропадать неожиданно решетка степь жидкий левый.","description":"Сохранять смертельный посвятить термин трясти. Выкинуть граница торговля изредка интернет.","courseId":"f3b7e14b-e1f2-4836-9fe7-a39a7c4a549d","maxScore":81,"minScore":49,"orderIndex":36,"estimatedTime":"2 weeks"}'

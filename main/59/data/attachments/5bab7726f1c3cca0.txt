@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI2VDIxOjIyOjEzLjk3MTk0NSIsInVzZXJfaWQiOiIyMzc1ZjQ1MC05NTc5LTQ1NTctOTczNy1jMDZlZmJiZTQ5ZWIifQ.zqxIIbIpHFIB-NhiVM3JcL7Ljf4oDipsxiPDhS90VOI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Рай факультет помолчать хлеб стакан сынок освобождение тусклый.","maxScore":91,"minScore":12,"description":"Коллектив нож чувство господь витрина эффект. Рабочий заведение написать хотеть порт угроза бегать.","estimatedTime":"7 weeks","previewFileId":"1585d098-e8d4-4426-be43-17ce252fc864","createdByUserId":"2375f450-9579-4557-9737-c06efbbe49eb"}'
