@@ -20,6 +20,11 @@ class Fake:
         """
         return self.faker.text()
 
+    def text_different_from(self, value: str) -> str:
+        """Изменяет строку, сохраняя длину непустого исходного значения."""
+        prefix = "B" if value.startswith("A") else "A"
+        return prefix + value[1:]
+
     def uuid4(self) -> str:
         """Генерирует UUID версии 4.
 
@@ -27,6 +32,10 @@ class Fake:
             UUID в строковом представлении.
         """
         return self.faker.uuid4()
+
+    def invalid_uuid(self) -> str:
+        """Генерирует безопасный для URL-пути идентификатор вне формата UUID."""
+        return f"invalid-{self.uuid4()}"
 
     def email(self, domain: str | None = None) -> str:
         """Генерирует уникальный случайный email.
@@ -55,6 +64,18 @@ class Fake:
             Случайный пароль.
         """
         return self.faker.password()
+
+    def password_different_from(self, password: str) -> str:
+        """Генерирует пароль, гарантированно отличный от заданного.
+
+        Args:
+            password: Исходный пароль, который нужно исключить.
+
+        Returns:
+            Новый пароль; при совпадении кандидата добавляется символ.
+        """
+        generated_password = self.password()
+        return f"{generated_password}!" if generated_password == password else generated_password
 
     def last_name(self) -> str:
         """Генерирует случайную фамилию.
@@ -107,6 +128,10 @@ class Fake:
             Случайное значение от 50 до 100.
         """
         return self.faker.random_int(min=50, max=100)
+
+    def invalid_score_range(self) -> tuple[int, int]:
+        """Возвращает max_score и min_score с гарантированным max_score < min_score."""
+        return self.min_score(), self.max_score()
 
     def min_score(self) -> int:
         """Генерирует минимальный балл курса.

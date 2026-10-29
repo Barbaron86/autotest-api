@@ -1,3 +1,5 @@
+from typing import Any
+
 import allure
 from loguru import logger
 
@@ -9,9 +11,51 @@ from clients.courses.courses_schema import (
     UpdateCourseRequestSchema,
     UpdateCourseResponseSchema,
 )
+from clients.error_schema import ValidationErrorResponseSchema
 from tools.assertions.base import assert_equal, assert_lens
+from tools.assertions.errors import ValidationErrorExpectation, assert_validation_error_response
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
+from tools.error_messages import ApiErrorMessage
+from tools.error_types import ValidationErrorType
+
+
+@allure.step("Check non-null optional course fields")
+def assert_course_optional_fields_are_set(course: CourseSchema) -> None:
+    """Проверяет непустое исходное состояние полей перед их очисткой."""
+    logger.info("🔎 Check non-null optional course fields")
+    for field in ("max_score", "min_score", "estimated_time"):
+        assert getattr(course, field) is not None, f"Initial course field {field} must not be null"
+
+
+@allure.step("Check course with cleared optional fields")
+def assert_course_with_cleared_optional_fields(actual: dict[str, Any], original_course: CourseSchema) -> None:
+    """Проверяет явные null в JSON и неизменность остальных данных курса."""
+    logger.info("🔎 Check course with cleared optional fields")
+    raw_course = actual["course"]
+    for field in ("maxScore", "minScore", "estimatedTime"):
+        assert field in raw_course, f"Missing course field: {field}"
+        assert raw_course[field] is None, f"Course field {field} must be null"
+    expected_course = original_course.model_copy(update={"max_score": None, "min_score": None, "estimated_time": None})
+    assert_course(actual=CourseSchema.model_validate(raw_course), expected=expected_course)
+
+
+@allure.step("Check update course with invalid score range response")
+def assert_update_course_with_invalid_score_range_response(
+    actual: ValidationErrorResponseSchema, request: UpdateCourseRequestSchema
+) -> None:
+    """Проверяет причину, вход и расположение ошибки диапазона баллов курса."""
+    logger.info("🔎 Check update course with invalid score range response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.VALUE_ERROR,
+            location=["body"],
+            input=request.model_dump(exclude_unset=True),
+            context={"error": {}},
+            message=ApiErrorMessage.INVALID_SCORE_RANGE,
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)
 
 
 @allure.step("Check create course response")

@@ -7,6 +7,7 @@ from clients.files.files_client import FilesClient, get_files_client
 from clients.files.files_schema import CreateFileRequestSchema, CreateFileResponseSchema
 from config import settings
 from fixtures.users import UserFixture
+from tools.assertions.files import assert_create_file_response
 
 
 class FileFixture(BaseModel):
@@ -41,6 +42,16 @@ def files_client(function_user: UserFixture) -> Iterator[FilesClient]:
 
 
 @pytest.fixture
+def file_request_with_too_long_filename() -> CreateFileRequestSchema:
+    """Подготавливает запрос с именем на один символ длиннее лимита API.
+
+    Returns:
+        Запрос с именем из 256 ASCII-символов при допустимой длине до 255.
+    """
+    return CreateFileRequestSchema(filename="a" * 256)
+
+
+@pytest.fixture
 def function_file(files_client: FilesClient) -> FileFixture:
     """Загружает тестовый файл для одного теста.
 
@@ -48,9 +59,13 @@ def function_file(files_client: FilesClient) -> FileFixture:
         files_client: Фикстура авторизованного API-клиента файлов.
 
     Returns:
-        Данные запроса на загрузку файла и ответа API.
+        Запрос и ответ загрузки файла, проверенный по полям запроса.
+
+    Raises:
+        AssertionError: Если данные загруженного файла не соответствуют запросу.
     """
     request = CreateFileRequestSchema(upload_file=settings.test_data.image_png_file)
     response = files_client.create_file(request=request)
+    assert_create_file_response(request=request, response=response)
 
     return FileFixture(request=request, response=response)

@@ -96,14 +96,20 @@ Exact package versions: [poetry.lock](poetry.lock).
 
 | Area | Implemented scenarios |
 | :--- | :--- |
-| **Authentication** | Login with valid credentials and validation of returned tokens. |
-| **Users** | Creation with different email domains and retrieval of the current user's profile. |
-| **Files** | Upload, retrieval, deletion, empty filename/directory validation and invalid identifiers. |
-| **Courses** | Creation, field updates and listing courses belonging to a user. |
-| **Exercises** | Creation, retrieval, updates, deletion and listing exercises belonging to a course. |
+| **Authentication** | Login and token refresh; rejection of an incorrect password and an invalid refresh token. |
+| **Users** | Creation with different email domains, profile retrieval, partial updates and deletion; rejection of duplicate emails and requests for nonexistent users. |
+| **Files** | Upload, retrieval, deletion, empty filename/directory validation, filename length limits and invalid identifiers. |
+| **Courses** | Creation, retrieval, deletion, field updates, clearing nullable fields and listing by author; rejection of an invalid score range without changing saved data. |
+| **Exercises** | Creation, retrieval, updates, deletion and listing by course; saving a zero order index and rejecting an invalid score range without changing saved data. |
 
 Tests verify HTTP status codes, response data and JSON Schemas. Negative scenarios
 check error payloads; deletion scenarios also verify that the resource is no longer available.
+Validation cases check structured error types and parameters; business errors without
+specific codes retain checks of their reason and relevant identifiers. Duplicate-email
+registration verifies the original profile and password remain usable; user deletion
+checks a separate target and preserves the authenticated observer.
+PATCH scenarios for explicit nulls, zero values and invalid score ranges also verify
+persisted state and unchanged fields through a separate GET request.
 
 ## 🧩 Architecture
 

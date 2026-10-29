@@ -1,7 +1,7 @@
 import allure
 from loguru import logger
 
-from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema, ValidationErrorSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from clients.files.files_schema import (
     CreateFileRequestSchema,
     CreateFileResponseSchema,
@@ -10,7 +10,12 @@ from clients.files.files_schema import (
 )
 from config import settings
 from tools.assertions.base import assert_equal
-from tools.assertions.errors import assert_internal_error_response, assert_validation_error_response
+from tools.assertions.errors import (
+    ValidationErrorExpectation,
+    assert_internal_error_response,
+    assert_validation_error_response,
+)
+from tools.error_types import ValidationErrorType
 
 
 @allure.step("Check create file response")
@@ -82,17 +87,38 @@ def assert_create_file_with_empty_filename_response(actual: ValidationErrorRespo
         AssertionError: Если ответ не соответствует ошибке пустого имени файла.
     """
     logger.info("🔎 Check create file with empty filename response")
-    expected = ValidationErrorResponseSchema(
-        detail=[
-            ValidationErrorSchema(
-                type="string_too_short",
-                input="",
-                context={"min_length": 1},
-                message="String should have at least 1 character",
-                location=["body", "filename"],
-            )
-        ]
-    )
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.STRING_TOO_SHORT,
+            input="",
+            context={"min_length": 1},
+            location=["body", "filename"],
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)
+
+
+@allure.step("Check create file with too long filename response")
+def assert_create_file_with_too_long_filename_response(actual: ValidationErrorResponseSchema, filename: str) -> None:
+    """Проверяет ошибку превышения допустимой длины имени файла.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        filename: Имя файла, переданное в запросе на загрузку.
+
+    Raises:
+        AssertionError: Если ответ не соответствует ограничению длины
+            имени файла в 255 символов или содержит другой входной параметр.
+    """
+    logger.info("🔎 Check create file with too long filename response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.STRING_TOO_LONG,
+            input=filename,
+            context={"max_length": 255},
+            location=["body", "filename"],
+        )
+    ]
     assert_validation_error_response(actual=actual, expected=expected)
 
 
@@ -107,17 +133,14 @@ def assert_create_file_with_empty_directory_response(actual: ValidationErrorResp
         AssertionError: Если ответ не соответствует ошибке пустой директории.
     """
     logger.info("🔎 Check create file with empty directory response")
-    expected = ValidationErrorResponseSchema(
-        detail=[
-            ValidationErrorSchema(
-                type="string_too_short",
-                input="",
-                context={"min_length": 1},
-                message="String should have at least 1 character",
-                location=["body", "directory"],
-            )
-        ]
-    )
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.STRING_TOO_SHORT,
+            input="",
+            context={"min_length": 1},
+            location=["body", "directory"],
+        )
+    ]
     assert_validation_error_response(actual=actual, expected=expected)
 
 
@@ -137,27 +160,23 @@ def assert_file_not_found_response(actual: InternalErrorResponseSchema) -> None:
 
 
 @allure.step("Check get file with incorrect file id response")
-def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorResponseSchema) -> None:
-    """Проверяет ошибку валидации идентификатора «incorrect-file-id».
+def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorResponseSchema, file_id: str) -> None:
+    """Проверяет ошибку валидации переданного некорректного UUID файла.
 
     Args:
         actual: Фактический ответ API с ошибками валидации.
+        file_id: Некорректный идентификатор, переданный в GET-запросе.
 
     Raises:
         AssertionError: Если ответ не соответствует ошибке разбора UUID
             в параметре пути file_id.
     """
     logger.info("🔎 Check get file with incorrect file id response")
-    error = "invalid character: expected an optional prefix of `urn:uuid:` followed by [0-9a-fA-F-], found `i` at 1"
-    expected = ValidationErrorResponseSchema(
-        detail=[
-            ValidationErrorSchema(
-                type="uuid_parsing",
-                input="incorrect-file-id",
-                context={"error": error},
-                message=f"Input should be a valid UUID, {error}",
-                location=["path", "file_id"],
-            )
-        ]
-    )
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.UUID_PARSING,
+            input=file_id,
+            location=["path", "file_id"],
+        )
+    ]
     assert_validation_error_response(actual=actual, expected=expected)
