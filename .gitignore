@@ -21,6 +21,7 @@ __pycache__/
 artifacts/
 allure-results/
 allure-report/
+!.github/actions/allure-report/
 
 # Swagger Coverage
 coverage-results/

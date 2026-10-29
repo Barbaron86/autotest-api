@@ -1,0 +1,60 @@
+name: Generate Allure report
+description: Generate Allure 2.44.0 with history using the pinned upstream renderer.
+
+inputs:
+  subfolder:
+    description: Report target in GitHub Pages, such as main or pr-18.
+    required: true
+  report-name:
+    description: Name displayed in the Allure report.
+    required: true
+  keep-reports:
+    description: Number of reports to retain in the target folder.
+    required: false
+    default: "50"
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Java 17
+      uses: actions/setup-java@b843ebf9b913146b38da2eaa7aeddf76074ae1ad # v6.1.0
+      with:
+        distribution: temurin
+        java-version: "17"
+
+    - name: Install Allure CLI
+      shell: bash
+      env:
+        ALLURE_VERSION: "2.44.0"
+        ALLURE_SHA256: "7021a90828c00cd6ec992027cce48e8a94bd87fad43d0c2dcac4795cadc178d7"
+      run: |
+        archive="$RUNNER_TEMP/allure-$ALLURE_VERSION.tgz"
+        curl --fail --location --retry 3 --output "$archive" \
+          "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/$ALLURE_VERSION/allure-commandline-$ALLURE_VERSION.tgz"
+        printf '%s  %s\n' "$ALLURE_SHA256" "$archive" | sha256sum --check
+        tar -xzf "$archive" -C "$RUNNER_TEMP"
+        printf '%s\n' "$RUNNER_TEMP/allure-$ALLURE_VERSION/bin" >> "$GITHUB_PATH"
+
+    - name: Render report and history
+      shell: bash
+      env:
+        ACTION_PATH: ${{ github.action_path }}
+        INPUT_ALLURE_RESULTS: allure-results
+        INPUT_ALLURE_REPORT: allure-report
+        INPUT_GH_PAGES: gh-pages
+        INPUT_ALLURE_HISTORY: allure-history
+        INPUT_SUBFOLDER: ${{ inputs.subfolder }}
+        INPUT_REPORT_NAME: ${{ inputs.report-name }}
+        INPUT_KEEP_REPORTS: ${{ inputs.keep-reports }}
+        INPUT_GITHUB_RUN_NUM: ${{ github.run_number }}
+        INPUT_GITHUB_RUN_ID: ${{ github.run_id }}
+        INPUT_GITHUB_REPO: ${{ github.repository }}
+        INPUT_GITHUB_REPO_OWNER: ${{ github.repository_owner }}
+        INPUT_GITHUB_TESTS_REPO: ${{ github.repository }}
+        INPUT_GITHUB_SERVER_URL: ${{ github.server_url }}
+        INPUT_REPORT_URL: ""
+      run: |
+        bash "$ACTION_PATH/vendor/entrypoint.sh"
+        test -s "$INPUT_ALLURE_REPORT/index.html"
+        test -s "$INPUT_ALLURE_HISTORY/$INPUT_SUBFOLDER/$INPUT_GITHUB_RUN_NUM/index.html"
+        test -d "$INPUT_ALLURE_HISTORY/$INPUT_SUBFOLDER/last-history"
