@@ -1,0 +1,22 @@
+[2m17:12:25.530[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:25.778[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:25.779[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:25.796[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:26.038[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:26.077[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:26.534[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:26.567[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:27.014[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:27.035[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m17:12:27.260[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m17:12:27.261[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file response
+[2m17:12:27.262[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m17:12:27.273[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m17:12:27.274[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check create course response
+[2m17:12:27.276[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/exercises
+[2m17:12:27.282[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/exercises
+[2m17:12:27.283[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.exercises[0m | 🔎 Check create exercise response
+[2m17:12:27.284[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/exercises/f9be960b-0aab-4f31-befc-c495a29ceb47
+[2m17:12:27.293[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK PATCH http://localhost:8001/api/v1/exercises/f9be960b-0aab-4f31-befc-c495a29ceb47
+[2m17:12:27.294[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.exercises[0m | 🔎 Check update exercise response
+[2m17:12:27.295[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

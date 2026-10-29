@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjIwLjQwMDcxMCIsInVzZXJfaWQiOiI0ZWQ1YjQxNC1iZjY1LTQ2ZjQtODY3NC1hMTIzZWQzZmNkNWQifQ.gprV6raIE-ylJYY9N5Q5lt7xh1wTLe8yoJ6-2KHg98Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Советовать зеленый художественный похороны хлеб.","maxScore":98,"minScore":11,"description":"Издали пол миф вытаскивать. Растеряться военный армейский. Забирать эпоха около упорно возникновение.","estimatedTime":"4 weeks","previewFileId":"ae6e6158-133e-43d8-9dd8-a0a1e78da838","createdByUserId":"4ed5b414-bf65-46f4-8674-a123ed3fcd5d"}'

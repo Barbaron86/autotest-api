@@ -1,0 +1,25 @@
+[2m17:12:19.682[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:19.926[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:19.927[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:19.941[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:20.403[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:20.438[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:20.882[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:20.901[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m17:12:21.127[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m17:12:21.128[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file response
+[2m17:12:21.129[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m17:12:21.141[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m17:12:21.142[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check create course response
+[2m17:12:21.144[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/courses/f5d39a86-eadc-4248-9930-ba5d62c1a008
+[2m17:12:21.152[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 422 Unprocessable Entity PATCH http://localhost:8001/api/v1/courses/f5d39a86-eadc-4248-9930-ba5d62c1a008
+[2m17:12:21.155[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:21.161[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check update course with invalid score range response
+[2m17:12:21.161[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error response
+[2m17:12:21.161[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error
+[2m17:12:21.162[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/courses/f5d39a86-eadc-4248-9930-ba5d62c1a008
+[2m17:12:21.174[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/courses/f5d39a86-eadc-4248-9930-ba5d62c1a008
+[2m17:12:21.177[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:21.186[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m17:12:21.187[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m17:12:21.187[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI3LjI1MTE2NiIsInVzZXJfaWQiOiI0ZTUyZWMwMi04N2ZiLTRiMGQtYjI4Ny01NTQ2M2Y2YjdjYTEifQ.OWw6bYnf_Qt1J30Ku9OTjg-Mxj8rKBoAHIoqNuB-cpY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вперед развитый темнеть банк задрать господь.","maxScore":98,"minScore":26,"description":"Домашний приходить поколение грустный пропасть. Помолчать умирать трясти передо передо вперед казнь. Сутки сустав пропаганда затянуться. Очко изменение рис мусор результат покидать.","estimatedTime":"3 weeks","previewFileId":"0160082b-52c6-42f4-8516-a8d7edbf9816","createdByUserId":"4e52ec02-87fb-4b0d-b287-55463f6b7ca1"}'

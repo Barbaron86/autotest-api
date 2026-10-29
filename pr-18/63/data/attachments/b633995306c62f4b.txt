@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjMwLjg4OTI5NSIsInVzZXJfaWQiOiIzZjI4YjVhMi1iZTc3LTQ0ZGMtYmQyZi0zYmQ1MTZjMGUyOGMifQ.lQ7LUI15YmWPrcT0ylN2fMZMcISluDJacETPL2snhEc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Построить совещание чем лиловый выражение.","description":"Помолчать свежий еврейский район волк назначить прежде отражение. Тяжелый неправда мимо хозяйка приятель житель рот. Полевой ручей чем основание.","courseId":"400f5487-49bc-4a69-ba73-e24383502fba","maxScore":80,"minScore":23,"orderIndex":34,"estimatedTime":"7 weeks"}'

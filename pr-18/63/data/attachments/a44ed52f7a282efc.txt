@@ -1,0 +1,14 @@
+[2m17:12:36.972[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:37.215[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:37.216[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:37.231[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:37.694[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:37.710[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/users/4378cb19-194a-4821-9a11-298636c00d2e
+[2m17:12:37.946[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK PATCH http://localhost:8001/api/v1/users/4378cb19-194a-4821-9a11-298636c00d2e
+[2m17:12:37.948[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:37.952[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check update user response
+[2m17:12:37.953[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
+[2m17:12:37.954[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/users/4378cb19-194a-4821-9a11-298636c00d2e
+[2m17:12:37.960[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/users/4378cb19-194a-4821-9a11-298636c00d2e
+[2m17:12:37.962[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:37.964[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user

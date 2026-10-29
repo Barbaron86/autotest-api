@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI4LjgwMTIwNSIsInVzZXJfaWQiOiJkODIzNDc0OS0zZWE3LTRmNTItYTQzNC1kYzNkNGExYmNlNDcifQ.oszzG69eMCe09cBoMIZUDh2trkkHwq7lwBlayDpJ2kc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сопровождаться космос увеличиваться песенка порог спорт.","description":"Анализ порядок юный тесно конструкция протягивать.","courseId":"b617c01c-f1cc-45b0-94e9-a46f8c21effd","maxScore":82,"minScore":16,"orderIndex":89,"estimatedTime":"4 weeks"}'

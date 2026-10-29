@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI2LjUzMTU2NCIsInVzZXJfaWQiOiI1YmRhNGJiMS01NzU0LTRlYjItYWFmYy1kODM4YTMzYTIyNWIifQ.WEmOpzlqImPervQNnFBG8rGO3AbuFgaGWuRn9XdYfKU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Другой непривычный бетонный человечек серьезный приличный каюта.","maxScore":83,"minScore":14,"description":"Аллея народ точно совет волк соответствие. Зарплата пересечь карандаш танцевать темнеть.","estimatedTime":"8 weeks","previewFileId":"77828dae-8a5b-4f9c-81d8-0dd495e6f836","createdByUserId":"5bda4bb1-5754-4eb2-aafc-d838a33a225b"}'

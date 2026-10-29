@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI0LjY1MTQzNCIsInVzZXJfaWQiOiJmZTQ5MTQ0NC0xODA5LTRhMmYtOTllNC02NjUxZjU4MmU0YWYifQ.x0qinJLeXyP6IzhjqPCGVyDojF6itEDbDPrlC3otnjE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Возможно доставать сынок заявление выбирать.","maxScore":74,"minScore":25,"description":"Юный смеяться правление ярко поздравлять дальний. Добиться материя адвокат вздрогнуть песенка. Коробка кпсс правление крыса выдержать. Сынок результат мрачно отъезд райком миг невыносимый.","estimatedTime":"3 weeks","previewFileId":"af3ede02-5fb1-41d2-8f1e-f6a7a02c3df0","createdByUserId":"fe491444-1809-4a2f-99e4-6651f582e4af"}'

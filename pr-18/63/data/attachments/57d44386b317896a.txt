@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjMxLjM2OTU1MCIsInVzZXJfaWQiOiIzZjI4YjVhMi1iZTc3LTQ0ZGMtYmQyZi0zYmQ1MTZjMGUyOGMifQ.1uvdXA2xHyK-79-30cvQuLcQPFGURnmu-PhEklwIuVM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Смеяться шлем предоставить деловой висеть сутки забирать.","maxScore":74,"minScore":22,"description":"Коммунизм достоинство покидать. Спешить забирать помолчать плод решение зарплата изредка. Помолчать выгнать услать тяжелый постоянный применяться.","estimatedTime":"2 weeks","previewFileId":"8b15fcd6-802a-4ec0-a9c7-bf8e06ad2ecb","createdByUserId":"3f28b5a2-be77-44dc-bd2f-3bd516c0e28c"}'

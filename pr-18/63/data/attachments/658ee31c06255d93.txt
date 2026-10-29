@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjE3LjA5NTgxNSIsInVzZXJfaWQiOiJkNzdkZTdmOC1kYTY5LTQ3NDAtYmUyNy05NzA2YzRkZWJlOGMifQ.OaNv2rZ0QaZ9TTJ4FbzoAMAKy-bRGz0Q6fjCTF_YlWc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Покидать сверкающий сынок ведь жидкий зарплата.","maxScore":76,"minScore":21,"description":"Посидеть запретить функция прежде самостоятельно кузнец. Выражение редактор самостоятельно теория.\nПадаль аж тревога. Конференция советовать танцевать плод экзамен.","estimatedTime":"6 weeks","previewFileId":"e528dcc2-2962-497a-bbee-eb8390a3f05f","createdByUserId":"d77de7f8-da69-4740-be27-9706c4debe8c"}'

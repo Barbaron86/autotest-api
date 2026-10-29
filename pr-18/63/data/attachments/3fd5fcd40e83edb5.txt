@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjIzLjMwODMzNSIsInVzZXJfaWQiOiI2NzBmYmMxNC05ZDI0LTRlYjEtOGI3Zi0xZmRkMDAzNWU0ZDAifQ.rdCefM5IEB_WfxFazWHlx2jahtLpcQgXzviTT9uk7oo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очутиться казнь миг.","maxScore":61,"minScore":23,"description":"Второй остановить более более. Поколение песенка вообще упор.\nБагровый посидеть близко левый. Головка решение задрать.","estimatedTime":"1 weeks","previewFileId":"a9571a5e-ecee-49f2-8215-5a7e5c34e0e6","createdByUserId":"670fbc14-9d24-4eb1-8b7f-1fdd0035e4d0"}'

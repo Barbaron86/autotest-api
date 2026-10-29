@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/579bc5d8-5da6-4246-a81f-b3bd83667662 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjE4LjY0MTU2NyIsInVzZXJfaWQiOiJjNjdiNzcwYS00NWI2LTRkODMtYmQ3Ni1lNmJkNDhkZGE1MGIifQ.P8XiiN2rOr_YvcZL2OyFcq8IFkM-MWcC-zA2t-FJj4I' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Аж посвятить командование вперед хлеб ответить. (обновлено)","maxScore":81,"minScore":17,"description":"Да господь военный освободить смертельный разнообразный. Горький кольцо низкий совещание пламя.\nОбновленное описание.","estimatedTime":"8 weeks (обновлено)"}'

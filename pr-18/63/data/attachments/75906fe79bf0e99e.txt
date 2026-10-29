@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/users/4378cb19-194a-4821-9a11-298636c00d2e \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjM3LjY5MTU1OCIsInVzZXJfaWQiOiI0Mzc4Y2IxOS0xOTRhLTQ4MjEtOWExMS0yOTg2MzZjMDBkMmUifQ.J6sYjrTUnGFPIme2ohWiZL8uPO-XVSJYWv81A0illHg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"firstName":"Дмитрий"}'

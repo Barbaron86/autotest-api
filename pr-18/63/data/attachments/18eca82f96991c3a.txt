@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjIxLjczNjI0MSIsInVzZXJfaWQiOiI3ODI5NDY1Yy1hODFhLTRjNmYtYTVmMi02MTlmNTQ2NGRmYzYifQ.8Ka5clXY3LafrfzHzRs7cQsgnGL2A79iuQy9yQsZcbM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вообще перебивать похороны механический терапия советовать.","maxScore":65,"minScore":27,"description":"Район ручей славный прощение выражаться роскошный. Достоинство вздрогнуть потянуться беспомощный хлеб.","estimatedTime":"5 weeks","previewFileId":"4e1a4e77-7fa7-4f93-9cf9-4b2bbcda701c","createdByUserId":"7829465c-a81a-4c6f-a5f2-619f5464dfc6"}'

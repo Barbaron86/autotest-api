@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI4LjMwNDA4NSIsInVzZXJfaWQiOiIwZGMxNzAwNi1iZTBmLTQyNjctODBlZC05NWI5YjUxYTI1ZWQifQ.zo00Omi31ql4q22j-G37L1O4vzahZ7r_cyIMiQg0mTA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Счастье соответствие уронить инструкция увеличиваться.","maxScore":89,"minScore":45,"description":"Неправда разуметься чувство рабочий другой. Рис четко поколение академик угол отъезд демократия.\nПастух роса потом кпсс равнодушный командующий.","estimatedTime":"5 weeks","previewFileId":"490bf2a7-8d22-4fba-a834-d573d81085d3","createdByUserId":"0dc17006-be0f-4267-80ed-95b9b51a25ed"}'

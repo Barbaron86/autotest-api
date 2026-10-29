@@ -1,0 +1,15 @@
+[2m17:12:33.483[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:33.956[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:33.957[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:33.972[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:34.216[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:34.236[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m17:12:34.463[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m17:12:34.464[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file response
+[2m17:12:34.466[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → DELETE http://localhost:8001/api/v1/files/69e3ccb8-7ce6-488c-bb6e-9c3aae388d8c
+[2m17:12:34.472[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK DELETE http://localhost:8001/api/v1/files/69e3ccb8-7ce6-488c-bb6e-9c3aae388d8c
+[2m17:12:34.473[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/files/69e3ccb8-7ce6-488c-bb6e-9c3aae388d8c
+[2m17:12:34.478[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 404 Not Found GET http://localhost:8001/api/v1/files/69e3ccb8-7ce6-488c-bb6e-9c3aae388d8c
+[2m17:12:34.478[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file not found response
+[2m17:12:34.478[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check internal error response
+[2m17:12:34.484[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

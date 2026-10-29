@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjIwLjY0MDUwMiIsInVzZXJfaWQiOiJjNjc3ODA5Yy0yMmRhLTQ2M2UtYTg4ZC1kZWMxZjcyMDBiM2YifQ.090KzyDRn5naJi9fccnIIxhdHXhD1xkBM_examWLGEk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Рабочий научить протягивать карандаш четыре рис вытаскивать написать.","maxScore":84,"minScore":22,"description":"Поставить мальчишка волк отдел школьный. Коллектив спичка мера.","estimatedTime":"8 weeks","previewFileId":"27fb9a3d-4bac-4462-96f8-86d8d95fa00c","createdByUserId":"c677809c-22da-463e-a88d-dec1f7200b3f"}'

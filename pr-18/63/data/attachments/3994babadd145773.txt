@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI4LjAzMjY1NCIsInVzZXJfaWQiOiIwZGMxNzAwNi1iZTBmLTQyNjctODBlZC05NWI5YjUxYTI1ZWQifQ.0IHl6HaAdsBVJjKmUFEXANWILsdgPLRqZR2Y7JvS6s8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Светило похороны более легко премьера дыхание шлем домашний.","description":"Выражаться ответить металл адвокат бровь. Банда коричневый висеть. Беспомощный товар оборот процесс оставить.","courseId":"0c24c5a1-0b74-4b8d-9652-c28979a075e7","maxScore":67,"minScore":16,"orderIndex":7,"estimatedTime":"10 weeks"}'

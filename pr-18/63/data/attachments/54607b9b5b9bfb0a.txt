@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjMwLjY0ODE5MCIsInVzZXJfaWQiOiJjYTg5YWU5Ny1hYjJiLTRiNGUtYjllMS05YWMzZmFiYmU5MGYifQ.88nfFbHMH8kR_k6WI7uYqPKDLVEVALhcO7FOAFouv3g' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Командир счастье плавно провинция пастух миф.","maxScore":93,"minScore":9,"description":"Труп уточнить слишком еврейский. Командующий деловой боец магазин жестокий космос исполнять.","estimatedTime":"2 weeks","previewFileId":"4de9f507-4a89-401d-ada8-f0b617960659","createdByUserId":"ca89ae97-ab2b-4b4e-b9e1-9ac3fabbe90f"}'

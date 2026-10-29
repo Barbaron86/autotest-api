@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI5LjI3OTAwMyIsInVzZXJfaWQiOiJkODIzNDc0OS0zZWE3LTRmNTItYTQzNC1kYzNkNGExYmNlNDcifQ.LMWTyQlcUVAq6Odiqaagye7wlJjYeOwBhBDrnhP8MWE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бок выбирать прелесть песня падаль господь провал.","maxScore":72,"minScore":25,"description":"Исполнять князь лиловый ремень вскакивать сомнительный. Космос запретить руководитель костер жестокий. Упорно желание князь космос что теория.","estimatedTime":"10 weeks","previewFileId":"c4671858-3fc7-4d3d-9c56-e9639ac328d0","createdByUserId":"d8234749-3ea7-4f52-a434-dc3d4a1bce47"}'

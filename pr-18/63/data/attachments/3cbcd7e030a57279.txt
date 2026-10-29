@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjIyLjQ1Mzk2NyIsInVzZXJfaWQiOiJlMWM3MzkwMi1mNWYxLTRhYjctYWRiMS0wNDFmMmY3MzFmOTcifQ.tlHyM5v7-zbVdyAJfJz1pL-pH3AMU4Iw9uC0-hxzcTA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Избегать мимо ложиться ставить кольцо еврейский демократия грустный.","maxScore":87,"minScore":34,"description":"Задрать цепочка слать.\nЦепочка терапия забирать ложиться ставить достоинство сутки за. Райком академик банда более низкий гулять неправда палка.","estimatedTime":"2 weeks","previewFileId":"140574fe-f5ed-430b-978a-5217152c1b26","createdByUserId":"e1c73902-f5f1-4ab7-adb1-041f2f731f97"}'

@@ -1,0 +1,19 @@
+[2m17:12:22.591[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:23.048[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:23.049[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:23.067[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:23.312[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:23.351[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:23.613[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:23.639[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m17:12:23.651[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m17:12:23.652[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file response
+[2m17:12:23.657[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m17:12:23.673[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m17:12:23.674[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check create course response
+[2m17:12:23.676[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/courses/56366582-83ef-435d-ab66-68158c3b1be9
+[2m17:12:23.921[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/courses/56366582-83ef-435d-ab66-68158c3b1be9
+[2m17:12:23.924[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:23.931[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m17:12:23.932[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m17:12:23.932[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user

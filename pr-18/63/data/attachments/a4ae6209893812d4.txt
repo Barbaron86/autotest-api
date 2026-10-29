@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQyOjI2LjAzNTU0NiIsInVzZXJfaWQiOiI1YmRhNGJiMS01NzU0LTRlYjItYWFmYy1kODM4YTMzYTIyNWIifQ.QW11N7ZPZ5sZR2h32nGjbUrgbd88onooZj7KHO4CsEg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Засунуть плавно роскошный.","description":"Желание число поздравлять мгновение. Угодный о мрачно низкий развитый.\nТабак банда устройство госпожа июнь.\nМимо остановить расстройство низкий полюбить пол.","courseId":"c834b6b7-45da-427d-8af8-b7d4cfa0fd5b","maxScore":87,"minScore":17,"orderIndex":94,"estimatedTime":"4 weeks"}'

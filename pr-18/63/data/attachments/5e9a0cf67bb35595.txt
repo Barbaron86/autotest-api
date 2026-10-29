@@ -1,0 +1,34 @@
+[2m17:12:21.533[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:12:21.981[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:12:21.982[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:12:21.996[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:22.457[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:22.485[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:22.806[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:12:22.821[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m17:12:23.051[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m17:12:23.052[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file response
+[2m17:12:23.053[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m17:12:23.065[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m17:12:23.066[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check create course response
+[2m17:12:23.066[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check non-null optional course fields
+[2m17:12:23.067[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.314[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.317[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:23.327[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m17:12:23.327[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m17:12:23.327[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
+[2m17:12:23.329[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.373[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK PATCH http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.375[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:23.382[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course with cleared optional fields
+[2m17:12:23.382[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m17:12:23.382[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m17:12:23.382[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
+[2m17:12:23.383[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.619[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/courses/15c91abc-f1ab-4e13-9bf6-0369b7bfebda
+[2m17:12:23.622[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:12:23.632[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course with cleared optional fields
+[2m17:12:23.633[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m17:12:23.633[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m17:12:23.633[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
