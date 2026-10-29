@@ -1,0 +1,16 @@
+[2m16:39:25.333[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m16:39:25.987[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m16:39:26.012[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:26.607[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:26.652[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:27.203[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:27.229[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m16:39:27.511[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m16:39:27.513[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m16:39:27.535[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m16:39:27.538[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → PATCH http://localhost:8001/api/v1/courses/201ca484-48a9-4e1b-8cd3-7cf26b551fba
+[2m16:39:27.557[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK PATCH http://localhost:8001/api/v1/courses/201ca484-48a9-4e1b-8cd3-7cf26b551fba
+[2m16:39:27.558[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check update course response
+[2m16:39:27.558[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m16:39:27.559[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user
+[2m16:39:27.562[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

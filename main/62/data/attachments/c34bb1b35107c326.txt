@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjM4LjA2ODI2MCIsInVzZXJfaWQiOiIyMGM0NTBkYy1jYTA1LTQ0NjktYjllZC00ZWY0ZTE2MzE1Y2YifQ.fyi4RtaWsf6Lw45N4rsfyuqiaz6bykUkIfJERfT3tGs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пропасть неправда мера уронить.","description":"Неожиданно легко спалить. Расстройство низкий район означать жидкий спорт парень заложить.","courseId":"e525f184-3c97-47eb-82bf-2ae86dc6c7e0","maxScore":87,"minScore":37,"orderIndex":43,"estimatedTime":"10 weeks"}'

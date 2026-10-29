@@ -1,0 +1,17 @@
+[2m16:39:29.448[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m16:39:29.754[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m16:39:29.775[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:30.077[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:30.115[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:30.673[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:30.694[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m16:39:30.981[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m16:39:30.983[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m16:39:30.998[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m16:39:31.002[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check create course response
+[2m16:39:31.003[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/courses/9ff477b6-35f9-418d-8742-1ad9b1297812
+[2m16:39:31.013[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/courses/9ff477b6-35f9-418d-8742-1ad9b1297812
+[2m16:39:31.017[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m16:39:31.029[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.courses[0m | 🔎 Check course
+[2m16:39:31.029[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check file
+[2m16:39:31.029[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check user

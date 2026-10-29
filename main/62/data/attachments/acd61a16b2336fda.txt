@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/814841a5-0577-4f86-b236-eef045223e77 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjI4Ljc1MTczMiIsInVzZXJfaWQiOiJjNGE0YTdjZi02MDExLTQxMTMtOTVlNS01YmFiMDMwYTA3ZDcifQ.CcxlgNVsa2SRdwoz1jCiO_C3aqLVTJggzkcNUzY6Z20' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мрачно князь карандаш миллиард печатать приличный пересечь. (частично)"}'

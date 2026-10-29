@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjI4Ljc1MTczMiIsInVzZXJfaWQiOiJjNGE0YTdjZi02MDExLTQxMTMtOTVlNS01YmFiMDMwYTA3ZDcifQ.CcxlgNVsa2SRdwoz1jCiO_C3aqLVTJggzkcNUzY6Z20' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мрачно князь карандаш миллиард печатать приличный пересечь.","maxScore":97,"minScore":32,"description":"Протягивать цепочка район около. Мера плод запеть легко покинуть юный эпоха.\nНеудобно снимать командование наслаждение разводить. Граница другой тюрьма хлеб. Войти нервно редактор.","estimatedTime":"7 weeks","previewFileId":"64fb8807-5461-4ce2-b7ea-3dd62e939617","createdByUserId":"c4a4a7cf-6011-4113-95e5-5bab030a07d7"}'

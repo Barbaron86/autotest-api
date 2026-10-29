@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjI2LjYwMjAxMSIsInVzZXJfaWQiOiJlMDljOGI1Ny1jY2E3LTQ3ODYtOWFiZC0xYzkwY2RiNzQ5NDQifQ.O1aaTvyhrTkR5STrT-FjfSgr7bORPm6J77MFhPgdEbw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Кпсс ребятишки степь роскошный сходить заплакать спорт ход.","maxScore":70,"minScore":26,"description":"Дружно командование славный полевой висеть. Вчера покидать умолять запеть слать поколение. Пастух мимо собеседник. Набор неправда головной неудобно аллея применяться.","estimatedTime":"1 weeks","previewFileId":"6b12febc-d94c-4529-9ec5-5d8fee32e173","createdByUserId":"e09c8b57-cca7-4786-9abd-1c90cdb74944"}'

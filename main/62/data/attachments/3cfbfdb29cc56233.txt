@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjMzLjI4Mjc5MSIsInVzZXJfaWQiOiJmNGQ3NDRkNS02MzIwLTRmOTctOTdjYi01MDljMzk3NzdkYzkifQ.y9Xg3cq9z5-DQPUbnHzueW2vCKXErNQrOyuKDaWxcvY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Космос сходить крутой основание сомнительный.","maxScore":87,"minScore":6,"description":"Палец девка важный перебивать хозяйка войти боец. Ленинград освободить военный госпожа подземный левый триста.\nРуководитель заявление выраженный вскинуть.","estimatedTime":"9 weeks","previewFileId":"efc41e0d-b23b-493f-9f8c-c18f220fb15a","createdByUserId":"f4d744d5-6320-4f97-97cb-509c39777dc9"}'

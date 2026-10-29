@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjM0LjU4MTUxNiIsInVzZXJfaWQiOiIwNmZhNmQzNC1mY2QyLTRlMGUtYTgwYi1kMTVmNzkyZGJmYzIifQ.xPqEbj73o4SCDJuKnpbAqw3OCnEODKZSXYfbfr6T6dY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выражение банк рай монета блин порядок.","maxScore":67,"minScore":14,"description":"Интернет пища домашний виднеться конференция. Ярко эпоха голубчик.\nОчередной нож совещание премьера плясать рота. Свежий еврейский ручей низкий район ботинок торговля поговорить.","estimatedTime":"1 weeks","previewFileId":"7e17dc98-0c32-4adf-99c8-7114f1ccecfb","createdByUserId":"06fa6d34-fcd2-4e0e-a80b-d15f792dbfc2"}'

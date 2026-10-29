@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjMxLjk2MTMxMCIsInVzZXJfaWQiOiJjYzY0YTgxNi1jOTI4LTQ2MTItYmQxZi00NWMyODcyYmIzMjIifQ.fWiYP6pTypLFV8jhg_BY1RzyZDBDyfYh2Aprp08O7To' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Невыносимый добиться падаль вскакивать коробка.","maxScore":77,"minScore":22,"description":"Привлекать прощение кидать мгновение поймать построить соответствие. Художественный находить освобождение. Отражение ярко академик через пламя грудь степь.","estimatedTime":"6 weeks","previewFileId":"dcab2d63-63ac-44c9-9bc0-66adc0ec8eb9","createdByUserId":"cc64a816-c928-4612-bd1f-45c2872bb322"}'

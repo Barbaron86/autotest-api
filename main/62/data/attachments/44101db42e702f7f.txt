@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjMwLjk2Nzg0MCIsInVzZXJfaWQiOiIxYmUyNDI4Ni0zZWQwLTQzMGEtYjZjMC1hMjEwMTM3MjIxNjIifQ.xlorLZh_FIpuEK7pgAQRcysC7IumBnWj-rrcWpF9x9Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Помолчать дремать сынок покидать число казнь означать.","maxScore":50,"minScore":4,"description":"Сутки ручей песенка исследование уничтожение угол неправда. Роскошный триста металл покидать.\nРебятишки присесть редактор ручей смелый. Монета дьявол шлем подробность пища.","estimatedTime":"3 weeks","previewFileId":"1a609d94-449c-413c-9886-c4705d079c21","createdByUserId":"1be24286-3ed0-430a-b6c0-a21013722162"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjM1LjgyMDIzMiIsInVzZXJfaWQiOiIyOThiY2IwMi02NDg5LTQ5ZDktOTM2YS01MWJhZmY3YjgxOTcifQ.qt51bTQv3eB2hZ6q8yjetBP1TyAXN0wpix4Zfh-DUQ0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Юный бригада секунда.","maxScore":90,"minScore":48,"description":"Холодно материя картинка потянуться. Функция посвятить юный висеть дружно руководитель решение.","estimatedTime":"10 weeks","previewFileId":"658c7b59-104e-4507-8ac6-d7068abbc56e","createdByUserId":"298bcb02-6489-49d9-936a-51baff7b8197"}'

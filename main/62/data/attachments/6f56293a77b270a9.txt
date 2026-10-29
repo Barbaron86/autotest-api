@@ -1,0 +1,19 @@
+[2m16:39:32.028[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m16:39:32.615[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m16:39:32.641[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:32.945[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:32.985[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:33.289[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:33.328[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:33.928[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m16:39:33.952[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m16:39:34.234[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/files
+[2m16:39:34.237[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/courses
+[2m16:39:34.255[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/courses
+[2m16:39:34.257[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/exercises
+[2m16:39:34.275[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/exercises
+[2m16:39:34.277[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → GET http://localhost:8001/api/v1/exercises/12c7e512-b932-4d0e-9d83-836416991cde
+[2m16:39:34.288[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK GET http://localhost:8001/api/v1/exercises/12c7e512-b932-4d0e-9d83-836416991cde
+[2m16:39:34.289[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.exercises[0m | 🔎 Check get exercise response
+[2m16:39:34.289[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.exercises[0m | 🔎 Check exercise
+[2m16:39:34.291[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

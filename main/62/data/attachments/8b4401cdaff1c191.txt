@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjI4LjQ1MzY1MiIsInVzZXJfaWQiOiI1MDk5MGUyNS05NmQzLTRkODEtYWQ3Ni0zYmI0MmViZjY5M2IifQ.uwVozWY5mNL31GoJ5rdDSgyWXF6Oq_SAznWa3cxEoLY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пропасть забирать через обида материя табак.","maxScore":55,"minScore":37,"description":"Холодно выкинуть ребятишки багровый тревога премьера кпсс. Коричневый даль возникновение пятеро наткнуться. Призыв помолчать жить один инвалид болото.","estimatedTime":"5 weeks","previewFileId":"4bef69ba-1c34-48ea-94f2-baf637448bca","createdByUserId":"50990e25-96d3-4d81-ad76-3bb42ebf693b"}'

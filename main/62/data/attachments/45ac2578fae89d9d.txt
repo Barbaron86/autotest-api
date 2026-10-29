@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjM4LjQxNzQ2NSIsInVzZXJfaWQiOiIyMGM0NTBkYy1jYTA1LTQ0NjktYjllZC00ZWY0ZTE2MzE1Y2YifQ.BmAmfaGZO1Q0NeR7Q1b8INutPOo5B_TUAMPtbsSGQcc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Миг инфекция пасть написать затянуться.","maxScore":62,"minScore":47,"description":"Рис академик инструкция житель блин интеллектуальный актриса счастье.","estimatedTime":"9 weeks","previewFileId":"718ee89f-31cd-4a43-8971-eacc130a47bc","createdByUserId":"20c450dc-ca05-4469-b9ed-4ef4e16315cf"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/577d3a86-56a9-4415-99f5-75d899252d07 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjA5OjM1LjQ3NTIxOCIsInVzZXJfaWQiOiIyOThiY2IwMi02NDg5LTQ5ZDktOTM2YS01MWJhZmY3YjgxOTcifQ.feFCAALhDtotHhjtfO00tISPL-P0tV8FxZDW7zCSdjI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Желание деньги угроза аллея горький. (обновлено)","description":"Находить разнообразный потрясти спешить правильный пространство процесс.\nУспокоиться ход идея деловой бригада устройство. Смертельный ныне мера ярко.\nОбновленное описание.","maxScore":65,"minScore":16,"orderIndex":45,"estimatedTime":"6 weeks (обновлено)"}'
