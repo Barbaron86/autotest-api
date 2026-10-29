@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjA4LjQ2NTQzNyIsInVzZXJfaWQiOiJhZjVmYTZlNC00ZTIxLTQ3NWQtODdmNC0wNDA3YmIwYTliNjEifQ.gsePtDNTg_lSRJBMrKQN13b5uayV_YYHyok2g3I7yi4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поезд головка полностью сомнительный пища виднеться угроза.","maxScore":97,"minScore":8,"description":"Через правление заработать пропасть монета нож костер. Штаб неожиданно развернуться похороны. Исполнять заложить аллея желание возмутиться кожа светило.","estimatedTime":"10 weeks","previewFileId":"406a7b33-079c-4663-9fdc-4d634aa8fadd","createdByUserId":"af5fa6e4-4e21-475d-87f4-0407bb0a9b61"}'

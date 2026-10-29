@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjA4LjA0OTIwMSIsInVzZXJfaWQiOiJhZjVmYTZlNC00ZTIxLTQ3NWQtODdmNC0wNDA3YmIwYTliNjEifQ.mObnxGLoq3tZeXF--52Gm2gwNmpsUZDYXNeHIsJMHPY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Деловой исполнять печатать художественный трясти холодно.","description":"Пасть успокоиться прощение. Потрясти угроза терапия темнеть близко бригада. Правление счастье идея грустный.\nГоловка налоговый отъезд команда порог бровь.","courseId":"4efcdd7e-dde3-452f-8e4e-9e053ffe0709","maxScore":60,"minScore":10,"orderIndex":81,"estimatedTime":"8 weeks"}'

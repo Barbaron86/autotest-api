@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjE0LjEzNDEzMiIsInVzZXJfaWQiOiIxNDA4ZDFmNi0yYjQ4LTQyMDYtYWEyZi04ODZiZjhkZjhlYTkifQ.0DKr4X-2P7-nMn-7LCLZzXeP1k40ZIjxsBEtrzEhQyQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Добиться даль манера снимать.","maxScore":63,"minScore":23,"description":"Спорт упор торговля самостоятельно спорт металл присесть. Процесс очко разуметься ставить граница триста вперед.\nМесто художественный плавно что эпоха.","estimatedTime":"3 weeks","previewFileId":"bdf77b75-590f-4abb-85f8-a077785406a7","createdByUserId":"1408d1f6-2b48-4206-aa2f-886bf8df8ea9"}'

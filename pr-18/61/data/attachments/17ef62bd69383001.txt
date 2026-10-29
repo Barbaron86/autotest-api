@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjA1LjI2NTczNiIsInVzZXJfaWQiOiI1ZDNlOTdkNi01MjFiLTQ2OGMtYTRiNy04ZDEyYWI0MWVmYWEifQ.FAIe5pm8JjYlPvL_RKICNnFzSa2fVNCLqfWjf8uztnk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Налоговый грустный терапия миг.","maxScore":54,"minScore":24,"description":"Горький приятель смертельный. Рот очко сравнение лапа. Строительство тысяча палка затянуться головной помолчать хлеб.\nНеобычный другой идея издали полностью очутиться. Художественный металл прежде.","estimatedTime":"9 weeks","previewFileId":"077b7e86-7147-447c-b552-77e037346980","createdByUserId":"5d3e97d6-521b-468c-a4b7-8d12ab41efaa"}'

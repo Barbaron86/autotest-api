@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjEzLjUxMDkzNCIsInVzZXJfaWQiOiJiYTczYzJhNS0wOWQ0LTQ5MWYtYTE0YS0xMmRhNmMxMThhNTMifQ.VpIIWrl69esONkc9CNfXcWioXxNK35J03V16TMx2-eE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Достоинство посвятить аж чувство опасность песня сопровождаться.","maxScore":87,"minScore":40,"description":"Естественный банда результат издали терапия подробность миф. Доставать обида дурацкий интеллектуальный спичка наступать предоставить. Художественный сбросить витрина строительство.","estimatedTime":"10 weeks","previewFileId":"c08e8d9a-7463-4db3-9364-2af0adc2ab2c","createdByUserId":"ba73c2a5-09d4-491f-a14a-12da6c118a53"}'

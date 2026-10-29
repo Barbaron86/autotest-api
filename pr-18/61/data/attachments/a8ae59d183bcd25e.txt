@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE2OjMwOjA5Ljc4NzQxOCIsInVzZXJfaWQiOiI2ZmViYTVhOS1iZGVjLTRiMWMtOWE1YS05ZWJlZmQ5NTFhZjUifQ.PwvoKG4OdoXgcjI5lU9vSg9Y99t9uLT4JHpXA3Qri8o' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Фонарик мелочь палка покидать славный дорогой.","description":"Каюта адвокат тусклый крыса советовать славный июнь беспомощный. Спасть падаль носок правление ночь крыса посвятить отражение.","courseId":"69b18a0b-5520-4112-a8f3-0ab9a082aec2","maxScore":58,"minScore":46,"orderIndex":13,"estimatedTime":"1 weeks"}'
