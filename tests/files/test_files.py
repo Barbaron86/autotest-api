@@ -17,11 +17,13 @@ from tools.assertions.files import (
     assert_create_file_response,
     assert_create_file_with_empty_directory_response,
     assert_create_file_with_empty_filename_response,
+    assert_create_file_with_too_long_filename_response,
     assert_file_not_found_response,
     assert_get_file_response,
     assert_get_file_with_incorrect_file_id_response,
 )
 from tools.assertions.schema import validate_json_schema
+from tools.fakers import fake
 
 
 @pytest.mark.files
@@ -53,15 +55,15 @@ class TestFiles:
             AssertionError: Если HTTP-статус или данные загруженного
                 файла не соответствуют ожидаемым значениям.
         """
-        request = CreateFileRequestSchema()
-        response = files_client.create_file_api(request)
+        create_file_request = CreateFileRequestSchema()
+        create_file_response = files_client.create_file_api(create_file_request)
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = CreateFileResponseSchema.model_validate_json(response.text)
+        assert_status_code(create_file_response.status_code, HTTPStatus.OK)
+        create_file_response_data = CreateFileResponseSchema.model_validate_json(create_file_response.text)
 
-        assert_create_file_response(request=request, response=response_data)
+        assert_create_file_response(request=create_file_request, response=create_file_response_data)
 
-        validate_json_schema(response.json(), response_data.model_json_schema())
+        validate_json_schema(create_file_response.json(), create_file_response_data.model_json_schema())
 
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)
@@ -85,13 +87,13 @@ class TestFiles:
         """
 
         file_id = function_file.response.file.id
-        response = files_client.get_file_api(file_id)
+        get_file_response = files_client.get_file_api(file_id)
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = GetFileResponseSchema.model_validate_json(response.text)
+        assert_status_code(get_file_response.status_code, HTTPStatus.OK)
+        get_file_response_data = GetFileResponseSchema.model_validate_json(get_file_response.text)
 
-        assert_get_file_response(get_file_response=response_data, create_file_response=function_file.response)
-        validate_json_schema(response.json(), response_data.model_json_schema())
+        assert_get_file_response(get_file_response=get_file_response_data, create_file_response=function_file.response)
+        validate_json_schema(get_file_response.json(), get_file_response_data.model_json_schema())
 
     @allure.tag(AllureTag.VALIDATE_ENTITY)
     @allure.story(AllureStory.VALIDATE_ENTITY)
@@ -108,14 +110,14 @@ class TestFiles:
             AssertionError: Если HTTP-статус или ошибка валидации
                 не соответствуют ожидаемым значениям.
         """
-        request = CreateFileRequestSchema(filename="")
-        response = files_client.create_file_api(request=request)
+        create_file_request = CreateFileRequestSchema(filename="")
+        create_file_response = files_client.create_file_api(request=create_file_request)
 
-        assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
-        response_data = ValidationErrorResponseSchema.model_validate_json(response.text)
+        assert_status_code(create_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        create_file_response_data = ValidationErrorResponseSchema.model_validate_json(create_file_response.text)
 
-        assert_create_file_with_empty_filename_response(actual=response_data)
-        validate_json_schema(response.json(), ValidationErrorResponseSchema.model_json_schema())
+        assert_create_file_with_empty_filename_response(actual=create_file_response_data)
+        validate_json_schema(create_file_response.json(), ValidationErrorResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.VALIDATE_ENTITY)
     @allure.story(AllureStory.VALIDATE_ENTITY)
@@ -132,14 +134,46 @@ class TestFiles:
             AssertionError: Если HTTP-статус или ошибка валидации
                 не соответствуют ожидаемым значениям.
         """
-        request = CreateFileRequestSchema(directory="")
-        response = files_client.create_file_api(request=request)
+        create_file_request = CreateFileRequestSchema(directory="")
+        create_file_response = files_client.create_file_api(request=create_file_request)
 
-        assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
-        response_data = ValidationErrorResponseSchema.model_validate_json(response.text)
+        assert_status_code(create_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        create_file_response_data = ValidationErrorResponseSchema.model_validate_json(create_file_response.text)
 
-        assert_create_file_with_empty_directory_response(actual=response_data)
-        validate_json_schema(response.json(), ValidationErrorResponseSchema.model_json_schema())
+        assert_create_file_with_empty_directory_response(actual=create_file_response_data)
+        validate_json_schema(create_file_response.json(), ValidationErrorResponseSchema.model_json_schema())
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Create file with too long filename")
+    @allure.severity(Severity.NORMAL)
+    def test_create_file_with_too_long_filename(
+        self,
+        files_client: FilesClient,
+        file_request_with_too_long_filename: CreateFileRequestSchema,
+    ) -> None:
+        """Проверяет отказ в загрузке файла с именем длиннее 255 символов.
+
+        Args:
+            files_client: Фикстура авторизованного API-клиента файлов.
+            file_request_with_too_long_filename: Фикстура запроса с именем
+                файла, превышающим допустимую длину.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации
+                длины имени файла не соответствуют контракту.
+        """
+        create_file_request = file_request_with_too_long_filename
+        create_file_response = files_client.create_file_api(request=create_file_request)
+
+        assert_status_code(create_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        create_file_response_data = ValidationErrorResponseSchema.model_validate_json(create_file_response.text)
+
+        assert_create_file_with_too_long_filename_response(
+            actual=create_file_response_data, filename=create_file_request.filename
+        )
+        validate_json_schema(create_file_response.json(), ValidationErrorResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.DELETE_ENTITY)
     @allure.story(AllureStory.DELETE_ENTITY)
@@ -158,17 +192,17 @@ class TestFiles:
                 удаленного файла не соответствуют ожидаемым значениям.
         """
         file_id = function_file.response.file.id
-        delete_response = files_client.delete_file_api(file_id=file_id)
+        delete_file_response = files_client.delete_file_api(file_id=file_id)
 
-        assert_status_code(delete_response.status_code, HTTPStatus.OK)
+        assert_status_code(delete_file_response.status_code, HTTPStatus.OK)
 
-        get_response = files_client.get_file_api(file_id=file_id)
+        get_file_response = files_client.get_file_api(file_id=file_id)
 
-        assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
-        response_data = InternalErrorResponseSchema.model_validate_json(get_response.text)
+        assert_status_code(get_file_response.status_code, HTTPStatus.NOT_FOUND)
+        get_file_response_data = InternalErrorResponseSchema.model_validate_json(get_file_response.text)
 
-        assert_file_not_found_response(actual=response_data)
-        validate_json_schema(get_response.json(), InternalErrorResponseSchema.model_json_schema())
+        assert_file_not_found_response(actual=get_file_response_data)
+        validate_json_schema(get_file_response.json(), InternalErrorResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.VALIDATE_ENTITY)
     @allure.story(AllureStory.VALIDATE_ENTITY)
@@ -185,10 +219,11 @@ class TestFiles:
             AssertionError: Если HTTP-статус или ошибка валидации
                 идентификатора не соответствуют ожидаемым значениям.
         """
-        response = files_client.get_file_api(file_id="incorrect-file-id")
+        invalid_file_id = fake.invalid_uuid()
+        get_file_response = files_client.get_file_api(file_id=invalid_file_id)
 
-        assert_status_code(response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
-        response_data = ValidationErrorResponseSchema.model_validate_json(response.text)
+        assert_status_code(get_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        get_file_response_data = ValidationErrorResponseSchema.model_validate_json(get_file_response.text)
 
-        assert_get_file_with_incorrect_file_id_response(actual=response_data)
-        validate_json_schema(response.json(), ValidationErrorResponseSchema.model_json_schema())
+        assert_get_file_with_incorrect_file_id_response(actual=get_file_response_data, file_id=invalid_file_id)
+        validate_json_schema(get_file_response.json(), ValidationErrorResponseSchema.model_json_schema())

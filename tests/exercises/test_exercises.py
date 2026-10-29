@@ -4,7 +4,7 @@ import allure
 import pytest
 from allure_commons.types import Severity
 
-from clients.error_schema import InternalErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from clients.exercises.exercises_client import ExercisesClient
 from clients.exercises.exercises_schema import (
     CreateExerciseRequestSchema,
@@ -13,6 +13,7 @@ from clients.exercises.exercises_schema import (
     GetExercisesRequestSchema,
     GetExercisesResponseSchema,
     UpdateExerciseRequestSchema,
+    UpdateExerciseResponseSchema,
 )
 from fixtures.courses import CourseFixture
 from fixtures.exercises import ExerciseFixture
@@ -23,12 +24,16 @@ from tools.allure.tags import AllureTag
 from tools.assertions.base import assert_equal, assert_status_code
 from tools.assertions.exercises import (
     assert_create_exercise_response,
+    assert_exercise,
     assert_exercise_not_found_response,
+    assert_exercise_with_order_index,
     assert_get_exercise_response,
     assert_get_exercises_response,
     assert_update_exercise_response,
+    assert_update_exercise_with_invalid_score_range_response,
 )
 from tools.assertions.schema import validate_json_schema
+from tools.fakers import fake
 
 
 @pytest.mark.exercises
@@ -57,14 +62,14 @@ class TestExercises:
             AssertionError: Если HTTP-статус или поля созданного задания
                 не соответствуют ожидаемым значениям.
         """
-        request = CreateExerciseRequestSchema(course_id=function_course.response.course.id)
-        response = exercises_client.create_exercise_api(request=request)
+        create_exercise_request = CreateExerciseRequestSchema(course_id=function_course.response.course.id)
+        create_exercise_response = exercises_client.create_exercise_api(request=create_exercise_request)
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = CreateExerciseResponseSchema.model_validate_json(response.text)
+        assert_status_code(create_exercise_response.status_code, HTTPStatus.OK)
+        create_exercise_response_data = CreateExerciseResponseSchema.model_validate_json(create_exercise_response.text)
 
-        assert_create_exercise_response(request=request, response=response_data)
-        validate_json_schema(response.json(), CreateExerciseResponseSchema.model_json_schema())
+        assert_create_exercise_response(request=create_exercise_request, response=create_exercise_response_data)
+        validate_json_schema(create_exercise_response.json(), CreateExerciseResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)
@@ -82,16 +87,16 @@ class TestExercises:
             AssertionError: Если HTTP-статус или данные полученного задания
                 не соответствуют данным при его создании.
         """
-        response = exercises_client.get_exercise_api(exercise_id=function_exercise.response.exercise.id)
+        get_exercise_response = exercises_client.get_exercise_api(exercise_id=function_exercise.response.exercise.id)
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = GetExerciseResponseSchema.model_validate_json(response.text)
+        assert_status_code(get_exercise_response.status_code, HTTPStatus.OK)
+        get_exercise_response_data = GetExerciseResponseSchema.model_validate_json(get_exercise_response.text)
 
         assert_get_exercise_response(
-            get_exercise_response=response_data,
+            get_exercise_response=get_exercise_response_data,
             create_exercise_response=function_exercise.response,
         )
-        validate_json_schema(response.json(), GetExerciseResponseSchema.model_json_schema())
+        validate_json_schema(get_exercise_response.json(), GetExerciseResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.UPDATE_ENTITY)
     @allure.story(AllureStory.UPDATE_ENTITY)
@@ -113,7 +118,7 @@ class TestExercises:
                 неизменяемые данные задания не соответствуют ожиданиям.
         """
         original_exercise = function_exercise.response.exercise
-        request = UpdateExerciseRequestSchema(
+        update_exercise_request = UpdateExerciseRequestSchema(
             title=f"{original_exercise.title[:230]} (обновлено)",
             description=f"{original_exercise.description}\nОбновленное описание.",
             max_score=(original_exercise.max_score or 0) + 1,
@@ -121,15 +126,108 @@ class TestExercises:
             order_index=original_exercise.order_index + 1,
             estimated_time=f"{original_exercise.estimated_time} (обновлено)",
         )
-        response = exercises_client.update_exercise_api(exercise_id=original_exercise.id, request=request)
+        update_exercise_response = exercises_client.update_exercise_api(
+            exercise_id=original_exercise.id, request=update_exercise_request
+        )
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = GetExerciseResponseSchema.model_validate_json(response.text)
+        assert_status_code(update_exercise_response.status_code, HTTPStatus.OK)
+        update_exercise_response_data = GetExerciseResponseSchema.model_validate_json(update_exercise_response.text)
 
-        assert_update_exercise_response(request=request, response=response_data)
-        assert_equal(response_data.exercise.id, original_exercise.id, name="id")
-        assert_equal(response_data.exercise.course_id, original_exercise.course_id, name="course_id")
-        validate_json_schema(response.json(), GetExerciseResponseSchema.model_json_schema())
+        assert_update_exercise_response(request=update_exercise_request, response=update_exercise_response_data)
+        assert_equal(update_exercise_response_data.exercise.id, original_exercise.id, name="id")
+        assert_equal(update_exercise_response_data.exercise.course_id, original_exercise.course_id, name="course_id")
+        validate_json_schema(update_exercise_response.json(), GetExerciseResponseSchema.model_json_schema())
+
+    @allure.tag(AllureTag.UPDATE_ENTITY)
+    @allure.story(AllureStory.UPDATE_ENTITY)
+    @allure.sub_suite(AllureStory.UPDATE_ENTITY)
+    @allure.title("Update exercise with zero order index")
+    @allure.severity(Severity.CRITICAL)
+    def test_update_exercise_with_zero_order_index(
+        self,
+        exercises_client: ExercisesClient,
+        function_exercise_with_nonzero_order_index: ExerciseFixture,
+    ) -> None:
+        """Проверяет сохранение целочисленного нуля в orderIndex задания.
+
+        Использует задание с проверенным ненулевым индексом из фикстуры.
+        Проверяет, что частичный PATCH меняет только индекс,
+        а повторный GET подтверждает результат.
+
+        Args:
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+            function_exercise_with_nonzero_order_index: Фикстура с исходными
+                данными задания, имеющего ненулевой индекс.
+
+        Raises:
+            AssertionError: Если индекс не изменился на целочисленный ноль
+                или изменились остальные данные задания после PATCH либо GET.
+        """
+        original_exercise = function_exercise_with_nonzero_order_index.response.exercise
+        new_order_index = 0
+        update_exercise_request = UpdateExerciseRequestSchema(order_index=new_order_index)
+
+        update_exercise_response = exercises_client.update_exercise_api(
+            exercise_id=original_exercise.id, request=update_exercise_request
+        )
+
+        assert_status_code(update_exercise_response.status_code, HTTPStatus.OK)
+        update_exercise_response_json = update_exercise_response.json()
+        validate_json_schema(update_exercise_response_json, UpdateExerciseResponseSchema.model_json_schema())
+        assert_exercise_with_order_index(
+            actual=update_exercise_response_json, original_exercise=original_exercise, order_index=new_order_index
+        )
+
+        get_exercise_response = exercises_client.get_exercise_api(exercise_id=original_exercise.id)
+
+        assert_status_code(get_exercise_response.status_code, HTTPStatus.OK)
+        get_exercise_response_json = get_exercise_response.json()
+        validate_json_schema(get_exercise_response_json, GetExerciseResponseSchema.model_json_schema())
+        assert_exercise_with_order_index(
+            actual=get_exercise_response_json, original_exercise=original_exercise, order_index=new_order_index
+        )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Update exercise with invalid score range")
+    @allure.severity(Severity.NORMAL)
+    def test_update_exercise_with_invalid_score_range(
+        self, exercises_client: ExercisesClient, function_exercise: ExerciseFixture
+    ) -> None:
+        """Проверяет отказ в обновлении задания при maxScore меньше minScore.
+
+        Args:
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+            function_exercise: Фикстура с исходными данными созданного задания.
+
+        Raises:
+            AssertionError: Если ошибка валидации не соответствует контракту
+                или отклоненный PATCH изменил сохраненные данные задания.
+        """
+        original_exercise = function_exercise.response.exercise
+        invalid_max_score, invalid_min_score = fake.invalid_score_range()
+        update_exercise_request = UpdateExerciseRequestSchema(max_score=invalid_max_score, min_score=invalid_min_score)
+
+        update_exercise_response = exercises_client.update_exercise_api(
+            exercise_id=original_exercise.id, request=update_exercise_request
+        )
+
+        assert_status_code(update_exercise_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(update_exercise_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        update_exercise_response_data = ValidationErrorResponseSchema.model_validate_json(update_exercise_response.text)
+
+        assert_update_exercise_with_invalid_score_range_response(
+            actual=update_exercise_response_data, request=update_exercise_request
+        )
+
+        get_exercise_response = exercises_client.get_exercise_api(exercise_id=original_exercise.id)
+
+        assert_status_code(get_exercise_response.status_code, HTTPStatus.OK)
+        validate_json_schema(get_exercise_response.json(), GetExerciseResponseSchema.model_json_schema())
+        get_exercise_response_data = GetExerciseResponseSchema.model_validate_json(get_exercise_response.text)
+
+        assert_exercise(actual=get_exercise_response_data.exercise, expected=original_exercise)
 
     @allure.tag(AllureTag.DELETE_ENTITY)
     @allure.story(AllureStory.DELETE_ENTITY)
@@ -148,17 +246,17 @@ class TestExercises:
                 удаленного задания не соответствуют ожиданиям.
         """
         exercise_id = function_exercise.response.exercise.id
-        delete_response = exercises_client.delete_exercise_api(exercise_id=exercise_id)
+        delete_exercise_response = exercises_client.delete_exercise_api(exercise_id=exercise_id)
 
-        assert_status_code(delete_response.status_code, HTTPStatus.OK)
+        assert_status_code(delete_exercise_response.status_code, HTTPStatus.OK)
 
-        get_response = exercises_client.get_exercise_api(exercise_id=exercise_id)
+        get_exercise_response = exercises_client.get_exercise_api(exercise_id=exercise_id)
 
-        assert_status_code(get_response.status_code, HTTPStatus.NOT_FOUND)
-        response_data = InternalErrorResponseSchema.model_validate_json(get_response.text)
+        assert_status_code(get_exercise_response.status_code, HTTPStatus.NOT_FOUND)
+        get_exercise_response_data = InternalErrorResponseSchema.model_validate_json(get_exercise_response.text)
 
-        assert_exercise_not_found_response(actual=response_data)
-        validate_json_schema(get_response.json(), InternalErrorResponseSchema.model_json_schema())
+        assert_exercise_not_found_response(actual=get_exercise_response_data)
+        validate_json_schema(get_exercise_response.json(), InternalErrorResponseSchema.model_json_schema())
 
     @allure.tag(AllureTag.GET_ENTITIES)
     @allure.story(AllureStory.GET_ENTITIES)
@@ -182,14 +280,14 @@ class TestExercises:
             AssertionError: Если HTTP-статус, количество или данные
                 полученных заданий не соответствуют ожиданиям.
         """
-        query = GetExercisesRequestSchema(course_id=function_course.response.course.id)
-        response = exercises_client.get_exercises_api(query=query)
+        get_exercises_query = GetExercisesRequestSchema(course_id=function_course.response.course.id)
+        get_exercises_response = exercises_client.get_exercises_api(query=get_exercises_query)
 
-        assert_status_code(response.status_code, HTTPStatus.OK)
-        response_data = GetExercisesResponseSchema.model_validate_json(response.text)
+        assert_status_code(get_exercises_response.status_code, HTTPStatus.OK)
+        get_exercises_response_data = GetExercisesResponseSchema.model_validate_json(get_exercises_response.text)
 
         assert_get_exercises_response(
-            get_exercises_response=response_data,
+            get_exercises_response=get_exercises_response_data,
             create_exercise_responses=[function_exercise.response],
         )
-        validate_json_schema(response.json(), GetExercisesResponseSchema.model_json_schema())
+        validate_json_schema(get_exercises_response.json(), GetExercisesResponseSchema.model_json_schema())

@@ -1,6 +1,9 @@
+from re import fullmatch
+
 import allure
 from loguru import logger
 
+from clients.error_schema import InternalErrorResponseSchema
 from clients.users.user_schema import (
     CreateUserRequestSchema,
     CreateUserResponseSchema,
@@ -10,6 +13,17 @@ from clients.users.user_schema import (
     UserSchema,
 )
 from tools.assertions.base import assert_equal
+from tools.assertions.errors import assert_internal_error_response
+from tools.error_messages import ApiErrorMessage, ApiErrorPattern
+
+
+@allure.step("Check user with existing email response")
+def assert_user_with_existing_email_response(actual: InternalErrorResponseSchema, email: str) -> None:
+    """Проверяет причину отказа и email, извлечённый из сообщения API."""
+    logger.info("🔎 Check user with existing email response")
+    match = fullmatch(ApiErrorPattern.USER_ALREADY_EXISTS, actual.detail)
+    assert match is not None, "Expected a user-with-existing-email rejection"
+    assert_equal(match["email"], email, name="existing email")
 
 
 @allure.step("Check create user response")
@@ -74,6 +88,21 @@ def assert_get_user_response(
     """
     logger.info("🔎 Check get user response")
     assert_user(actual=get_user_response.user, expected=create_user_response.user)
+
+
+@allure.step("Check user not found response")
+def assert_user_not_found_response(actual: InternalErrorResponseSchema) -> None:
+    """Проверяет сообщение API об отсутствии пользователя.
+
+    Args:
+        actual: Фактический ответ API с сообщением об ошибке.
+
+    Raises:
+        AssertionError: Если сообщение не соответствует ошибке отсутствия пользователя.
+    """
+    logger.info("🔎 Check user not found response")
+    expected = InternalErrorResponseSchema(detail=ApiErrorMessage.USER_NOT_FOUND)
+    assert_internal_error_response(actual=actual, expected=expected)
 
 
 @allure.step("Check update user response")

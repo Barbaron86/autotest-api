@@ -1,7 +1,9 @@
+from typing import Any
+
 import allure
 from loguru import logger
 
-from clients.error_schema import InternalErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from clients.exercises.exercises_schema import (
     CreateExerciseRequestSchema,
     CreateExerciseResponseSchema,
@@ -12,7 +14,31 @@ from clients.exercises.exercises_schema import (
     UpdateExerciseResponseSchema,
 )
 from tools.assertions.base import assert_equal, assert_lens
-from tools.assertions.errors import assert_internal_error_response
+from tools.assertions.errors import (
+    ValidationErrorExpectation,
+    assert_internal_error_response,
+    assert_validation_error_response,
+)
+from tools.error_messages import ApiErrorMessage
+from tools.error_types import ValidationErrorType
+
+
+@allure.step("Check update exercise with invalid score range response")
+def assert_update_exercise_with_invalid_score_range_response(
+    actual: ValidationErrorResponseSchema, request: UpdateExerciseRequestSchema
+) -> None:
+    """Проверяет причину, вход и расположение ошибки диапазона баллов задания."""
+    logger.info("🔎 Check update exercise with invalid score range response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.VALUE_ERROR,
+            location=["body"],
+            input=request.model_dump(exclude_unset=True),
+            context={"error": {}},
+            message=ApiErrorMessage.INVALID_SCORE_RANGE,
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)
 
 
 @allure.step("Check create exercise response")
@@ -59,6 +85,31 @@ def assert_exercise(actual: ExerciseSchema, expected: ExerciseSchema) -> None:
     assert_equal(actual.min_score, expected.min_score, name="min_score")
     assert_equal(actual.order_index, expected.order_index, name="order_index")
     assert_equal(actual.estimated_time, expected.estimated_time, name="estimated_time")
+
+
+@allure.step("Check exercise with order index {order_index}")
+def assert_exercise_with_order_index(
+    actual: dict[str, Any], original_exercise: ExerciseSchema, order_index: int
+) -> None:
+    """Проверяет индекс в сыром JSON и сохранность остальных данных задания.
+
+    Args:
+        actual: Сырой JSON-ответ PATCH или GET с данными задания.
+        original_exercise: Проверенные данные задания до обновления.
+        order_index: Ожидаемый целочисленный индекс после обновления.
+
+    Raises:
+        AssertionError: Если индекс отсутствует, имеет неверный тип/значение
+            или изменилось другое поле задания.
+    """
+    logger.info("🔎 Check exercise with order index {}", order_index)
+    raw_exercise = actual["exercise"]
+    assert "orderIndex" in raw_exercise, "Missing exercise field: orderIndex"
+    assert type(raw_exercise["orderIndex"]) is int, "orderIndex must be a JSON integer"
+    assert_equal(raw_exercise["orderIndex"], order_index, name="orderIndex")
+
+    expected_exercise = original_exercise.model_copy(update={"order_index": order_index})
+    assert_exercise(actual=ExerciseSchema.model_validate(raw_exercise), expected=expected_exercise)
 
 
 @allure.step("Check get exercise response")
