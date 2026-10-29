@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjE3LjU1NzIxMCIsInVzZXJfaWQiOiI4NzA2YmJiZS1hMjk1LTRkNzYtOTIxNy0yNTdiYTZlZjMyY2QifQ.moSjzmyx21Tnv7Wwurbcsg_rNbclLljeqtdSXQe5RjQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Господь носок пробовать вытаскивать снимать поезд.","maxScore":99,"minScore":29,"description":"Горький упорно набор уничтожение изредка собеседник. Призыв коричневый солнце выкинуть.\nИной сустав лететь конструкция. Ученый смертельный житель князь умирать.","estimatedTime":"8 weeks","previewFileId":"b5411be6-59da-41f9-80bd-9cf6b796b66e","createdByUserId":"8706bbbe-a295-4d76-9217-257ba6ef32cd"}'

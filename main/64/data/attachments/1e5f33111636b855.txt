@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjE1LjA4MjMyOSIsInVzZXJfaWQiOiIyMDExZGM2OC04MzAyLTQ1NTQtYmIyZC1kNTg3OTkzZmNhYWYifQ.QdLJfpMdM-HkzERc6953x-Xkn7rWEEiMandVn8crJaA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Собеседник ход посидеть.","maxScore":93,"minScore":44,"description":"Написать еврейский салон подробность легко.\nПорядок правильный анализ пропасть материя. Спичка вскакивать аж бегать.","estimatedTime":"8 weeks","previewFileId":"05894162-6783-4cb7-9596-ae87b5e0608c","createdByUserId":"2011dc68-8302-4554-bb2d-d587993fcaaf"}'

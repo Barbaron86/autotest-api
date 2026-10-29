@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjE1Ljg5MDE0MCIsInVzZXJfaWQiOiJmMjdkOTk1MC1hZDljLTRlYTQtODk0OS03Nzg1YmQ2Njc1YTEifQ.PRAz7OZ9XNJ6C4xTZid42pLo5gJfIBQN7bPJJotQ8d4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сбросить идея еврейский славный парень забирать граница.","maxScore":81,"minScore":14,"description":"Ботинок еврейский чувство присесть бабочка результат ремень. Решение висеть дошлый советовать посвятить доставать. Вперед сынок выгнать июнь.","estimatedTime":"10 weeks","previewFileId":"abf38dc5-c6d1-40d4-9339-fc4852c1e8fc","createdByUserId":"f27d9950-ad9c-4ea4-8949-7785bd6675a1"}'

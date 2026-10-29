@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjA2LjIxNjUyNCIsInVzZXJfaWQiOiI2NzEwYzFiZC03ZGZiLTRjOWUtODAyMi03ZjliZmNjNjM3ZjYifQ.kuMpgH3ThoTLBarmEhHF0sXnIJOGYvLqPK-Czwgfy40' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Разводить головной палка головной помолчать.","maxScore":68,"minScore":19,"description":"Забирать появление смеяться встать. Деловой голубчик степь бак.\nУгроза поговорить разуметься находить неожиданный. Лететь поймать строительство около успокоиться еврейский выраженный необычный.","estimatedTime":"5 weeks","previewFileId":"14faac37-d94d-4d44-8c3b-e6f7d4040abe","createdByUserId":"6710c1bd-7dfb-4c9e-8022-7f9bfcc637f6"}'

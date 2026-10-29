@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjA4Ljg0Mzc1MSIsInVzZXJfaWQiOiIzYTc0ZjM3OS00ZDhlLTQ5Y2ItOWZlMS0zNDdkNGEwNjQxY2QifQ.6Qm43pQIpsEY4-lZ1DK_hcdptZiG_qWaMm_5mcQ7W58' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Лапа правый командующий тута сверкать передо спалить изменение.","maxScore":55,"minScore":32,"description":"Неправда неправда точно разуметься строительство дремать мелочь. Коробка через четыре космос запеть актриса вариант. Серьезный холодно выбирать другой.","estimatedTime":"3 weeks","previewFileId":"24beb93d-3d0f-4174-81e2-05239c4dc8dd","createdByUserId":"3a74f379-4d8e-49cb-9fe1-347d4a0641cd"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjExLjE2NDI3MyIsInVzZXJfaWQiOiI0NmZmYjU4ZC1jOWI2LTQ5ZWUtYWU0Ni02MzE1ZThhYjQ4N2MifQ.DNSwLHRA76bsL7xJSr4q_UjKpGKauH57FIr6_PczPDI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Помолчать войти задержать умирать плод команда второй.","maxScore":90,"minScore":44,"description":"Желание вздрогнуть палата сутки вздрогнуть жидкий рот. Дурацкий забирать отдел набор. Эффект ход адвокат сверкающий райком падаль.","estimatedTime":"4 weeks","previewFileId":"b8cc25ca-a42f-4922-a739-c6dedb7e53b2","createdByUserId":"46ffb58d-c9b6-49ee-ae46-6315e8ab487c"}'

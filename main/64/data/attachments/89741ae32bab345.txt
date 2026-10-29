@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjE2Ljc0ODU3MCIsInVzZXJfaWQiOiJmYWE1NjVkMi0zNTdmLTQ2NTAtODU1My1jODJiZDM2MGQxYmMifQ.sSRG-Hj6h3DMXOPiwWZFkXn9bBNI9Il0LD4H9fB1HCQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Достоинство витрина ночь неправда да табак.","maxScore":60,"minScore":13,"description":"Зеленый эффект недостаток забирать вчера нажать. Пропаганда оборот штаб сутки.\nПриличный жестокий командир деньги потом. Сынок очередной цель конструкция подземный приличный актриса.","estimatedTime":"8 weeks","previewFileId":"a822c003-2a32-47fd-b2a2-28f3b8f4d9a3","createdByUserId":"faa565d2-357f-4650-8553-c82bd360d1bc"}'

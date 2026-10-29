@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEyLjAyNzgzMyIsInVzZXJfaWQiOiJhNmIyMTliMS1iNjBkLTQ2NTQtOGFiMS1mZDU0YzU5MDhjYzEifQ.kFjrwgyHBF2CkzO4Lo0NZRkacjiiXNflH2jSvuIEYDY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Танцевать подробность доставать инфекция пропаганда сверкать.","maxScore":55,"minScore":31,"description":"Выраженный предоставить парень командир. Беспомощный вчера выразить уничтожение художественный.\nБлин бабочка фонарик. Перебивать экзамен слишком нож.","estimatedTime":"9 weeks","previewFileId":"e9a3cfcf-603c-4576-91d2-48be56feb7bf","createdByUserId":"a6b219b1-b60d-4654-8ab1-fd54c5908cc1"}'

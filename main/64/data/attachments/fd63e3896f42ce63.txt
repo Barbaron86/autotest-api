@@ -1,0 +1,12 @@
+[2m17:19:07.246[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m17:19:07.634[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m17:19:07.635[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m17:19:07.651[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:19:08.017[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m17:19:08.019[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:19:08.021[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.authentication[0m | 🔎 Check login response
+[2m17:19:08.022[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m17:19:08.217[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 401 Unauthorized POST http://localhost:8001/api/v1/authentication/login
+[2m17:19:08.218[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m17:19:08.219[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.authentication[0m | 🔎 Check invalid credentials response
+[2m17:19:08.219[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check internal error response

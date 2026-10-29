@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEzLjI1MDA1MCIsInVzZXJfaWQiOiJjYzU1MzkxYi1iZDdhLTQ0ZWYtYTlhNC1mYTFjYmExZTBlZGEifQ.9S9VLBWvenkncccLPaBL98_juZaknz3Wa_cCk7eFJ9U' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Выражаться что сопровождаться процесс.","description":"Провал уронить рис достоинство сравнение соответствие мотоцикл. Трясти очко выгнать ведь изба помимо тесно. Прежний неожиданно сравнение развитый издали.","courseId":"4c1ca073-e307-4a0c-929d-b4b4c48d228f","maxScore":69,"minScore":33,"orderIndex":75,"estimatedTime":"4 weeks"}'

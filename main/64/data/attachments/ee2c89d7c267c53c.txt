@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEwLjI4MDA5NCIsInVzZXJfaWQiOiIxMzFiMmI5My01YjUwLTRhYzYtOWU4YS1mZDc0ZTEyZGFjNDAifQ.j6iDN_N5_kYOBVXRX7WvftrENRlQAtRMKDdxRDqPVa8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Торговля дьявол наткнуться инфекция совещание.","maxScore":74,"minScore":33,"description":"Совет остановить цепочка зима головка расстегнуть освобождение. Прошептать спорт вытаскивать.","estimatedTime":"7 weeks","previewFileId":"3a9a1ec4-7272-46ec-a33c-2b4ac33fd219","createdByUserId":"131b2b93-5b50-4ac6-9e8a-fd74e12dac40"}'

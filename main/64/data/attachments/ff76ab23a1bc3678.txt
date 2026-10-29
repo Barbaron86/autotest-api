@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjE0LjI3ODgzMiIsInVzZXJfaWQiOiJmMTdlN2QyNi1lYjI4LTQ4OTgtYWM3MC1jNzU0OTE0NDNkMjkifQ.Wg70IwvjRwBe7yYQRjbJsCvAOD4a6gY20lHH8jVxaa8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"При да юный ныне.","maxScore":84,"minScore":48,"description":"Угроза провал адвокат салон а задрать. Спичка провал редактор четыре коммунизм грустный сохранять носок.","estimatedTime":"5 weeks","previewFileId":"a57653ce-4017-4d7a-affc-7cfa96f8b901","createdByUserId":"f17e7d26-eb28-4898-ac70-c75491443d29"}'

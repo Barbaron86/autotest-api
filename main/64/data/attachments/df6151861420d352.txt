@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEwLjA4NTk4MSIsInVzZXJfaWQiOiJjNzM4NTBhNC0yMjYzLTRhYWQtYTliMy1iNzg0NGUwMzJiYmYifQ.0NIf40WUS_6l4I9LiQJmylDo7_E_CI4M3WIiME2FskQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Угроза термин куча отъезд поговорить сверкать совет страсть.","maxScore":84,"minScore":18,"description":"Рис порт желание очко горький. Развернуться рис четко плавно. За коробка заявление место девка подробность.","estimatedTime":"3 weeks","previewFileId":"6af93d01-793d-47c5-b346-5c7b5f039d1c","createdByUserId":"c73850a4-2263-4aad-a9b3-b7844e032bbf"}'

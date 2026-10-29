@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjExLjgwNDk1MCIsInVzZXJfaWQiOiJhNmIyMTliMS1iNjBkLTQ2NTQtOGFiMS1mZDU0YzU5MDhjYzEifQ.vLJNHHLcdrM2qXcj3illaJkhLxt5Tpzd28JbGR6tW00' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Июнь зарплата руководитель монета лететь.","description":"Полевой счастье неправда домашний. Тута возможно район выразить наслаждение основание мрачно. Головка спорт доставать научить слишком бочок.","courseId":"7c3663ca-1982-4952-9d59-4f176514bd71","maxScore":72,"minScore":31,"orderIndex":44,"estimatedTime":"4 weeks"}'

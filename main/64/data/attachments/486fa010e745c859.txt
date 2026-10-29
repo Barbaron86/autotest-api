@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEyLjYwNzY4MCIsInVzZXJfaWQiOiJjODY0ZjhjZC05NzFmLTRlNmQtYmFlNy1jNjkzYjMzMzc4YTIifQ.RdNNkip-4-_wWfwlo1uWsSmVnF-4Q46TVxOuz9Dw0hk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Табак правление увеличиваться народ.","maxScore":93,"minScore":42,"description":"Монета вздрогнуть самостоятельно носок что сустав горький подземный. Манера торопливый низкий соответствие. Эпоха темнеть грустный полюбить налоговый еврейский успокоиться.","estimatedTime":"8 weeks","previewFileId":"af4058ac-5450-4624-b6a8-fbe3208e300d","createdByUserId":"c864f8cd-971f-4e6d-bae7-c693b33378a2"}'

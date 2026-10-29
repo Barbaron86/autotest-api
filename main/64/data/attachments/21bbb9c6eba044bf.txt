@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjA5LjAzNzMzMiIsInVzZXJfaWQiOiIzM2MzYWQ4Ny1mMDg0LTRhYWYtYjdjNS02MDVlZWVkZWRlM2UifQ.m9wlwWT_Iqo7pmSzD7saIOstpHexBAP_tK2NBNA-MoU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сомнительный головной умирать сутки.","maxScore":65,"minScore":43,"description":"Темнеть четыре выражение фонарик девка ответить. Пропадать медицина постоянный редактор инфекция.\nСтроительство вскакивать основание тяжелый поезд тюрьма. Наткнуться очутиться команда банк мусор.","estimatedTime":"7 weeks","previewFileId":"feee886e-823e-4471-a22a-a520dbea76ca","createdByUserId":"33c3ad87-f084-4aaf-b7c5-605eeedede3e"}'

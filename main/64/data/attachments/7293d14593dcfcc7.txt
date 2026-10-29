@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjEzLjQ3MDgzMSIsInVzZXJfaWQiOiJjYzU1MzkxYi1iZDdhLTQ0ZWYtYTlhNC1mYTFjYmExZTBlZGEifQ.3jJZ2WEOBGnBCC4Vf1vs022Toy-6OmdC0nYAdTq6Mls' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Мелочь слать народ темнеть очутиться выразить.","maxScore":70,"minScore":48,"description":"Палка болото академик рота успокоиться бригада.\nНаходить бочок четко скользить ручей ученый следовательно. Доставать ручей заплакать магазин разуметься выгнать.","estimatedTime":"7 weeks","previewFileId":"f84e49dd-e627-4cfc-bd66-8ac8df5e2401","createdByUserId":"cc55391b-bd7a-44ef-a9a4-fa1cba1e0eda"}'

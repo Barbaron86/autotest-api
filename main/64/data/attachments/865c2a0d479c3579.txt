@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/746485fd-68ec-465c-a6d2-04e32c82ee09 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTEwLTI5VDE3OjQ5OjA3LjQzNjA1NCIsInVzZXJfaWQiOiI3OTZiZGZlMS00NzVjLTRjMzktYmI3Yy0xMmJhZWJkMDY3OTIifQ.JfeyiLSJUjNq5NepqX6AAzXkTpMrOT4QddUIleBjhwc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вытаскивать кожа ярко сынок слишком полоска. (обновлено)","maxScore":98,"minScore":25,"description":"Командование граница какой адвокат мучительно близко зачем. Уронить карман командование трясти термин бабочка.\nОбновленное описание.","estimatedTime":"1 weeks (обновлено)"}'
