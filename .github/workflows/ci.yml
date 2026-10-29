@@ -303,15 +303,38 @@ jobs:
           cp swagger-coverage-report/coverage-report.json gh-pages/swagger-coverage/coverage-report.json
 
       - name: Generate Allure report
-        uses: simple-elf/allure-report-action@385367cde61ac68c2568a117f7579f7f148dc459 # v1.15
-        with:
-          allure_results: allure-results
-          allure_report: allure-report
-          gh_pages: gh-pages
-          allure_history: allure-history
-          subfolder: ${{ steps.report.outputs.subfolder }}
-          report_name: ${{ steps.report.outputs.name }}
-          keep_reports: 50
+        env:
+          ALLURE_VERSION: "2.44.0"
+          ALLURE_SHA256: "7021a90828c00cd6ec992027cce48e8a94bd87fad43d0c2dcac4795cadc178d7"
+          ALLURE_ACTION_REF: "385367cde61ac68c2568a117f7579f7f148dc459"
+          INPUT_ALLURE_RESULTS: allure-results
+          INPUT_ALLURE_REPORT: allure-report
+          INPUT_GH_PAGES: gh-pages
+          INPUT_ALLURE_HISTORY: allure-history
+          INPUT_SUBFOLDER: ${{ steps.report.outputs.subfolder }}
+          INPUT_REPORT_NAME: ${{ steps.report.outputs.name }}
+          INPUT_KEEP_REPORTS: "50"
+          INPUT_GITHUB_RUN_NUM: ${{ github.run_number }}
+          INPUT_GITHUB_RUN_ID: ${{ github.run_id }}
+          INPUT_GITHUB_REPO: ${{ github.repository }}
+          INPUT_GITHUB_REPO_OWNER: ${{ github.repository_owner }}
+          INPUT_GITHUB_TESTS_REPO: ${{ github.repository }}
+          INPUT_GITHUB_SERVER_URL: ${{ github.server_url }}
+          INPUT_REPORT_URL: ""
+        run: |
+          archive="$RUNNER_TEMP/allure-$ALLURE_VERSION.tgz"
+          script="$RUNNER_TEMP/allure-report-entrypoint.sh"
+          curl --fail --location --retry 3 --output "$archive" \
+            "https://repo.maven.apache.org/maven2/io/qameta/allure/allure-commandline/$ALLURE_VERSION/allure-commandline-$ALLURE_VERSION.tgz"
+          printf '%s  %s\n' "$ALLURE_SHA256" "$archive" | sha256sum --check
+          tar -xzf "$archive" -C "$RUNNER_TEMP"
+          curl --fail --location --retry 3 --output "$script" \
+            "https://raw.githubusercontent.com/simple-elf/allure-report-action/$ALLURE_ACTION_REF/entrypoint.sh"
+          export PATH="${JAVA_HOME_17_X64:?JDK 17 is required}/bin:$RUNNER_TEMP/allure-$ALLURE_VERSION/bin:$PATH"
+          bash "$script"
+          test -s "$INPUT_ALLURE_REPORT/index.html"
+          test -s "$INPUT_ALLURE_HISTORY/$INPUT_SUBFOLDER/$INPUT_GITHUB_RUN_NUM/index.html"
+          test -d "$INPUT_ALLURE_HISTORY/$INPUT_SUBFOLDER/last-history"
 
       - name: Publish reports to GitHub Pages
         uses: peaceiris/actions-gh-pages@84c30a85c19949d7eee79c4ff27748b70285e453 # v4.1.0
