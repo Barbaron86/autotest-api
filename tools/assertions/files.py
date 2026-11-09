@@ -15,6 +15,7 @@ from tools.assertions.errors import (
     assert_internal_error_response,
     assert_validation_error_response,
 )
+from tools.error_messages import ApiErrorMessage
 from tools.error_types import ValidationErrorType
 
 
@@ -155,7 +156,7 @@ def assert_file_not_found_response(actual: InternalErrorResponseSchema) -> None:
         AssertionError: Если ответ не содержит сообщение «File not found».
     """
     logger.info("🔎 Check file not found response")
-    expected = InternalErrorResponseSchema(detail="File not found")
+    expected = InternalErrorResponseSchema(detail=ApiErrorMessage.FILE_NOT_FOUND)
     assert_internal_error_response(actual=actual, expected=expected)
 
 

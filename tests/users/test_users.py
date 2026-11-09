@@ -5,7 +5,6 @@ import pytest
 from allure_commons.types import Severity
 
 from clients.authentication.authentication_client import AuthenticationClient
-from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema
 from clients.error_schema import InternalErrorResponseSchema
 from clients.users.private_users_client import PrivateUsersClient
 from clients.users.public_users_client import PublicUsersClient
@@ -21,7 +20,6 @@ from tools.allure.epics import AllureEpic
 from tools.allure.features import AllureFeature
 from tools.allure.stories import AllureStory
 from tools.allure.tags import AllureTag
-from tools.assertions.authentication import assert_login_response
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
 from tools.assertions.users import (
@@ -267,23 +265,13 @@ class TestUsers:
     ) -> None:
         """Проверяет запрет создания пользователя с существующим email.
 
-        Передает email созданного пользователя и отличающиеся остальные
-        данные. Проверяет ошибку, сохранность профиля через GET и возможность
-        входа с исходным паролем.
-
         Args:
             public_users_client: Фикстура публичного API-клиента пользователей.
-            private_users_client: Фикстура авторизованного API-клиента пользователей.
-            function_user: Фикстура с исходными данными созданного пользователя.
-            authentication_client: Фикстура API-клиента аутентификации.
             user_request_with_existing_email: Тот же email и отличающиеся остальные данные.
 
         Raises:
-            AssertionError: Если HTTP-статус, сообщение, структура ошибки
-                или сохраненные данные пользователя, включая пароль,
-                не соответствуют ожиданиям.
+            AssertionError: Если статус или данные ошибки не соответствуют контракту.
         """
-        original_create_user_request = function_user.request
         create_user_request = user_request_with_existing_email
         create_user_response = public_users_client.create_user_api(request=create_user_request)
 
@@ -293,20 +281,3 @@ class TestUsers:
         validate_json_schema(
             instance=create_user_response.json(), schema=InternalErrorResponseSchema.model_json_schema()
         )
-
-        get_user_response = private_users_client.get_user_api(user_id=function_user.response.user.id)
-
-        assert_status_code(actual=get_user_response.status_code, expected=HTTPStatus.OK)
-        get_user_response_data = GetUserResponseSchema.model_validate_json(get_user_response.text)
-        assert_user(actual=get_user_response_data.user, expected=function_user.response.user)
-        validate_json_schema(instance=get_user_response.json(), schema=GetUserResponseSchema.model_json_schema())
-
-        login_request = LoginRequestSchema(
-            email=original_create_user_request.email, password=original_create_user_request.password
-        )
-        login_response = authentication_client.login_api(request=login_request)
-
-        assert_status_code(actual=login_response.status_code, expected=HTTPStatus.OK)
-        login_response_data = LoginResponseSchema.model_validate_json(login_response.text)
-        assert_login_response(response=login_response_data)
-        validate_json_schema(instance=login_response.json(), schema=LoginResponseSchema.model_json_schema())

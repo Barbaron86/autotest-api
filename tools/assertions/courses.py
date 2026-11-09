@@ -11,9 +11,13 @@ from clients.courses.courses_schema import (
     UpdateCourseRequestSchema,
     UpdateCourseResponseSchema,
 )
-from clients.error_schema import ValidationErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from tools.assertions.base import assert_equal, assert_lens
-from tools.assertions.errors import ValidationErrorExpectation, assert_validation_error_response
+from tools.assertions.errors import (
+    ValidationErrorExpectation,
+    assert_internal_error_response,
+    assert_validation_error_response,
+)
 from tools.assertions.files import assert_file
 from tools.assertions.users import assert_user
 from tools.error_messages import ApiErrorMessage
@@ -143,3 +147,18 @@ def assert_get_courses_response(
 
     for index, create_course_response in enumerate(create_course_responses):
         assert_course(actual=get_courses_response.courses[index], expected=create_course_response.course)
+
+
+@allure.step("Check course not found response")
+def assert_course_not_found_response(actual: InternalErrorResponseSchema) -> None:
+    """Проверяет сообщение API об отсутствии курса.
+
+    Args:
+        actual: Фактический ответ API с сообщением об ошибке.
+
+    Raises:
+        AssertionError: Если сообщение не соответствует ошибке отсутствия курса.
+    """
+    logger.info("🔎 Check course not found response")
+    expected = InternalErrorResponseSchema(detail=ApiErrorMessage.COURSE_NOT_FOUND)
+    assert_internal_error_response(actual=actual, expected=expected)

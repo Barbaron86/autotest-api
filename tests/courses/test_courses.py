@@ -25,14 +25,12 @@ from tools.allure.tags import AllureTag
 from tools.assertions.base import assert_equal, assert_status_code
 from tools.assertions.courses import (
     assert_course,
+    assert_course_not_found_response,
     assert_course_with_cleared_optional_fields,
     assert_create_course_response,
     assert_get_courses_response,
     assert_update_course_response,
     assert_update_course_with_invalid_score_range_response,
-)
-from tools.assertions.errors import (
-    assert_internal_error_response,
 )
 from tools.assertions.files import assert_file
 from tools.assertions.schema import validate_json_schema
@@ -274,10 +272,7 @@ class TestCourses:
         validate_json_schema(get_course_response.json(), InternalErrorResponseSchema.model_json_schema())
         get_course_response_data = InternalErrorResponseSchema.model_validate_json(get_course_response.text)
 
-        assert_internal_error_response(
-            actual=get_course_response_data,
-            expected=InternalErrorResponseSchema(detail="Course not found"),
-        )
+        assert_course_not_found_response(actual=get_course_response_data)
 
     @allure.tag(AllureTag.GET_ENTITY)
     @allure.story(AllureStory.GET_ENTITY)

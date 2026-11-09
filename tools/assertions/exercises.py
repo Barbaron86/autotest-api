@@ -164,7 +164,7 @@ def assert_exercise_not_found_response(actual: InternalErrorResponseSchema) -> N
         AssertionError: Если ответ не содержит сообщение «Exercise not found».
     """
     logger.info("🔎 Check exercise not found response")
-    expected = InternalErrorResponseSchema(detail="Exercise not found")
+    expected = InternalErrorResponseSchema(detail=ApiErrorMessage.EXERCISE_NOT_FOUND)
     assert_internal_error_response(actual=actual, expected=expected)
 
 
@@ -189,3 +189,43 @@ def assert_get_exercises_response(
 
     for index, create_exercise_response in enumerate(create_exercise_responses):
         assert_exercise(actual=get_exercises_response.exercises[index], expected=create_exercise_response.exercise)
+
+
+@allure.step("Check get exercises with invalid course ID response")
+def assert_get_exercises_with_invalid_course_id_response(actual: ValidationErrorResponseSchema, course_id: str) -> None:
+    """Проверяет ошибку валидации некорректного UUID курса.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        course_id: Некорректный UUID, переданный в query-параметре.
+
+    Raises:
+        AssertionError: Если тип, расположение или значение ошибки не соответствуют ожиданиям.
+    """
+    logger.info("🔎 Check get exercises with invalid course ID response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.UUID_PARSING, input=course_id, location=["query", "courseId"]
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)
+
+
+@allure.step("Check get exercise with invalid ID response")
+def assert_get_exercise_with_invalid_id_response(actual: ValidationErrorResponseSchema, exercise_id: str) -> None:
+    """Проверяет ошибку валидации некорректного UUID задания.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        exercise_id: Некорректный UUID, переданный в path-параметре.
+
+    Raises:
+        AssertionError: Если тип, расположение или значение ошибки не соответствуют ожиданиям.
+    """
+    logger.info("🔎 Check get exercise with invalid ID response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.UUID_PARSING, input=exercise_id, location=["path", "exercise_id"]
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)

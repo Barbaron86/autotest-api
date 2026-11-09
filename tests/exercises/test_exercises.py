@@ -28,7 +28,9 @@ from tools.assertions.exercises import (
     assert_exercise_not_found_response,
     assert_exercise_with_order_index,
     assert_get_exercise_response,
+    assert_get_exercise_with_invalid_id_response,
     assert_get_exercises_response,
+    assert_get_exercises_with_invalid_course_id_response,
     assert_update_exercise_response,
     assert_update_exercise_with_invalid_score_range_response,
 )
@@ -291,3 +293,71 @@ class TestExercises:
             create_exercise_responses=[function_exercise.response],
         )
         validate_json_schema(get_exercises_response.json(), GetExercisesResponseSchema.model_json_schema())
+
+    @allure.tag(AllureTag.GET_ENTITIES)
+    @allure.story(AllureStory.GET_ENTITIES)
+    @allure.sub_suite(AllureStory.GET_ENTITIES)
+    @allure.title("Get exercises for empty course")
+    @allure.severity(Severity.NORMAL)
+    def test_get_exercises_for_empty_course(
+        self, function_course: CourseFixture, exercises_client: ExercisesClient
+    ) -> None:
+        """Проверяет получение пустого списка заданий для нового курса."""
+
+        get_exercises_query = GetExercisesRequestSchema(course_id=function_course.response.course.id)
+        get_exercises_response = exercises_client.get_exercises_api(query=get_exercises_query)
+
+        assert_status_code(get_exercises_response.status_code, HTTPStatus.OK)
+
+        get_exercises_response_data = GetExercisesResponseSchema.model_validate_json(get_exercises_response.text)
+        assert_get_exercises_response(get_exercises_response=get_exercises_response_data, create_exercise_responses=[])
+        validate_json_schema(
+            instance=get_exercises_response.json(), schema=GetExercisesResponseSchema.model_json_schema()
+        )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Get exercises with invalid course ID")
+    @allure.severity(Severity.NORMAL)
+    def test_get_exercises_with_invalid_course_id(self, exercises_client: ExercisesClient) -> None:
+        """Проверяет отклонение GET-запроса с некорректным UUID курса.
+
+        Args:
+            exercises_client: Авторизованный API-клиент заданий.
+
+        Raises:
+            AssertionError: Если статус или данные ошибки не соответствуют ожиданиям.
+        """
+        get_exercises_query = GetExercisesRequestSchema(course_id=fake.invalid_uuid())
+        get_exercises_response = exercises_client.get_exercises_api(query=get_exercises_query)
+
+        assert_status_code(get_exercises_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=get_exercises_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        get_exercises_response_data = ValidationErrorResponseSchema.model_validate_json(get_exercises_response.text)
+
+        assert_get_exercises_with_invalid_course_id_response(
+            actual=get_exercises_response_data, course_id=get_exercises_query.course_id
+        )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Get exercise with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_get_exercise_with_invalid_id(self, exercises_client: ExercisesClient) -> None:
+        """Проверяет получение задания с некорректным UUID."""
+        exercise_id = fake.invalid_uuid()
+        get_exercise_response = exercises_client.get_exercise_api(exercise_id=exercise_id)
+
+        assert_status_code(get_exercise_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=get_exercise_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        get_exercise_response_data = ValidationErrorResponseSchema.model_validate_json(get_exercise_response.text)
+
+        assert_get_exercise_with_invalid_id_response(actual=get_exercise_response_data, exercise_id=exercise_id)
