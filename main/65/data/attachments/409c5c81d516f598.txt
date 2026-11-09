@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjA3LjIwMzc1MyIsInVzZXJfaWQiOiI2ODBiMWVkOS1lYWZkLTQxZmItYjUzNC0xNjdkNDI0ZWExOGMifQ.V3PE85ViKrQcPflwKnjt7Uujg4hT-8QtAMCJsM26Tu8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поколение потом мгновение совещание решение космос народ.","description":"Эпоха правильный нервно металл при витрина. Устройство команда табак девка человечек. Пропасть князь смелый совет мучительно войти рота июнь.","courseId":"2bce5280-1da2-4f54-a05a-f4dec3cc87f6","maxScore":88,"minScore":0,"orderIndex":29,"estimatedTime":"8 weeks"}'

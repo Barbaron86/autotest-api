@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjQ5OjU2Ljk1NDg1OCIsInVzZXJfaWQiOiI0NThjMzZkNy0zYTJkLTRhZjctYWVjYy00MWZiNTIzZGY2ZmMifQ.VeysAo2M39HxO6f1mMYjpAdNSwX4kNv_9F3r9laKgQA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пасть сравнение тревога.","maxScore":91,"minScore":38,"description":"Слать выкинуть написать упор вряд падаль миг.\nТюрьма хозяйка налоговый место. Дремать выразить господь мелочь увеличиваться коллектив госпожа. Пространство руководитель скрытый радость место.","estimatedTime":"8 weeks","previewFileId":"454ae694-e24f-4402-97c8-4709d653abc2","createdByUserId":"458c36d7-3a2d-4af7-aecc-41fb523df6fc"}'

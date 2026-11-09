@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjAyLjgzMjUxNCIsInVzZXJfaWQiOiIyZGUxZWRiNi1mMTFkLTRjYjctYTgxZi05YzllMzk2YWVlNDIifQ.0U61tV9YiZVrAZwde-003YeJuNeaEuEyHYQOP5LbmgM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вряд валюта сопровождаться аллея падаль жить карандаш.","maxScore":87,"minScore":2,"description":"Что разуметься перебивать. Четко новый дьявол сверкающий. Зарплата налоговый разводить пища товар выраженный миллиард.\nЗапретить природа металл совещание.","estimatedTime":"2 weeks","previewFileId":"090163cd-f8e1-497b-9e98-0757f6d1d505","createdByUserId":"2de1edb6-f11d-4cb7-a81f-9c9e396aee42"}'

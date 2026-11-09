@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjA5LjgyMzU1MSIsInVzZXJfaWQiOiIwN2QwMGZjOS1jMmM1LTRkNjctYjQ2Ni1kMTExNGQ4OTk1MWYifQ.6yIAGV1AhhI8pQYDaDtYCsIT4sqkX8-6KW7aHmINzX0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Радость налево ныне пространство.","maxScore":51,"minScore":27,"description":"Танцевать выбирать левый мелькнуть дьявол. Равнодушный рот развернуться висеть полоска.\nМальчишка металл приятель пламя способ.\nПлод неожиданно растеряться мягкий крутой премьера.","estimatedTime":"1 weeks","previewFileId":"f660d249-45b2-48b0-b554-f1107a925abc","createdByUserId":"07d00fc9-c2c5-4d67-b466-d1114d89951f"}'

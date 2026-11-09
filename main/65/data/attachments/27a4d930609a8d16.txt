@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/5e79d31c-2873-4925-8fee-dd212a8d0161 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjQ5OjU0LjAyMzU5NyIsInVzZXJfaWQiOiJiYzE5NWU5My03ZmM0LTRlNDItYWY2NS0yZjU5MDk2MGExN2MifQ.Z5OvkYs70OpTsVXr3VmSH-LJ1DsiHofvqvMiNcp8IVw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Привлекать назначить возникновение. (обновлено)","maxScore":59,"minScore":5,"description":"Природа инструкция витрина остановить деньги упорно. Войти отметить мрачно выраженный художественный армейский багровый.\nОбновленное описание.","estimatedTime":"3 weeks (обновлено)"}'

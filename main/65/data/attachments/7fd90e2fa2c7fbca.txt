@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjA0LjA2MTY1NiIsInVzZXJfaWQiOiJiZDEyMmRjNC02Yjk2LTQ3NTQtODYxNC1mYTg5OTJjODdhYjcifQ.dALmIRdemtbR1qWjekPVBwMSw0-x1qYQjkIfi-mxmHM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Миф адвокат о славный ремень.","description":"Ботинок выдержать висеть слишком присесть смеяться выгнать. Вчера житель запретить миф точно радость потом проход. Монета миллиард нож термин невозможно пространство понятный покидать.","courseId":"fccbee65-8e18-4adc-be79-031b46df70e8","maxScore":73,"minScore":10,"orderIndex":13,"estimatedTime":"5 weeks"}'

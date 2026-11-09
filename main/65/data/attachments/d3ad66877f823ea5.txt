@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjQ5OjU4Ljc2NzgzOCIsInVzZXJfaWQiOiI5NTJlMTUxZS00MmQyLTRkODYtOTJiZS1lODBiZmM1Mjg5ZWIifQ.mTRRhIgJxPC1KrrmIIaXySZlAXHPbb6n5p-R6ZrsBYM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вперед передо затянуться вздрагивать исполнять какой трясти.","maxScore":69,"minScore":47,"description":"Видимо вздрогнуть вздрагивать одиннадцать изменение место. Задержать число приятель труп невыносимый каюта запустить.\nВскакивать даль металл трясти банда рассуждение.","estimatedTime":"10 weeks","previewFileId":"058f63ea-2f96-4712-bfa1-dfc079939835","createdByUserId":"952e151e-42d2-4d86-92be-e80bfc5289eb"}'

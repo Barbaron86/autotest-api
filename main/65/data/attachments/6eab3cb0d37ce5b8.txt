@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjA3LjUxMDg3NyIsInVzZXJfaWQiOiI2ODBiMWVkOS1lYWZkLTQxZmItYjUzNC0xNjdkNDI0ZWExOGMifQ.MiRiLrLYpGLhXlfbcQUirHH4Ow8nWsNc9ESx2om_nRY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сбросить идея торговля.","maxScore":54,"minScore":36,"description":"Военный спорт самостоятельно один госпожа основание спичка отметить. Белье совещание правление зеленый смертельный возможно торопливый сбросить.","estimatedTime":"5 weeks","previewFileId":"0047cc66-753b-4ae4-a029-1be4971c3ae6","createdByUserId":"680b1ed9-eafd-41fb-b534-167d424ea18c"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjA2LjM3MzUwOCIsInVzZXJfaWQiOiI4YmJlYWM0Mi1lZjE1LTQ0MTctOGIwNy04N2RlMzcyNzMwYzIifQ.WDFNE3v76P3SgiutfBDLW1H_DrqHw8IVXxPDwiEw4nk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Команда достоинство прежний монета товар.","maxScore":77,"minScore":35,"description":"Вчера витрина пересечь. Видимо пятеро уничтожение лететь сверкать.\nБлин заплакать встать посидеть. За ботинок хозяйка солнце.","estimatedTime":"6 weeks","previewFileId":"abd98f3b-347c-418b-b93c-fe6e8b7ffb87","createdByUserId":"8bbeac42-ef15-4417-8b07-87de372730c2"}'

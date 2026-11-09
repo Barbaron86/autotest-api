@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjAyLjU1NTk4OCIsInVzZXJfaWQiOiIwYWQwNWQ0Ny02MzdmLTQxZDMtYWJmMS1lYWZlYjFiNmFlODkifQ.s3V2WrlLlbYU8jXDJIDd2X7m-dd5ZsXciWG0qPope3c' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Совещание рота казнь разуметься.","maxScore":57,"minScore":33,"description":"Уничтожение бочок монета мимо. Падаль банк низкий более дошлый цель.\nСекунда ломать крыса добиться художественный. Металл банк висеть. Вперед командир появление идея.","estimatedTime":"9 weeks","previewFileId":"bbcf5c64-fb27-4ba7-b66a-30b7d4c671f4","createdByUserId":"0ad05d47-637f-41d3-abf1-eafeb1b6ae89"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjAwLjIzNjc3MyIsInVzZXJfaWQiOiIwN2MzYTljYy0wMjYzLTQxMWItODAzYS0wNDQwYTAwMTcxZDgifQ.d1aGPZq2RzNgaGACp6qEInwBJbv_L9hynbO0CMwboJY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очутиться около головка деньги ремень намерение дальний.","maxScore":62,"minScore":0,"description":"Отъезд избегать валюта. Аллея сынок услать заложить интернет лететь.\nПесня экзамен магазин хлеб оборот. Точно коллектив изба выгнать функция. Ручей намерение что багровый передо другой.","estimatedTime":"6 weeks","previewFileId":"09d5e4b5-6e35-48ef-ad3d-85f2e0c79b13","createdByUserId":"07c3a9cc-0263-411b-803a-0440a00171d8"}'

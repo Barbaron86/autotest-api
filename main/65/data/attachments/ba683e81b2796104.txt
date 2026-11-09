@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjUwOjAwLjUxMDAxMiIsInVzZXJfaWQiOiI4MmM4YjY3Zi1hYTRkLTRiYjQtOTE1OC1lNmRkZDc2NGE1MzcifQ.HygoJL_x5RZZoDGzpI54-D2yQFd3X9vjZNq0scIZZ2s' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Сохранять интернет остановить.","maxScore":78,"minScore":43,"description":"Что отражение потом. Решетка разводить способ рассуждение космос куча уничтожение торговля.","estimatedTime":"9 weeks","previewFileId":"f7f7611c-85b3-4c08-a7db-e3cbf7bca44e","createdByUserId":"82c8b67f-aa4d-4bb4-9158-e6ddd764a537"}'

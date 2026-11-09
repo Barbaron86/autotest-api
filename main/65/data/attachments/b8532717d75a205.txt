@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTA5VDE5OjQ5OjU3LjgyNjg2MiIsInVzZXJfaWQiOiI0ZTBlZWE0Ny0yOWFjLTQyZDItYTBhNy05Yjk2ZTM5ZjJhNWIifQ.gi1wAqQHCMZ-TmTZ4uxzMXNJ9joUy1PfqggkKQnbobY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Постоянный песня четко покинуть.","maxScore":81,"minScore":23,"description":"Костер запретить смелый а князь назначить. Неожиданно сопровождаться страсть увеличиваться.","estimatedTime":"1 weeks","previewFileId":"31481edb-fb8d-475d-ab9c-24c38d9cbc9f","createdByUserId":"4e0eea47-29ac-42d2-a0a7-9b96e39f2a5b"}'

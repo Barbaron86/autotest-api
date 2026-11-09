@@ -1,0 +1,11 @@
+[2m19:19:51.807[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m19:19:52.341[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m19:19:52.342[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m19:19:52.353[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m19:19:52.889[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m19:19:52.890[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.authentication[0m | 🔎 Check login response
+[2m19:19:52.892[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/refresh
+[2m19:19:52.901[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/refresh
+[2m19:19:52.902[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m19:19:52.908[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.authentication[0m | 🔎 Check refresh response
+[2m19:19:52.908[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.authentication[0m | 🔎 Check login response
