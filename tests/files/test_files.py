@@ -19,8 +19,8 @@ from tools.assertions.files import (
     assert_create_file_with_empty_filename_response,
     assert_create_file_with_too_long_filename_response,
     assert_file_not_found_response,
+    assert_file_with_invalid_id_response,
     assert_get_file_response,
-    assert_get_file_with_incorrect_file_id_response,
 )
 from tools.assertions.schema import validate_json_schema
 from tools.fakers import fake
@@ -223,7 +223,36 @@ class TestFiles:
         get_file_response = files_client.get_file_api(file_id=invalid_file_id)
 
         assert_status_code(get_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(get_file_response.json(), ValidationErrorResponseSchema.model_json_schema())
+
         get_file_response_data = ValidationErrorResponseSchema.model_validate_json(get_file_response.text)
 
-        assert_get_file_with_incorrect_file_id_response(actual=get_file_response_data, file_id=invalid_file_id)
-        validate_json_schema(get_file_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        assert_file_with_invalid_id_response(actual=get_file_response_data, file_id=invalid_file_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Delete file with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_delete_file_with_invalid_id(self, files_client: FilesClient) -> None:
+        """Проверяет отклонение удаления файла с некорректным UUID.
+
+        Args:
+            files_client: Фикстура авторизованного API-клиента файлов.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        file_id = fake.invalid_uuid()
+        delete_file_response = files_client.delete_file_api(file_id=file_id)
+
+        assert_status_code(delete_file_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=delete_file_response.json(),
+            schema=ValidationErrorResponseSchema.model_json_schema(),
+        )
+        delete_file_response_data = ValidationErrorResponseSchema.model_validate_json(delete_file_response.text)
+
+        assert_file_with_invalid_id_response(actual=delete_file_response_data, file_id=file_id)

@@ -207,16 +207,35 @@ def assert_get_exercises_with_invalid_course_id_response(actual: ValidationError
     assert_invalid_uuid_response(actual=actual, invalid_id=course_id, location=["query", "courseId"])
 
 
-@allure.step("Check get exercise with invalid ID response")
-def assert_get_exercise_with_invalid_id_response(actual: ValidationErrorResponseSchema, exercise_id: str) -> None:
+@allure.step("Check exercise with invalid ID response")
+def assert_exercise_with_invalid_id_response(actual: ValidationErrorResponseSchema, exercise_id: str) -> None:
     """Проверяет ошибку валидации некорректного UUID задания.
 
     Args:
         actual: Фактический ответ API с ошибками валидации.
-        exercise_id: Некорректный UUID, переданный в path-параметре.
+        exercise_id: Некорректный UUID задания, переданный в path-параметре.
 
     Raises:
-        AssertionError: Если тип, расположение или значение ошибки не соответствуют ожиданиям.
+        AssertionError: Если количество, тип, расположение или входное
+            значение ошибки не соответствуют ожиданиям.
     """
-    logger.info("🔎 Check get exercise with invalid ID response")
+    logger.info("🔎 Check exercise with invalid ID response")
     assert_invalid_uuid_response(actual=actual, invalid_id=exercise_id, location=["path", "exercise_id"])
+
+
+@allure.step("Check create exercise with invalid course ID response")
+def assert_create_exercise_with_invalid_course_id_response(
+    actual: ValidationErrorResponseSchema, course_id: str
+) -> None:
+    """Проверяет ошибку валидации UUID курса при создании задания.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        course_id: Некорректный UUID курса, переданный в теле запроса.
+
+    Raises:
+        AssertionError: Если количество, тип, расположение или входное
+            значение ошибки не соответствуют ожиданиям.
+    """
+    logger.info("🔎 Check create exercise with invalid course ID response")
+    assert_invalid_uuid_response(actual=actual, invalid_id=course_id, location=["body", "courseId"])

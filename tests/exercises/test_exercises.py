@@ -24,11 +24,12 @@ from tools.allure.tags import AllureTag
 from tools.assertions.base import assert_equal, assert_status_code
 from tools.assertions.exercises import (
     assert_create_exercise_response,
+    assert_create_exercise_with_invalid_course_id_response,
     assert_exercise,
     assert_exercise_not_found_response,
+    assert_exercise_with_invalid_id_response,
     assert_exercise_with_order_index,
     assert_get_exercise_response,
-    assert_get_exercise_with_invalid_id_response,
     assert_get_exercises_response,
     assert_get_exercises_with_invalid_course_id_response,
     assert_update_exercise_response,
@@ -302,7 +303,19 @@ class TestExercises:
     def test_get_exercises_for_empty_course(
         self, function_course: CourseFixture, exercises_client: ExercisesClient
     ) -> None:
-        """Проверяет получение пустого списка заданий для нового курса."""
+        """Проверяет получение пустого списка заданий для нового курса.
+
+        Использует курс из фикстуры, для которого ещё не созданы задания.
+        Проверяет HTTP-статус, пустой список заданий и JSON Schema ответа.
+
+        Args:
+            function_course: Фикстура с данными созданного курса.
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+
+        Raises:
+            AssertionError: Если HTTP-статус, структура ответа или содержимое
+                списка заданий не соответствуют ожидаемым значениям.
+        """
 
         get_exercises_query = GetExercisesRequestSchema(course_id=function_course.response.course.id)
         get_exercises_response = exercises_client.get_exercises_api(query=get_exercises_query)
@@ -349,7 +362,18 @@ class TestExercises:
     @allure.title("Get exercise with invalid ID")
     @allure.severity(Severity.NORMAL)
     def test_get_exercise_with_invalid_id(self, exercises_client: ExercisesClient) -> None:
-        """Проверяет получение задания с некорректным UUID."""
+        """Проверяет отклонение получения задания с некорректным UUID.
+
+        Передаёт невалидный идентификатор задания и проверяет HTTP 422,
+        JSON Schema и содержимое ошибки валидации.
+
+        Args:
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+
+        Raises:
+            AssertionError: Если HTTP-статус, структура ответа или ошибка
+                валидации UUID не соответствуют ожидаемым значениям.
+        """
         exercise_id = fake.invalid_uuid()
         get_exercise_response = exercises_client.get_exercise_api(exercise_id=exercise_id)
 
@@ -360,4 +384,57 @@ class TestExercises:
         )
         get_exercise_response_data = ValidationErrorResponseSchema.model_validate_json(get_exercise_response.text)
 
-        assert_get_exercise_with_invalid_id_response(actual=get_exercise_response_data, exercise_id=exercise_id)
+        assert_exercise_with_invalid_id_response(actual=get_exercise_response_data, exercise_id=exercise_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Create exercise with invalid course ID")
+    @allure.severity(Severity.NORMAL)
+    def test_create_exercise_with_invalid_course_id(self, exercises_client: ExercisesClient) -> None:
+        """Проверяет отклонение создания задания с некорректным UUID курса.
+
+        Args:
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        create_exercise_request = CreateExerciseRequestSchema(course_id=fake.invalid_uuid())
+        create_exercise_response = exercises_client.create_exercise_api(request=create_exercise_request)
+
+        assert_status_code(create_exercise_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(create_exercise_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        create_exercise_response_data = ValidationErrorResponseSchema.model_validate_json(create_exercise_response.text)
+
+        assert_create_exercise_with_invalid_course_id_response(
+            actual=create_exercise_response_data, course_id=create_exercise_request.course_id
+        )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Delete exercise with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_delete_exercise_with_invalid_id(self, exercises_client: ExercisesClient) -> None:
+        """Проверяет отклонение удаления задания с некорректным UUID.
+
+        Передаёт невалидный идентификатор задания и проверяет HTTP 422,
+        JSON Schema и содержимое ошибки валидации.
+
+        Args:
+            exercises_client: Фикстура авторизованного API-клиента заданий.
+
+        Raises:
+            AssertionError: Если HTTP-статус, структура ответа или ошибка
+                валидации UUID не соответствуют ожидаемым значениям.
+        """
+        exercise_id = fake.invalid_uuid()
+        delete_exercise_response = exercises_client.delete_exercise_api(exercise_id=exercise_id)
+
+        assert_status_code(delete_exercise_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(delete_exercise_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        delete_exercise_response_data = ValidationErrorResponseSchema.model_validate_json(delete_exercise_response.text)
+
+        assert_exercise_with_invalid_id_response(actual=delete_exercise_response_data, exercise_id=exercise_id)

@@ -161,17 +161,20 @@ def assert_file_not_found_response(actual: InternalErrorResponseSchema) -> None:
     assert_internal_error_response(actual=actual, expected=expected)
 
 
-@allure.step("Check get file with incorrect file id response")
-def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorResponseSchema, file_id: str) -> None:
-    """Проверяет ошибку валидации переданного некорректного UUID файла.
+@allure.step("Check file with invalid ID response")
+def assert_file_with_invalid_id_response(
+    actual: ValidationErrorResponseSchema,
+    file_id: str,
+) -> None:
+    """Проверяет ошибку валидации некорректного UUID файла.
 
     Args:
         actual: Фактический ответ API с ошибками валидации.
-        file_id: Некорректный идентификатор, переданный в GET-запросе.
+        file_id: Некорректный UUID файла, переданный в path-параметре.
 
     Raises:
-        AssertionError: Если ответ не соответствует ошибке разбора UUID
-            в параметре пути file_id.
+        AssertionError: Если количество, тип, расположение или входное
+            значение ошибки не соответствуют ожидаемым.
     """
-    logger.info("🔎 Check get file with incorrect file id response")
+    logger.info("🔎 Check file with invalid ID response")
     assert_invalid_uuid_response(actual=actual, invalid_id=file_id, location=["path", "file_id"])
