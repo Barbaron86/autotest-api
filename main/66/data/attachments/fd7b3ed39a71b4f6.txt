@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE4Ljc4Njc0MCIsInVzZXJfaWQiOiIzNTU5YTA5Ny1kNDFkLTQwOTUtYTExMC00NjU3MDNlOGFiZTIifQ.WaSFcJ0F4ByN4wZYWdzEUqqKGUJJJSvf8I2XGJMp0nY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Конструкция рай факультет.","maxScore":59,"minScore":30,"description":"Трясти космос бабочка серьезный аллея столетие неожиданный освободить. Провал засунуть фонарик очко витрина смеяться совет. Возможно настать плод витрина возникновение при пламя.","estimatedTime":"8 weeks","previewFileId":"c2177e83-a59a-4847-93ad-42c9fcd1047c","createdByUserId":"3559a097-d41d-4095-a110-465703e8abe2"}'

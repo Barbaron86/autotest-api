@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjIzLjU1MzQ2OSIsInVzZXJfaWQiOiI5YzZhMWFiMS1kYzJiLTQ4N2ItYTZhZi1hMWE3NmNmYjcwOTIifQ.MbI5TS0kzkOIB9cXHkAxNx3umOGgZZ8eI_4Fwlw1CfI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Военный кпсс табак второй намерение.","maxScore":86,"minScore":47,"description":"Кузнец зима крыса развитый необычный стакан. Витрина падать мгновение командир смелый коробка плавно.","estimatedTime":"8 weeks","previewFileId":"0c4a6e2a-9ca3-41b6-80ff-39d95f886f76","createdByUserId":"9c6a1ab1-dc2b-487b-a6af-a1a76cfb7092"}'

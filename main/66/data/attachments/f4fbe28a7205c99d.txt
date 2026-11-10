@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjEwLjA4NDk4NCIsInVzZXJfaWQiOiJjZWQyN2ZhNC1hYWM2LTQ2NTktYjU5MS01MGRhMWMwNjg2YTkifQ.1QY9PbUdkkOpFFV9mXfpzORF4TOE9dAhWnD01MAwmfU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Да сбросить пропасть проход точно другой художественный.","maxScore":87,"minScore":39,"description":"Полюбить бровь издали равнодушный эффект слишком голубчик демократия. Сынок низкий изба.","estimatedTime":"2 weeks","previewFileId":"20da6127-41ad-40fb-893f-891bf8456cd3","createdByUserId":"ced27fa4-aac6-4659-b591-50da1c0686a9"}'

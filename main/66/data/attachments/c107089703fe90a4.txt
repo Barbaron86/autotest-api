@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE3LjQwODMxMCIsInVzZXJfaWQiOiIwZmRmMGQzZS05YWE3LTQ3YTItYWFkOC0zNDkxMDUyZDEzMjgifQ.jbHJ80DtDARP7Wbw3jrRDo1gn0xTt7qM-SgSmLMakGY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Голубчик носок холодно интернет означать.","description":"Бегать теория разуметься наслаждение смеяться. Счастье скользить постоянный дошлый рай слать. Нож настать разводить заработать процесс.","courseId":"7095978b-f374-4e6b-a2be-edeb99f91ae5","maxScore":64,"minScore":19,"orderIndex":14,"estimatedTime":"1 weeks"}'

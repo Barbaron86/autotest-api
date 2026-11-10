@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/ae25728a-5976-41fa-ba93-09a809ed93c8 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjA5LjgxMTM2MiIsInVzZXJfaWQiOiJiZWE2YjI4Zi03ZGJhLTQ1OWItYWQyZi0wZmNkNjRhMzMwMTEifQ.Cw7dUevBGjlt9FXWFvOQBmpQCI-F4to3vz7rXP5Cm40' \
+  --header 'content-type: application/json' \
+  --data-raw '{"maxScore":null,"minScore":null,"estimatedTime":null}'

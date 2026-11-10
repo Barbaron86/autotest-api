@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjI1LjU3NDU1MyIsInVzZXJfaWQiOiI0ZDVkNThkMC03YjBlLTRmNTgtOTAyZi03NTY3NGE3NTU2NDcifQ.9URoyauYHMYnYJz2FsAvULOP-gwQnS2ApfbXtPBipOo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Подземный новый демократия лапа.","description":"Господь пол пробовать тяжелый адвокат. Увеличиваться мусор багровый художественный выражение спалить применяться вряд.\nЗапретить мелькнуть команда господь вперед. Бочок рай растеряться ярко.","courseId":"dbc16726-1d5e-4973-aa2e-2266a0b46fd2","maxScore":59,"minScore":6,"orderIndex":26,"estimatedTime":"8 weeks"}'

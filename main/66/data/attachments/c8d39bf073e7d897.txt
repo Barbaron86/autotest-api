@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjExLjMzMDIwNyIsInVzZXJfaWQiOiI1OThkN2M0ZC05OWZhLTRhNmEtODM5Yy00NjA1YTAwNTk0YjYifQ.Wgu62xDgljx0ZFVjiYPoakLAdYzFwkQG0EQAkyTZ-64' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Горький падать понятный.","maxScore":53,"minScore":43,"description":"Материя обида смеяться. Торопливый космос жидкий полевой прелесть недостаток. Свежий войти цепочка написать нож шлем.","estimatedTime":"9 weeks","previewFileId":"dc368412-d191-4b1e-bb7d-d1e248e23793","createdByUserId":"598d7c4d-99fa-4a6a-839c-4605a00594b6"}'

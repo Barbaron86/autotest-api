@@ -1,0 +1,8 @@
+curl --request DELETE \
+  http://localhost:8001/api/v1/courses/invalid-38476d37-54c6-4606-aeca-7a5960627080 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE1LjM5OTQ2MCIsInVzZXJfaWQiOiI2YWVhMGMwYi0yNWM2LTQ5YWUtODczOC1lNWJjYzc0OWVmYmIifQ.p2I8QAOEMXfdlgEX6AajxbRnJ10PvGcAuzmzc_c6cus'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjI2LjEyNDE4NyIsInVzZXJfaWQiOiI0ZDVkNThkMC03YjBlLTRmNTgtOTAyZi03NTY3NGE3NTU2NDcifQ.9swqbjNae8WGMkNyWnKVc5dVj-x0zlRGUHRyiPDP_C0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Природа песня граница потрясти свежий.","maxScore":82,"minScore":46,"description":"Снимать возникновение вздрогнуть труп. Выразить прошептать появление ныне. Командующий низкий волк анализ.\nМотоцикл юный металл что бак полевой плавно монета. Аж растеряться сравнение добиться.","estimatedTime":"5 weeks","previewFileId":"2f2bc270-9357-475f-9817-845c3495299d","createdByUserId":"4d5d58d0-7b0e-4f58-902f-75674a755647"}'

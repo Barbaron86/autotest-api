@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE5LjcxNDI1MCIsInVzZXJfaWQiOiIxZWUwYzU1Ni05MzQxLTRiNGMtYjYyNC1hYzhjODU3NzIyOWQifQ.ys5divF3jTYUbvxPN24V6CqxXhIU-8ynOn2HOih9zx8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Протягивать бровь настать появление.","description":"Исполнять пространство заявление деловой приходить. Бригада ответить пропасть костер. Лиловый сынок сынок штаб.","courseId":"0d92d62a-c62c-4bd9-bfda-ecb992084847","maxScore":72,"minScore":42,"orderIndex":28,"estimatedTime":"4 weeks"}'

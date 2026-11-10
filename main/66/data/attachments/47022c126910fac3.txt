@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjEzLjY2NTUwOSIsInVzZXJfaWQiOiIwODRmNTRlYS04NjdjLTRjNjQtYjU5Mi02ODhjNmY2OWU2NDYifQ.gcaBJyqF62zgVOQWPeVq6RcI90hhRnEgwLDXcGx_7UI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Один провал куча нож трубка тревога торговля поймать.","maxScore":79,"minScore":49,"description":"Жить какой спасть близко пол применяться князь. Пламя рот штаб очко витрина отметить лиловый ребятишки. Запретить сустав запустить сомнительный чувство расстегнуть собеседник.","estimatedTime":"4 weeks","previewFileId":"f02e3958-e44b-4349-b240-ff9b07e44f72","createdByUserId":"084f54ea-867c-4c64-b592-688c6f69e646"}'

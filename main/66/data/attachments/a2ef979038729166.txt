@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjIwLjI2NjEyOSIsInVzZXJfaWQiOiIxZWUwYzU1Ni05MzQxLTRiNGMtYjYyNC1hYzhjODU3NzIyOWQifQ.rtaja9N5tmfshHni_cm0w2OltlPF0HdY-BkjOdla8wI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Инструкция металл легко приходить зарплата.","maxScore":86,"minScore":22,"description":"Фонарик горький социалистический салон механический вперед. Теория призыв художественный войти. Прошептать наслаждение нож манера мусор ученый.","estimatedTime":"8 weeks","previewFileId":"3a0d0ee3-6f1f-438c-b5b8-b61374465d3e","createdByUserId":"1ee0c556-9341-4b4c-b624-ac8c8577229d"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE1LjY3MzQwNSIsInVzZXJfaWQiOiJkZGRiYjU0NC02ODVhLTQ1ODItOGI5MC00MWNkMjM1MGYxYWQifQ.dAqrlA2GDEjXFyr34Kp3QZ17LDgu5quroLVcj-LMlYY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дошлый войти другой зима падать.","description":"Полностью подробность монета. Упор разводить уронить секунда белье указанный. Валюта поймать металл рота падать.\nТабак крутой экзамен за какой песня пропаганда. Цвет приятель вряд идея военный.","courseId":"5bd04d96-3328-4e89-bf23-c3f4ba06e62f","maxScore":78,"minScore":20,"orderIndex":75,"estimatedTime":"10 weeks"}'

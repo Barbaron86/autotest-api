@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjA4LjYzMDkzNSIsInVzZXJfaWQiOiIyNGMwMWQ4ZC1kMjc3LTRiOTAtYWFkYS00ZDlhYWEwOTM3ZjAifQ.fR_JUcuB6nhqzCBZV5JWI3xeEDsTDc-0qkLB1NYV9P0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Наступать банк инвалид основание успокоиться труп витрина.","maxScore":68,"minScore":2,"description":"Сбросить счастье инструкция забирать. Хлеб порт трясти назначить через рассуждение. Сустав новый домашний рис сходить выбирать.","estimatedTime":"8 weeks","previewFileId":"af165e94-9bf3-4944-b250-4ccff7956200","createdByUserId":"24c01d8d-d277-4b90-aada-4d9aaa0937f0"}'

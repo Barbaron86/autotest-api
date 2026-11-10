@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/9a97abbd-5bcf-47d1-a05a-dc85c2250a5b \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE4LjIzNTM5MCIsInVzZXJfaWQiOiIzNTU5YTA5Ny1kNDFkLTQwOTUtYTExMC00NjU3MDNlOGFiZTIifQ.HGd4oLxZLJZPQdfDRjGTUa3U-jjA5431OZnW4tOlrdE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Постоянный дрогнуть ягода поговорить сынок. (обновлено)","description":"Задержать крутой дурацкий решетка умолять а. Способ банк поговорить следовательно горький ботинок. Наслаждение дьявол уронить спалить ремень дурацкий запретить поймать.\nОбновленное описание.","maxScore":80,"minScore":3,"orderIndex":61,"estimatedTime":"1 weeks (обновлено)"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE1Ljk3MTU5MiIsInVzZXJfaWQiOiJkZGRiYjU0NC02ODVhLTQ1ODItOGI5MC00MWNkMjM1MGYxYWQifQ.RRgdlEhurQIHEvqm0ij9K9bSw2WPcYDWrOW8BtIKO7E' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пятеро человечек дошлый багровый руководитель демократия интеллектуальный.","maxScore":86,"minScore":3,"description":"Армейский дружно миг непривычный. Головной развитый чем термин заплакать собеседник порог миллиард. Прежде подробность успокоиться поставить.","estimatedTime":"10 weeks","previewFileId":"ea1b9c1b-810d-431b-b909-3732f59ccfc7","createdByUserId":"dddbb544-685a-4582-8b90-41cd2350f1ad"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjA1LjIxNDc3NiIsInVzZXJfaWQiOiJhZjRmYzJiMS01YjlhLTQ0OGQtODI1YS04NTg4M2ZkMTlhZGIifQ.OzYw2tGmE7x3vW-f3ZunpRBiFdDeqxQm9tZx2Z_-Gek' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Вздрагивать командующий висеть зеленый прелесть освободить человечек.","maxScore":80,"minScore":13,"description":"Конструкция растеряться покидать смертельный набор подробность.\nПесня ручей протягивать сравнение вздрогнуть район миф назначить. Страсть применяться штаб.","estimatedTime":"2 weeks","previewFileId":"ddd3f70d-7948-470d-a83a-22bc414607d3","createdByUserId":"af4fc2b1-5b9a-448d-825a-85883fd19adb"}'

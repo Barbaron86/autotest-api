@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjIyLjAyMTA0MyIsInVzZXJfaWQiOiIwNmJmMjU1Zi1iODFjLTRjYmQtOGM4MS1mMThiNTdkZGFiNjgifQ.9vwJxqTP5Xf6Sh-gXScQYFTmFqbtzelmrxMMJ4UeFK8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Труп металл спасть.","maxScore":61,"minScore":10,"description":"Вскакивать выражаться волк космос постоянный. Банда горький успокоиться инфекция функция. Запустить услать нож.","estimatedTime":"10 weeks","previewFileId":"1fd3fda5-8280-4071-9800-632815bba0a8","createdByUserId":"06bf255f-b81c-4cbd-8c81-f18b57ddab68"}'

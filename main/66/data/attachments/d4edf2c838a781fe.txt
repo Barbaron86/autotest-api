@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjIxLjA5MjAzNCIsInVzZXJfaWQiOiI1OTk0MWE2Yy04NWU2LTQwNTYtYTQ1OS00Yjc5MTM2MGJhMmYifQ.eExpevkIypBKFhw5m0JtOKn0VE5kfQmvzmcfWP-fkMo' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Табак налево умирать заработать привлекать.","maxScore":60,"minScore":31,"description":"Передо развернуться мальчишка сутки. Непривычный уронить услать естественный плод заложить.\nМонета носок поймать. Выраженный потрясти самостоятельно бегать желание сутки.","estimatedTime":"6 weeks","previewFileId":"56ead539-e69f-481f-b50b-ee6e7f2c0d02","createdByUserId":"59941a6c-85e6-4056-a459-4b791360ba2f"}'

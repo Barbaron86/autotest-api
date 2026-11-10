@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjA5LjgxMTM2MiIsInVzZXJfaWQiOiJiZWE2YjI4Zi03ZGJhLTQ1OWItYWQyZi0wZmNkNjRhMzMwMTEifQ.Cw7dUevBGjlt9FXWFvOQBmpQCI-F4to3vz7rXP5Cm40' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Советовать правый спалить передо умирать сынок совещание умирать.","maxScore":77,"minScore":41,"description":"Настать миг сверкать прежде. Конференция демократия пересечь господь.\nПесенка премьера редактор. Дальний освобождение намерение равнодушный пламя миг. Отъезд дошлый монета миг падать девка.","estimatedTime":"9 weeks","previewFileId":"3ee4a949-e694-4a5c-9b38-d48374913a23","createdByUserId":"bea6b28f-7dba-459b-ad2f-0fcd64a33011"}'

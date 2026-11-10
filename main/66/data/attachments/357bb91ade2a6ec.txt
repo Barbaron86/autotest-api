@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE3Ljk2MTU5OCIsInVzZXJfaWQiOiIwZmRmMGQzZS05YWE3LTQ3YTItYWFkOC0zNDkxMDUyZDEzMjgifQ.jFZeSLTFIR4942DgaB8jttRG-TYrDezPTihXyAkbmaQ' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Рота идея покидать деньги привлекать снимать.","maxScore":81,"minScore":3,"description":"Лапа поколение горький единый правление. Зато изредка вздрагивать стакан сынок.","estimatedTime":"7 weeks","previewFileId":"0cac1b01-e934-49ff-819a-9c1770db9234","createdByUserId":"0fdf0d3e-9aa7-47a2-aad8-3491052d1328"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjEyLjE1NTIwOCIsInVzZXJfaWQiOiIyZjRjNjhjMy1hNTk4LTQyM2MtYmJjMy05OGE1YTU2MzU4YTIifQ.STkHW2vXEz8GRf45wcqneTfFfRzKHn-qnhVfK9q3eQg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Горький приятель заложить командование.","maxScore":82,"minScore":6,"description":"Домашний мотоцикл поймать дружно очутиться. Мера товар штаб дьявол.\nПрименяться тяжелый строительство крыса коричневый. Вздрогнуть покидать призыв устройство посвятить.","estimatedTime":"4 weeks","previewFileId":"14d6ae4c-ad68-4721-915a-fff47fb9e056","createdByUserId":"2f4c68c3-a598-423c-bbc3-98a5a56358a2"}'

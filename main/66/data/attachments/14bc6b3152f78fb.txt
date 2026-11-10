@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDE5OjM2OjE2Ljc5NDkwNyIsInVzZXJfaWQiOiIyOWViZDE3Ny01OGZiLTRkMzQtYTFhYS02OTIzZTgxYzkwNjUifQ.O2RNK71Srag-F_sZBO7b2mqH8wZSqYI_Q-l1yIomzKY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Каюта мучительно дошлый лапа издали цвет вообще.","maxScore":52,"minScore":8,"description":"Теория правый настать. Расстройство опасность потянуться налоговый зеленый.","estimatedTime":"6 weeks","previewFileId":"invalid-4db56ac5-0a72-4646-9b4a-bed9e67fd2ee","createdByUserId":"29ebd177-58fb-4d34-a1aa-6923e81c9065"}'
