@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/c6757474-eb02-484c-94a8-2048718adef8 \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM1LjE5MzcyNSIsInVzZXJfaWQiOiJjMjZjZTk0ZS01ZTBjLTRmNzgtOTQxNS02YzMyY2ViOTU3MTEifQ.95XUI0wfvHpp8DrCwCosmi-aWugpN3pRo8pQmrd8t8s' \
+  --header 'content-type: application/json' \
+  --data-raw '{"orderIndex":0}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM5LjUyMTAwNiIsInVzZXJfaWQiOiJjZTNiOGZhYi0yZTI5LTRmMDMtYjJhNS03NjIyNzA4YjhjOWIifQ.87ifwGHkqHfVBaz9G9jDL_AJlqSSOSWeeQOSbNtSuoM' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Коммунизм направо вывести райком.","maxScore":53,"minScore":34,"description":"Ложиться команда сверкать прежде заработать госпожа. Рай пища плясать сомнительный сынок оборот.\nПомолчать бабочка июнь район четко приходить монета сынок. Расстройство вперед неожиданный неправда.","estimatedTime":"10 weeks","previewFileId":"721f3700-ad56-457f-a4f7-07d2b3cb6c3b","createdByUserId":"ce3b8fab-2e29-4f03-b2a5-7622708b8c9b"}'

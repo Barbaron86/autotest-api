@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM0LjI5MDcyMyIsInVzZXJfaWQiOiIyYmUyNzU2Yy1kNDI5LTQ3YWQtOGJhNi0yNmE0NWNlMjA2YmUifQ.VLj0_jKEUDaN8pvh9jIlel9cETLI-Blya3OXrd9zikw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пасть песенка песня чем потянуться.","maxScore":82,"minScore":34,"description":"Светило висеть тяжелый теория виднеться висеть. Изображать жить цвет затянуться карандаш советовать холодно. Нож вздрогнуть результат правый. Сопровождаться провал девка потрясти совет.","estimatedTime":"5 weeks","previewFileId":"d7ede9be-5d2f-4126-a478-9e442f8a4a81","createdByUserId":"2be2756c-d429-47ad-8ba6-26a45ce206be"}'

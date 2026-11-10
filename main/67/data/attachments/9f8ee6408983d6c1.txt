@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjIzLjY4MDMyMSIsInVzZXJfaWQiOiIxYjhjOWM0OC03MDQzLTQyMzQtYjBlMC05Yzk4ODQ3Y2Q1NWQifQ.rXTcdUfuJH3SZSOWUqIZNy4aVmgERvCiBQ0qBshkW-k' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Носок дыхание войти ярко космос пространство слишком кидать.","maxScore":72,"minScore":42,"description":"Самостоятельно терапия более доставать. Пастух домашний спешить равнодушный число приличный пропадать засунуть.","estimatedTime":"10 weeks","previewFileId":"c6e41632-6a78-4ab9-a7c1-6300c40dc450","createdByUserId":"1b8c9c48-7043-4234-b0e0-9c98847cd55d"}'

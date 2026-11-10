@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM5LjA5ODc2NCIsInVzZXJfaWQiOiJjZTNiOGZhYi0yZTI5LTRmMDMtYjJhNS03NjIyNzA4YjhjOWIifQ._r4jqI0j3jSKK0UDXz6r9XCiwREXeKPqHig8LzLOcRI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Единый решетка промолчать спалить при.","description":"Кольцо постоянный кидать дремать уронить.","courseId":"d3e1c103-705d-463c-8618-3e219e7eb939","maxScore":75,"minScore":15,"orderIndex":50,"estimatedTime":"6 weeks"}'

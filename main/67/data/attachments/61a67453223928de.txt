@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjMzLjYzODM4NiIsInVzZXJfaWQiOiJkNTIwNTlhZi0yMWZiLTRjZGQtOGU0My0yN2VlMWNmYWYwNTUifQ.R8U26eTZemibjVz0dvlcLyxLYV9B9SPnsBDHQ9TEYfU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Фонарик умирать анализ домашний бак означать ход неудобно.","maxScore":100,"minScore":24,"description":"Мера деловой актриса оборот. Тяжелый хозяйка пересечь.\nНизкий покинуть вскакивать пропадать серьезный. Изменение стакан бровь решетка запеть.","estimatedTime":"5 weeks","previewFileId":"f39b5f75-7383-4dfb-aad3-0af446b8db1c","createdByUserId":"d52059af-21fb-4cdd-8e43-27ee1cfaf055"}'

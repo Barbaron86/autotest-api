@@ -1,0 +1,11 @@
+[2m20:21:40.013[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m20:21:40.227[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m20:21:40.228[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m20:21:40.233[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m20:21:40.441[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m20:21:40.447[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/files
+[2m20:21:40.453[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 422 Unprocessable Entity POST http://localhost:8001/api/v1/files
+[2m20:21:40.453[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.files[0m | 🔎 Check create file with empty filename response
+[2m20:21:40.453[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error response
+[2m20:21:40.454[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error
+[2m20:21:40.455[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema

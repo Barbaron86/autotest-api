@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjQxLjEwNDcxNSIsInVzZXJfaWQiOiI3ODhmMzEyNi0wM2ZiLTRkODEtYjk2OS05ZjZhZTVhNDE5MmIifQ.bw1_xeJvJByJhk0BXtMtzFvAMJ4rWACs0l4Qv5ZsU6s' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ночь адвокат издали пастух.","description":"Исследование эпоха поставить неправда. Мрачно пища миг интеллектуальный мелочь.","courseId":"ae5cfa5c-c4e9-4d9c-ab25-44aab37cb6c4","maxScore":67,"minScore":17,"orderIndex":56,"estimatedTime":"3 weeks"}'

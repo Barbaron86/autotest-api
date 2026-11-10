@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM3LjM2MTE3MiIsInVzZXJfaWQiOiIzYjQzOWY4NC02Y2ZkLTRhYTctOTI0Ny1lY2EwODZkNjUwZjIifQ.SYIcdeL8L1_U9us7EAe8t-CrDiACVYRew6BTEoN74uA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Монета ход что страсть прежний указанный функция один.","description":"Мера князь солнце спорт уронить изображать холодно промолчать. Запретить войти направо интеллектуальный. Прежде возмутиться полевой четко полевой труп мрачно. Торговля что освобождение возбуждение о.","courseId":"8f1140d6-9038-4c83-bfd9-e9df222cb18f","maxScore":84,"minScore":0,"orderIndex":83,"estimatedTime":"8 weeks"}'

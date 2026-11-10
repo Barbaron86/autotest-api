@@ -1,0 +1,12 @@
+[2m20:21:36.527[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m20:21:36.739[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/users
+[2m20:21:36.740[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user response
+[2m20:21:36.745[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/authentication/login
+[2m20:21:37.157[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 200 OK POST http://localhost:8001/api/v1/authentication/login
+[2m20:21:37.164[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/exercises
+[2m20:21:37.366[0m | [2mgw0[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 422 Unprocessable Entity POST http://localhost:8001/api/v1/exercises
+[2m20:21:37.368[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m20:21:37.371[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.exercises[0m | 🔎 Check create exercise with invalid course ID response
+[2m20:21:37.371[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check invalid UUID response
+[2m20:21:37.371[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error response
+[2m20:21:37.371[0m | [2mgw0[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error

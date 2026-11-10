@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM3LjU3NzIwMiIsInVzZXJfaWQiOiIzYjQzOWY4NC02Y2ZkLTRhYTctOTI0Ny1lY2EwODZkNjUwZjIifQ.kOtleKfM8QH2agIWiVtp7KB4kZY-EtvXzsKc4mytqx0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Ягода лиловый палка беспомощный военный.","maxScore":68,"minScore":10,"description":"Висеть мимо господь. Граница один один монета протягивать выражаться ленинград.","estimatedTime":"4 weeks","previewFileId":"cc7371c8-7893-49f8-bcfd-92bbf6fca7a3","createdByUserId":"3b439f84-6cfd-4aa7-9247-eca086d650f2"}'

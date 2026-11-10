@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI5Ljc1NzMyMyIsInVzZXJfaWQiOiI0ODc1M2JiZC1mZjkwLTQ4ODctYWQ5OC1kYWM2MjJiYjA0YTMifQ.O7fpN-sPe5ittINHYZdlmbXH163CHp8IT330DrbzUkE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Слишком смертельный плавно ведь.","maxScore":53,"minScore":24,"description":"Написать правление сынок лапа приличный. Магазин роскошный точно расстегнуть выраженный дьявол зима.\nМеталл покидать конструкция наступать.","estimatedTime":"9 weeks","previewFileId":"3304ba03-1ef4-4c7b-9cc7-431097d4aa60","createdByUserId":"48753bbd-ff90-4887-ad98-dac622bb04a3"}'

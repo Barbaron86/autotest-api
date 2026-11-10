@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI3LjA5MzI4NiIsInVzZXJfaWQiOiI5ODI2Zjg3MC1hYzljLTQyZDctOWNmNC03OWY4YzcyYjk0YjEifQ.B3YVZNehz6_93gK6JhYwRhC3ni32HeKKO8DbOJ96N20' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Набор рис совещание сверкающий госпожа порог манера.","maxScore":52,"minScore":4,"description":"Потрясти очутиться валюта. Рота вытаскивать девка очередной сравнение спешить.\nТермин результат функция встать. Сходить назначить космос нажать запустить добиться самостоятельно.","estimatedTime":"3 weeks","previewFileId":"7a92bd3d-bb94-4644-a72c-24e58972188a","createdByUserId":"9826f870-ac9c-42d7-9cf4-79f8c72b94b1"}'

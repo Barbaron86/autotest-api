@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM3LjE1MzcwNCIsInVzZXJfaWQiOiI5MTU3YWNkMC01MTIyLTQwNWUtYjc0NS03MDU1YjQ1MWZlYjYifQ.YVC3Fq4J07Xrg25ev3NKbeMl3RYpXw4tBBpk8a7h2-w' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Более господь трубка совет потрясти оборот аллея.","description":"Пространство сынок правление деловой угроза расстегнуть командование. Девка медицина потом карман бетонный назначить.","courseId":"invalid-f54ff28f-d4f5-47a3-ae8a-929fb87fa74f","maxScore":89,"minScore":41,"orderIndex":18,"estimatedTime":"9 weeks"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjMxLjY4Mzk0NiIsInVzZXJfaWQiOiIwOTNiMmQ0ZC03YmRmLTQ0ZmQtYTdjOC1iYzkwMjYyMjI2MDgifQ.iW1YZU8xm4UQD150hPKRkLgMNyyRKMpM1j2I1Vw8zMA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Миг основание остановить холодно.","maxScore":93,"minScore":34,"description":"Художественный понятный космос важный. Иной слать костер плавно. Механический рота мусор новый труп зачем коммунизм.\nХод неожиданный мелочь ленинград прежний гулять.","estimatedTime":"8 weeks","previewFileId":"invalid-869941da-9041-40c5-bfdc-8821a17b38a0","createdByUserId":"093b2d4d-7bdf-44fd-a7c8-bc9026222608"}'

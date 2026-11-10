@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI2LjAxMTI2NSIsInVzZXJfaWQiOiI3ZDI1NGVhZS03MDA4LTRjYzctYmZmMC04MWNmZmQwNmJkM2MifQ._6DXl3TMSQg5j7jRGOuSvuVZu5TARpVR5Gkt3-IsUDw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Инвалид число житель покидать обида.","maxScore":60,"minScore":12,"description":"Материя инструкция вперед головка. Счастье интеллектуальный прежде головной бровь. Приятель металл печатать витрина близко столетие выгнать.","estimatedTime":"6 weeks","previewFileId":"76091bf6-991b-412c-92cf-22e28161105b","createdByUserId":"7d254eae-7008-4cc7-bff0-81cffd06bd3c"}'

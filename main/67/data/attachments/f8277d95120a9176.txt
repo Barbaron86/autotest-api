@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI3Ljk4NjA3NyIsInVzZXJfaWQiOiJkYWMwM2JiMy03MWI2LTQ5YzctYmUxZC1kNTZjODVkZmI5YTAifQ.eSvERdTy-1VGh5B61ctwwcEe4pSi7Ojol1ES9iChirc' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Нож банда торговля голубчик тревога отдел терапия привлекать.","maxScore":77,"minScore":7,"description":"Подробность серьезный роса сустав видимо. Мелочь аллея изредка. Угодный пересечь мрачно пятеро спичка валюта.\nПятеро карман падать багровый пламя головка. Мусор мимо призыв ведь картинка.","estimatedTime":"1 weeks","previewFileId":"37b73dce-b901-4966-81d6-5108138f26c2","createdByUserId":"dac03bb3-71b6-49c7-be1d-d56c85dfb9a0"}'

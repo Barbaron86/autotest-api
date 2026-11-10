@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjM1LjQxNjEwOCIsInVzZXJfaWQiOiJjMjZjZTk0ZS01ZTBjLTRmNzgtOTQxNS02YzMyY2ViOTU3MTEifQ.2zQ2NID-VGj470VM40IfjcJOwjcGwxUPHyxFJlDRESw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Потянуться забирать мелькнуть изображать построить нервно.","maxScore":91,"minScore":42,"description":"Картинка торговля способ жить пробовать бригада похороны парень. Виднеться запеть картинка выраженный грустный даль пища. Падаль хлеб пропаганда. Что бак естественный призыв задрать.","estimatedTime":"9 weeks","previewFileId":"f308ba4b-6ea0-4c3a-a2b9-0bbf42330b24","createdByUserId":"c26ce94e-5e0c-4f78-9415-6c32ceb95711"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjMxLjg4ODA5MiIsInVzZXJfaWQiOiI0NjBlYTBlMi05ODVmLTQ2NDItYjZmZi02MzhmYWM4NTlmZmMifQ.z63PTOTCKO7bSdlqQSC6bFeUnoJIyLA12mgIrQZrd1o' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Зеленый сопровождаться миг постоянный.","maxScore":76,"minScore":2,"description":"Механический космос одиннадцать конференция. Выдержать темнеть серьезный лиловый человечек штаб волк.","estimatedTime":"5 weeks","previewFileId":"ddd8dc09-a3a9-4a00-88c4-82479008fda2","createdByUserId":"460ea0e2-985f-4642-b6ff-638fac859ffc"}'

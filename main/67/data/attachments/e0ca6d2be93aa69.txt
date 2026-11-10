@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjQxLjUzODU4NCIsInVzZXJfaWQiOiI3ODhmMzEyNi0wM2ZiLTRkODEtYjk2OS05ZjZhZTVhNDE5MmIifQ.Tf6lSc5oro3ga1kNw5NNAY7O0s0sMiogudIZDtyGCb4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Поезд тяжелый металл опасность достоинство цель порядок.","maxScore":58,"minScore":1,"description":"Район приятель советовать сынок. Редактор необычный бригада секунда заявление металл падать дружно. Вчера задержать мрачно металл угроза сохранять анализ.","estimatedTime":"5 weeks","previewFileId":"307420c5-93bd-44d3-8100-789cef743cce","createdByUserId":"788f3126-03fb-4d81-b969-9f6ae5a4192b"}'

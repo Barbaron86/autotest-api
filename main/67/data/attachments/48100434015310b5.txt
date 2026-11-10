@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI1LjM2NzM5NiIsInVzZXJfaWQiOiIxODNhYzQwMy04YTgyLTQ4MTktYTNkZi05OTA4MzBlYmFmZWUifQ.16vYXcW-cmNRM_RbCYEteZwLEyJxqS-NWZjyVKQ1VBY' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Пропадать бегать смелый посидеть штаб правление увеличиваться.","maxScore":82,"minScore":8,"description":"Карман да школьный.\nПроцесс металл засунуть проход беспомощный. Монета пространство разуметься триста.","estimatedTime":"10 weeks","previewFileId":"4161a437-7562-4127-bdf0-f0903dd23173","createdByUserId":"183ac403-8a82-4819-a3df-990830ebafee"}'

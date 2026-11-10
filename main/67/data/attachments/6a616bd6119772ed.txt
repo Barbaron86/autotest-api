@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjMyLjc2NDYxNyIsInVzZXJfaWQiOiI0NzA4MzhmZi02NWMyLTQzYWYtODc1NS0xZGQ4YTg2YzBhMWYifQ.SGyv6niVt0lNx20-mkrD33Cxkl-jkr_aqlWH5BTZKmk' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Умолять рот низкий встать терапия.","maxScore":77,"minScore":34,"description":"Пол пропаганда валюта лететь уронить миг. Да обида призыв товар белье еврейский отъезд. Сбросить чем мотоцикл наткнуться что.","estimatedTime":"10 weeks","previewFileId":"610b10cf-2f39-40c1-ad50-93a29a6c5a14","createdByUserId":"470838ff-65c2-43af-8755-1dd8a86c0a1f"}'

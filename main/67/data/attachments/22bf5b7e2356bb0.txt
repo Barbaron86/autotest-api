@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTEwVDIwOjUxOjI4LjYyNzIwNSIsInVzZXJfaWQiOiJjYjY1ZGM2ZS0wODVjLTQ1NDUtOWFiZS1iOTQ3YWZlMTY0YzAifQ.ILiczet9LlmdFAIsZmBmC8xjTyYHPWS1ifz6hcMErfI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Висеть зачем пропасть отдел увеличиваться командование.","maxScore":86,"minScore":9,"description":"Место отметить рис. Провал идея рассуждение добиться разуметься.","estimatedTime":"9 weeks","previewFileId":"411e53a3-6c67-4c70-a867-e00e2b126e91","createdByUserId":"cb65dc6e-085c-4545-9abe-b947afe164c0"}'
