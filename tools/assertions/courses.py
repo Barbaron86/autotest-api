@@ -16,6 +16,7 @@ from tools.assertions.base import assert_equal, assert_lens
 from tools.assertions.errors import (
     ValidationErrorExpectation,
     assert_internal_error_response,
+    assert_invalid_uuid_response,
     assert_validation_error_response,
 )
 from tools.assertions.files import assert_file
@@ -162,3 +163,51 @@ def assert_course_not_found_response(actual: InternalErrorResponseSchema) -> Non
     logger.info("🔎 Check course not found response")
     expected = InternalErrorResponseSchema(detail=ApiErrorMessage.COURSE_NOT_FOUND)
     assert_internal_error_response(actual=actual, expected=expected)
+
+
+@allure.step("Check get courses with invalid user ID response")
+def assert_get_courses_with_invalid_user_id_response(actual: ValidationErrorResponseSchema, user_id: str) -> None:
+    """Проверяет ошибку валидации UUID пользователя при получении курсов.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        user_id: Некорректный идентификатор пользователя.
+
+    Raises:
+        AssertionError: Если ошибка не соответствует ожидаемой.
+    """
+    logger.info("🔎 Check get courses with invalid user ID response")
+    assert_invalid_uuid_response(actual=actual, invalid_id=user_id, location=["query", "userId"])
+
+
+@allure.step("Check course with invalid ID response")
+def assert_course_with_invalid_id_response(actual: ValidationErrorResponseSchema, course_id: str) -> None:
+    """Проверяет ошибку валидации некорректного UUID курса.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        course_id: Некорректный UUID из path-параметра.
+
+    Raises:
+        AssertionError: Если ошибка не соответствует ожидаемым значениям.
+    """
+    logger.info("🔎 Check course with invalid ID response")
+    assert_invalid_uuid_response(actual=actual, invalid_id=course_id, location=["path", "course_id"])
+
+
+@allure.step("Check create course with invalid preview file ID response")
+def assert_create_course_with_invalid_preview_file_id_response(
+    actual: ValidationErrorResponseSchema,
+    preview_file_id: str,
+) -> None:
+    """Проверяет ошибку валидации UUID файла превью при создании курса.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        preview_file_id: Некорректный UUID файла превью из тела запроса.
+
+    Raises:
+        AssertionError: Если ошибка не соответствует ожидаемым значениям.
+    """
+    logger.info("🔎 Check create course with invalid preview file ID response")
+    assert_invalid_uuid_response(actual=actual, invalid_id=preview_file_id, location=["body", "previewFileId"])

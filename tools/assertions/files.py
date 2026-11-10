@@ -13,6 +13,7 @@ from tools.assertions.base import assert_equal
 from tools.assertions.errors import (
     ValidationErrorExpectation,
     assert_internal_error_response,
+    assert_invalid_uuid_response,
     assert_validation_error_response,
 )
 from tools.error_messages import ApiErrorMessage
@@ -173,11 +174,4 @@ def assert_get_file_with_incorrect_file_id_response(actual: ValidationErrorRespo
             в параметре пути file_id.
     """
     logger.info("🔎 Check get file with incorrect file id response")
-    expected = [
-        ValidationErrorExpectation(
-            type=ValidationErrorType.UUID_PARSING,
-            input=file_id,
-            location=["path", "file_id"],
-        )
-    ]
-    assert_validation_error_response(actual=actual, expected=expected)
+    assert_invalid_uuid_response(actual=actual, invalid_id=file_id, location=["path", "file_id"])

@@ -27,8 +27,11 @@ from tools.assertions.courses import (
     assert_course,
     assert_course_not_found_response,
     assert_course_with_cleared_optional_fields,
+    assert_course_with_invalid_id_response,
     assert_create_course_response,
+    assert_create_course_with_invalid_preview_file_id_response,
     assert_get_courses_response,
+    assert_get_courses_with_invalid_user_id_response,
     assert_update_course_response,
     assert_update_course_with_invalid_score_range_response,
 )
@@ -339,3 +342,122 @@ class TestCourses:
             create_course_responses=[function_course.response],
         )
         validate_json_schema(get_courses_response.json(), GetCoursesResponseSchema.model_json_schema())
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Get courses with invalid user ID")
+    @allure.severity(Severity.NORMAL)
+    def test_get_courses_with_invalid_user_id(self, courses_client: CoursesClient) -> None:
+        """Проверяет отклонение запроса списка курсов с некорректным UUID пользователя.
+
+        Args:
+            courses_client: Авторизованный API-клиент для работы с курсами.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        get_courses_query = GetCoursesQuerySchema(user_id=fake.invalid_uuid())
+        get_courses_response = courses_client.get_courses_api(query=get_courses_query)
+
+        assert_status_code(get_courses_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=get_courses_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        get_courses_response_data = ValidationErrorResponseSchema.model_validate_json(get_courses_response.text)
+
+        assert_get_courses_with_invalid_user_id_response(
+            actual=get_courses_response_data, user_id=get_courses_query.user_id
+        )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Get course with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_get_course_with_invalid_id(self, courses_client: CoursesClient) -> None:
+        """Проверяет отклонение запроса курса с некорректным UUID.
+
+        Args:
+            courses_client: Авторизованный API-клиент для работы с курсами.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        course_id = fake.invalid_uuid()
+        get_course_response = courses_client.get_course_api(course_id=course_id)
+
+        assert_status_code(get_course_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=get_course_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        get_course_response_data = ValidationErrorResponseSchema.model_validate_json(get_course_response.text)
+
+        assert_course_with_invalid_id_response(actual=get_course_response_data, course_id=course_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Delete course with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_delete_course_with_invalid_id(self, courses_client: CoursesClient) -> None:
+        """Проверяет отклонение удаления курса с некорректным UUID.
+
+        Args:
+            courses_client: Авторизованный API-клиент для работы с курсами.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        course_id = fake.invalid_uuid()
+        delete_course_response = courses_client.delete_course_api(course_id=course_id)
+
+        assert_status_code(delete_course_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=delete_course_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        delete_course_response_data = ValidationErrorResponseSchema.model_validate_json(delete_course_response.text)
+
+        assert_course_with_invalid_id_response(actual=delete_course_response_data, course_id=course_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Create course with invalid preview file ID")
+    @allure.severity(Severity.NORMAL)
+    def test_create_course_with_invalid_preview_file_id(
+        self,
+        courses_client: CoursesClient,
+        function_user: UserFixture,
+    ) -> None:
+        """Проверяет отклонение создания курса с некорректным UUID файла превью.
+
+        Args:
+            courses_client: Авторизованный API-клиент для работы с курсами.
+            function_user: Фикстура с данными созданного пользователя.
+
+        Raises:
+            AssertionError: Если HTTP-статус или содержимое ошибки
+                не соответствуют ожидаемым значениям.
+        """
+        create_course_request = CreateCourseRequestSchema(
+            preview_file_id=fake.invalid_uuid(), created_by_user_id=function_user.response.user.id
+        )
+        create_course_response = courses_client.create_course_api(request=create_course_request)
+
+        assert_status_code(create_course_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        validate_json_schema(
+            instance=create_course_response.json(), schema=ValidationErrorResponseSchema.model_json_schema()
+        )
+        create_course_response_data = ValidationErrorResponseSchema.model_validate_json(create_course_response.text)
+
+        assert_create_course_with_invalid_preview_file_id_response(
+            actual=create_course_response_data, preview_file_id=create_course_request.preview_file_id
+        )

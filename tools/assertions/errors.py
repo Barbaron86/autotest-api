@@ -1,6 +1,5 @@
 from typing import Any
 
-import allure
 from loguru import logger
 
 from clients.base_schema import BaseSchema
@@ -23,7 +22,6 @@ class ValidationErrorExpectation(BaseSchema):
     message: str | None = None
 
 
-@allure.step("Check validation error")
 def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationErrorExpectation) -> None:
     """Проверяет соответствие ошибки валидации ожидаемой.
 
@@ -44,7 +42,6 @@ def assert_validation_error(actual: ValidationErrorSchema, expected: ValidationE
     assert_equal(actual.location, expected.location, name="location")
 
 
-@allure.step("Check validation error response")
 def assert_validation_error_response(
     actual: ValidationErrorResponseSchema,
     expected: list[ValidationErrorExpectation],
@@ -65,7 +62,6 @@ def assert_validation_error_response(
         assert_validation_error(actual=actual.detail[index], expected=detail)
 
 
-@allure.step("Check internal error response")
 def assert_internal_error_response(
     actual: InternalErrorResponseSchema,
     expected: InternalErrorResponseSchema,
@@ -81,3 +77,22 @@ def assert_internal_error_response(
     """
     logger.info("🔎 Check internal error response")
     assert_equal(actual.detail, expected.detail, name="detail")
+
+
+def assert_invalid_uuid_response(
+    actual: ValidationErrorResponseSchema, invalid_id: str, location: list[str | int]
+) -> None:
+    """Проверяет ошибку валидации некорректного UUID.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        invalid_id: Некорректный идентификатор из запроса.
+        location: Ожидаемое расположение ошибочного параметра.
+
+    Raises:
+        AssertionError: Если количество, тип, входное значение
+            или расположение ошибок не соответствуют ожиданиям.
+    """
+    logger.info("🔎 Check invalid UUID response")
+    expected = [ValidationErrorExpectation(type=ValidationErrorType.UUID_PARSING, input=invalid_id, location=location)]
+    assert_validation_error_response(actual=actual, expected=expected)

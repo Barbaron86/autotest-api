@@ -17,6 +17,7 @@ from tools.assertions.base import assert_equal, assert_lens
 from tools.assertions.errors import (
     ValidationErrorExpectation,
     assert_internal_error_response,
+    assert_invalid_uuid_response,
     assert_validation_error_response,
 )
 from tools.error_messages import ApiErrorMessage
@@ -203,12 +204,7 @@ def assert_get_exercises_with_invalid_course_id_response(actual: ValidationError
         AssertionError: Если тип, расположение или значение ошибки не соответствуют ожиданиям.
     """
     logger.info("🔎 Check get exercises with invalid course ID response")
-    expected = [
-        ValidationErrorExpectation(
-            type=ValidationErrorType.UUID_PARSING, input=course_id, location=["query", "courseId"]
-        )
-    ]
-    assert_validation_error_response(actual=actual, expected=expected)
+    assert_invalid_uuid_response(actual=actual, invalid_id=course_id, location=["query", "courseId"])
 
 
 @allure.step("Check get exercise with invalid ID response")
@@ -223,9 +219,4 @@ def assert_get_exercise_with_invalid_id_response(actual: ValidationErrorResponse
         AssertionError: Если тип, расположение или значение ошибки не соответствуют ожиданиям.
     """
     logger.info("🔎 Check get exercise with invalid ID response")
-    expected = [
-        ValidationErrorExpectation(
-            type=ValidationErrorType.UUID_PARSING, input=exercise_id, location=["path", "exercise_id"]
-        )
-    ]
-    assert_validation_error_response(actual=actual, expected=expected)
+    assert_invalid_uuid_response(actual=actual, invalid_id=exercise_id, location=["path", "exercise_id"])
