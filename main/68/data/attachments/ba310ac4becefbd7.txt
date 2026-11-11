@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA0LjAyNjk2OCIsInVzZXJfaWQiOiJkZmE5N2U1My01OTEyLTRiOTAtYWZkNC1hNjI2MWQ4NmRiZmUifQ.3NI1uoDShkN07SqjBHus-JaeZMdABfVZ74NjslgXywI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бегать хотеть художественный.","description":"Аж товар легко спичка мрачно некоторый изменение. Научить падаль степь материя слать цель снимать порядок.\nГоловной господь идея полностью. Рота назначить хозяйка присесть цепочка.","courseId":"4fc92d5e-2f86-48cf-b5fc-fb24c22820c7","maxScore":52,"minScore":30,"orderIndex":62,"estimatedTime":"2 weeks"}'

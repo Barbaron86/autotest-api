@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjU0LjcyNjQwNyIsInVzZXJfaWQiOiJiNWJiMzUxMS1lYjJkLTRiNDQtYmFkZS02MTJmNzgxMTM3NDIifQ.7vAn6n6-qIYaGxfzD8DCQgtsABqTGatcmretMO34bEs' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Функция девка академик запустить.","maxScore":89,"minScore":24,"description":"Сравнение аж растеряться пробовать зарплата передо. Танцевать уничтожение четко возникновение хозяйка поймать.","estimatedTime":"2 weeks","previewFileId":"b4b11d32-e395-48dd-92af-d98a9a16de35","createdByUserId":"b5bb3511-eb2d-4b44-bade-612f78113742"}'

@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/courses/187508fc-a69f-426e-b571-c02c06bfe66d \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjU2LjI5NzE2NyIsInVzZXJfaWQiOiIzMTY0MTZkNS0zZTkxLTQxNzUtYTlkMi01NjdjMTQ5Zjk2OWYifQ.rvH5M4eYC699YKBfxg8WDVnV-n2izyXQckQoc0SCxb0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очередной трубка белье коричневый радость уничтожение. (частично)"}'

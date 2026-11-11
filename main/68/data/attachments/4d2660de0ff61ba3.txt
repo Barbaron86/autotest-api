@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAyLjE0MzU2MCIsInVzZXJfaWQiOiI4NTNhNjM4Ny04YTA1LTRkY2YtODdhOC1jMzhmZGRmNTQ0OWQifQ.vuBG74m-EdkN_IvDBx5xeZNN6J_GzVC9oPJp2DrGVR4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Направо каюта поставить сомнительный.","description":"Дальний оборот печатать карман виднеться миллиард заработать. Затянуться ответить багровый увеличиваться.\nПокинуть факультет ремень неожиданно факультет падать. Число болото рассуждение командир.","courseId":"b069e734-cabd-4fc3-8d1a-1e061f69a28f","maxScore":71,"minScore":38,"orderIndex":42,"estimatedTime":"5 weeks"}'

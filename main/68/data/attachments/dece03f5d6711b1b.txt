@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjE0Ljk1MTM2NSIsInVzZXJfaWQiOiI5YTI5OTUxZC1mOGJmLTQ0NmMtYjc0Ni1mYmU3YmI1M2ZmMTEifQ.hQKrx0p6BdqcqJbDmPRagjXDrjWsi6IZbXVq76XyvM8' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Столетие танцевать витрина инвалид банда ставить.","maxScore":84,"minScore":20,"description":"Настать болото деловой сынок. Хозяйка ботинок конференция возбуждение солнце. Роса карандаш угодный функция приличный.","estimatedTime":"9 weeks","previewFileId":"7a57ef14-7e2d-434f-8f0a-d112117ccf59","createdByUserId":"9a29951d-f8bf-446c-b746-fbe7bb53ff11"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA3LjM4NjQ5MiIsInVzZXJfaWQiOiJjOTM0MDUxYi0yZDU3LTQ0ZDgtYTRiZC1kNGZlM2E2MjJmODIifQ.7ZgYXS6XyUluFxJyMiA9TVvneOjBsZH-h7rdItVTfkI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Важный металл пространство инвалид бабочка зима доставать.","description":"Снимать правый домашний миг команда слать ведь. Жидкий отдел пересечь валюта. Развитый куча дорогой уточнить что отдел.","courseId":"invalid-847bc8c2-d629-4885-b049-026b51e8a4c4","maxScore":66,"minScore":20,"orderIndex":12,"estimatedTime":"7 weeks"}'

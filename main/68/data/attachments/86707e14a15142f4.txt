@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjUzLjQ1NjMwNSIsInVzZXJfaWQiOiIzYWQyZjdiNi05MzBmLTRiZWItYTM5NC00Y2Y1ZmZhZTU2ZjIifQ.0g_fI_-bnU-Y3Xmn_U7DolPfF-mTj2P3keQocLj2tKU' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Невыносимый интернет армейский армейский выгнать построить.","maxScore":69,"minScore":23,"description":"Освобождение крыса зарплата космос о мелькнуть необычный желание. Сынок командование строительство мелочь функция.\nПропадать отметить вперед остановить неожиданный карандаш.","estimatedTime":"10 weeks","previewFileId":"5d82f799-7dbe-4f6d-a831-eebb15a4bd9b","createdByUserId":"3ad2f7b6-930f-4beb-a394-4cf5ffae56f2"}'

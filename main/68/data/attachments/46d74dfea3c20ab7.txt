@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjU2LjI5NzE2NyIsInVzZXJfaWQiOiIzMTY0MTZkNS0zZTkxLTQxNzUtYTlkMi01NjdjMTQ5Zjk2OWYifQ.rvH5M4eYC699YKBfxg8WDVnV-n2izyXQckQoc0SCxb0' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очередной трубка белье коричневый радость уничтожение.","maxScore":61,"minScore":26,"description":"Сохранять тысяча темнеть инвалид. Плод низкий освобождение рот вариант. Изредка помолчать валюта строительство функция угроза. Невыносимый дремать мгновение некоторый избегать передо порт.","estimatedTime":"7 weeks","previewFileId":"e4cedb36-1ae0-414b-bf41-ef584f298f15","createdByUserId":"316416d5-3e91-4175-a9d2-567c149f969f"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/exercises \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA1Ljg2MDIyNCIsInVzZXJfaWQiOiI5NWFjNWIyMC1mNGQ4LTRjMTctYmM4Mi1mZmU0NTdjZGUwODgifQ.2tzvFgjze5q-EJ-SIQ6Wjqe7eMGEt-OvynEz4IiO-cw' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Очутиться а способ.","description":"Витрина штаб мелочь протягивать. Заведение горький поймать видимо пропасть материя пространство.","courseId":"76747e76-8e11-4503-a26c-9f75ea1902a2","maxScore":90,"minScore":20,"orderIndex":7,"estimatedTime":"8 weeks"}'

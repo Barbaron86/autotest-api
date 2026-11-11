@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjU5LjM1OTI1NyIsInVzZXJfaWQiOiI2Y2E1ZGUxZS0xMDdkLTRlYmEtYTViZi1kZWJiZjc4NGRhMTIifQ.XAmRwNvKOg6QAkGTkU8tRvvk5obfA8nexQOk6PPsg7k' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Дрогнуть бочок основание назначить.","maxScore":60,"minScore":3,"description":"Вообще хотеть призыв угодный спорт. Ответить экзамен труп куча. Указанный миг спорт.\nПламя сутки команда покидать отметить. Наткнуться засунуть лететь тысяча. Рот вытаскивать правильный миг тяжелый.","estimatedTime":"10 weeks","previewFileId":"invalid-54a9ae79-fa32-4b7f-a1f6-e85b96de4bcb","createdByUserId":"6ca5de1e-107d-4eba-a5bf-debbf784da12"}'

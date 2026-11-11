@@ -1,0 +1,6 @@
+[2m18:23:21.216[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | → POST http://localhost:8001/api/v1/users
+[2m18:23:21.446[0m | [2mgw1[0m | [1mINFO   [0m | [36mclients.event_hooks[0m | ← 422 Unprocessable Entity POST http://localhost:8001/api/v1/users
+[2m18:23:21.447[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.schema[0m | 🔎 Validate JSON schema
+[2m18:23:21.451[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.users[0m | 🔎 Check create user with empty password response
+[2m18:23:21.451[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error response
+[2m18:23:21.451[0m | [2mgw1[0m | [1mINFO   [0m | [36mtools.assertions.errors[0m | 🔎 Check validation error

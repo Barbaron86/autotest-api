@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAxLjkwNDc2MyIsInVzZXJfaWQiOiI3NGZjODA3My1mYjg4LTQzMTQtYjRiMS05MWRmYWM0ZTM0YTkifQ.MZ4ozD9-xhA6-w79oq5fO_IBc1E5VTHoAp8oJdKlyeA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Факультет заведение сохранять команда появление чем реклама забирать.","maxScore":91,"minScore":37,"description":"Стакан ложиться мягкий неожиданно торопливый покинуть непривычный.\nТюрьма вперед аж задержать. Шлем да запретить собеседник.","estimatedTime":"6 weeks","previewFileId":"f1ad0145-6a27-4188-8adf-f63af2eb851e","createdByUserId":"74fc8073-fb88-4314-b4b1-91dfac4e34a9"}'

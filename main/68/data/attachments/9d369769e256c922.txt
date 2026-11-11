@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUyOjU4LjA3NDA3MyIsInVzZXJfaWQiOiI2M2RmMTEzMS1hM2JjLTRlZWUtOTViZC1iNjU3YzllZjFmMmUifQ.XGIZG84VMQrsYAVtm7iaKx33lsWJ_QUhLErnJxlf0rI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Аж вздрогнуть указанный.","maxScore":84,"minScore":8,"description":"Направо вариант близко выбирать передо зеленый. Рота реклама близко добиться собеседник конференция тусклый назначить. Темнеть лететь лететь мелькнуть магазин виднеться жить очутиться.","estimatedTime":"1 weeks","previewFileId":"cd09a1b0-76f7-4702-a3dd-c417cfd61959","createdByUserId":"63df1131-a3bc-4eee-95bd-b657c9ef1f2e"}'

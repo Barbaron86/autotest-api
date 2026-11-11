@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAyLjYyMjkwOCIsInVzZXJfaWQiOiI4NTNhNjM4Ny04YTA1LTRkY2YtODdhOC1jMzhmZGRmNTQ0OWQifQ.alUl5vGSSq5XpQQIbt2Hxk1DLr3BK08xmQ5ofGHl_cE' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Заработать падаль лететь нажать.","maxScore":80,"minScore":41,"description":"Отъезд остановить устройство предоставить оставить. Ученый функция домашний дорогой приятель холодно мрачно.","estimatedTime":"4 weeks","previewFileId":"63cc5f0d-077a-41de-8366-38efa822eb4a","createdByUserId":"853a6387-8a05-4dcf-87a8-c38fddf5449d"}'

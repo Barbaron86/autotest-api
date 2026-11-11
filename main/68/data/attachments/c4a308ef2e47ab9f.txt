@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjExLjE1NjQ5MSIsInVzZXJfaWQiOiJjMTIyMGIzOS05NzhlLTQ5NWYtYWM3ZS00MTNmMzIxN2UwMTMifQ.0aPlTOC3HDAsHmZlr3Pr_pcCy4dSYFU4c7wK17IszZ4' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Изменение полоска тяжелый костер.","maxScore":72,"minScore":9,"description":"Зато провал очередной единый господь. Затянуться неправда боец тысяча белье. Аж беспомощный счастье сомнительный пасть передо. Бригада вчера командир появление печатать райком конструкция.","estimatedTime":"2 weeks","previewFileId":"117b7eb0-fa1d-4e1d-97de-ef015eaa9c23","createdByUserId":"c1220b39-978e-495f-ac7e-413f3217e013"}'

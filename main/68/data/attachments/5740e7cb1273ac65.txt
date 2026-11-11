@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAwLjEyMjc5MiIsInVzZXJfaWQiOiJhMjg1NjVjZi1hYzc4LTRlMzEtOGZjZS05YjE1NzBmYTZmNjQifQ.WCSVXgnDqnaAIO1EHPxr1zjBV9BCTjD9SSbzjc0Zh3k' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Скрытый бровь пища самостоятельно низкий вздрогнуть.","maxScore":53,"minScore":24,"description":"Дрогнуть эффект другой ныне. Пропадать хлеб написать солнце инфекция. Передо присесть устройство.\nЗатянуться белье спешить роскошный порт жестокий. Правильный куча очко дошлый тяжелый.","estimatedTime":"1 weeks","previewFileId":"d2a0b080-1133-46b8-9045-b4d813da01bd","createdByUserId":"a28565cf-ac78-4e31-8fce-9b1570fa6f64"}'

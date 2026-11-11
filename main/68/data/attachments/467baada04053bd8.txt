@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA2LjM0Nzc5NyIsInVzZXJfaWQiOiI5NWFjNWIyMC1mNGQ4LTRjMTctYmM4Mi1mZmU0NTdjZGUwODgifQ.Ym2TDqhtuDw-nYkP8egGt3q3ZjpSrTt-M17yz05zcCA' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Посидеть выражение пробовать медицина домашний выраженный.","maxScore":76,"minScore":44,"description":"Князь вчера перебивать правый коричневый. Правление покидать коричневый плод.","estimatedTime":"10 weeks","previewFileId":"2ca7ffd1-8380-4b54-ae6c-c2526df4830a","createdByUserId":"95ac5b20-f4d8-4c17-bc82-ffe457cde088"}'

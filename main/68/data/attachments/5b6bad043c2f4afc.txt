@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAzLjc4Njk4NCIsInVzZXJfaWQiOiJhMWI5ZjdmNC01ZTA0LTRmNGUtYmI5MC1jYmQyYmQ1NGNhYjcifQ.GuIPA0BJqD0u_zrSdJ1W3QFa58f6Xfm8bgGcMaWj2FI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Число сынок дремать лететь.","maxScore":94,"minScore":20,"description":"Руководитель хозяйка сопровождаться мотоцикл песня устройство запустить. Материя пропасть ручей отражение. Ребятишки дорогой теория палец.","estimatedTime":"5 weeks","previewFileId":"48a7b822-4704-4d94-8703-6761fefb0f4d","createdByUserId":"a1b9f7f4-5e04-4f4e-bb90-cbd2bd54cab7"}'

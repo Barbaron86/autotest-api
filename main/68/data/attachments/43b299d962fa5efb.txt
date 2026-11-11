@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA0LjUwNTUwOSIsInVzZXJfaWQiOiJkZmE5N2U1My01OTEyLTRiOTAtYWZkNC1hNjI2MWQ4NmRiZmUifQ.dN9XBgJQpK7AyORALuMxsgtg2FZEwrIsjqqNl1rh8mg' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Разуметься войти запустить порог.","maxScore":78,"minScore":9,"description":"Проход эффект избегать ботинок выражаться решетка.","estimatedTime":"1 weeks","previewFileId":"09e01fb4-635e-48a8-9e3d-a7e280d033a4","createdByUserId":"dfa97e53-5912-4b90-afd4-a6261d86dbfe"}'

@@ -1,0 +1,10 @@
+curl --request POST \
+  http://localhost:8001/api/v1/courses \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjAwLjg0MjE4MyIsInVzZXJfaWQiOiIyNDJlMDViMS00OTdiLTQwZTctODk4Zi0wMGUxNGY2ZWJlYmQifQ.D5ngsSgxz19P5wAf9lpD2Bwr7pRE9ZjUJPUwDISs21Q' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Висеть эффект посидеть вряд мгновение посидеть изменение командование.","maxScore":81,"minScore":32,"description":"Товар неправда триста палец. Человечек помолчать уронить уронить неправда каюта похороны. Инфекция построить пропаганда сравнение. Район вытаскивать металл песенка расстегнуть разнообразный тревога.","estimatedTime":"10 weeks","previewFileId":"460a2e28-22c4-4626-818a-07de53b5c0a4","createdByUserId":"242e05b1-497b-40e7-898f-00e14f6ebebd"}'

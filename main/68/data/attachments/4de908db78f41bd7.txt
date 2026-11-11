@@ -1,0 +1,10 @@
+curl --request PATCH \
+  http://localhost:8001/api/v1/exercises/2f7409ea-2e4e-47bf-a92a-d7676b5f1bde \
+  --header 'host: localhost:8001' \
+  --header 'accept: */*' \
+  --header 'accept-encoding: gzip, deflate' \
+  --header 'connection: keep-alive' \
+  --header 'user-agent: python-httpx/0.28.1' \
+  --header 'authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmUiOiIyMDI2LTExLTExVDE4OjUzOjA0LjAyNjk2OCIsInVzZXJfaWQiOiJkZmE5N2U1My01OTEyLTRiOTAtYWZkNC1hNjI2MWQ4NmRiZmUifQ.3NI1uoDShkN07SqjBHus-JaeZMdABfVZ74NjslgXywI' \
+  --header 'content-type: application/json' \
+  --data-raw '{"title":"Бегать хотеть художественный. (обновлено)","description":"Аж товар легко спичка мрачно некоторый изменение. Научить падаль степь материя слать цель снимать порядок.\nГоловной господь идея полностью. Рота назначить хозяйка присесть цепочка.\nОбновленное описание.","maxScore":53,"minScore":31,"orderIndex":63,"estimatedTime":"2 weeks (обновлено)"}'
