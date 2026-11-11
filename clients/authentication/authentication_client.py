@@ -24,6 +24,19 @@ class AuthenticationClient(ApiClient):
         """
         return self.post(f"{APIRoutes.AUTHENTICATION}/login", json=request.model_dump())
 
+    @allure.step("Authenticate user with raw JSON")
+    @tracker.track_coverage_httpx(f"{APIRoutes.AUTHENTICATION}/login")
+    def login_raw_api(self, payload: dict[str, object]) -> Response:
+        """Отправляет произвольный JSON для проверки серверной валидации.
+
+        Args:
+            payload: JSON-тело запроса без клиентской валидации.
+
+        Returns:
+            HTTP-ответ API.
+        """
+        return self.post(f"{APIRoutes.AUTHENTICATION}/login", json=payload)
+
     @allure.step("Refresh authentication token")
     @tracker.track_coverage_httpx(f"{APIRoutes.AUTHENTICATION}/refresh")
     def refresh_api(self, request: RefreshRequestSchema) -> Response:
@@ -36,6 +49,19 @@ class AuthenticationClient(ApiClient):
             HTTP-ответ API на запрос обновления токена.
         """
         return self.post(f"{APIRoutes.AUTHENTICATION}/refresh", json=request.model_dump())
+
+    @allure.step("Refresh authentication token with raw JSON")
+    @tracker.track_coverage_httpx(f"{APIRoutes.AUTHENTICATION}/refresh")
+    def refresh_raw_api(self, payload: dict[str, object]) -> Response:
+        """Отправляет произвольный JSON для проверки валидации refresh-токена.
+
+        Args:
+            payload: Тело запроса без клиентской валидации.
+
+        Returns:
+            HTTP-ответ API на запрос обновления токена.
+        """
+        return self.post(f"{APIRoutes.AUTHENTICATION}/refresh", json=payload)
 
     def login(self, request: LoginRequestSchema) -> LoginResponseSchema:
         """Аутентифицирует пользователя.

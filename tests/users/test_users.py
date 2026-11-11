@@ -5,7 +5,7 @@ import pytest
 from allure_commons.types import Severity
 
 from clients.authentication.authentication_client import AuthenticationClient
-from clients.error_schema import InternalErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from clients.users.private_users_client import PrivateUsersClient
 from clients.users.public_users_client import PublicUsersClient
 from clients.users.user_schema import (
@@ -24,11 +24,13 @@ from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
 from tools.assertions.users import (
     assert_create_user_response,
+    assert_create_user_with_empty_password_response,
     assert_get_user_response,
     assert_update_user_response,
     assert_user,
     assert_user_not_found_response,
     assert_user_with_existing_email_response,
+    assert_user_with_invalid_id_response,
 )
 from tools.fakers import fake
 
@@ -281,3 +283,96 @@ class TestUsers:
         validate_json_schema(
             instance=create_user_response.json(), schema=InternalErrorResponseSchema.model_json_schema()
         )
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Get user with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_get_user_with_invalid_id(self, private_users_client: PrivateUsersClient) -> None:
+        """Проверяет отклонение получения пользователя с некорректным UUID.
+
+        Args:
+            private_users_client: Фикстура авторизованного API-клиента пользователей.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        user_id = fake.invalid_uuid()
+        get_user_response = private_users_client.get_user_api(user_id=user_id)
+
+        assert_status_code(get_user_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(get_user_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        get_user_response_data = ValidationErrorResponseSchema.model_validate_json(get_user_response.text)
+
+        assert_user_with_invalid_id_response(actual=get_user_response_data, user_id=user_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Delete user with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_delete_user_with_invalid_id(self, private_users_client: PrivateUsersClient) -> None:
+        """Проверяет отклонение удаления пользователя с некорректным UUID.
+
+        Args:
+            private_users_client: Фикстура авторизованного API-клиента пользователей.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        user_id = fake.invalid_uuid()
+        delete_user_response = private_users_client.delete_user_api(user_id=user_id)
+
+        assert_status_code(delete_user_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(delete_user_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        delete_user_response_data = ValidationErrorResponseSchema.model_validate_json(delete_user_response.text)
+
+        assert_user_with_invalid_id_response(actual=delete_user_response_data, user_id=user_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Update user with invalid ID")
+    @allure.severity(Severity.NORMAL)
+    def test_update_user_with_invalid_id(self, private_users_client: PrivateUsersClient) -> None:
+        """Проверяет отклонение обновления пользователя с некорректным UUID.
+
+        Args:
+            private_users_client: Фикстура авторизованного API-клиента пользователей.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        user_id = fake.invalid_uuid()
+        update_user_request = UpdateUserRequestSchema(first_name=fake.first_name())
+        update_user_response = private_users_client.update_user_api(user_id=user_id, request=update_user_request)
+
+        assert_status_code(update_user_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(update_user_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        update_user_response_data = ValidationErrorResponseSchema.model_validate_json(update_user_response.text)
+
+        assert_user_with_invalid_id_response(actual=update_user_response_data, user_id=user_id)
+
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.VALIDATE_ENTITY)
+    @allure.sub_suite(AllureStory.VALIDATE_ENTITY)
+    @allure.title("Create user with empty password")
+    @allure.severity(Severity.NORMAL)
+    def test_create_user_with_empty_password(self, public_users_client: PublicUsersClient) -> None:
+        """Проверяет отклонение создания пользователя с пустым паролем.
+
+        Args:
+            public_users_client: Фикстура публичного API-клиента пользователей.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        create_user_request = CreateUserRequestSchema(password="")
+        create_user_response = public_users_client.create_user_api(request=create_user_request)
+
+        assert_status_code(create_user_response.status_code, HTTPStatus.UNPROCESSABLE_ENTITY)
+        validate_json_schema(create_user_response.json(), ValidationErrorResponseSchema.model_json_schema())
+        create_user_response_data = ValidationErrorResponseSchema.model_validate_json(create_user_response.text)
+
+        assert_create_user_with_empty_password_response(actual=create_user_response_data)

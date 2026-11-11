@@ -3,7 +3,7 @@ from re import fullmatch
 import allure
 from loguru import logger
 
-from clients.error_schema import InternalErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from clients.users.user_schema import (
     CreateUserRequestSchema,
     CreateUserResponseSchema,
@@ -13,8 +13,14 @@ from clients.users.user_schema import (
     UserSchema,
 )
 from tools.assertions.base import assert_equal
-from tools.assertions.errors import assert_internal_error_response
+from tools.assertions.errors import (
+    ValidationErrorExpectation,
+    assert_internal_error_response,
+    assert_invalid_uuid_response,
+    assert_validation_error_response,
+)
 from tools.error_messages import ApiErrorMessage, ApiErrorPattern
+from tools.error_types import ValidationErrorType
 
 
 @allure.step("Check user with existing email response")
@@ -129,3 +135,41 @@ def assert_update_user_response(
     expected_user = original_user.model_copy(update=request.model_dump(exclude_unset=True, by_alias=False))
 
     assert_user(actual=response.user, expected=expected_user)
+
+
+@allure.step("Check user with invalid ID response")
+def assert_user_with_invalid_id_response(actual: ValidationErrorResponseSchema, user_id: str) -> None:
+    """Проверяет ошибку валидации некорректного UUID пользователя.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+        user_id: Некорректный UUID пользователя в path-параметре.
+
+    Raises:
+        AssertionError: Если данные ошибки не соответствуют ожиданиям.
+    """
+    logger.info("🔎 Check user with invalid ID response")
+    assert_invalid_uuid_response(actual=actual, invalid_id=user_id, location=["path", "user_id"])
+
+
+@allure.step("Check create user with empty password response")
+def assert_create_user_with_empty_password_response(actual: ValidationErrorResponseSchema) -> None:
+    """Проверяет ошибку валидации пустого пароля при создании пользователя.
+
+    Args:
+        actual: Фактический ответ API с ошибками валидации.
+
+    Raises:
+        AssertionError: Если тип, расположение или значение ошибки
+            не соответствуют ожидаемым.
+    """
+    logger.info("🔎 Check create user with empty password response")
+    expected = [
+        ValidationErrorExpectation(
+            type=ValidationErrorType.STRING_TOO_SHORT,
+            input="",
+            context={"min_length": 1},
+            location=["body", "password"],
+        )
+    ]
+    assert_validation_error_response(actual=actual, expected=expected)

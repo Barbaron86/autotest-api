@@ -6,7 +6,7 @@ from allure_commons.types import Severity
 
 from clients.authentication.authentication_client import AuthenticationClient
 from clients.authentication.authentication_schema import LoginRequestSchema, LoginResponseSchema, RefreshRequestSchema
-from clients.error_schema import InternalErrorResponseSchema
+from clients.error_schema import InternalErrorResponseSchema, ValidationErrorResponseSchema
 from fixtures.users import UserFixture
 from tools.allure.epics import AllureEpic
 from tools.allure.features import AllureFeature
@@ -16,7 +16,9 @@ from tools.assertions.authentication import (
     assert_invalid_credentials_response,
     assert_invalid_refresh_token_response,
     assert_login_response,
+    assert_login_with_invalid_email_type_response,
     assert_refresh_response,
+    assert_refresh_with_invalid_token_type_response,
 )
 from tools.assertions.base import assert_status_code
 from tools.assertions.schema import validate_json_schema
@@ -160,3 +162,77 @@ class TestAuthentication:
         refresh_response_data = InternalErrorResponseSchema.model_validate_json(refresh_response.text)
         assert_invalid_refresh_token_response(actual=refresh_response_data)
         validate_json_schema(instance=refresh_response.json(), schema=InternalErrorResponseSchema.model_json_schema())
+
+    @pytest.mark.parametrize(
+        "invalid_email",
+        [
+            pytest.param(None, id="null"),
+            pytest.param(123, id="integer"),
+            pytest.param(True, id="boolean"),
+            pytest.param([], id="array"),
+            pytest.param({}, id="object"),
+        ],
+    )
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.LOGIN)
+    @allure.sub_suite(AllureStory.LOGIN)
+    @allure.title("Login with invalid email type")
+    @allure.severity(Severity.NORMAL)
+    def test_login_with_invalid_email_type(
+        self, authentication_client: AuthenticationClient, invalid_email: object
+    ) -> None:
+        """Проверяет отклонение авторизации с некорректным типом email.
+
+        Args:
+            authentication_client: Фикстура API-клиента аутентификации.
+            invalid_email: Значение email с некорректным типом данных.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        login_response = authentication_client.login_raw_api(
+            payload={"email": invalid_email, "password": fake.password()}
+        )
+
+        assert_status_code(actual=login_response.status_code, expected=HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        login_response_data = ValidationErrorResponseSchema.model_validate_json(login_response.text)
+        assert_login_with_invalid_email_type_response(actual=login_response_data, email=invalid_email)
+
+        validate_json_schema(instance=login_response.json(), schema=ValidationErrorResponseSchema.model_json_schema())
+
+    @pytest.mark.parametrize(
+        "invalid_token",
+        [
+            pytest.param(None, id="null"),
+            pytest.param(123, id="integer"),
+            pytest.param(True, id="boolean"),
+            pytest.param([], id="array"),
+            pytest.param({}, id="object"),
+        ],
+    )
+    @allure.tag(AllureTag.VALIDATE_ENTITY)
+    @allure.story(AllureStory.REFRESH_TOKEN)
+    @allure.sub_suite(AllureStory.REFRESH_TOKEN)
+    @allure.title("Refresh with invalid token type")
+    @allure.severity(Severity.NORMAL)
+    def test_refresh_with_invalid_token_type(
+        self, authentication_client: AuthenticationClient, invalid_token: object
+    ) -> None:
+        """Проверяет отклонение обновления токена с некорректным типом данных.
+
+        Args:
+            authentication_client: Фикстура API-клиента аутентификации.
+            invalid_token: Значение refresh-токена с некорректным типом данных.
+
+        Raises:
+            AssertionError: Если HTTP-статус или ошибка валидации не соответствуют ожиданиям.
+        """
+        refresh_response = authentication_client.refresh_raw_api(payload={"refreshToken": invalid_token})
+
+        assert_status_code(actual=refresh_response.status_code, expected=HTTPStatus.UNPROCESSABLE_ENTITY)
+
+        refresh_response_data = ValidationErrorResponseSchema.model_validate_json(refresh_response.text)
+        assert_refresh_with_invalid_token_type_response(actual=refresh_response_data, token=invalid_token)
+
+        validate_json_schema(instance=refresh_response.json(), schema=ValidationErrorResponseSchema.model_json_schema())
